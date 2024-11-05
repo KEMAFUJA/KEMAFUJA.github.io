@@ -42,11 +42,14 @@ body {
   text-align: center;
   animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; 
 }
+
 /*NOMBRE*/
 .card h2 {
   font-size: 24px;
-  margin: 0;
+  margin: 0;  
 }
+
+
 /*RELLENO*/
 .card p {
   color: #474747;
@@ -91,21 +94,11 @@ display: inline;
 
 
 /*TITUTO CON EFECTO*/
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 .letra {
     font-size: 50px;
-    transition: font-size 10s; /* Suaviza la transición del cambio de tamaño de fuente */
-    opacity: 1; /* Inicialmente visible */
-}
+    
+    animation: backgroundColorChange4 40s ease-in-out infinite;
+  }
 
 .font1 {
     font-family: Arial, sans-serif;
@@ -120,25 +113,36 @@ display: inline;
 }
 
 .font4 {
-    font-family: 'Times New Roman';
+    font-family: Georgia, serif;
 }
 
-.hidden {
-    display: none; /* Oculta el elemento cuando no está visible */
+@keyframes backgroundColorChange4 {
+  0% { 
+    filter: drop-shadow(#ffffff) ; 
+    color: #987f03; /* Color del texto inicial */
+  }
+  33% { 
+    filter: drop-shadow( #d4c67e); 
+    color: #ffe76e; /* Cambia el color del texto en esta etapa */
+  } 
+  66% { 
+    filter: drop-shadow(#c3af50); 
+    color: #ffde38; /* Cambia el color del texto en esta etapa */
+  }
+  100% { 
+    filter: drop-shadow( #ffd500); 
+    color: #ffffff; /* Vuelve al color del texto inicial */
+  }
 }
+
 
 </style>
 
 <body>
     <div class="card">
 
-        <div class="letra-container">
-            <h1 class="letra font1">FJ ENTERPRISE</h1>
-            <h1 class="letra font2 hidden">FJ ENTERPRISE</h1>
-            <h1 class="letra font3 hidden">FJ ENTERPRISE</h1>
-            <h1 class="letra font4 hidden">FJ ENTERPRISE</h1>
-        </div>
-        
+      <h1 class="letra font1">FJ ENTERPRISE</h1>
+
         
         <div class="mb-5">
             <h3 class="inline-text bg-ing">ING.</h3>
@@ -152,26 +156,27 @@ display: inline;
 
 
     <script>
-        const fonts = document.querySelectorAll('.letra');
-        let currentFont = 0;
-    
-        function changeFont() {
-            // Ocultar la fuente actual
-            fonts[currentFont].style.animation = 'fadeOut 1s forwards'; // Aplicar la animación de desvanecimiento
-            fonts[currentFont].classList.add('hidden');
-    
-            // Incrementar el índice de la fuente actual
-            currentFont = (currentFont + 1) % fonts.length;
-    
-            // Mostrar la siguiente fuente
-            fonts[currentFont].classList.remove('hidden');
-            fonts[currentFont].style.animation = 'fadeIn 1s forwards'; // Aplicar la animación de aparición
-        }
-    
-        // Cambiar la fuente cada 2 segundos (2000 milisegundos)
-        setInterval(changeFont, 3000);
-    </script>
-    
+      const fonts = ['font1', 'font2', 'font3', 'font4'];
+      let currentFont = 0;
+  
+      function changeFont() {
+          // Obtener el elemento h1
+          const letraElement = document.querySelector('.letra');
+  
+          // Quitar la clase de la fuente actual
+          letraElement.classList.remove(fonts[currentFont]);
+  
+          // Incrementar el índice de la fuente actual
+          currentFont = (currentFont + 1) % fonts.length;
+  
+          // Agregar la nueva clase de fuente
+          letraElement.classList.add(fonts[currentFont]);
+      }
+  
+      // Cambiar la fuente cada 2 segundos (2000 milisegundos)
+      setInterval(changeFont, 3000);
+  </script>
+      
 </body>
 </html>
 
