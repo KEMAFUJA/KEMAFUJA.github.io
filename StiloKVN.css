@@ -27,10 +27,10 @@ body {
 }
 /*CUBO*/
 .card {  
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 80px;
-  width: 400px;
+  width: 470px;
   text-align: center;
   animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; 
 }
@@ -39,7 +39,6 @@ body {
 .card h2 {
   font-size: 24px;
 }
-
 
 /*RELLENO*/
 .card p {
@@ -79,7 +78,7 @@ body {
 }
 
 .nombre-completo {
-  margin: 10px 0 5px 0;
+  margin: 10px 0 0px 0;
   display: inline-block; /* Agrupa los elementos */
 }
 
@@ -129,6 +128,7 @@ body {
   color: white;
   margin: 0;
   align-items: center;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.262);
   animation: backgroundColorChange4 40s ease-in-out infinite, fontChange 5s ease-in-out infinite;
   display: inline-block; /* Asegura que ambos títulos estén uno al lado del otro */
 }
@@ -169,10 +169,11 @@ body {
 }*/
 
 .icono {
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  border-radius: 5%;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px 0 10px;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
 }
 
