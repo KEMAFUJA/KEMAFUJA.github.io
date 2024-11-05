@@ -2,9 +2,9 @@
 /*FONDO*/
 @keyframes backgroundColorChange {
   0% { background-color: #ffffff; }
-  20% { background-color: #0088ff; } 
-  40% { background-color: #63009c; }
-  60% { background-color: #8c0033; }
+  20% { background-color: #004582; } 
+  40% { background-color: #3b005e; }
+  60% { background-color: #570020; }
   80% { background-color: #000000; }
   100% { background-color: #ffffff; }
 }
