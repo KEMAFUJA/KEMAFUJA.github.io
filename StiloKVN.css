@@ -251,56 +251,45 @@ body {
 
 
 
-/* Contenedor principal */
-.dropdown {
-  position: relative;
-  
-}
-
-/* Estilo del enlace (¿Qué hacemos?) */
+/* Estilo para el enlace */
 .dropdown-toggle {
-  font-size: 15px;
-  cursor: pointer;
   color: #007bff;
   text-decoration: none;
+  cursor: pointer;
 }
 
-/* Contenido desplegable */
+/* Contenido oculto por defecto */
 .content {
   display: none;
-  position: absolute;
   background-color: #f9f9f9;
   padding: 15px;
   border: 1px solid #ddd;
-  margin-top: 5px;
-  width: 300px; /* Ajustar según el tamaño deseado */
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%); /* Para centrar horizontalmente */
+  margin-top: 10px;
+  text-align: left; /* Alineación de texto a la izquierda */
 }
 
-/* Mostrar el contenido al pasar el mouse */
+/* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
 .dropdown:hover .content {
   display: block;
 }
 
-/* Estilo de la lista */
+/* Estilos para la lista */
 ul {
-  list-style-type: none;
+  list-style-type: none; /* Quita los puntos */
   padding-left: 0;
   margin: 0 0 10px 0;
 }
 
 li {
   margin-bottom: 0px;
+  text-align: center; /* Centra el texto dentro de cada li */
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 20px; /* Indentación para sublistas */
 }
 
-/* Resaltar el título de cada categoría */
 strong {
-  font-size: 1.1em;
+  font-size: 1.1em; /* Resaltar el título */
   color: #333;
 }
