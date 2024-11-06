@@ -42,7 +42,7 @@ body {
 
 /*RELLENO*/
 .card p {
-  font-size: 20px;
+  font-size: 25px;
   color: #474747;
   margin: 5px 0;
 }
@@ -241,7 +241,7 @@ body {
 }
 
 .colored-text {
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   font-weight: bold;
   animation: colorShadow 3s infinite alternate, heartbeat 1s ease-in-out infinite;
