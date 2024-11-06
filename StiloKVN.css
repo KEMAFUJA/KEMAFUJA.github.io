@@ -29,8 +29,8 @@ body {
 .card {  
   border-radius: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 60px;
-  width: 400px;
+  padding: 70px;
+  width: 450px;
   text-align: center;
   animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; 
 }
@@ -145,10 +145,10 @@ body {
   
 }
 .size1{
-  font-size: 30px;
+  font-size: 40px;
 }
 .size2{
-  font-size: 70px;
+  font-size: 80px;
 }
 
 
@@ -186,8 +186,8 @@ body {
 }*/
 
 .icono {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin: 0 0 0 10px;
   border-radius: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
