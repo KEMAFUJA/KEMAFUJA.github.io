@@ -249,32 +249,44 @@ body {
 
 
 
-/* Estilo para el enlace */
-.dropdown-toggle {
-  color: #007bff;
-  text-decoration: none;
-  cursor: pointer;
+/* Contenedor principal */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-/* Contenido oculto por defecto */
+/* Estilo del enlace (¿Qué hacemos?) */
+.dropdown-toggle {
+  font-size: 18px;
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Contenido desplegable */
 .content {
   display: none;
+  position: absolute;
   background-color: #f9f9f9;
   padding: 15px;
   border: 1px solid #ddd;
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 300px; /* Ajustar según el tamaño deseado */
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%); /* Para centrar horizontalmente */
 }
 
-/* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
+/* Mostrar el contenido al pasar el mouse */
 .dropdown:hover .content {
   display: block;
 }
 
-/* Estilos para la lista */
+/* Estilo de la lista */
 ul {
-  list-style-type: none; /* Quita los puntos */
+  list-style-type: none;
   padding-left: 0;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
 }
 
 li {
@@ -282,10 +294,11 @@ li {
 }
 
 ul {
-  padding-left: 20px; /* Indentación para sublistas */
+  padding-left: 20px;
 }
 
+/* Resaltar el título de cada categoría */
 strong {
-  font-size: 1.1em; /* Resaltar el título */
+  font-size: 1.1em;
   color: #333;
 }
