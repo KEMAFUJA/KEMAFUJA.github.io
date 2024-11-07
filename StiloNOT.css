@@ -76,6 +76,8 @@ body {
 a:hover {
   text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }
+
+
 /*JUNTAO*/
 .inline-text {
 display: inline;
@@ -89,7 +91,7 @@ display: inline;
 
 /*TITUTO CON EFECTO*/
 .letra {
-    font-size: 80px; 
+    font-size: 90px; 
     font-family: Georgia, serif;   
     animation: backgroundColorChange4 50s ease-in-out infinite;
   }
@@ -157,6 +159,6 @@ display: inline;
 }
 
 .nombre-completo {
-  margin: 0 0 10px 0;
+  margin: -20px 0 10px 0;
   display: inline-block; /* Agrupa los elementos */
 }
