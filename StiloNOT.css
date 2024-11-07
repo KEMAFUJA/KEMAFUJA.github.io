@@ -73,7 +73,9 @@ body {
   font-weight: bold;
   animation: backgroundColorChange3 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
 }
-
+a:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
 /*JUNTAO*/
 .inline-text {
 display: inline;
