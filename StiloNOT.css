@@ -1,12 +1,12 @@
 
 /*FONDO*/
 @keyframes backgroundColorChange {
-  0% { background-color: #ffffff; }
-  20% { background-color: #004582; } 
-  40% { background-color: #3b005e; }
-  60% { background-color: #570020; }
-  80% { background-color: #000000; }
-  100% { background-color: #ffffff; }
+  0% { background-color: #0a004b; }
+  20% { background-color: #0f0070; } 
+  40% { background-color: #1600a9; }
+  60% { background-color: #1c00d2; }
+  80% { background-color: #0f0070; }
+  100% { background-color: #0a004b; }
 }
 
 body {
@@ -15,14 +15,14 @@ body {
   align-items: center;
   height: 100vh;
   font-family: Arial, sans-serif;
-  animation: backgroundColorChange 20s ease-in-out infinite; /* Duración de 10 segundos, en bucle infinito */
+  animation: backgroundColorChange 15s ease-in-out infinite; /* Duración de 10 segundos, en bucle infinito */
 }
 
 /*FONDO CUBO*/
 @keyframes backgroundColorChange2 {
   0% { background-color: #ffffff; }
-  33% { background-color: #d2e5ff; } 
-  66% { background-color:#59affa; }
+  33% { background-color: #593fff; } 
+  66% { background-color:#8471ff; }
   100% { background-color: #ffffff; }
 }
 /*CUBO*/
@@ -37,7 +37,7 @@ body {
 
 /*NOMBRE*/
 .card h2 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 0;  
 }
 
@@ -48,31 +48,55 @@ body {
   margin: 5px 0;
 }
 
-/*LINK WHATS APP*/
-@keyframes backgroundColorChange3 {
+/*COLORES LINKS*/
+@keyframes backgroundnumwa {
   0% { 
-    background-color: #ffffff; 
-    color: #000000; /* Color del texto inicial */
+    color: #005a1f; /* Color del texto inicial */
   }
   33% { 
-    background-color: #d2e5ff; 
-    color: #007bff; /* Cambia el color del texto en esta etapa */
+    color: #00ff59; /* Cambia el color del texto en esta etapa */
   } 
-  66% { 
-    background-color: #59affa; 
-    color: #ffcc00; /* Cambia el color del texto en esta etapa */
+  66% {
+    color: #008930; /* Cambia el color del texto en esta etapa */
   }
   100% { 
-    background-color: #ffffff; 
-    color: #000000; /* Vuelve al color del texto inicial */
+    color: #005a1f; /* Vuelve al color del texto inicial */
   }
 }
 
-.card a {
+@keyframes backgroundFBCORR {
+  0% { 
+    color: #06005a; /* Color del texto inicial */
+  }
+  33% { 
+    color: #1100ff; /* Cambia el color del texto en esta etapa */
+  } 
+  66% {
+    color: #090084; /* Cambia el color del texto en esta etapa */
+  }
+  100% { 
+    color: #06005a; /* Vuelve al color del texto inicial */
+  }
+}
+
+.numwa {
   text-decoration: none;
   font-weight: bold;
-  animation: backgroundColorChange3 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+  animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
 }
+
+.fbcorr {
+  text-decoration: none;
+  font-weight: bold;
+  animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+}
+
+.numwa {
+  text-decoration: none;
+  font-weight: bold;
+  animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+}
+
 a:hover {
   text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }
@@ -155,7 +179,7 @@ display: inline;
 }
 
 .letrachica {
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .nombre-completo {
