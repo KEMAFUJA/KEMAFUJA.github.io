@@ -37,7 +37,7 @@ body {
 
 /*NOMBRE*/
 .card h2 {
-  font-size: 35px;
+  font-size: 40px;
   margin: 0;  
 }
 
@@ -179,7 +179,7 @@ display: inline;
 }
 
 .letrachica {
-  font-size: 12.5px;
+  font-size: 10px;
 }
 
 .nombre-completo {
