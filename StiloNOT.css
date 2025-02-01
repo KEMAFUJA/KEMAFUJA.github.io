@@ -186,3 +186,61 @@ display: inline;
   margin: -20px 0 10px 0;
   display: inline-block; /* Agrupa los elementos */
 }
+
+
+/* Estilo para el enlace */
+.dropdown-toggle {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Contenido oculto por defecto */
+.content {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-top: 100px;
+  text-align: left; /* Alineación de texto a la izquierda */
+}
+
+/* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
+.dropdown:hover .content {
+  display: block;
+}
+
+/* Estilos para la lista */
+ul {
+  list-style-type: none; /* Quita los puntos */
+  padding-left: 0;
+  margin: 0 0 10px 0;
+}
+
+li {
+  margin-bottom: 0px;
+  text-align: center; /* Centra el texto dentro de cada li */
+}
+
+ul {
+  padding-left: 20px; /* Indentación para sublistas */
+}
+
+strong {
+  font-size: 1.1em; /* Resaltar el título */
+  color: #333;
+}
+
+
+.iconos-completo {
+  margin: 0 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconos {
+  display: flex;
+  gap: 10px; /* Espacio entre iconos */
+  margin-bottom: 5px; /* Espacio entre iconos y botones */
+}
