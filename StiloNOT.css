@@ -168,7 +168,7 @@ display: inline;
 .icono {
   width: 35px;
   height: 35px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 30px;
   border-radius: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
