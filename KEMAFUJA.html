@@ -1,168 +1,167 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=yes">
-    <title>Contacto Personal</title>
-    <link rel="stylesheet" href="StiloKVN.css">
-</head>
-<body>
-    <div class="card">
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=yes">
+      <title>Contacto Personal</title>
+      <link rel="stylesheet" href="StiloKVN.css">
+  </head>
+  <body>
+  <div class="card">
+        <div>
+          <h1 class="letra font1 size2">KEMAFUJA</h1>
+          <h3 class="letra font1 size1">ENTERPRISE</h3>
+        </div>    
 
-      <div class="letra-container">
-        <h1 class="letra font1 size2">KEMAFUJA</h1>
-        <h3 class="letra font1 size1">ENTERPRISE</h3>
-    </div>    
-        
-         <!--
-<div class="nombre-completo"></div>   
-<h4 class="letra font1"> hola</h4>
-<h2 class="letra font1"> chau</h2>
-<h2 class="apellido"> peji</h2>
--->
+          <!--
+  <div class="nombre-completo"></div>   
+  <h4 class="letra font1"> hola</h4>
+  <h2 class="letra font1"> chau</h2>
+  <h2 class="apellido"> peji</h2>
+  -->
 
-    <div class="nombre-completo">
-      <p><strong>Correo:</strong> <a href="mailto:KEMAFUJA_ENTERPRISE@hotmail.com?subject=Consulta&body=Hola, quisiera consultar sobre...">KEMAFUJA_ENTERPRISE@hotmail.com</a></p>
-      <p><strong>Teléfono:</strong> +591 75614564</p>
-    </div>        
-        
-    <div class="iconos-completo">
-      <h4 class="colored-text" style="font-size: 15px;">Visita mis redes sociales:</h4>
-      
-      <!-- Contenedor de iconos -->
-      <div class="iconos">
-          <a href="https://api.whatsapp.com/send?phone=59175614564&text=Hola%20me%20interesa%20tu%20servicio..." target="_blank">
-              <img src="WhatsApp2.png" alt="Contacto de WhatsApp" class="icono">
-          </a>
-          <a href="https://t.me/KEMAFUJA_ENTERPRISE?text=Hola,%20me%20interesa%20contactar%20con%20ustedes." target="_blank">
-              <img src="Telagram2.png" alt="Contacto de Telegram" class="icono">
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61567842524001&mibextid=ZbWKwL" target="_blank">
-              <img src="Facebook2.png" alt="Pagina de Facebook" class="icono">
-          </a>
-          <a href="https://www.instagram.com/kemafuja/" target="_blank">
-              <img src="Instagram2.png" alt="Perfil de Instagram" class="icono">
-          </a>
-          <a href="https://youtube.com/@kemafujaenterprise?si=FWMjR8yKLcFIVx2V" target="_blank">
-              <img src="YouTube3.png" alt="Canal de YouTube" class="icono">
-          </a>
-          <a href="https://www.tiktok.com/@kemafujaenterpris?_t=8r9Gz1l0QIn&_r=1" target="_blank">
-              <img src="Tik Tok2.png" alt="Pagina de Tik Tok" class="icono">
-          </a>
-      </div>
-  
-      <!-- Botones de reproducción y pausa -->
-      <div class="botones">
-          <button onclick="playAudio()" class="boton">Reproducir</button>
-          <button onclick="pauseAudio()" class="boton">Pausar</button>
-      </div>
-  </div>
-
-
-<!-- Elemento de audio -->
-<audio id="miAudio" loop>
-    <source src="FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-</audio>
-
-<script>
-    // Obtener el elemento de audio
-    const miAudio = document.getElementById('miAudio');
-
-    // Función para reproducir el audio
-    function playAudio() {
-        miAudio.play();
-    }
-
-    // Función para pausar el audio
-    function pauseAudio() {
-        miAudio.pause();
-    }
-</script>
-
-        <div class="dropdown">
-          <a class="dropdown-toggle" href="javascript:void(0);">¿Qué hacemos?</a>
-          <div class="content">
-            <ul>
-              <li><strong>SISTEMAS INFORMÁTICOS:</strong>
-                <ul>
-                  <li>Páginas, Sitios o Plataforma Web</li>
-                  <li>Tarjetas de presentación en QR o link</li>
-                  <li>Macros/Atajos en Office</li>
-                  <li>Mini Juegos</li>
-                </ul>
-              </li>
-              <li><strong>PRODUCCIÓN MUSICAL</strong>
-                <ul>
-                  <li>Mezcla</li>
-                  <li>Masterización</li>
-                </ul>
-              </li>
-              <li><strong>PRODUCCIÓN DE VIDEOS/IMÁGENES</strong>
-                <ul>
-                  <li>Edición</li>
-                  <li>Retoques</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <audio id="background-audio" autoplay loop>
-          <source src="FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
-          Tu navegador no soporta el elemento de audio.
-        </audio>
+      <div class="nombre-completo">
+        <p><strong>Correo:</strong> <a href="mailto:kemafuja.enterprise@hotmail.com?subject=Consulta&body=Hola, quisiera consultar sobre..."> KEMAFUJA.ENTERPRISE@hotmail.com </a></p>
+        <p><strong>Teléfono:</strong> +591 75614564</p>
+      </div>        
           
-
-    <script>
-
-document.addEventListener('click', function() {
-  const audio = document.getElementById('backgroundMusic');
-  if (audio.paused) {
-    audio.play();
-  }
-});
-
-
-
-function toggleDropdown() {
-  const content = document.getElementById("dropdownContent");
-  if (content.style.display === "none") {
-    content.style.display = "block";
-  } else {
-    content.style.display = "none";
-  }
-}
-
-
-
-      const words = document.querySelectorAll('.letra');
-const fontClasses = ['font1', 'font2', 'font3', 'font4'];
-let currentFontIndex = 0;
-
-function changeFont() {
-    // Remover la clase de fuente actual
-    words.forEach(word => {
-        word.classList.remove(fontClasses[currentFontIndex]);
-    });
+      <div class="iconos-completo">
+        <h4 class="colored-text" style="font-size: 15px;">Visita mis redes sociales:</h4>
+        
+        <!-- Contenedor de iconos -->
+        <div class="iconos">
+            <a href="https://api.whatsapp.com/send?phone=59175614564&text=Hola%20me%20interesa%20tu%20servicio..." target="_blank">
+                <img src="WhatsApp2.png" alt="Contacto de WhatsApp" class="icono">
+            </a>
+            <a href="https://t.me/KEMAFUJA_ENTERPRISE?text=Hola,%20me%20interesa%20contactar%20con%20ustedes." target="_blank">
+                <img src="Telagram2.png" alt="Contacto de Telegram" class="icono">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567842524001&mibextid=ZbWKwL" target="_blank">
+                <img src="Facebook2.png" alt="Pagina de Facebook" class="icono">
+            </a>
+            <a href="https://www.instagram.com/kemafuja/" target="_blank">
+                <img src="Instagram2.png" alt="Perfil de Instagram" class="icono">
+            </a>
+            <a href="https://youtube.com/@kemafujaenterprise?si=FWMjR8yKLcFIVx2V" target="_blank">
+                <img src="YouTube3.png" alt="Canal de YouTube" class="icono">
+            </a>
+            <a href="https://www.tiktok.com/@kemafujaenterpris?_t=8r9Gz1l0QIn&_r=1" target="_blank">
+                <img src="Tik Tok2.png" alt="Pagina de Tik Tok" class="icono">
+            </a>
+        </div>
     
-    // Cambiar al siguiente tipo de fuente
-    currentFontIndex = (currentFontIndex + 1) % fontClasses.length;
-
-    // Aplicar la nueva clase a ambas palabras
-    words.forEach(word => {
-        word.classList.add(fontClasses[currentFontIndex]);
-    });
-}
-
-// Cambiar la fuente cada 3 segundos
-setInterval(changeFont, 3000);
+        <!-- Botones de reproducción y pausa -->
+        <div class="botones">
+            <button onclick="playAudio()" class="boton">Reproducir</button>
+            <button onclick="pauseAudio()" class="boton">Pausar</button>
+        </div>
+    </div>
 
 
+  <!-- Elemento de audio -->
+  <audio id="miAudio" loop>
+      <source src="FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
 
+  <script>
+      // Obtener el elemento de audio
+      const miAudio = document.getElementById('miAudio');
 
+      // Función para reproducir el audio
+      function playAudio() {
+          miAudio.play();
+      }
+
+      // Función para pausar el audio
+      function pauseAudio() {
+          miAudio.pause();
+      }
   </script>
+
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);">¿Qué hacemos?</a>
+            <div class="content">
+              <ul>
+                <li><strong>SISTEMAS INFORMÁTICOS:</strong>
+                  <ul>
+                    <li>Páginas, Sitios o Plataforma Web</li>
+                    <li>Tarjetas de presentación en QR o link</li>
+                    <li>Macros/Atajos en Office</li>
+                    <li>Mini Juegos</li>
+                  </ul>
+                </li>
+                <li><strong>PRODUCCIÓN MUSICAL</strong>
+                  <ul>
+                    <li>Mezcla</li>
+                    <li>Masterización</li>
+                  </ul>
+                </li>
+                <li><strong>PRODUCCIÓN DE VIDEOS/IMÁGENES</strong>
+                  <ul>
+                    <li>Edición</li>
+                    <li>Retoques</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <audio id="background-audio" autoplay loop>
+            <source src="FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+            
+        </div>       
+      <script>
+
+  document.addEventListener('click', function() {
+    const audio = document.getElementById('backgroundMusic');
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+
+
+
+  function toggleDropdown() {
+    const content = document.getElementById("dropdownContent");
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
+
+
+
+        const words = document.querySelectorAll('.letra');
+  const fontClasses = ['font1', 'font2', 'font3', 'font4'];
+  let currentFontIndex = 0;
+
+  function changeFont() {
+      // Remover la clase de fuente actual
+      words.forEach(word => {
+          word.classList.remove(fontClasses[currentFontIndex]);
+      });
       
-</body>
-</html>
+      // Cambiar al siguiente tipo de fuente
+      currentFontIndex = (currentFontIndex + 1) % fontClasses.length;
+
+      // Aplicar la nueva clase a ambas palabras
+      words.forEach(word => {
+          word.classList.add(fontClasses[currentFontIndex]);
+      });
+  }
+
+  // Cambiar la fuente cada 3 segundos
+  setInterval(changeFont, 3000);
+
+
+
+
+    </script>
+        
+  </body>
+  </html>
 
