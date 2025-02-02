@@ -27,6 +27,7 @@ body {
 }
 /*CUBO*/
 .card {  
+  
   border-radius: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 70px;
@@ -69,18 +70,18 @@ body {
 }
 
 /*JUNTAO*/
-/*.inline-text {
+.inline-text {
   display: inline; /* Mantiene en la misma línea */
-/*}
+}
 
 .nombre-completo {
   margin: 30px 0 0 0;
   display: inline-block; /* Agrupa los elementos */
-/*}
+}
 
 .apellido {
   margin: 0; /* Quita márgenes adicionales */
-/*}
+}
 
 /*PALPITO*/
 @keyframes heartbeat {
