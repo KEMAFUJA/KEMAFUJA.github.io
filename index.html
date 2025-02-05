@@ -63,6 +63,8 @@
       Tu navegador no soporta el elemento de audio.
   </audio>
   
+  <p><a href="#" onclick="openPDF()" style="font-size: 10px; font-weight: bold;"> PORTAFOLIO DE PRODUCTOS Y PRECIOS 2025</a></p>
+
           <div class="dropdown">
             <a class="dropdown-toggle">¿Qué hacemos?</a>
             <div class="content">
@@ -142,6 +144,47 @@
   // Cambiar la fuente cada 3 segundos
   setInterval(changeFont, 3000);
 */
+function openPDF() {
+        // Crear un nuevo contenedor modal para mostrar el PDF
+        const modal = document.createElement("div");
+        modal.style.position = "fixed";
+        modal.style.top = "0";
+        modal.style.left = "0";
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        modal.style.zIndex = "1000";
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+    
+        // Crear un iframe para mostrar el PDF dentro del modal
+        const iframe = document.createElement("iframe");
+        iframe.src = "PAQUETES KEMAFUJA.pdf"; // Reemplaza con la ruta a tu archivo PDF
+        iframe.style.width = "80%";
+        iframe.style.height = "80%";
+        iframe.style.border = "none";
+    
+        // Añadir el iframe al modal
+        modal.appendChild(iframe);
+    
+        // Añadir un botón para cerrar el modal
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Cerrar";
+        closeButton.style.position = "absolute";
+        closeButton.style.top = "20px";
+        closeButton.style.right = "20px";
+        closeButton.style.padding = "10px";
+        closeButton.style.backgroundColor = "white";
+        closeButton.style.cursor = "pointer";
+        closeButton.onclick = function() {
+            document.body.removeChild(modal);
+        };
+        modal.appendChild(closeButton);
+    
+        // Añadir el modal al cuerpo del documento
+        document.body.appendChild(modal);
+    }
 
 
 
