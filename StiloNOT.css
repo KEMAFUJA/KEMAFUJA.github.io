@@ -21,10 +21,16 @@ body {
 /*FONDO CUBO*/
 @keyframes backgroundColorChange2 {
   0% { background-color: #ffffff; }
-  33% { background-color: #2c41ff; } 
-  66% { background-color:#5d6dff; }
+  33% { background-color: #162398; } 
+  66% { background-color:#3c50ff; }
   100% { background-color: #ffffff; }
 }
+/*PALPITO*/
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
 /*CUBO*/
 .card {  
   border-radius: 10px;
@@ -38,6 +44,10 @@ body {
 /*NOMBRE*/
 .card h2 {
   font-size: 40px;
+  margin: 0;  
+}
+.card h3 {
+  font-size: 35px;
   margin: 0;  
 }
 
@@ -91,12 +101,6 @@ body {
   animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
 }
 
-.numwa {
-  text-decoration: none;
-  font-weight: bold;
-  animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
-}
-
 a:hover {
   text-decoration: underline; /* Subraya el enlace al pasar el cursor */
 }
@@ -106,36 +110,8 @@ a:hover {
 .inline-text {
 display: inline;
 }
-/*PALPITO*/
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-}
 
-
-/*TITUTO CON EFECTO*/
-.letra {
-    font-size: 90px; 
-    font-family: Georgia, serif;   
-    animation: backgroundColorChange4 50s ease-in-out infinite;
-  }
-
-.font1 {
-    font-family: Arial, sans-serif;
-}
-
-.font2 {
-    font-family: Verdana, sans-serif;
-}
-
-.font3 {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.font4 {
-    font-family: Georgia, serif;
-}
-
+/*Color TITULO*/
 @keyframes backgroundColorChange4 {
   0% { 
     filter: drop-shadow(#fff2ae) ; 
@@ -159,16 +135,17 @@ display: inline;
   }
 }
 
-.icono-whatsapp {
-  width: 30px;
-  height: 30px;
-}
-
+/*TITUTO CON EFECTO*/
+.letra {
+    font-size: 90px; 
+    font-family: Georgia, serif;   
+    animation: backgroundColorChange4 50s ease-in-out infinite;
+  }
 
 .icono {
   width: 35px;
   height: 35px;
-  margin: 0 0 0 30px;
+  margin: 10px 0 10px 30px;
   border-radius: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
@@ -190,7 +167,6 @@ display: inline;
 
 /* Estilo para el enlace */
 .dropdown-toggle {
-  color: #007bff;
   text-decoration: none;
   cursor: pointer;
 }
@@ -199,16 +175,24 @@ display: inline;
 .content {
   display: none;
   background-color: #f9f9f9;
-  padding: 15px;
   border: 1px solid #ddd;
   margin-top: 10px;
-  text-align: left; /* Alineación de texto a la izquierda */
+  text-align: center; /* Alineación de texto centreado */
 }
 
 /* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
-.dropdown:hover .content {
+.dropdown:hover .content2,
+.dropdown:hover .content{
   display: block;
+  text-decoration: none;
 }
+
+.content2 {
+  display: none;
+  background-color: transparent;
+  text-align: center; /* Alineación de texto a la izquierda */
+}
+
 
 /* Estilos para la lista */
 ul {
@@ -220,10 +204,7 @@ ul {
 li {
   margin-bottom: 0px;
   text-align: center; /* Centra el texto dentro de cada li */
-}
-
-ul {
-  padding-left: 20px; /* Indentación para sublistas */
+  font-size: 10px;
 }
 
 strong {
@@ -232,15 +213,25 @@ strong {
 }
 
 
-.iconos-completo {
-  margin: 0 0 10px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Estilo para el enlace */
+/*.map-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.iconos {
-  display: flex;
-  gap: 10px; /* Espacio entre iconos */
-  margin-bottom: 5px; /* Espacio entre iconos y botones */
+/* Estilo para el popup del mapa */
+/*.map-popup {
+  display: none; 
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /*encima de otros*/
+/* padding: 10px;
 }
+
+/* Muestra el popup al pasar el mouse */
+/*.map-link:hover + .map-popup {
+  display: block;
+}*/
