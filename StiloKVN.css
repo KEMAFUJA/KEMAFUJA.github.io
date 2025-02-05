@@ -113,7 +113,7 @@ body {
   }
 }
 
-@keyframes fontChange {
+/*@keyframes fontChange {
   0%, 100% { font-family: Arial, sans-serif; }
   7% { font-family: "Helvetica Neue", Helvetica, sans-serif; }
   14% { font-family: 'Courier New', Courier, monospace; }
@@ -129,15 +129,55 @@ body {
   84% { font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif; }
   91% { font-family: 'Lucida Console', Monaco, monospace; }
   98% { font-family: 'Brush Script MT', cursive; }
-}
+}*/
 
+@keyframes fontChange {
+  0% { 
+    font-family: Arial, sans-serif; font-weight: bold;
+    color: #987f03;
+    text-shadow: 2px 2px 4px #ffffff; }
+  14% { 
+    font-family: Arial, sans-serif; font-weight: bold;
+    color: #c7a600;
+    text-shadow: 2px 2px 4px #c0c0c0; }
+  28% { 
+    font-family: 'Times New Roman', Times, serif; font-weight: bold;
+    color: #fcd201;
+    text-shadow: 2px 2px 4px #818181;}
+  42% { 
+    font-family: 'Brush Script MT', cursive; font-weight: bold;
+    color: #fde673;
+    text-shadow: 2px 2px 4px #4f4f4f;}
+  56% { 
+    font-family: 'Lucida Handwriting', cursive;font-weight: bold;
+    color: #fff1ae;
+    text-shadow: 2px 2px 4px #000000;}
+  70% { 
+    font-family: 'Courier New', Courier, monospace; font-weight: bold;
+    font-weight: 400; 
+    color: #fde673;
+    text-shadow: 2px 2px 4px #464646;}
+  84% { 
+    font-family: monospace; font-weight: bold;
+    color: #fcd201;
+    text-shadow: 2px 2px 4px #7d7d7d;}
+  92% { 
+    font-family: Georgia, serif;font-weight: bold;
+    color: #c7a600;
+    text-shadow: 2px 2px 4px #c0c0c0;}
+  100% { 
+    font-family: 'Impact', fantasy;font-weight: bold;
+    color: #987f03;
+    text-shadow: 2px 2px 4px #ffffff;}
+}
 
 .letra {
   color: white;
   margin: 0;
   align-items: center;
-  text-shadow: 0 0px 10px rgba(0, 0, 0, 0.262);
-  animation: backgroundColorChange4 40s ease-in-out infinite, fontChange 25s ease-in-out infinite;
+  
+  /*text-shadow: 0 0px 10px rgba(0, 0, 0, 0.262);*/
+  animation: /*backgroundColorChange4 40s ease-in-out infinite,*/ fontChange 20s ease-in-out infinite;
   
 }
 .size1{
@@ -155,11 +195,6 @@ body {
   animation: colorBackground 40s ease-in-out infinite;
 }
 
-.font1 { font-family: Arial, sans-serif; }
-.font2 { font-family: "Helvetica Neue", Helvetica, sans-serif; }
-.font3 { font-family: 'Courier New', Courier, monospace; }
-.font4 { font-family: Georgia, serif; }
-.hidden { display: none; }  /* Para ocultar elementos no visibles */
 
 
 /*@keyframes backgroundColorChange4 {
