@@ -5,8 +5,63 @@
       <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=yes">
       <title>Contacto Personal</title>
       <link rel="stylesheet" href="StiloKVN.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
   </head>
   <body>
+    <style>
+    /*PARA EL PDF*/
+    /* Estilos generales */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow-y: auto; /* Permite el scroll vertical */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+
+      /* Contenedor de páginas */
+  .page-container {
+    margin: 10px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-origin: center center;
+  }
+
+  /* Botón para cerrar */
+  .close-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      z-index: 1001;
+  }
+
+  /* Botón de descarga */
+  .download-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+  }
+  </style>
   <div class="card">
         <div>
           <h1 class="letra size2">KEMAFUJA</h1>
@@ -62,8 +117,8 @@
       <source src="FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
       Tu navegador no soporta el elemento de audio.
   </audio>
-  
-  <p><a href="#" onclick="openPDF()" style="font-size: 10px; font-weight: bold;"> PORTAFOLIO DE PRODUCTOS Y PRECIOS 2025</a></p>
+   
+  <a href="#" onclick="openPDF()" style="font-size: 10px; font-weight: bold;"> VER PORTAFOLIO (PAQUETES Y PRECIOS)</a>
 
           <div class="dropdown">
             <a class="dropdown-toggle">¿Qué hacemos?</a>
@@ -101,6 +156,58 @@
             
         </div>       
       <script>
+    function openPDF() {
+            // Crear el modal
+            const modal = document.createElement("div");
+            modal.classList.add("modal");
+    
+            // Botón para cerrar el modal
+            const closeButton = document.createElement("button");
+            closeButton.textContent = "Cerrar";
+            closeButton.classList.add("close-button");
+            closeButton.onclick = () => document.body.removeChild(modal);
+            modal.appendChild(closeButton);
+    
+            // Botón para descargar el PDF
+            const downloadButton = document.createElement("a");
+            downloadButton.textContent = "Descargar PDF";
+            downloadButton.classList.add("download-button");
+            downloadButton.href = "PAQUETES KEMAFUJA.pdf"; // Cambia la ruta correcta
+            downloadButton.download = "PAQUETES_KEMAFUJA.pdf"; // Nombre del archivo descargado
+            modal.appendChild(downloadButton);
+    
+            // Contenedor de páginas
+            const container = document.createElement("div");
+            container.classList.add("pdf-container");
+            modal.appendChild(container);
+            document.body.appendChild(modal);
+    
+            // Cargar y renderizar PDF
+            pdfjsLib.getDocument("PAQUETES KEMAFUJA.pdf").promise.then(pdf => {
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const scale = 1.5;
+                        const viewport = page.getViewport({ scale });
+    
+                        const canvas = document.createElement("canvas");
+                        canvas.classList.add("page-container");
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        container.appendChild(canvas);
+    
+                        const renderContext = {
+                            canvasContext: canvas.getContext("2d"),
+                            viewport
+                        };
+                        page.render(renderContext);
+                    });
+                }
+            }).catch(error => {
+                console.error("Error al cargar el PDF: ", error);
+            });
+        }
+
+
       // Obtener el elemento de audio
       const miAudio = document.getElementById('miAudio');
 
@@ -144,7 +251,7 @@
   // Cambiar la fuente cada 3 segundos
   setInterval(changeFont, 3000);
 */
-function openPDF() {
+/*function openPDF2() {
         // Crear un nuevo contenedor modal para mostrar el PDF
         const modal = document.createElement("div");
         modal.style.position = "fixed";
@@ -184,9 +291,7 @@ function openPDF() {
     
         // Añadir el modal al cuerpo del documento
         document.body.appendChild(modal);
-    }
-
-
+    }*/
 
     </script>
         
