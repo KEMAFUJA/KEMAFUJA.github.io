@@ -26,8 +26,7 @@ body {
   100% { background-color: #ffffff; }
 }
 /*CUBO*/
-.card {  
-  
+.card {    
   border-radius: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 70px;
@@ -291,6 +290,7 @@ body {
   color: #007bff;
   text-decoration: none;
   cursor: pointer;
+  border: 100px;
 }
 
 /* Contenido oculto por defecto */
@@ -329,6 +329,7 @@ strong {
   color: #333;
 }
 
+/*BOTONES REPRODUCIR/PAUSAR*/
 .boton {
   margin: 10px 20px;
   background-color: transparent; /* Ajuste de color */  
@@ -344,3 +345,4 @@ strong {
   display: flex;
   gap: 10px; /* Espacio entre botones */
 }
+
