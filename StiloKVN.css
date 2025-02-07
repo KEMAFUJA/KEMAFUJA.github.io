@@ -323,6 +323,7 @@ ul {
 li {
   margin-bottom: 0px;
   text-align: center; /* Centra el texto dentro de cada li */
+  color: black;
 }
 
 ul {
