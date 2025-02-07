@@ -63,10 +63,11 @@
   }
   </style>
   <div class="card">
-        <div>
-          <h1 class="letra size2">KEMAFUJA</h1>
-          <h3 class="letra size1">ENTERPRISE</h3>
+    <div class="contenedor-titulos">
+          <h1 id="titulo" style="font-size: 80PX;"></h1>
+          <h1 id="titulo2"style="font-size: 40PX;"></h1>
         </div>    
+        
 
           <!--
   <div class="nombre-completo"></div>   
@@ -221,6 +222,29 @@
           miAudio.pause();
       }
 
+
+      //TITULO
+      const titulo = document.getElementById('titulo');
+        const texto = "KEMAFUJA ";
+        const titulo2 = document.getElementById('titulo2');
+        const texto2 = "ENTERPRISE ";
+
+        let index = 0;
+
+        function escribirTitulo() {
+            if (index < texto2.length) {
+                titulo.textContent += texto.charAt(index);
+                titulo2.textContent += texto2.charAt(index);
+                index++;
+                setTimeout(escribirTitulo, 100); // Ajusta la velocidad de escritura
+            } else {
+                // Mantener el cursor parpadeando después de terminar
+                titulo.style.borderRight = '3px solid transparent';
+                titulo2.style.borderRight = '3px solid transparent';
+            }
+        }
+
+        escribirTitulo();
       /*document.addEventListener('click', function() {
         const audio = document.getElementById('backgroundMusic');
         if (audio.paused) {
@@ -297,4 +321,3 @@
         
   </body>
   </html>
-
