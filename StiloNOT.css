@@ -38,17 +38,23 @@ body {
   padding: 20px;
   width: 600px;
   text-align: center;
-  animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; 
+  background-color: rgba(255, 255, 255, 0.111);
+  box-shadow:0 0 100px  black ;
+
+  /*animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; */
 }
 
 /*NOMBRE*/
 .card h2 {
   font-size: 40px;
-  margin: 0;  
+  margin: 0; 
+  color: black;
+ 
 }
 .card h3 {
   font-size: 35px;
   margin: 0;  
+  color: black;
 }
 
 
@@ -61,31 +67,31 @@ body {
 /*COLORES LINKS*/
 @keyframes backgroundnumwa {
   0% { 
-    color: #005a1f; /* Color del texto inicial */
+    color: #00ff59; /* Cambia el color del texto en esta etapa */
   }
   33% { 
-    color: #00ff59; /* Cambia el color del texto en esta etapa */
+    color: #005a1f; /* Color del texto inicial */
   } 
   66% {
     color: #008930; /* Cambia el color del texto en esta etapa */
   }
   100% { 
-    color: #005a1f; /* Vuelve al color del texto inicial */
+    color: #00ff59; /* Cambia el color del texto en esta etapa */
   }
 }
 
 @keyframes backgroundFBCORR {
   0% { 
-    color: #06005a; /* Color del texto inicial */
+    color: #1100ff; /* Cambia el color del texto en esta etapa */
   }
   33% { 
-    color: #1100ff; /* Cambia el color del texto en esta etapa */
+    color: #06005a; /* Color del texto inicial */
   } 
   66% {
     color: #090084; /* Cambia el color del texto en esta etapa */
   }
   100% { 
-    color: #06005a; /* Vuelve al color del texto inicial */
+    color: #1100ff; /* Cambia el color del texto en esta etapa */
   }
 }
 
@@ -161,6 +167,7 @@ display: inline;
 
 .nombre-completo {
   margin: -20px 0 10px 0;
+  text-shadow: 0 0 8px rgba(172, 172, 172, 0.679);
   display: inline-block; /* Agrupa los elementos */
 }
 
@@ -207,9 +214,27 @@ li {
   font-size: 10px;
 }
 
+@keyframes backgroundStr {
+  0% { text-shadow: 0px 0px 10px rgba(183, 183, 183, 0.725);
+    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+  }
+  25% { text-shadow: 0px 0px 10px rgba(180, 180, 180, 0.507);
+    color: #767676; /* Color del texto inicial */
+  }
+  50% { text-shadow: 0px 0px 10px rgba(164, 164, 164, 0.234);
+    color: #333; /* Color del texto inicial */
+  } 
+  75% {text-shadow: 0px 0px 10px rgba(171, 171, 171, 0.242);
+    color: #767676; /* Cambia el color del texto en esta etapa */
+  }
+  100% { text-shadow: none;
+    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+  }
+}
+
 strong {
   font-size: 1.1em; /* Resaltar el título */
-  color: #333;
+  animation: backgroundStr 40s ease-in-out infinite;
 }
 
 
