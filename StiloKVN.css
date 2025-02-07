@@ -1,12 +1,12 @@
 
 /*FONDO*/
 @keyframes backgroundColorChange {
-  0% { background-color: #ffffff; }
-  20% { background-color: #0088ff; } 
-  40% { background-color: #ff8400; }
-  60% { background-color: #8c0033; }
-  80% { background-color: #000000; }
-  100% { background-color: #ffffff; }
+  0% { background-color: #00074b; }
+  20% { background-color: #000a65; } 
+  40% { background-color: #01119f; }
+  60% { background-color: #0017e7; }
+  80% { background-color: #000a65; }
+  100% { background-color: #00074b; }
 }
 
 body {
@@ -15,83 +15,112 @@ body {
   align-items: center;
   height: 100vh;
   font-family: Arial, sans-serif;
-  animation: backgroundColorChange 20s ease-in-out infinite; /* Duración de 10 segundos, en bucle infinito */
+  animation: backgroundColorChange 15s ease-in-out infinite; /* Duración de 10 segundos, en bucle infinito */
 }
 
 /*FONDO CUBO*/
 @keyframes backgroundColorChange2 {
   0% { background-color: #ffffff; }
-  33% { background-color: #d2e5ff; } 
-  66% { background-color:#59affa; }
+  33% { background-color: #162398; } 
+  66% { background-color:#3c50ff; }
   100% { background-color: #ffffff; }
 }
-/*CUBO*/
-.card {    
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 70px;
-  width: 450px;
-  text-align: center;
-  animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; 
+/*PALPITO*/
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
 }
+
+/*CUBO*/
+.card {  
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 600px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.111);
+  box-shadow:0 0 100px  black ;
+
+  /*animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; */
+}
+
+/*NOMBRE*/
+.card h2 {
+  font-size: 40px;
+  margin: 0; 
+  color: black;
+ 
+}
+.card h3 {
+  font-size: 35px;
+  margin: 0;  
+  color: black;
+}
+
 
 /*RELLENO*/
 .card p {
-  font-size: 20px;
   color: #474747;
   margin: 5px 0;
 }
 
-/*LINK WHATS APP*/
-@keyframes backgroundColorChange3 {
+/*COLORES LINKS*/
+@keyframes backgroundnumwa {
   0% { 
-    background-color: #ffffff; 
-    color: #000000; /* Color del texto inicial */
+    color: #00ff59; /* Cambia el color del texto en esta etapa */
   }
   33% { 
-    background-color: #d2e5ff; 
-    color: #007bff; /* Cambia el color del texto en esta etapa */
+    color: #005a1f; /* Color del texto inicial */
   } 
-  66% { 
-    background-color: #59affa; 
-    color: #ffcc00; /* Cambia el color del texto en esta etapa */
+  66% {
+    color: #008930; /* Cambia el color del texto en esta etapa */
   }
   100% { 
-    background-color: #ffffff; 
-    color: #000000; /* Vuelve al color del texto inicial */
+    color: #00ff59; /* Cambia el color del texto en esta etapa */
   }
 }
 
-.card a {
+@keyframes backgroundFBCORR {
+  0% { 
+    color: #1100ff; /* Cambia el color del texto en esta etapa */
+  }
+  33% { 
+    color: #06005a; /* Color del texto inicial */
+  } 
+  66% {
+    color: #090084; /* Cambia el color del texto en esta etapa */
+  }
+  100% { 
+    color: #1100ff; /* Cambia el color del texto en esta etapa */
+  }
+}
+
+.numwa {
   text-decoration: none;
   font-weight: bold;
-  animation: backgroundColorChange3 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+  animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
 }
+
+.fbcorr {
+  text-decoration: none;
+  font-weight: bold;
+  animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+}
+
+a:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
 
 /*JUNTAO*/
 .inline-text {
-  display: inline; /* Mantiene en la misma línea */
+display: inline;
 }
 
-.nombre-completo {
-  margin: 30px 0 0 0;
-  display: inline-block; /* Agrupa los elementos */
-}
-
-.apellido {
-  margin: 0; /* Quita márgenes adicionales */
-}
-
-/*PALPITO*/
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-}
-
-/*TITULO*/
+/*Color TITULO*/
 @keyframes backgroundColorChange4 {
   0% { 
-    filter: drop-shadow(#ffffff) ; 
+    filter: drop-shadow(#fff2ae) ; 
     color: #987f03; /* Color del texto inicial */
   }
   30% { 
@@ -104,121 +133,25 @@ body {
   }
   90% { 
     filter: drop-shadow( #ffd500); 
-    color: #ffffff; /* Vuelve al color del texto inicial */
+    color: #fff280; /* Vuelve al color del texto inicial */
   }
   100% { 
-    filter: drop-shadow(#ffffff) ; 
+    filter: drop-shadow(#fff2ae) ; 
     color: #987f03; /* Color del texto inicial */
   }
 }
-
-/*@keyframes fontChange {
-  0%, 100% { font-family: Arial, sans-serif; }
-  7% { font-family: "Helvetica Neue", Helvetica, sans-serif; }
-  14% { font-family: 'Courier New', Courier, monospace; }
-  21% { font-family: Georgia, serif; }
-  28% { font-family: 'Times New Roman', Times, serif; }
-  35% { font-family: Verdana, Geneva, sans-serif; }
-  42% { font-family: Tahoma, Geneva, sans-serif; }
-  49% { font-family: 'Trebuchet MS', Helvetica, sans-serif; }
-  56% { font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; }
-  63% { font-family: 'Comic Sans MS', cursive, sans-serif; }
-  70% { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; }
-  77% { font-family: 'Impact', Charcoal, sans-serif; }
-  84% { font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif; }
-  91% { font-family: 'Lucida Console', Monaco, monospace; }
-  98% { font-family: 'Brush Script MT', cursive; }
-}*/
-
-@keyframes fontChange {
-  0% { 
-    font-family: Arial, sans-serif; font-weight: bold;
-    color: #987f03;
-    text-shadow: 2px 2px 4px #ffffff; }
-  14% { 
-    font-family: Arial, sans-serif; font-weight: bold;
-    color: #c7a600;
-    text-shadow: 2px 2px 4px #c0c0c0; }
-  28% { 
-    font-family: 'Times New Roman', Times, serif; font-weight: bold;
-    color: #fcd201;
-    text-shadow: 2px 2px 4px #818181;}
-  42% { 
-    font-family: 'Brush Script MT', cursive; font-weight: bold;
-    color: #fde673;
-    text-shadow: 2px 2px 4px #4f4f4f;}
-  56% { 
-    font-family: 'Lucida Handwriting', cursive;font-weight: bold;
-    color: #fff1ae;
-    text-shadow: 2px 2px 4px #000000;}
-  70% { 
-    font-family: 'Courier New', Courier, monospace; font-weight: bold;
-    font-weight: 400; 
-    color: #fde673;
-    text-shadow: 2px 2px 4px #464646;}
-  84% { 
-    font-family: monospace; font-weight: bold;
-    color: #fcd201;
-    text-shadow: 2px 2px 4px #7d7d7d;}
-  92% { 
-    font-family: Georgia, serif;font-weight: bold;
-    color: #c7a600;
-    text-shadow: 2px 2px 4px #c0c0c0;}
-  100% { 
-    font-family: 'Impact', fantasy;font-weight: bold;
-    color: #987f03;
-    text-shadow: 2px 2px 4px #ffffff;}
-}
-
-.letra {
-  color: white;
-  margin: 0;
-  align-items: center;
-  
-  /*text-shadow: 0 0px 10px rgba(0, 0, 0, 0.262);*/
-  animation: /*backgroundColorChange4 40s ease-in-out infinite,*/ fontChange 20s ease-in-out infinite;
-  
-}
-.size1{
-  font-size: 40px;
-}
-.size2{
-  font-size: 80px;
-}
-
 
 /*TITUTO CON EFECTO*/
-/*.letra {
-  font-size: 70px;
-  margin: 0;
-  animation: colorBackground 40s ease-in-out infinite;
-}
-
-
-
-/*@keyframes backgroundColorChange4 {
-  0% { 
-    filter: drop-shadow(#ffffff) ; 
-    color: #987f03; /* Color del texto inicial */
- /* }
-  33% { 
-    filter: drop-shadow( #d4c67e); 
-    color: #ffe76e; /* Cambia el color del texto en esta etapa */
-  /*} 
-  66% { 
-    filter: drop-shadow(#c3af50); 
-    color: #ffde38; /* Cambia el color del texto en esta etapa */
-  /*}
-  100% { 
-    filter: drop-shadow( #ffd500); 
-    color: #ffffff; /* Vuelve al color del texto inicial */
-  /*}
-}*/
+.letra {
+    font-size: 90px; 
+    font-family: Georgia, serif;   
+    animation: backgroundColorChange4 50s ease-in-out infinite;
+  }
 
 .icono {
   width: 35px;
   height: 35px;
-  margin: 0 0 0 10px;
+  margin: 10px 0 10px 30px;
   border-radius: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
@@ -228,85 +161,45 @@ body {
   box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.8);
 }
 
-@keyframes moveAndPulse {
-  0% {
-    transform: translateX(-5px) scale(0.9);
-  }
-  50% {
-    transform: translateX(5px) scale(1); 
-  }
-  100% {
-    transform: translateX(-5px) scale(0.9); 
-  }
+.letrachica {
+  font-size: 10px;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.iconos-completo {
-  margin: 0 0 10px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.iconos {
-  display: flex;
-  gap: 10px; /* Espacio entre iconos */
-  margin-bottom: 20px; /* Espacio entre iconos y botones */
-}
-
-
-@keyframes colorShadow {
-  0% {
-    text-shadow: 2px 2px 5px #660000, -2px -2px 5px #7b3100;
-  }
-  25% {
-    text-shadow: 2px 2px 5px #7b3100, -2px -2px 5px #876d02;
-  }
-  50% {
-    text-shadow: 2px 2px 5px #876d02, -2px -2px 5px #007b00;
-  }
-  75% {
-    text-shadow: 2px 2px 5px #007b00, -2px -2px 5px #004174;
-  }
-  100% {
-    text-shadow: 2px 2px 5px #004174, -2px -2px 5px #660000;
-  }
-}
-
-.colored-text {
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-  animation: colorShadow 3s infinite alternate, heartbeat 1s ease-in-out infinite;
+.nombre-completo {
+  margin: -20px 0 10px 0;
+  text-shadow: 0 0 8px rgba(172, 172, 172, 0.679);
+  display: inline-block; /* Agrupa los elementos */
 }
 
 
 /* Estilo para el enlace */
 .dropdown-toggle {
-  color: #007bff;
   text-decoration: none;
   cursor: pointer;
-  border: 100px;
 }
 
 /* Contenido oculto por defecto */
 .content {
   display: none;
   background-color: #f9f9f9;
-  padding: 15px;
   border: 1px solid #ddd;
   margin-top: 10px;
-  text-align: left; /* Alineación de texto a la izquierda */
+  text-align: center; /* Alineación de texto centreado */
 }
 
 /* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
-.dropdown:hover .content {
+.dropdown:hover .content2,
+.dropdown:hover .content{
   display: block;
+  text-decoration: none;
 }
+
+.content2 {
+  display: none;
+  background-color: transparent;
+  text-align: center; /* Alineación de texto a la izquierda */
+}
+
 
 /* Estilos para la lista */
 ul {
@@ -318,31 +211,52 @@ ul {
 li {
   margin-bottom: 0px;
   text-align: center; /* Centra el texto dentro de cada li */
+  font-size: 10px;
 }
 
-ul {
-  padding-left: 20px; /* Indentación para sublistas */
+@keyframes backgroundStr {
+  0% { text-shadow: 0px 0px 10px rgba(183, 183, 183, 0.725);
+    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+  }
+  25% { text-shadow: 0px 0px 10px rgba(180, 180, 180, 0.507);
+    color: #767676; /* Color del texto inicial */
+  }
+  50% { text-shadow: 0px 0px 10px rgba(164, 164, 164, 0.234);
+    color: #333; /* Color del texto inicial */
+  } 
+  75% {text-shadow: 0px 0px 10px rgba(171, 171, 171, 0.242);
+    color: #767676; /* Cambia el color del texto en esta etapa */
+  }
+  100% { text-shadow: none;
+    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+  }
 }
 
 strong {
   font-size: 1.1em; /* Resaltar el título */
-  color: #333;
+  animation: backgroundStr 40s ease-in-out infinite;
 }
 
-/*BOTONES REPRODUCIR/PAUSAR*/
-.boton {
-  margin: 10px 20px;
-  background-color: transparent; /* Ajuste de color */  
-  font-family: 'Courier New', Courier, monospace;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
+
+/* Estilo para el enlace */
+/*.map-link {
+  color: blue;
+  text-decoration: underline;
   cursor: pointer;
-  animation: colorShadow 30s infinite, heartbeat 10s ease-in-out infinite, backgroundColorChange4 10s ease-in-out infinite;
 }
 
-.botones {
-  display: flex;
-  gap: 10px; /* Espacio entre botones */
+/* Estilo para el popup del mapa */
+/*.map-popup {
+  display: none; 
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /*encima de otros*/
+/* padding: 10px;
 }
 
+/* Muestra el popup al pasar el mouse */
+/*.map-link:hover + .map-popup {
+  display: block;
+}*/
