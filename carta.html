@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicatoria Romántica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff758c, #ff7eb3); /* Fondo romántico */
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Corazón palpitante como fondo */
+        .heart-background {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 150px;
+            color: #ff1744;
+            animation: heartbeat 1.5s infinite;
+            opacity: 0.3; /* Baja opacidad para que no opaque el texto */
+            z-index: -1; /* Lo coloca detrás de otros elementos */
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+            }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            font-family: 'Roboto', sans-serif;
+            z-index: 1; /* Se asegura de que el contenedor esté sobre el corazón */
+        }
+
+        .line {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .letter {
+            font-family: 'Dancing Script', cursive; /* Fuente cursiva elegante */
+            color: #ffeb3b; /* Amarillo vibrante */
+            font-size: 36px;
+            font-style: italic;
+        }
+
+        .text {
+            display: inline;
+            opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white; /* Efecto de cursor */
+            font-family: 'Playfair Display', serif; /* Nueva fuente elegante */
+            font-size: 22px;
+            color: #fff5e1; /* Color más suave para las frases */
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazón palpitante en el fondo -->
+    <div class="heart-background">❤️</div>
+
+    <div class="container">
+        <div class="line"><span class="letter">A</span> <span class="text" id="text1"></span></div>
+        <div class="line"><span class="letter">M</span> <span class="text" id="text2"></span></div>
+        <div class="line"><span class="letter">I</span> <span class="text" id="text3"></span></div>
+        <div class="line"><span class="letter">L</span> <span class="text" id="text4"></span></div>
+        <div class="line"><span class="letter">A</span> <span class="text" id="text5"></span></div>
+        <div class="line"><span class="letter">H</span> <span class="text" id="text6"></span></div>
+    </div>
+
+    <script>
+        const texts = [
+            "marte es el sueño que nunca quiero despertar.",
+            "i corazón late al ritmo de tu dulce mirar.",
+            "nesperado y mágico fue nuestro encuentro.",
+            "lenaste mi vida con amor eterno.",
+            "brazarte es sentir que todo es perfecto.",
+            "asta el infinito te amaré en cada momento."
+        ];
+
+        function typeEffect(element, text, speed, callback) {
+            let i = 0;
+            element.style.opacity = 1;
+            function typing() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                } else if (callback) {
+                    setTimeout(callback, 500);
+                }
+            }
+            typing();
+        }
+
+        function startTyping() {
+            typeEffect(document.getElementById("text1"), texts[0], 50, () => {
+                typeEffect(document.getElementById("text2"), texts[1], 50, () => {
+                    typeEffect(document.getElementById("text3"), texts[2], 50, () => {
+                        typeEffect(document.getElementById("text4"), texts[3], 50, () => {
+                            typeEffect(document.getElementById("text5"), texts[4], 50, () => {
+                                typeEffect(document.getElementById("text6"), texts[5], 50);
+                            });
+                        });
+                    });
+                });
+            });
+        }
+
+        window.onload = startTyping;
+    </script>
+</body>
+</html>
