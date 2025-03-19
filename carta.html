@@ -23,15 +23,16 @@
         /* Corazón palpitante como fondo */
         .heart-background {
             position: absolute;
-            bottom: 0;
+            bottom: 20px; /* Subirlo 20px */
             left: 50%;
             transform: translateX(-50%);
             font-size: 150px;
             color: #ff1744;
             animation: heartbeat 1.5s infinite;
-            opacity: 0.3; /* Baja opacidad para que no opaque el texto */
-            z-index: -1; /* Lo coloca detrás de otros elementos */
+            opacity: 0.3;
+            z-index: -1;
         }
+
 
         @keyframes heartbeat {
             0%, 100% {
