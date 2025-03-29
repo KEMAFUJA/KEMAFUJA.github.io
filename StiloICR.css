@@ -48,33 +48,33 @@ body {
   position: relative;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 40px; /* Ajusta un valor más razonable */
+  padding: 20px; /* Ajusta un valor más razonable */
   border-radius: 10px;
   box-shadow: 0 0 100px black;
   animation: pulse 25s ease-in-out infinite;
-  width: 10%; /* 80% del ancho de la ventana */
+  width: 600px; /* 80% del ancho de la ventana */
   max-width: 1200px; /* Tamaño máximo ajustado a un valor razonable */
   height: auto;
-
+  text-align: center;
 }
 
 
 .pulsating-logo {
-  animation: glow2 5s ease-in-out infinite, pulse 50s ease-in-out infinite;
+  animation: glow2 5s ease-in-out infinite, pulse 20s ease-in-out infinite;
   margin-left: 0px;
   margin-top: 10px;
 }
 
 @keyframes glow2 {
   0%, 100% {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1)) 
-            drop-shadow(0 0 5px rgba(255, 255, 255, 0.1)) 
-            drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1)) 
+            drop-shadow(0 0 5px rgba(52, 52, 52, 0.1)) 
+            drop-shadow(0 0 5px rgba(86, 86, 86, 0.1));
   }
   50% {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)) 
-            drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) 
-            drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            drop-shadow(0 0 5px rgba(185, 185, 185, 0.4)) 
+            drop-shadow(0 0 5px rgba(125, 125, 125, 0.2));
   }
 }
 
@@ -87,35 +87,9 @@ body {
   }
 }
 
-/*FONDO CUBO*/
-@keyframes backgroundColorChange2 {
-  0% { background-color: #ffffff; }
-  33% { background-color: #162398; } 
-  66% { background-color:#3c50ff; }
-  100% { background-color: #ffffff; }
-}
-/*PALPITO*/
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.01); }
-}
-
-/*CUBO*/
-.card {  
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 600px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.111);
-  box-shadow:0 0 100px  black ;
-
-  /*animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; */
-}
-
 /*RELLENO*/
 p {
-  color: #474747;
+  color: #000000;
   margin: 5px 0;
 }
 
@@ -172,36 +146,6 @@ a:hover {
 display: inline;
 }
 
-/*Color TITULO*/
-@keyframes backgroundColorChange4 {
-  0% { 
-    filter: drop-shadow(#fff2ae) ; 
-    color: #987f03; /* Color del texto inicial */
-  }
-  30% { 
-    filter: drop-shadow( #d4c67e); 
-    color: #ffe76e; /* Cambia el color del texto en esta etapa */
-  } 
-  60% { 
-    filter: drop-shadow(#c3af50); 
-    color: #ffde38; /* Cambia el color del texto en esta etapa */
-  }
-  90% { 
-    filter: drop-shadow( #ffd500); 
-    color: #fff280; /* Vuelve al color del texto inicial */
-  }
-  100% { 
-    filter: drop-shadow(#fff2ae) ; 
-    color: #987f03; /* Color del texto inicial */
-  }
-}
-
-/*TITUTO CON EFECTO*/
-.letra {
-    font-size: 90px; 
-    font-family: Georgia, serif;   
-    animation: backgroundColorChange4 50s ease-in-out infinite;
-  }
 
 .icono {
   width: 35px;
@@ -271,19 +215,19 @@ li {
 
 @keyframes backgroundStr {
   0% { text-shadow: 0px 0px 10px rgba(183, 183, 183, 0.725);
-    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+    color: #000000; /* Cambia el color del texto en esta etapa */
   }
   25% { text-shadow: 0px 0px 10px rgba(180, 180, 180, 0.507);
     color: #767676; /* Color del texto inicial */
   }
   50% { text-shadow: 0px 0px 10px rgba(164, 164, 164, 0.234);
-    color: #000000; /* Color del texto inicial */
+    color: #c4c4c4; /* Color del texto inicial */
   } 
   75% {text-shadow: 0px 0px 10px rgba(171, 171, 171, 0.242);
     color: #767676; /* Cambia el color del texto en esta etapa */
   }
   100% { text-shadow: none;
-    color: #b1b1b1; /* Cambia el color del texto en esta etapa */
+    color: #000000; /* Cambia el color del texto en esta etapa */
   }
 }
 
