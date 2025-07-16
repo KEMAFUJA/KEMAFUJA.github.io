@@ -1,0 +1,9 @@
+{
+  "LUNES": ["Comida1", "Comida2", "Comida3", "Comida4", "Comida5"],
+  "MARTES": ["Comida6", "Comida7", "Comida8", "Comida9", "Comida10"],
+  "MIERCOLES": ["Comida11", "Comida12", "Comida13", "Comida14", "Comida15"],
+  "JUEVES": ["Comida16", "Comida17", "Comida18", "Comida19", "Comida20"],
+  "VIERNES": ["Comida21", "Comida22", "Comida23", "Comida24", "Comida25"],
+  "SABADO": ["Comida26", "Comida27", "Comida28", "Comida29", "Comida30"],
+  "DOMINGO": ["Comida31", "Comida32", "Comida33", "Comida34", "Comida35"]
+}
