@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpeg" type="image/png">
+    <title>BARBERÍA - BRUNO SAUCEDO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap">
+    <style>
+        /* Estilos CSS integrados para mayor portabilidad */
+        :root {
+            --gold: #C5A35E;
+            --dark: #1A1A1A;
+            --light: #b9b9b9ac;
+            --blanco: #c6c6c6;
+            --gray: #333333;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Fondo difuminado sugerido - Reemplazar con imagen real */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-image: url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');*/
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.3) blur(2px);
+            z-index: -1;
+        }
+        
+        .card {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            width: 90%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--blanco);
+            text-align: center;
+            margin: 0.5rem 0;
+            letter-spacing: 1px;
+        }
+        
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--light);
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.5rem 0;
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        p{
+            font-size: 1rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--blanco);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s;
+            display: block;
+            text-shadow: 0 0 0.5px #c1c1c1;
+        }
+        
+        .contact-link:hover {
+            color: var(--gold);
+        }
+        
+        .dropdown {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--light);
+            text-decoration: none;
+            padding: 0.8rem;
+            background-color: rgba(197, 163, 94, 0.1);
+            border-radius: 3px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle:hover {
+            background-color: rgba(197, 163, 94, 0.2);
+        }
+        
+        .dropdown-toggle span {
+            flex-grow: 1;
+        }
+        
+        .dropdown-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .dropdown.active .dropdown-toggle {
+            background-color: rgba(197, 163, 94, 0.3);
+        }
+        
+        .content, .content2 {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background-color: rgba(51, 51, 51, 0.5);
+            border-radius: 0 0 3px 3px;
+        }
+        
+        .dropdown.active .content, 
+        .dropdown.active .content2 {
+            max-height: 500px;
+            padding: 1rem;
+        }
+        
+        .content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .content strong {
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 3px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .gold-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .gold-particle {
+            position: absolute;
+            background-color: var(--gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1rem;
+            }
+            p{
+                font-size: 0.75rem;
+            }
+        }
+
+        @keyframes backgroundImageChange {
+        0%, 100% {
+        background-image: url('BARBERO/BARBERO (1).jpg');
+        filter: blur(25px);
+        }
+        13% {
+        background-image: url('BARBERO/BARBERO (2).jpg');
+        filter: blur(20px);
+        }
+        26% {
+        background-image: url('BARBERO/BARBERO (3).jpg');
+        filter: blur(15px);
+        }
+        39% {
+        background-image: url('BARBERO/BARBERO (4).jpg');
+        filter: blur(10px);
+        }
+        52% {
+        background-image: url('BARBERO/BARBERO (5).jpg');
+        filter: blur(10px);
+        }
+        65% {
+        background-image: url('BARBERO/BARBERO (6).jpg');
+        filter: blur(15px);
+        }
+        78% {
+        background-image: url('BARBERO/BARBERO (7).jpg');
+        filter: blur(20px);
+        }
+        91% {
+        background-image: url('BARBERO/BARBERO (8).jpg');
+        filter: blur(25px);
+        }
+        }
+        .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        animation: backgroundImageChange 50s infinite;
+        background-size: cover;
+        background-position: center;
+        z-index: -1; /* Mantiene el fondo detrás del contenido */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="gold-particles"></div>
+    
+    <div class="card">
+        <h1>BARBERÍA</h1>
+        <h2>BARBERO - BRUNO SAUCEDO </h2>
+        
+        <div class="divider"></div>
+        
+        <p class="intro-text">Experiencia en cortes clásicos y modernos.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" href="tel:+59162839293">+591 62839293</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">Instagram:</p>
+                    <a class="contact-link fbcorr" href="https://www.instagram.com/lbruno_ssosa?igsh=MWt3NTRmdjRxbzFpaA==&utm_source=ig_contact_invite" target="_blank">BRUNO SAUCEDO</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59162839293&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank">Reservar cita</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">Email:</p>
+                    <a class="contact-link fbcorr" href="mailto:Saucedososaluisbruno3@gmail.com?subject=Consulta&body=Hola,%20quisiera%20información%20sobre..." target="_blank">Saucedososaluisbruno3@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="ubicacionDropdown">
+            <a class="dropdown-toggle">
+                <span>Ubicación</span>
+            </a>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.61720685584!2d-63.16188152482638!3d-17.7626668831899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ1JzQ1LjYiUyA2M8KwMDknMzMuNSJX!5e0!3m2!1ses-419!2sbo!4v1753294675505!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="dropdown" id="horarioDropdown">
+            <a class="dropdown-toggle">
+                <span>Horario de atención</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li><strong>LUNES A DOMINGO:</strong> 9:00 - 21:00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lbruno_ssosa?igsh=MWt3NTRmdjRxbzFpaA==&utm_source=ig_contact_invite" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=59162839293&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
+            </a>
+            <a href="https://facebook.com/estiloytradicionbarberia" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+            <a href="https://maps.app.goo.gl/oYGMnU4muCdqSmfU8" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Ubicación">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para los dropdowns
+            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.dropdown');
+                    dropdown.classList.toggle('active');
+                    
+                    // Cerrar otros dropdowns abiertos
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Cerrar dropdowns al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+
+            // Efecto de partículas doradas dinámicas
+            const goldParticles = document.querySelector('.gold-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('gold-particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                goldParticles.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
