@@ -1,7 +1,7 @@
 {
   "LUNES": ["Comida1", "Comida2", "Comida3", "Comida4", "Comida5"],
   "MARTES": ["Comida6", "Comida7", "Comida8", "Comida9", "Comida10"],
-  "MIERCOLES": ["Comida11", "Comida12", "Comida13", "Comida14", "Comida15"],
+  "MIERCOLES": ["SOPA DE SEMILLA", "LASAÑA DE CARNE", "MILANESA DE POLLO", "REVUELTO DE CARNE", "CHORRELLANA"],
   "JUEVES": ["SOPA DE MANI", "PICANTE DE POLLO", "LOMO SALTEADO", "COSTILLA DE CERDO", "POLLO A LA PLANCHA", "SAICE"],
   "VIERNES": ["Comida21", "Comida22", "Comida23", "Comida24", "Comida25"],
   "SABADO": ["Comida26", "Comida27", "Comida28", "Comida29", "Comida30"],
