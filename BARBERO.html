@@ -11,7 +11,8 @@
         :root {
             --gold: #C5A35E;
             --dark: #1A1A1A;
-            --light: #F5F5F5;
+            --light: #c9ac73ac;
+            --blanco: #c6c6c6;
             --gray: #333333;
         }
         
@@ -45,7 +46,7 @@
         }
         
         .card {
-            background-color: rgba(26, 26, 26, 0.75);
+            background-color: rgba(0, 0, 0, 0.9);
             border: 1px solid var(--gold);
             border-radius: 5px;
             width: 90%;
@@ -81,7 +82,7 @@
         
         h1, h2, h3 {
             font-family: 'Cinzel', serif;
-            color: var(--gold);
+            color: var(--blanco);
             text-align: center;
             margin: 0.5rem 0;
             letter-spacing: 1px;
@@ -138,7 +139,7 @@
         
         .contact-label {
             font-size: 0.8rem;
-            color: var(--gold);
+            color: var(--blanco);
             margin-bottom: 0.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -150,6 +151,7 @@
             font-weight: 300;
             transition: color 0.3s;
             display: block;
+            text-shadow: 0 0 10px #c08e2a;
         }
         
         .contact-link:hover {
@@ -332,7 +334,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        animation: backgroundImageChange 20s infinite;
+        animation: backgroundImageChange 50s infinite;
         background-size: cover;
         background-position: center;
         z-index: -1; /* Mantiene el fondo detrás del contenido */
@@ -347,17 +349,17 @@
     
     <div class="card">
         <h1>ESTILO & TRADICIÓN</h1>
-        <h2>BARBERÍA CLÁSICA</h2>
+        <h2>BARBERÍA</h2>
         
         <div class="divider"></div>
         
-        <p class="intro-text">Experiencia en cortes clásicos y modernos con el toque artesanal</p>
+        <p class="intro-text">Experiencia en cortes clásicos y modernos.</p>
         
         <div class="contact-grid">
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59112345678">+591 12345678</a>
+                    <a class="contact-link numwa" href="tel:+59162839293">+591 62839293</a>
                 </div>
             </div>
             
@@ -371,7 +373,7 @@
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59112345678&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank">Reservar cita</a>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59162839293&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank">Reservar cita</a>
                 </div>
             </div>
             
@@ -409,7 +411,7 @@
             <a href="https://instagram.com/estilo_y_tradicion" target="_blank" class="social-icon">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59112345678&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank" class="social-icon">
+            <a href="https://api.whatsapp.com/send?phone=59162839293&text=Hola,%20quisiera%20sacar%20una%20cita..." target="_blank" class="social-icon">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
             </a>
             <a href="https://facebook.com/estiloytradicionbarberia" target="_blank" class="social-icon">
