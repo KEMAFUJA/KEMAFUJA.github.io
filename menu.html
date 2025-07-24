@@ -112,10 +112,17 @@
     }
 
     @keyframes MANANA {
+      0%,100% { background-color: #e2b100; }
+      20%,80% { background-color: #ffcf20; }
+      40%,60% { background-color: #ffd747; }
+    }
+    
+    /*ROJO
+    @keyframes MANANA {
       0%,100% { background-color: #7e0000; }
       20%,80% { background-color: #790f0f; }
       40%,60% { background-color: #772323; }
-    }
+    }*/
 
     @keyframes TARDE {
       0%,100% { background-color: rgb(0, 125, 214); }
@@ -306,8 +313,22 @@
         opacity: 0.8;
       }
     }
-  </style>
+
+.precio {
+  background: linear-gradient(135deg, #0cb200 0%, #5eff00 50%, #0cb200 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  display: inline-block;
+  padding: 2px 5px;
+}
+</style>
 </head>
+
 <body>
   <div class="smoke-effect" id="smokeEffect"></div>
   <div id="sparkLayer" class="spark-layer"></div>
@@ -320,33 +341,38 @@
   <ul id="menu-lista"></ul>
 
   <script>
-    const dias = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
-    const hoy = new Date();
-    const diaNombre = dias[hoy.getDay()];
+const dias = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
+const hoy = new Date();
+const diaNombre = dias[hoy.getDay()];
 
-    fetch('menu.json')
-      .then(res => res.json())
-      .then(data => {
-        const comidas = data[diaNombre];
-        const lista = document.getElementById("menu-lista");
-        const titulo = document.getElementById("titulo");
-        titulo.textContent = `Restaurante "Leticia"`;
-        lista.textContent = `🍽️ Menú "${diaNombre}"`;
-        if (comidas && comidas.length > 0) {
-          comidas.forEach(comida => {
-            const li = document.createElement("li");
-            li.textContent = comida;
-            lista.appendChild(li);
-          });
-        } else {
-          lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
-        }
-      })
-      .catch(err => {
-        console.error("Error cargando el JSON:", err);
-        document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+fetch('menu.json')
+  .then(res => res.json())
+  .then(data => {
+    const comidas = data[diaNombre];
+    const lista = document.getElementById("menu-lista");
+    const titulo = document.getElementById("titulo");
+    
+    titulo.textContent = `Restaurante "Leticia"`;
+    
+    // Crear elemento para el título del día con precio
+    const tituloDia = document.createElement("div");
+    tituloDia.innerHTML = `🍽️ Menú "${diaNombre}" - Completo: <span class="precio">${diaNombre === "DOMINGO" ? "20" : "15"}Bs</span>`;
+    lista.appendChild(tituloDia);
+    
+    if (comidas && comidas.length > 0) {
+      comidas.forEach(comida => {
+        const li = document.createElement("li");
+        li.textContent = comida;
+        lista.appendChild(li);
       });
-
+    } else {
+      lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
+    }
+  })
+  .catch(err => {
+    console.error("Error cargando el JSON:", err);
+    document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+  });
 
 
 
