@@ -129,26 +129,30 @@
     const hoy = new Date();
     const diaNombre = dias[hoy.getDay()];
 
-    fetch('menu.json')
-      .then(res => res.json())
-      .then(data => {
-        const comidas = data[diaNombre];
-        const lista = document.getElementById("menu-lista");
-        lista.textContent = `🍽️ Menú "${diaNombre}"`;
-        if (comidas && comidas.length > 0) {
-          comidas.forEach(comida => {
-            const li = document.createElement("li");
-            li.textContent = comida;
-            lista.appendChild(li);
-          });
-        } else {
-          lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
-        }
-      })
-      .catch(err => {
-        console.error("Error cargando el JSON:", err);
-        document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+fetch('menu.json')
+  .then(res => res.json())
+  .then(data => {
+    const comidas = data[diaNombre];
+    const lista = document.getElementById("menu-lista");
+    const tituloDia = document.createElement("div");
+    tituloDia.innerHTML = `🍽️ Menú "${diaNombre}" - Completo: <span class="precio">${diaNombre === "DOMINGO" ? "20" : "15"}Bs</span>`;
+    lista.appendChild(tituloDia);
+    
+    if (comidas && comidas.length > 0) {
+      comidas.forEach(comida => {
+        const li = document.createElement("li");
+        li.textContent = comida;
+        lista.appendChild(li);
       });
+    } else {
+      lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
+    }
+  })
+  .catch(err => {
+    console.error("Error cargando el JSON:", err);
+    document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+  });
+
     </script>
 </body>
 </html>
