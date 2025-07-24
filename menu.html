@@ -37,19 +37,56 @@
     }
 
     #titulo {
-      color: #ffd1388e;
-      text-shadow:
-    0 0 10px #ff0000,
-    0 0 20px #ff4500,
-    0 0 30px #ffa500,
-    0 0 40px #ff6347,
-    0 0 50px #ff0000;
-      background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
-      -webkit-background-clip: text;
-  background-clip: text;
-  
-      animation: fire-glow 20s infinite;
+    color: #ffd1388e;
+    background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
+    -webkit-background-clip: text;
+    background-clip: text;  
+    animation: glowingText 5s infinite;
     }
+
+    @keyframes glowingText {
+  0% {
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 10px #ff4500,
+      0 0 15px #ffa500,
+      0 0 20px #ff6347,
+      0 0 25px #ff0000;
+  }
+  25% {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff4500,
+      0 0 30px #ffa500,
+      0 0 40px #ff6347,
+      0 0 50px #ff0000;
+  }
+  50% {
+    text-shadow:
+      0 0 15px #ff0000,
+      0 0 30px #ff4500,
+      0 0 45px #ffa500,
+      0 0 60px #ff6347,
+      0 0 75px #ff0000;
+  }
+  75% {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff4500,
+      0 0 30px #ffa500,
+      0 0 40px #ff6347,
+      0 0 50px #ff0000;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 10px #ff4500,
+      0 0 15px #ffa500,
+      0 0 20px #ff6347,
+      0 0 25px #ff0000;
+  }
+}
+
 
     ul {
       list-style: none;
