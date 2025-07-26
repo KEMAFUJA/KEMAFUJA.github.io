@@ -110,7 +110,14 @@
       20%,80% { background-color: #002c5e; }
       40%,60% { background-color: #003b80; }
     }
+
+    /*@keyframes MANANA {
+      0%,100% { background-color: #e2b100; }
+      20%,80% { background-color: #ffcf20; }
+      40%,60% { background-color: #ffd747; }
+    }
     
+    ROJO*/
     @keyframes MANANA {
       0%,100% { background-color: #7e0000; }
       20%,80% { background-color: #790f0f; }
@@ -355,10 +362,14 @@ fetch('menu.json')
     
     if (comidas && comidas.length > 0) {
       comidas.forEach(comida => {
-        const li = document.createElement("li");
-        li.textContent = comida;
-        lista.appendChild(li);
-      });
+            const li = document.createElement("li");
+            li.textContent = `${ ""} ${comida.nombre}`;
+            li.style.backgroundColor = comida.color || "white";
+            if (comida.negrita) {
+              li.style.fontWeight = "bold";
+            }
+            lista.appendChild(li);
+          });
     } else {
       lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
     }
