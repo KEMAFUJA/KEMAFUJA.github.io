@@ -43,7 +43,7 @@
     { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "PLATOS EXTRAS 😮😋", "color": "#ffb43285", "negrita": true },
+    { "nombre": "PLATOS EXTRAS 😋", "color": "#ffb43285", "negrita": true },
     { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
     { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
     { "nombre": "POLLO A LA BROASTER - 13BS", "color": "#ffe4b595", "negrita": false}
