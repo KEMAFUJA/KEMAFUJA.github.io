@@ -43,18 +43,19 @@
     { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "-PLATOS EXTRAS-", "color": "#ffb43285", "negrita": true },
+    { "nombre": "PLATOS EXTRAS 😮😋", "color": "#ffb43285", "negrita": true },
     { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
     { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
     { "nombre": "POLLO A LA BROASTER - 13BS", "color": "#ffe4b595", "negrita": false}
   ],
   "DOMINGO": [
-    { "nombre": "SOPA DE MANI", "color": "#fff2cc", "negrita": true },
-    { "nombre": "POLL AL HORNO", "color": "#ffe4e1", "negrita": false },
-    { "nombre": "PICANTE DE POLLO", "color": "#ffd1a4", "negrita": false },
-    { "nombre": "PICANTE DE LENGUA", "color": "#ffcccb", "negrita": false },
-    { "nombre": "KEPERI AL HORNO", "color": "#e6f7ff", "negrita": false },
-    { "nombre": "PIQUE MACHO", "color": "#f5f5dc", "negrita": true },
-    { "nombre": "CHICHARRON DE CERDO", "color": "#ffe4b5", "negrita": false }
+    { "nombre": "SOPA DE MANI", "color": "#ff6d05a0", "negrita": true },
+    { "nombre": "POLLO AL HORNO", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "PICANTE DE POLLO", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "PICANTE DE LENGUA", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "KEPERI AL HORNO", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "LECHON AL HORNO", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "BEBIDAS 🍹", "color": "#ffe4b5", "negrita": true },
+    { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
