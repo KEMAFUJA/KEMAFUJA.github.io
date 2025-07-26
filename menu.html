@@ -106,34 +106,34 @@
 
     /* Fondos por tramo del día */
     @keyframes MADRUGADA {
-      0%,100% { background-color: #001f3f; }
-      20%,80% { background-color: #002c5e; }
-      40%,60% { background-color: #003b80; }
+      0%,100% { background-color: hsl(51, 100%, 30%); }
+      20%,80% { background-color: hsl(51, 100%, 40%); }
+      40%,60% { background-color: hsl(51, 100%, 50%); }
     }
 
-    /*@keyframes MANANA {
-      0%,100% { background-color: #e2b100; }
-      20%,80% { background-color: #ffcf20; }
-      40%,60% { background-color: #ffd747; }
+    @keyframes MANANA2 {
+      0%,100% { background-color: hsl(205, 100%, 42%); }
+      20%,80% { background-color: hsl(205, 100%, 50%); }
+      40%,60% { background-color: hsl(205, 100%, 69%); }
     }
     
-    ROJO*/
+    
     @keyframes MANANA {
-      0%,100% { background-color: #7e0000; }
-      20%,80% { background-color: #790f0f; }
-      40%,60% { background-color: #772323; }
+      0%,100% { background-color: hsl(0, 100%, 25%); }
+      20%,80% { background-color: hsl(0, 100%, 30%); }
+      40%,60% { background-color: hsl(0, 100%, 35%); }
     }
 
     @keyframes TARDE {
-      0%,100% { background-color: rgb(0, 125, 214); }
-      20%,80% { background-color: rgb(38, 143, 218); }
-      40%,60% { background-color: rgb(107, 186, 243); }
+      0%,100% { background-color: hsl(205, 100%, 40%); }
+      20%,80% { background-color: hsl(205, 100%, 50%); }
+      40%,60% { background-color: hsl(205, 100%, 70%); }
     }
 
     @keyframes NOCHE {
-      0%,100% { background-color: #00074b; }
-      20%,80% { background-color: #000a65; }
-      40%,60% { background-color: #000d83; }
+      0%,100% { background-color: hsl(234, 100%, 15%); }
+      20%,80% { background-color: hsl(234, 100%, 20%); }
+      40%,60% { background-color: hsl(234, 100%, 26%); }
     }
 
     /* Humo */
@@ -327,6 +327,13 @@
   padding: 2px 5px;
   
 }
+
+#mensaje, #menu-lista{
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+span{
+  text-shadow: none;
+}
 </style>
 </head>
 
@@ -387,6 +394,7 @@ fetch('menu.json')
 
     function actualizarFondoAnimado() {
       const ahora = new Date();
+      const dia = ahora.getDay();
       const h = ahora.getHours();
       const m = ahora.getMinutes();
       const s = ahora.getSeconds();
@@ -400,7 +408,10 @@ fetch('menu.json')
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        tramo = "MANANA";
+        if(dia==="DOMINGO"){
+        tramo = "MANANA2";
+        }else{
+        tramo = "MANANA";}
         mensaje.textContent = "🌞 Mañana: ";
       } else if (h >= 12 && h < 18) {
         tramo = "TARDE";
