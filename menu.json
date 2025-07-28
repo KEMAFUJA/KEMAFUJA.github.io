@@ -1,10 +1,11 @@
 {
   "LUNES": [
-    { "nombre": "Comida1", "color": "#ffe4e1", "negrita": false },
-    { "nombre": "Comida2", "color": "#e6ffe6", "negrita": false },
-    { "nombre": "Comida3", "color": "#fffacc", "negrita": false },
-    { "nombre": "Comida4", "color": "#f0f8ff", "negrita": false },
-    { "nombre": "Comida5", "color": "#f9f9f9", "negrita": false }
+    { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "CHILETA  DE RES", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "COSTILLA AL JUGO", "color": "#ffe4e195", "negrita": false}
   ],
   "MARTES": [
     { "nombre": "Comida6", "color": "#fffacc", "negrita": false },
