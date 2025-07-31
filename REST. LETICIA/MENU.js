@@ -59,7 +59,7 @@ fetch('menu.json')
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        if(dia==="MIERCOLES"){
+        if(dia==="JUEVES"){
         tramo = "MANANA2";
         }else{
         tramo = "MANANA";}
