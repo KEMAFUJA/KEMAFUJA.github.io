@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta property="og:title" content="BOCA DE SABOR - RESTAURANTE GASTRONÓMICO">
+    <meta property="og:description" content="Experiencia culinaria con sabores auténticos. Reserva tu mesa.">
+    <meta property="og:image" content="https://ejemplo.com/images/restaurante-banner.jpg">
+    <meta property="og:url" content="https://ejemplo.com/bocadesabor">
+    <meta name="twitter:card" content="summary_large_image">    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icono-restaurante.png" type="image/png">
+    <title>BOCA DE SABOR | Restaurante & Bar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&family=Pacifico&display=swap">
+    <link rel="stylesheet" href="RESTAURANT.css">
+</head>
+
+<body>
+    <div class="bg-slideshow"></div>
+    <div class="hero-overlay"></div>
+    <div class="floating-elements"></div>
+    
+    <div class="card">
+        <div class="restaurant-name">Boca de Sabor</div>
+        <h1>RESTAURANTE - LETICIA</h1>
+        <h2>Experiencia gastronómica auténtica</h2>
+        
+        <div class="divider"></div>
+        
+        <p class="intro-text">En Boca de Sabor fusionamos tradición e innovación para ofrecerte los sabores más auténticos. Cada plato es una celebración de ingredientes frescos y técnicas culinarias cuidadosamente seleccionadas.</p>
+        
+        <a href="https://api.whatsapp.com/send?phone=59179918260&text=Hola,%20quisiera%20reservar%20una%20mesa..." class="reservation-btn">Reservar Mesa</a>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <p class="contact-label">Teléfono</p>
+                <a class="contact-link" href="tel:+59179918260">+591 79918260</a>
+            </div>
+            
+            <div class="contact-item">
+                <p class="contact-label">Dirección</p>
+                <span class="contact-link">Av. Mutualista Esquina Calle 22, Santa Cruz</span>
+            </div>
+            
+            <div class="contact-item">
+                <p class="contact-label">Horario</p>
+                <span class="contact-link">Lun-Dom: 11:00-15:00 / 17:00-01:00</span>
+            </div>
+        </div>
+
+        <div class="section" id="menu-section">
+            <div class="section-title">
+                <h3>Nuestro Menú</h3>
+                <span class="arrow"></span>
+            </div>
+            <div class="section-content">
+                <ul id="menu-lista"></ul>
+            </div>
+        </div>
+
+        <!--div class="section" id="gallery-section">
+            <div class="section-title">
+                <h3>Galería</h3>
+                <span class="arrow"></span>
+            </div>
+            <div class="section-content">
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plato 1">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plato 2">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plato 3">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Plato 4">
+                </div>
+            </div>
+        </div-->
+
+        <div class="section" id="location-section">
+            <div class="section-title">
+                <h3>Ubicación</h3>
+                <span class="arrow"></span>
+            </div>
+            <div class="section-content">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d237.48157355748424!2d-63.156292510079545!3d-17.758525484728768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ1JzMwLjkiUyA2M8KwMDknMjIuNCJX!5e0!3m2!1ses-419!2sbo!4v1753366338970!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=59179918260" target="_blank" class="social-icon">
+                <img src="WhatsApp2.png" alt="WhatsApp">
+            </a>
+            <a href="https://maps.app.goo.gl/CviewYtwiRDaF3LG7" target="_blank" class="social-icon">
+                <img src="Maps2.png" alt="Ubicación">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para las secciones desplegables
+            document.querySelectorAll('.section-title').forEach(title => {
+                title.addEventListener('click', function() {
+                    const section = this.closest('.section');
+                    section.classList.toggle('active');
+                });
+            });
+            
+            // Crear elementos flotantes decorativos
+            const floatingElements = document.querySelector('.floating-elements');
+            const foodIcons = ['🍕', '🍔', '🍣', '🥗', '🍝', '🍤', '🥩', '🍷', '🍰'];
+            
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                element.textContent = foodIcons[Math.floor(Math.random() * foodIcons.length)];
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                element.style.fontSize = `${Math.random() * 20 + 10}px`;
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                element.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                floatingElements.appendChild(element);
+            }
+            
+            // Abrir la sección de menú por defecto
+            document.getElementById('menu-section').classList.add('active');
+        });
+
+
+
+const dias = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
+const hoy = new Date();
+const diaNombre = dias[hoy.getDay()];
+
+fetch('menu.json')
+  .then(res => res.json())
+  .then(data => {
+    const comidas = data[diaNombre];
+    const lista = document.getElementById("menu-lista");
+    // Crear elemento para el título del día con precio
+    const tituloDia = document.createElement("div");
+    tituloDia.innerHTML = `🍽️ Menú "${diaNombre}" - Completo: <span class="precio">${diaNombre === "DOMINGO" ? "20" : "15"}Bs</span>`;
+    lista.appendChild(tituloDia);
+    
+    if (comidas && comidas.length > 0) {
+      comidas.forEach(comida => {
+            const li = document.createElement("li");
+            li.textContent = `${ ""} ${comida.nombre}`;
+            li.style.backgroundColor = comida.color || "white";
+            if (comida.negrita) {
+              li.style.fontWeight = "bold";
+            }
+            lista.appendChild(li);
+          });
+    } else {
+      lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
+    }
+  })
+  .catch(err => {
+    console.error("Error cargando el JSON:", err);
+    document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+  });
+  
+    </script>
+</body>
+</html>
