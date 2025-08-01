@@ -3,7 +3,7 @@ const dias = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "S
 const hoy = new Date();
 const diaNombre = dias[hoy.getDay()];
 
-fetch('menu.json')
+fetch(`menu.json?t=${new Date().getTime()}`)
   .then(res => res.json())
   .then(data => {
     const comidas = data[diaNombre];
@@ -59,10 +59,10 @@ fetch('menu.json')
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        if(dia==="VIERNES"){
+        /*if(dia==="VIERNES"){
         tramo = "MANANA3";
-        }else{
-        tramo = "MANANA";}
+        }else{*/
+        tramo = "MANANA";//}
         mensaje.textContent = "🌞 Mañana: ";
       } else if (h >= 12 && h < 18) {
         tramo = "TARDE";
