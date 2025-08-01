@@ -59,8 +59,8 @@ fetch('menu.json')
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        if(dia==="JUEVES"){
-        tramo = "MANANA2";
+        if(dia==="VIERNES"){
+        tramo = "MANANA3";
         }else{
         tramo = "MANANA";}
         mensaje.textContent = "🌞 Mañana: ";
