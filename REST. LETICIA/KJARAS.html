@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K'jaras Gourmet - Sabores Andinos</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A; /* Fondo más oscuro para contrastar con el humo */
+            --light: #F5F5F5;
+            --red: #A52A2A;
+            --fire: #FF4500;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Efecto de humo en el fondo */
+        .smoke-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            overflow: hidden;
+        }
+        
+        .smoke {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #333333, #555555);
+            filter: blur(25px);
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Efecto de chispas de fuego */
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--fire);
+            box-shadow: 0 0 5px 2px var(--fire);
+            animation: sparkle 30s infinite ease-out;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-2500px); opacity: 0; }
+        }
+        
+        /* Resto del CSS (igual que antes) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+     
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: rgba(245, 245, 245, 0.8);
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.5rem 0;
+        }
+        
+        .dish-presentation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .dish-image-container {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            aspect-ratio: 1/1;
+            background: #2a2a2a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .dish-image-container:hover {
+            transform: translateY(-10px);
+        }
+        
+        .dish-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        .dish-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .dish-title {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .dish-description {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba(245, 245, 245, 0.8);
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, var(--dark), var(--red));
+            border: 1px solid var(--gold);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .promo-banner::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .promo-title {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            min-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .price-card h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--light);
+        }
+        
+        .price-card p {
+            color: rgba(245, 245, 245, 0.7);
+            margin-bottom: 1.5rem;
+        }
+        
+        .order-btn {
+            background: linear-gradient(to right, var(--gold), #F1C40F);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: rgba(245, 245, 245, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .dish-presentation {
+                flex-direction: column;
+            }
+            
+            .price-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .price-card {
+                width: 100%;
+            }
+        }
+        
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Efecto de humo y chispas -->
+    <div class="smoke-effect" id="smokeEffect"></div>
+    
+    <div class="container">
+        <!-- Todo el contenido anterior se mantiene igual -->
+        <header>
+            <div class="logo">Restaurante - LETICIA</div>
+            <div class="subtitle">Sabores ancestrales con un toque contemporáneo</div>
+            <div class="divider"></div>
+        </header>
+        
+        <div class="dish-presentation">
+            <div class="dish-image-container">
+                <img src="KJARAS_MEJORADA.png" alt="Ch'arki Andino" class="dish-image" id="dishImage">
+            </div>
+            
+            <div class="dish-info">
+                <h1 class="dish-title">K'JARAS Premium</h1>
+                <p class="dish-description">
+                    Nuestra exclusiva K'jara, ofrece una experiencia gastronómica única. Carne seleccionada, sazonada con especias tradicionales para conservar todo su sabor y textura.
+                </p>
+                <p class="dish-description">
+                    Una delicia que combina tradición y calidad, perfecta para los paladares más exigentes.
+                </p>
+            </div>
+        </div>
+        
+        <div class="promo-banner">
+            <div class="floating-elements">
+                <div class="floating-element" style="width: 200px; height: 200px; top: -50px; left: -50px;"></div>
+                <div class="floating-element" style="width: 150px; height: 150px; bottom: -30px; right: -30px;"></div>
+            </div>
+            
+            <h2 class="promo-title">OFERTA ESPECIAL</h2>
+            
+            <div class="price-cards">
+                <div class="price-card">
+                    <h3>K'JARA Clásica</h3>
+                    <div class="price">35<span>Bs.</span></div>
+                    <p>Versión tradicional sin costilla, jugosa y llena de sabor</p>
+                    <!--button class="order-btn">Pedir ahora</button-->
+                </div>
+                
+                <div class="price-card">
+                    <h3>K'JARA Premium</h3>
+                    <div class="price">55<span>Bs.</span></div>
+                    <p>Edición especial con costilla, para los verdaderos conocedores</p>
+                    <!--button class="order-btn">Pedir ahora</button-->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Restaurant "LETICIA" - Todos los derechos reservados</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Generador de humo
+        const smokeEffect = document.getElementById('smokeEffect');
+        
+        for (let i = 0; i < 15; i++) {
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+            smoke.style.width = `${Math.random() * 200 + 100}px`;
+            smoke.style.height = smoke.style.width;
+            smoke.style.left = `${Math.random() * 100}%`;
+            smoke.style.bottom = `-150px`;
+            smoke.style.animationDelay = `${Math.random() * 15}s`;
+            smoke.style.opacity = Math.random() * 0.3;
+            smokeEffect.appendChild(smoke);
+        }
+        
+        // Generador de chispas
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            spark.style.left = `${Math.random() * 100}%`;
+            spark.style.bottom = `0`;
+            spark.style.animationDuration = `${Math.random() * 1 + 10.0}s`;
+            document.body.appendChild(spark);
+            
+            setTimeout(() => {
+                spark.remove();
+            }, 2000);
+        }
+        
+        // Crear chispas cada 100ms
+        setInterval(createSpark, 100);
+        
+        // Carga de imagen (opcional)
+        document.getElementById('dishImage').addEventListener('click', function() {
+            this.src = 'https://via.placeholder.com/600x600/2a2a2a/ffffff?text=Imagen+del+plato+cargada';
+            this.alt = 'Ch\'arki Andino Premium';
+        });
+    </script>
+</body>
+</html>
