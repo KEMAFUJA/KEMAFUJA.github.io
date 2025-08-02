@@ -102,28 +102,12 @@
       20%,80% { background-color: hsl(51, 100%, 40%); }
       40%,60% { background-color: hsl(51, 100%, 50%); }
     }
-    
 
-    /*MAÑANA*/
-    @keyframes CELESTE {
+    @keyframes MANANA {
       0%,100% { background-color: hsl(205, 100%, 42%); }
       20%,80% { background-color: hsl(205, 100%, 50%); }
       40%,60% { background-color: hsl(205, 100%, 69%); }
     }
-    
-    @keyframes CAFE {
-      0%,100% { background-color: hsl(35, 100%, 25%); }
-      20%,80% { background-color: hsla(35, 100%, 25%, 0.5); }
-      40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
-    }
-
-    @keyframes MANANA {
-      0%,100% { background-color: hsl(65, 100%, 99%); }
-      20%,80% { background-color: hsl(65, 100%, 99.5%); }
-      40%,60% { background-color: hsl(65, 100%, 100%); }
-    }
-
-    /*FIN*/
 
     @keyframes TARDE {
       0%,100% { background-color: hsl(205, 100%, 40%); }
@@ -335,3 +319,4 @@
 span{
   text-shadow: none;
 }
+
