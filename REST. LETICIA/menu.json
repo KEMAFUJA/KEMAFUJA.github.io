@@ -45,12 +45,7 @@
     { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "FEIJOADA", "color": "#ffe4e195", "negrita": false },
     { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false },
-    
-    { "nombre": "PLATOS EXTRAS 😋", "color": "#ffb43285", "negrita": true },
-    { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
-    { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
-    { "nombre": "POLLO A LA BROASTER - 13BS", "color": "#ffe4b595", "negrita": false}
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false }
   ],
   "DOMINGO": [
     { "nombre": "SOPA DE MANI", "color": "#ff6d05a0", "negrita": true },
@@ -63,4 +58,5 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
