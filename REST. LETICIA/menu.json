@@ -41,11 +41,12 @@
   ],
   "SABADO": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "FEIJOADA", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false },
+    
     { "nombre": "PLATOS EXTRAS 😋", "color": "#ffb43285", "negrita": true },
     { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
     { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
@@ -62,3 +63,4 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
