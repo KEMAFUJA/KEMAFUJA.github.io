@@ -59,10 +59,7 @@ fetch(`menu.json?t=${new Date().getTime()}`)
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        /*if(dia==="VIERNES"){
-        tramo = "MANANA3";
-        }else{*/
-        tramo = "MANANA";//}
+        tramo = "MANANA";
         mensaje.textContent = "🌞 Mañana: ";
       } else if (h >= 12 && h < 18) {
         tramo = "TARDE";
@@ -133,3 +130,4 @@ fetch(`menu.json?t=${new Date().getTime()}`)
 
 
     setInterval(createSpark, 300);
+
