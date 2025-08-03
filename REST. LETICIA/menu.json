@@ -54,9 +54,11 @@
     { "nombre": "PICANTE DE LENGUA", "color": "#ff984ea0", "negrita": false },
     { "nombre": "KEPERI AL HORNO", "color": "#ff984ea0", "negrita": false },
     { "nombre": "LECHON AL HORNO", "color": "#ff984ea0", "negrita": false },
+    { "nombre": "COSTILLA DE CERDO", "color": "#ff984ea0", "negrita": false },
     { "nombre": "BEBIDAS 🍹", "color": "#ffe4b5", "negrita": true },
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
