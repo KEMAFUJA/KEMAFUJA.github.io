@@ -104,9 +104,9 @@
     }
 
     @keyframes MANANA {
-      0%,100% { background-color: hsl(205, 100%, 42%); }
-      20%,80% { background-color: hsl(205, 100%, 50%); }
-      40%,60% { background-color: hsl(205, 100%, 69%); }
+      0%,100% { background-color: hsl(300, 100%, 40%); }
+      20%,80% { background-color: hsl(300, 100%, 60%); }
+      40%,60% { background-color: hsl(300, 100%, 80%); }
     }
 
     @keyframes TARDE {
@@ -319,5 +319,6 @@
 span{
   text-shadow: none;
 }
+
 
 
