@@ -1,0 +1,353 @@
+
+/*FONDO*/
+@keyframes backgroundColorChange {
+  0% { background-color: #ffffff; }
+  20% { background-color: #0088ff; } 
+  40% { background-color: #ff8400; }
+  60% { background-color: #8c0033; }
+  80% { background-color: #000000; }
+  100% { background-color: #ffffff; }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  animation: backgroundColorChange 20s ease-in-out infinite; /* Duración de 10 segundos, en bucle infinito */
+}
+
+/*FONDO CUBO*/
+@keyframes backgroundColorChange2 {
+  0% { background-color: #ffffff; }
+  33% { background-color: #d2e5ff; } 
+  66% { background-color:#59affa; }
+  100% { background-color: #ffffff; }
+}
+/*CUBO*/
+.card {    
+  border-radius: 25px;
+  box-shadow: 0 0px 100px rgba(0, 0, 0, 0.5);
+  padding: 70px;
+  width: 450px;
+  text-align: center;
+  color: transparent;
+  /*animation: backgroundColorChange2 40s ease-in-out infinite, heartbeat 2.5s infinite; */
+}
+
+/*RELLENO*/
+.card p {
+  font-size: 20px;
+  color: #474747;
+  margin: 5px 0;
+}
+
+/*LINKS*/
+@keyframes backgroundColorChange3 {
+  0% { 
+    filter: drop-shadow(#ffffff) ;
+    color: #000000; /* Color del texto inicial */
+  }
+  33% { 
+    filter: drop-shadow(#d2e5ff) ;
+    color: #007bff; /* Cambia el color del texto en esta etapa */
+  } 
+  66% { 
+    filter: drop-shadow(#59affa) ;
+    color: #ffcc00; /* Cambia el color del texto en esta etapa */
+  }
+  100% { 
+    filter: drop-shadow(#ffffff) ;
+    color: #000000; /* Vuelve al color del texto inicial */
+  }
+}
+
+.card a {
+  text-decoration: none;
+  font-weight: bold;
+  animation: backgroundColorChange3 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;  
+}
+
+/*JUNTAO*/
+.inline-text {
+  display: inline; /* Mantiene en la misma línea */
+}
+
+.nombre-completo {
+  margin: 30px 0 0 0;
+  display: inline-block; /* Agrupa los elementos */
+}
+
+.apellido {
+  margin: 0; /* Quita márgenes adicionales */
+}
+
+/*PALPITO*/
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+
+/*TITULO*/
+@keyframes backgroundColorChange4 {
+  0% { 
+    filter: drop-shadow(#ffffff) ; 
+    color: #987f03; /* Color del texto inicial */
+  }
+  30% { 
+    filter: drop-shadow( #d4c67e); 
+    color: #ffe76e; /* Cambia el color del texto en esta etapa */
+  } 
+  60% { 
+    filter: drop-shadow(#c3af50); 
+    color: #ffde38; /* Cambia el color del texto en esta etapa */
+  }
+  90% { 
+    filter: drop-shadow( #ffd500); 
+    color: #ffffff; /* Vuelve al color del texto inicial */
+  }
+  100% { 
+    filter: drop-shadow(#ffffff) ; 
+    color: #987f03; /* Color del texto inicial */
+  }
+}
+
+/*@keyframes fontChange {
+  0%, 100% { font-family: Arial, sans-serif; }
+  7% { font-family: "Helvetica Neue", Helvetica, sans-serif; }
+  14% { font-family: 'Courier New', Courier, monospace; }
+  21% { font-family: Georgia, serif; }
+  28% { font-family: 'Times New Roman', Times, serif; }
+  35% { font-family: Verdana, Geneva, sans-serif; }
+  42% { font-family: Tahoma, Geneva, sans-serif; }
+  49% { font-family: 'Trebuchet MS', Helvetica, sans-serif; }
+  56% { font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; }
+  63% { font-family: 'Comic Sans MS', cursive, sans-serif; }
+  70% { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; }
+  77% { font-family: 'Impact', Charcoal, sans-serif; }
+  84% { font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif; }
+  91% { font-family: 'Lucida Console', Monaco, monospace; }
+  98% { font-family: 'Brush Script MT', cursive; }
+}*/
+
+@keyframes fontChange {
+  0% { 
+    font-family: Arial, sans-serif; font-weight: bold;
+    color: #987f03;
+    text-shadow: 2px 2px 4px #ffffff; }
+  14% { 
+    font-family: Arial, sans-serif; font-weight: bold;
+    color: #c7a600;
+    text-shadow: 2px 2px 4px #c0c0c0; }
+  28% { 
+    font-family: 'Times New Roman', Times, serif; font-weight: bold;
+    color: #fcd201;
+    text-shadow: 2px 2px 4px #818181;}
+  42% { 
+    font-family: 'Brush Script MT', cursive; font-weight: bold;
+    color: #fde673;
+    text-shadow: 2px 2px 4px #4f4f4f;}
+  56% { 
+    font-family: 'Lucida Handwriting', cursive;font-weight: bold;
+    color: #fff1ae;
+    text-shadow: 2px 2px 4px #000000;}
+  70% { 
+    font-family: 'Courier New', Courier, monospace; font-weight: bold;
+    font-weight: 400; 
+    color: #fde673;
+    text-shadow: 2px 2px 4px #464646;}
+  84% { 
+    font-family: monospace; font-weight: bold;
+    color: #fcd201;
+    text-shadow: 2px 2px 4px #7d7d7d;}
+  92% { 
+    font-family: Georgia, serif;font-weight: bold;
+    color: #c7a600;
+    text-shadow: 2px 2px 4px #c0c0c0;}
+  100% { 
+    font-family: 'Impact', fantasy;font-weight: bold;
+    color: #987f03;
+    text-shadow: 2px 2px 4px #ffffff;}
+}
+
+h1 {
+  
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black; /* Simula el cursor */
+  margin: 0px 0; /* Espacio entre los títulos */
+  animation: fontChange 20s ease-in-out infinite;
+}
+.contenedor-titulos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.size1{
+  font-size: 80px;
+}
+.size2{
+  font-size: 40px;
+}
+
+
+/*TITUTO CON EFECTO*/
+/*.letra {
+  font-size: 70px;
+  margin: 0;
+  animation: colorBackground 40s ease-in-out infinite;
+}
+
+
+
+/*@keyframes backgroundColorChange4 {
+  0% { 
+    filter: drop-shadow(#ffffff) ; 
+    color: #987f03; /* Color del texto inicial */
+ /* }
+  33% { 
+    filter: drop-shadow( #d4c67e); 
+    color: #ffe76e; /* Cambia el color del texto en esta etapa */
+  /*} 
+  66% { 
+    filter: drop-shadow(#c3af50); 
+    color: #ffde38; /* Cambia el color del texto en esta etapa */
+  /*}
+  100% { 
+    filter: drop-shadow( #ffd500); 
+    color: #ffffff; /* Vuelve al color del texto inicial */
+  /*}
+}*/
+
+.icono {
+  width: 35px;
+  height: 35px;
+  margin: 0 0 0 10px;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
+}
+
+.icono:hover {
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes moveAndPulse {
+  0% {
+    transform: translateX(-5px) scale(0.9);
+  }
+  50% {
+    transform: translateX(5px) scale(1); 
+  }
+  100% {
+    transform: translateX(-5px) scale(0.9); 
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.iconos-completo {
+  margin: 0 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconos {
+  display: flex;
+  gap: 10px; /* Espacio entre iconos */
+  margin-bottom: 20px; /* Espacio entre iconos y botones */
+}
+
+
+@keyframes colorShadow {
+  0% {
+    text-shadow: 2px 2px 5px #660000, -2px -2px 5px #7b3100;
+  }
+  25% {
+    text-shadow: 2px 2px 5px #7b3100, -2px -2px 5px #876d02;
+  }
+  50% {
+    text-shadow: 2px 2px 5px #876d02, -2px -2px 5px #007b00;
+  }
+  75% {
+    text-shadow: 2px 2px 5px #007b00, -2px -2px 5px #004174;
+  }
+  100% {
+    text-shadow: 2px 2px 5px #004174, -2px -2px 5px #660000;
+  }
+}
+
+.colored-text {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  animation: colorShadow 3s infinite alternate, heartbeat 1s ease-in-out infinite;
+}
+
+
+/* Estilo para el enlace */
+.dropdown-toggle {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  border: 100px;
+}
+
+/* Contenido oculto por defecto */
+.content {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  text-align: left; /* Alineación de texto a la izquierda */
+}
+
+/* Mostrar contenido al pasar el mouse sobre el enlace o el contenedor */
+.dropdown:hover .content {
+  display: block;
+}
+
+/* Estilos para la lista */
+ul {
+  list-style-type: none; /* Quita los puntos */
+  padding-left: 0;
+  margin: 0 0 10px 0;
+}
+
+li {
+  margin-bottom: 0px;
+  text-align: center; /* Centra el texto dentro de cada li */
+  color: #000000;
+}
+
+ul {
+  padding-left: 20px; /* Indentación para sublistas */
+}
+
+strong {
+  font-size: 1.1em; /* Resaltar el título */
+  color: #333;
+}
+
+/*BOTONES REPRODUCIR/PAUSAR*/
+.boton {
+  margin: 10px 20px;
+  background-color: transparent; /* Ajuste de color */  
+  font-family: 'Courier New', Courier, monospace;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  animation: colorShadow 30s infinite, heartbeat 10s ease-in-out infinite, backgroundColorChange4 10s ease-in-out infinite;
+}
+
+.botones {
+  display: flex;
+  gap: 10px; /* Espacio entre botones */
+}

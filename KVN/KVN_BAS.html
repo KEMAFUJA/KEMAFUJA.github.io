@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta de Contacto "BASICO" - Kemafuja</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* FONDO ANIMADO CON DIFUMINADO */
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e1e2f, #3c3b5a);
+    }
+
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      animation: backgroundImageChange 30s infinite;
+      filter: blur(20px);
+    }
+
+    @keyframes backgroundImageChange {
+      0% { background-image: url('imagen1.jpg'); }
+      33% { background-image: url('imagen2.jpg'); }
+      66% { background-image: url('imagen3.jpg'); }
+      100% { background-image: url('imagen1.jpg'); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .nombre-completo h2, .nombre-completo h3 {
+      margin: 5px;
+      font-weight: 600;
+    }
+
+    .nombre-completo h2 {
+      font-size: 32px;
+    }
+
+    .nombre-completo h3 {
+      font-size: 20px;
+      color: #a0c4ff;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .fa {
+      margin-right: 8px;
+    }
+
+    /* MODAL PDF */
+    iframe {
+      width: 80vw;
+      height: 80vh;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <div class="card">
+    <div class="nombre-completo">
+      <h3><i class="fa-solid fa-user-tie"></i> ING.</h3>
+      <h2>KEVIN MAURICIO</h2>
+      <h2>FUENTES JAIMES</h2>
+    </div>
+
+    <p><i class="fa-solid fa-phone"></i> y <i class="fa-brands fa-whatsapp"></i> <strong>Teléfono:</strong> 71055268</p>
+    <p><i class="fa-solid fa-envelope"></i> <strong>Correo:</strong> kevin_mfuentes@hotmail.com</p>
+    <p><i class="fa-solid fa-file-pdf"></i> <strong>Currículum:</strong> <a href="#" onclick="openPDF()">Ver PDF</a></p>
+  </div>
+
+  <!-- Botón flotante de WhatsApp>
+  <a href="https://api.whatsapp.com/send?phone=59175614564" target="_blank" class="whatsapp-btn" title="Enviar mensaje por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a-->
+
+  <!-- Modal PDF Script -->
+  <script>
+    function openPDF() {
+      const modal = document.createElement("div");
+      modal.style.position = "fixed";
+      modal.style.top = "0";
+      modal.style.left = "0";
+      modal.style.width = "100%";
+      modal.style.height = "100%";
+      modal.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+      modal.style.zIndex = "1000";
+      modal.style.display = "flex";
+      modal.style.alignItems = "center";
+      modal.style.justifyContent = "center";
+
+      const iframe = document.createElement("iframe");
+      iframe.src = "Curriculum.pdf";
+      iframe.style.border = "none";
+
+      const closeButton = document.createElement("button");
+      closeButton.textContent = "✖";
+      closeButton.style.position = "absolute";
+      closeButton.style.top = "20px";
+      closeButton.style.right = "30px";
+      closeButton.style.fontSize = "25px";
+      closeButton.style.background = "transparent";
+      closeButton.style.color = "#fff";
+      closeButton.style.border = "none";
+      closeButton.style.cursor = "pointer";
+
+      closeButton.onclick = () => document.body.removeChild(modal);
+
+      modal.appendChild(iframe);
+      modal.appendChild(closeButton);
+      document.body.appendChild(modal);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicios Informáticos - Kevin Fuentes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary: #3f37c9;
+      --dark: #212529;
+      --light: #f8f9fa;
+      --accent: #f72585;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --success: #4cc9f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background-color: #fafbff;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(67, 97, 238, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 15% 85%, rgba(247, 37, 133, 0.05) 0%, transparent 25%);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header estilizado */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: #fafbff;
+      transform: skewY(-3deg);
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Secciones con tarjetas */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    /* Tabla mejorada */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 1.5rem 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: rgba(67, 97, 238, 0.03);
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    td:last-child {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* Listas mejoradas */
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    ul li, ol li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '•';
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    ol {
+      counter-reset: item;
+    }
+
+    ol li {
+      counter-increment: item;
+    }
+
+    ol li::before {
+      content: counter(item);
+      background: var(--primary);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+
+    /* Contacto mejorado */
+    .contact-info p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      width: 25px;
+      text-align: center;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-bottom: 1px dashed transparent;
+    }
+
+    a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Badge de precios */
+    .price-badge {
+      background: rgba(67, 97, 238, 0.1);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      section {
+        padding: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      th, td {
+        padding: 12px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      header {
+        padding: 3rem 1.5rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Kevin Fuentes</h1>
+      <p>Soluciones Tecnológicas Creativas y Profesionales</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Servicios y Tarifas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Descripción</th>
+            <th>Inversión</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Código QR personalizado</td>
+            <td>Diseño y generación de códigos QR con estilo único y seguimiento de escaneos</td>
+            <td><span class="price-badge">$30 - $60</span></td>
+          </tr>
+          <tr>
+            <td>Tarjetas de presentación digital</td>
+            <td>Creación de tarjetas virtuales interactivas con enlaces directos</td>
+            <td><span class="price-badge">$50 - $120</span></td>
+          </tr>
+          <tr>
+            <td>Sitio web básico</td>
+            <td>Desarrollo de sitios web responsivos (1-5 páginas) con diseño moderno</td>
+            <td><span class="price-badge">$200 - $500</span></td>
+          </tr>
+          <tr>
+            <td>Minijuegos interactivos</td>
+            <td>JueINDX(1-5 páginas) con diseño moderno</td>
+            <td><span class="price-badge">$200 - $500</span></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
