@@ -68,31 +68,41 @@ document.querySelector('.dropdown-header').addEventListener('click', function() 
 });
 
 // Modal para PDF
-function openPDF() {
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
-    
-    // Contenido del modal
-    modal.innerHTML = `
-        <div class="modal-content">
-            <button class="close-button">
-        <i class="fas fa-times"></i>
-            </button>
-            <div class="pdf-viewer">
-        <iframe src="PAQUETES KEMAFUJA.pdf"></iframe>
-            </div>
-            <a href="PAQUETES KEMAFUJA.pdf" download="PAQUETES KEMAFUJA.pdf" class="download-button">
-        <i class="fas fa-download"></i> Descargar PDF
-            </a>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Cerrar modal
-    modal.querySelector('.close-button').addEventListener('click', () => {
-document.body.removeChild(modal);
-    });
-}
+
+    function openPDF() {
+      const modal = document.createElement("div");
+      modal.style.position = "fixed";
+      modal.style.top = "0";
+      modal.style.left = "0";
+      modal.style.width = "100%";
+      modal.style.height = "100%";
+      modal.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+      modal.style.zIndex = "1000";
+      modal.style.display = "flex";
+      modal.style.alignItems = "center";
+      modal.style.justifyContent = "center";
+
+      const iframe = document.createElement("iframe");
+      iframe.src = "PAQUETES_KEMAFUJA.pdf";
+      iframe.style.border = "none";
+
+      const closeButton = document.createElement("button");
+      closeButton.textContent = "✖";
+      closeButton.style.position = "absolute";
+      closeButton.style.top = "20px";
+      closeButton.style.right = "30px";
+      closeButton.style.fontSize = "25px";
+      closeButton.style.background = "transparent";
+      closeButton.style.color = "#fff";
+      closeButton.style.border = "none";
+      closeButton.style.cursor = "pointer";
+
+      closeButton.onclick = () => document.body.removeChild(modal);
+
+      modal.appendChild(iframe);
+      modal.appendChild(closeButton);
+      document.body.appendChild(modal);
+    }
+
 
     
