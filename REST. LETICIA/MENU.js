@@ -8,9 +8,9 @@ fetch(`menu.json?t=${new Date().getTime()}`)
   .then(data => {
     const comidas = data[diaNombre];
     const lista = document.getElementById("menu-lista");
-    const titulo = document.getElementById("titulo");
+    //const titulo = document.getElementById("titulo");
     
-    titulo.textContent = `Restaurante "Leticia"`;
+    //titulo.textContent = `Restaurante "Leticia"`;
     
     // Crear elemento para el título del día con precio
     const tituloDia = document.createElement("div");
@@ -59,7 +59,10 @@ fetch(`menu.json?t=${new Date().getTime()}`)
         tramo = "MADRUGADA";
         mensaje.textContent = "🌃 Madrugada: ";
       } else if (h >= 6 && h < 12) {
-        tramo = "MANANA";
+        /*if(dia==="VIERNES"){
+        tramo = "MANANA3";
+        }else{*/
+        tramo = "MANANA";//}
         mensaje.textContent = "🌞 Mañana: ";
       } else if (h >= 12 && h < 18) {
         tramo = "TARDE";
@@ -130,4 +133,3 @@ fetch(`menu.json?t=${new Date().getTime()}`)
 
 
     setInterval(createSpark, 300);
-
