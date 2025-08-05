@@ -81,7 +81,7 @@ function openPDF() {
             <div class="pdf-viewer">
         <iframe src="PAQUETES KEMAFUJA.pdf"></iframe>
             </div>
-            <a href="PAQUETES_KEMAFUJA.pdf" download="PAQUETES KEMAFUJA.pdf" class="download-button">
+            <a href="PAQUETES KEMAFUJA.pdf" download="PAQUETES KEMAFUJA.pdf" class="download-button">
         <i class="fas fa-download"></i> Descargar PDF
             </a>
         </div>
@@ -94,4 +94,5 @@ function openPDF() {
 document.body.removeChild(modal);
     });
 }
+
     
