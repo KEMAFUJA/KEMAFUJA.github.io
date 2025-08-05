@@ -9,11 +9,11 @@
   ],
   "MARTES": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "GUISO DE PAPALIZA", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "TALLARÍN CON CARNE", "color": "#ffe4e195", "negrita": false },
     { "nombre": "REVUELTO DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "TALLARIN CON CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "AJÍ DE PANZA", "color": "#ffe4e195", "negrita": false },    
+    { "nombre": "CHICHARRÓN DE POLLO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "POLLO A LA PLANCHA", "color": "#ffe4e195", "negrita": false}
   ],
   "MIERCOLES": [
     { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
@@ -59,6 +59,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
