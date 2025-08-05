@@ -29,53 +29,64 @@
     }
 
     #titulo {
-    color: #ffd1388e;
+      font-size: 3.5rem;
+    display: inline; /* o inline-block */
     background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
-    -webkit-background-clip: text;
-    background-clip: text;  
-    animation: glowingText 5s infinite;
+    -webkit-background-clip: text; /* Compatibilidad con navegadores WebKit (Chrome, Safari) */
+    background-clip: text; /* Recorta el fondo al área del texto */
+    color: transparent; /* Hace el texto transparente para mostrar el degradado de fondo */
+    background-size: 100% 500%;     
+    animation: animacion-degradado 50s infinite alternate; 
+    }
+
+    @keyframes animacion-degradado {
+      0% {
+        background-position: 0% 0%; /* Inicio: degradado alineado a la izquierda (primer color visible) */
+      }
+      100% {
+        background-position: 0% 100%; /* Fin: degradado alineado a la derecha (último color visible) */
+      }
+    }
+
+    span{
+    text-shadow: none;
+    animation: glowingText 25s infinite;
+    }
+
+    @font-face {
+    font-family: 'PRISTINA';
+    src: url('/-LETRAS/fonts/PRISTINA.TTF');
+    }
+
+    #nombre {
+        font-family: 'PRISTINA';
+        font-size: 5rem;
     }
 
     @keyframes glowingText {
-  0% {
+  0%, 100% {
     text-shadow:
-      0 0 5px #ff0000,
-      0 0 10px #ff4500,
-      0 0 15px #ffa500,
-      0 0 20px #ff6347,
-      0 0 25px #ff0000;
+      0 0 2.5px hsla(0, 100%, 50%, 0.35),
+      0 0 5px hsl(16, 100%, 50%, 0.35),
+      0 0 7.5px hsl(39, 100%, 50%, 0.35),
+      0 0 10px hsl(9, 100%, 50%, 0.35),
+      0 0 12.5px hsl(0, 100%, 50%, 0.5);
   }
-  25% {
+  25%, 75% {
     text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff4500,
-      0 0 30px #ffa500,
-      0 0 40px #ff6347,
-      0 0 50px #ff0000;
+      0 0 5px hsla(0, 100%, 50%, 0.35),
+      0 0 10px hsl(16, 100%, 50%, 0.35),
+      0 0 15px hsl(39, 100%, 50%, 0.35),
+      0 0 20px hsl(9, 100%, 50%, 0.35),
+      0 0 25px hsl(0, 100%, 50%, 0.5);
   }
   50% {
     text-shadow:
-      0 0 15px #ff0000,
-      0 0 30px #ff4500,
-      0 0 45px #ffa500,
-      0 0 60px #ff6347,
-      0 0 75px #ff0000;
-  }
-  75% {
-    text-shadow:
-      0 0 10px #ff0000,
-      0 0 20px #ff4500,
-      0 0 30px #ffa500,
-      0 0 40px #ff6347,
-      0 0 50px #ff0000;
-  }
-  100% {
-    text-shadow:
-      0 0 5px #ff0000,
-      0 0 10px #ff4500,
-      0 0 15px #ffa500,
-      0 0 20px #ff6347,
-      0 0 25px #ff0000;
+      0 0 10px hsla(0, 100%, 50%, 0.35),
+      0 0 20px hsl(16, 100%, 50%, 0.35),
+      0 0 30px hsl(39, 100%, 50%, 0.35),
+      0 0 40px hsl(9, 100%, 50%, 0.35),
+      0 0 50px hsl(0, 100%, 50%, 0.5);
   }
 }
 
@@ -102,12 +113,34 @@
       20%,80% { background-color: hsl(51, 100%, 40%); }
       40%,60% { background-color: hsl(51, 100%, 50%); }
     }
+    
+
+    /*MAÑANA*/
+    @keyframes CELESTE {
+      0%,100% { background-color: hsl(205, 100%, 42%); }
+      20%,80% { background-color: hsl(205, 100%, 50%); }
+      40%,60% { background-color: hsl(205, 100%, 69%); }
+    }
 
     @keyframes MANANA {
       0%,100% { background-color: hsl(300, 100%, 40%); }
       20%,80% { background-color: hsl(300, 100%, 60%); }
       40%,60% { background-color: hsl(300, 100%, 80%); }
     }
+    
+    @keyframes CAFE {
+      0%,100% { background-color: hsl(35, 100%, 25%); }
+      20%,80% { background-color: hsla(35, 100%, 25%, 0.5); }
+      40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
+    }
+
+    @keyframes BLANCO {
+      0%,100% { background-color: hsl(65, 100%, 99%); }
+      20%,80% { background-color: hsl(65, 100%, 99.5%); }
+      40%,60% { background-color: hsl(65, 100%, 100%); }
+    }
+
+    /*FIN*/
 
     @keyframes TARDE {
       0%,100% { background-color: hsl(205, 100%, 40%); }
@@ -201,6 +234,9 @@
       body {
         padding: 1em;
         font-size: 1.4rem;
+      }
+      #titulo{
+        font-size: 2rem;
       }
     }
 
@@ -316,9 +352,3 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-span{
-  text-shadow: none;
-}
-
-
-
