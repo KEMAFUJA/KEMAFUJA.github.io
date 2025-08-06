@@ -55,7 +55,7 @@
 
     @font-face {
     font-family: 'PRISTINA';
-    src: url('/-LETRAS/fonts/PRISTINA.TTF');
+    src: url('PRISTINA.TTF');
     }
 
     #nombre {
@@ -355,3 +355,4 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
