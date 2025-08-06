@@ -1,27 +1,26 @@
 {
   "LUNES": [
-    { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "ALBONDIGA AL JUGO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "SALPICÓN DE POLLO", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "CHULETA  DE RES", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "COSTILLA AL JUGO", "color": "#ffe4e195", "negrita": false}
   ],
   "MARTES": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "TALLARÍN CON CARNE", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "GUISO DE PAPALIZA", "color": "#ffe4e195", "negrita": false },
     { "nombre": "REVUELTO DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "AJÍ DE PANZA", "color": "#ffe4e195", "negrita": false },    
-    { "nombre": "CHICHARRÓN DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO A LA PLANCHA", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "TALLARIN CON CARNE", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false}
   ],
   "MIERCOLES": [
-    { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "CARNE CON PIMENTO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "SAICE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO A LA PLANCHA", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
+    { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
+    { "nombre": "LASAÑA DE CARNE", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "POLLO AL HORNO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
   ],
   "JUEVES": [
     { "nombre": "SOPA DE MANI", "color": "#fff2cc", "negrita": true },
@@ -41,11 +40,15 @@
   ],
   "SABADO": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "FEIJOADA", "color": "#ffe4e195", "negrita": false },
     { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false }
+    { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "PLATOS EXTRAS 😋", "color": "#ffb43285", "negrita": true },
+    { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
+    { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
+    { "nombre": "POLLO A LA BROASTER - 13BS", "color": "#ffe4b595", "negrita": false}
   ],
   "DOMINGO": [
     { "nombre": "SOPA DE MANI", "color": "#ff6d05a0", "negrita": true },
@@ -54,13 +57,7 @@
     { "nombre": "PICANTE DE LENGUA", "color": "#ff984ea0", "negrita": false },
     { "nombre": "KEPERI AL HORNO", "color": "#ff984ea0", "negrita": false },
     { "nombre": "LECHON AL HORNO", "color": "#ff984ea0", "negrita": false },
-    { "nombre": "COSTILLA DE CERDO", "color": "#ff984ea0", "negrita": false },
     { "nombre": "BEBIDAS 🍹", "color": "#ffe4b5", "negrita": true },
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
-
-
-
-
-
