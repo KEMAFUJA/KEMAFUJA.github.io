@@ -55,7 +55,7 @@
 
     @font-face {
     font-family: 'PRISTINA';
-    src: url('PRISTINA.TTF');
+    src: url('/-LETRAS/fonts/PRISTINA.TTF');
     }
 
     #nombre {
@@ -122,7 +122,7 @@
       40%,60% { background-color: hsl(205, 100%, 69%); }
     }
 
-    @keyframes MANANA {
+    @keyframes ROSADO {
       0%,100% { background-color: hsl(300, 100%, 40%); }
       20%,80% { background-color: hsl(300, 100%, 60%); }
       40%,60% { background-color: hsl(300, 100%, 80%); }
@@ -138,6 +138,9 @@
       0%,100% { background-color: hsl(65, 100%, 99%); }
       20%,80% { background-color: hsl(65, 100%, 99.5%); }
       40%,60% { background-color: hsl(65, 100%, 100%); }
+    }
+    @keyframes MANANA {
+      0%,100% { background-color: hsl(0, 0%, 0%); }
     }
 
     /*FIN*/
@@ -352,4 +355,3 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
