@@ -24,11 +24,9 @@
   ],
   "JUEVES": [
     { "nombre": "SOPA DE MANI", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
-    { "nombre": "PICANTE DE POLLO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
-    { "nombre": "LOMO SALTEADO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "KEPERI", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "COSTILLITA DE CERDO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "ROLLITO DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
+    { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },    
+    { "nombre": "COSTILLITA DE CERDO AL HORNO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "PICANTE DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
   ],
   "VIERNES": [
@@ -62,3 +60,4 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
