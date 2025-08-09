@@ -6,148 +6,29 @@
     <meta property="og:image" content="https://kemafuja.github.io/REST. LETICIA/images/LOGO.jpg">
     <meta property="og:url" content="https://kemafuja.github.io/REST. LETICIA/">
     <meta name="twitter:card" content="summary_large_image">    
-    <meta charset="UTF-8">
-    <title>Menú del día - Restaurante Leticia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="LOGO.png" type="image/png">
-    <link rel="stylesheet" href="MENU.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        .franja {
-            position: fixed;
-            width: 100%;
-            height: 110vh;
-            display: flex;
-            flex-direction: column;
-            z-index: -1;
-        }
-        
-        .franja-color {
-            flex: 15;
-        }
-        
-        .rojo {
-            background-color: hsl(5, 80%, 35%);
-        }
-        
-        .amarillo {
-            background-color: hsl(50, 100%, 45%);
-        }
-        
-        .verde {
-            background-color: hsl(145, 100%, 20%);
-        }
-        
-        .smoke-effect, .spark-layer, .flames {
-            z-index: 5;
-        }
 
-        @font-face {
-    font-family: 'Inspiration-Regular';
-    src: url('/-LETRAS/fonts/AGENCYR.TTF');
-}
-        .leyenda {
-      position: absolute;
-      bottom: 55px;
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-family: 'Inspiration-Regular';
-      font-size: 25px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-      opacity: 0.5;
-      z-index: 4;
-    }
-        
-    </style>
+
+  <meta charset="UTF-8">
+  <title>Menú del día</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="LOGO.png" type="image/png">
+  <link rel="stylesheet" href="MENU.css">
 </head>
 
 <body>
-    <!-- Fondo de la bandera boliviana -->
-    <div class="franja">
-        <div class="franja-color rojo"></div>
-        <div class="franja-color amarillo"></div>
-        <div class="franja-color verde"></div>
-    </div>
-    
-    <!-- Efectos visuales -->
-    <div class="smoke-effect" id="smokeEffect"></div>
-    <div id="sparkLayer" class="spark-layer"></div>
-    <div class="flames" id="flames"></div>
-    
-    <!-- Contenido del menú -->
-    
-        <div id="mensaje">Cargando...</div>
-        
-        <h1 id="titulo">
-            <span>RESTAURANTE</span>
-            <span> - </span>
-            <span id="nombre">LETICIA</span>
-        </h1>
-        
-        <ul id="menu-lista"></ul>
- <!--div class="leyenda">
-    "Viva mi patria Bolivia!!! Una gran nacion, por ella doy mi vida, tambien mi corazon."
-</div-->   
-    
-    <script src="MENU.js"></script>
-    <script>
-        // Efecto de movimiento sutil para el fondo
-        document.addEventListener('mousemove', function(e) {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            const franjas = document.querySelectorAll('.franja-color');
-            franjas[0].style.transform = `translate(${x * 10 - 5}px, ${y * 10 - 5}px)`;
-            franjas[1].style.transform = `translate(${x * 8 - 4}px, ${y * 8 - 4}px)`;
-            franjas[2].style.transform = `translate(${x * 6 - 3}px, ${y * 6 - 3}px)`;
-        });
-        
-        // Efecto patriótico en días especiales
-        const today = new Date();
-        if(today.getMonth() === 7) { // 6 de agosto
-            crearConfeti();
-        }
-        
-        function crearConfeti() {
-            const colors = ['#D52B1E', '#FCD116', '#007A33', '#FFFFFF'];
-            
-            for(let i = 0; i < 50; i++) {
-                const confeti = document.createElement('div');
-                confeti.style.position = 'fixed';
-                confeti.style.width = `${Math.random() * 10 + 5}px`;
-                confeti.style.height = `${Math.random() * 10 + 5}px`;
-                confeti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confeti.style.left = `${Math.random() * 100}vw`;
-                confeti.style.top = '-10px';
-                confeti.style.borderRadius = '50%';
-                confeti.style.opacity = Math.random() * 0.7 + 0.3;
-                confeti.style.zIndex = '4';
-                
-                document.body.appendChild(confeti);
-                
-                animateConfeti(confeti);
-            }
-        }
-        
-        function animateConfeti(element) {
-            const duration = Math.random() * 5 + 5;
-            const rotation = Math.random() * 360;
-            
-            element.animate([
-                { transform: `translate(0, 0) rotate(0deg)`, top: '-10px' },
-                { transform: `translate(${Math.random() * 200 - 100}px, 110vh) rotate(${rotation}deg)` }
-            ], {
-                duration: duration * 1000,
-                iterations: Infinity
-            });
-        }
-    </script>
+  <div class="smoke-effect" id="smokeEffect"></div>
+  <div id="sparkLayer" class="spark-layer"></div>
+  <div class="flames" id="flames"></div>
+
+  <div id="mensaje">Cargando...</div>
+
+  <h1 id="titulo">
+  <span>RESTAURANTE</span>
+  <span id="nombre">"LETICIA"</span>
+</h1>
+
+  <ul id="menu-lista"></ul>
+<script src="MENU.js"></script>
+  
 </body>
 </html>
-
