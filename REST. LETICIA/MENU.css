@@ -53,9 +53,14 @@
     animation: glowingText 25s infinite;
     }
 
+    .bien{
+      color: green;
+      text-shadow: 0 0 10px rgba(0, 128, 0, 0.5) !important;
+    }
+
     @font-face {
     font-family: 'PRISTINA';
-    src: url('PRISTINA.TTF');
+    src: url('/-LETRAS/fonts/PRISTINA.TTF');
     }
 
     #nombre {
@@ -355,4 +360,3 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
