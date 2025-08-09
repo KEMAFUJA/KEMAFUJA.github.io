@@ -139,12 +139,12 @@
       40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
     }
 
-    @keyframes BLANCO {
+    @keyframes MANANA {
       0%,100% { background-color: hsl(65, 100%, 99%); }
       20%,80% { background-color: hsl(65, 100%, 99.5%); }
       40%,60% { background-color: hsl(65, 100%, 100%); }
     }
-    @keyframes MANANA {
+    @keyframes NEGRO {
       0%,100% { background-color: hsl(0, 0%, 0%); }
     }
 
