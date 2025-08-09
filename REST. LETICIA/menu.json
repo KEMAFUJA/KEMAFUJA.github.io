@@ -24,30 +24,27 @@
   ],
   "JUEVES": [
     { "nombre": "SOPA DE MANI", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
-    { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },    
-    { "nombre": "COSTILLITA DE CERDO AL HORNO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "PICANTE DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
+    { "nombre": "PICANTE DE POLLO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
+    { "nombre": "LOMO SALTEADO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "KEPERI", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "COSTILLITA DE CERDO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "ROLLITO DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
   ],
   "VIERNES": [
-    { "nombre": "SOPA DE TRIGO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
-    { "nombre": "MAJADITO BATIDO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },    
-    { "nombre": "GUISO DE PAPALISA", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "CHICHARRON DE POLLO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "LOMO SALTEADO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
+    { "nombre": "SOPA DE TRIGO", "color": "#e0ffe0", "negrita": true },
+    { "nombre": "MAJADITO BATIDO", "color": "#f5deb3", "negrita": false },
+    { "nombre": "AJI DE PANZA", "color": "#ffe4e1", "negrita": false },
+    { "nombre": "FALSO CONEJO", "color": "#ffdab9", "negrita": false },
+    { "nombre": "REVUELTO DE CARNE", "color": "#f0fff0", "negrita": false },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4b595", "negrita": false }
   ],
   "SABADO": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "PLATOS EXTRAS 😋", "color": "#ffb43285", "negrita": true },
-    { "nombre": "POLLERITA - 30BS", "color": "#ffe4b595", "negrita": false},
-    { "nombre": "POLLO A LA PARRILLA - 13BS", "color": "#ffe4b595", "negrita": false},
-    { "nombre": "POLLO A LA BROASTER - 13BS", "color": "#ffe4b595", "negrita": false}
+    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false }
   ],
   "DOMINGO": [
     { "nombre": "SOPA DE MANI", "color": "#ff6d05a0", "negrita": true },
@@ -60,5 +57,3 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
-
-
