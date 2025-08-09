@@ -20,7 +20,7 @@ fetch(`menu.json?t=${new Date().getTime()}`)
     if (comidas && comidas.length > 0) {
       comidas.forEach(comida => {
             const li = document.createElement("li");
-            li.textContent = `${ ""} ${comida.nombre}`;
+            li.innerHTML = `<span class="bien">✔</span> ${comida.nombre}`;
             li.style.backgroundColor = comida.color || "white";
             if (comida.negrita) {
               li.style.fontWeight = "bold";
