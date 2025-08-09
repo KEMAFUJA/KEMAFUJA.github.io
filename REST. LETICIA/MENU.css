@@ -10,7 +10,7 @@
       font-family: sans-serif;
       font-size: 2rem;
       text-align: center;
-      color: black;
+      color: hsl(0, 0%, 30%);
       position: relative;
       overflow: hidden;
       animation-duration: 30s;
@@ -360,5 +360,6 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 
