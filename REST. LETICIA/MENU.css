@@ -119,36 +119,11 @@
       40%,60% { background-color: hsl(51, 100%, 50%); }
     }
     
-
-    /*MAÑANA*/
-    @keyframes CELESTE {
-      0%,100% { background-color: hsl(205, 100%, 42%); }
-      20%,80% { background-color: hsl(205, 100%, 50%); }
-      40%,60% { background-color: hsl(205, 100%, 69%); }
-    }
-
-    @keyframes ROSADO {
-      0%,100% { background-color: hsl(300, 100%, 40%); }
-      20%,80% { background-color: hsl(300, 100%, 60%); }
-      40%,60% { background-color: hsl(300, 100%, 80%); }
-    }
-    
-    @keyframes CAFE {
-      0%,100% { background-color: hsl(35, 100%, 25%); }
-      20%,80% { background-color: hsla(35, 100%, 25%, 0.5); }
-      40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
-    }
-
     @keyframes MANANA {
-      0%,100% { background-color: hsl(65, 100%, 99%); }
-      20%,80% { background-color: hsl(65, 100%, 99.5%); }
-      40%,60% { background-color: hsl(65, 100%, 100%); }
+      0%,100% { background-color: hsl(135, 100%, 40%); }
+      20%,80% { background-color: hsla(135, 100%, 30%); }
+      40%,60% { background-color: hsl(135, 100%, 20%); }
     }
-    @keyframes NEGRO {
-      0%,100% { background-color: hsl(0, 0%, 0%); }
-    }
-
-    /*FIN*/
 
     @keyframes TARDE {
       0%,100% { background-color: hsl(205, 100%, 40%); }
@@ -360,6 +335,7 @@
 #mensaje, #menu-lista{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 
 
