@@ -16,11 +16,12 @@
     { "nombre": "POLLO A LA PLANCHA", "color": "#ffe4e195", "negrita": false}
   ],
   "MIERCOLES": [
-    { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
-    { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
-    { "nombre": "LASAÑA DE CARNE", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "POLLO AL HORNO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
+    { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "POLLO CON CHAMPIÑONES", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "CARNE CON PIMENTON", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "LASAÑA DE CARNE", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false}
   ],
   "JUEVES": [
     { "nombre": "SOPA DE MANI", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
@@ -58,6 +59,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
