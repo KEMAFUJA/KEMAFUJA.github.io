@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusPay Manager</title>
+    <style>
+        :root {
+            --primary: #6e48aa;
+            --secondary: #9d50bb;
+            --accent: #4776e6;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #4cc9f0;
+            --warning: #f8961e;
+            --danger: #f94144;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), transparent);
+            border-radius: 3px;
+        }
+        
+        .db-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+        
+        .client-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--success);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background: var(--success);
+            border-radius: 3px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.3);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .checkbox-label {
+            margin-left: 0.5rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .custom-checkbox:checked {
+            background: var(--success);
+            border-color: var(--success);
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .date-container {
+            display: none;
+            margin-top: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .client-list {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .list-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .list-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 200px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+        }
+        
+        .client-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+        
+        .client-table th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .client-table td {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .client-table tr:hover td {
+            background: rgba(255, 255, 255, 0.07);
+        }
+        
+        .client-table tr:first-child td {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background: rgba(76, 201, 240, 0.2);
+            color: var(--success);
+        }
+        
+        .badge-warning {
+            background: rgba(248, 150, 30, 0.2);
+            color: var(--warning);
+        }
+        
+        .action-btns {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .action-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .edit-btn:hover {
+            background: var(--success);
+        }
+        
+        .delete-btn:hover {
+            background: var(--danger);
+        }
+        
+        .reminder-btn:hover {
+            background: var(--warning);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem 0;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .empty-state img {
+            width: 100px;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+        
+        /* Efectos especiales */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(110, 72, 170, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(110, 72, 170, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(110, 72, 170, 0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">NexusPay</div>
+            <div class="db-actions">
+                <button class="btn btn-outline" id="export-btn">
+                    <span>Exportar JSON</span>
+                </button>
+                <button class="btn btn-outline" id="import-btn">
+                    <span>Importar JSON</span>
+                </button>
+            </div>
+        </header>
+        
+        <div class="main-grid">
+            <div class="client-form floating">
+                <h2 class="form-title">Nuevo Cliente</h2>
+                <form id="client-form">
+                    <div class="form-group">
+                        <label for="client-name">Nombre del Cliente</label>
+                        <input type="text" id="client-name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client-amount">Monto</label>
+                        <input type="number" id="client-amount" class="form-control" required>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="monthly-payment" class="custom-checkbox">
+                        <label for="monthly-payment" class="checkbox-label">Pago Mensual</label>
+                    </div>
+                    
+                    <div class="form-group date-container" id="date-container">
+                        <label for="start-date">Fecha de Inicio</label>
+                        <input type="date" id="start-date" class="form-control">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary pulse" style="width: 100%;">
+                        <span>Guardar Cliente</span>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="client-list">
+                <div class="list-header">
+                    <h2 class="list-title">Clientes Registrados</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Buscar...">
+                    </div>
+                </div>
+                
+                <table class="client-table">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Monto</th>
+                            <th>Tipo</th>
+                            <th>Fecha Inicio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clients-table-body">
+                        <!-- Los clientes se cargarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+                
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDEzQzE5LDE3LjQyIDE1LjQyLDIxIDExLDIxQzYuNTgsMjEgMywxNy40MiAzLDEzQzMsOC41OCA2LjU4LDUgMTEsNUMxNS40Miw1IDE5LDguNTggMTksMTNNMjAsMjBMMTYsMTZNNywxMUgxNU0xMSw3VjEzIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMCIvPjwvc3ZnPg==" alt="Empty">
+                    <h3>No hay clientes registrados</h3>
+                    <p>Agrega tu primer cliente usando el formulario</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Base de datos en JSON
+        let clientsDB = {
+            clients: [],
+            lastId: 0
+        };
+        
+        // Elementos del DOM
+        const DOM = {
+            form: document.getElementById('client-form'),
+            nameInput: document.getElementById('client-name'),
+            amountInput: document.getElementById('client-amount'),
+            monthlyCheckbox: document.getElementById('monthly-payment'),
+            dateContainer: document.getElementById('date-container'),
+            dateInput: document.getElementById('start-date'),
+            tableBody: document.getElementById('clients-table-body'),
+            emptyState: document.getElementById('empty-state'),
+            searchInput: document.getElementById('search-input'),
+            exportBtn: document.getElementById('export-btn'),
+            importBtn: document.getElementById('import-btn')
+        };
+        
+        // Inicializar la aplicación
+        function init() {
+            loadFromLocalStorage();
+            renderClients();
+            setupEventListeners();
+            setupDateInput();
+        }
+        
+        // Configurar listeners de eventos
+        function setupEventListeners() {
+            // Formulario
+            DOM.form.addEventListener('submit', handleFormSubmit);
+            
+            // Checkbox mensual
+            DOM.monthlyCheckbox.addEventListener('change', function() {
+                DOM.dateContainer.style.display = this.checked ? 'block' : 'none';
+                if (this.checked && !DOM.dateInput.value) {
+                    const today = new Date().toISOString().split('T')[0];
+                    DOM.dateInput.value = today;
+                }
+            });
+            
+            // Búsqueda
+            DOM.searchInput.addEventListener('input', function() {
+                renderClients(this.value.toLowerCase());
+            });
+            
+            // Exportar JSON
+            DOM.exportBtn.addEventListener('click', exportToJSON);
+            
+            // Importar JSON
+            DOM.importBtn.addEventListener('click', importFromJSON);
+        }
+        
+        // Configurar fecha por defecto
+        function setupDateInput() {
+            const today = new Date().toISOString().split('T')[0];
+            DOM.dateInput.value = today;
+            DOM.dateInput.min = today;
+        }
+        
+        // Manejar envío del formulario
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const clientData = {
+                id: ++clientsDB.lastId,
+                name: DOM.nameInput.value.trim(),
+                amount: parseFloat(DOM.amountInput.value),
+                isMonthly: DOM.monthlyCheckbox.checked,
+                startDate: DOM.monthlyCheckbox.checked ? DOM.dateInput.value : null,
+                createdAt: new Date().toISOString()
+            };
+            
+            if (!clientData.name || isNaN(clientData.amount)) {
+                alert('Por favor completa todos los campos requeridos');
+                return;
+            }
+            
+            clientsDB.clients.push(clientData);
+            saveToLocalStorage();
+            renderClients();
+            resetForm();
+            
+            // Efecto visual
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.classList.remove('pulse');
+            void submitBtn.offsetWidth; // Trigger reflow
+            submitBtn.classList.add('pulse');
+        }
+        
+        // Reiniciar formulario
+        function resetForm() {
+            DOM.form.reset();
+            DOM.dateContainer.style.display = 'none';
+            DOM.dateInput.value = new Date().toISOString().split('T')[0];
+        }
+        
+        // Renderizar clientes en la tabla
+        function renderClients(filter = '') {
+            DOM.tableBody.innerHTML = '';
+            
+            const filteredClients = filter 
+                ? clientsDB.clients.filter(client => 
+                    client.name.toLowerCase().includes(filter))
+                : clientsDB.clients;
+            
+            if (filteredClients.length === 0) {
+                DOM.emptyState.style.display = 'block';
+                return;
+            }
+            
+            DOM.emptyState.style.display = 'none';
+            
+            filteredClients.forEach(client => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${client.name}</td>
+                    <td>$${client.amount.toFixed(2)}</td>
+                    <td>
+                        <span class="badge ${client.isMonthly ? 'badge-success' : 'badge-warning'}">
+                            ${client.isMonthly ? 'Mensual' : 'Único'}
+                        </span>
+                    </td>
+                    <td>${client.isMonthly ? formatDate(client.startDate) : 'N/A'}</td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="action-btn edit-btn" data-id="${client.id}">✏️</button>
+                            <button class="action-btn delete-btn" data-id="${client.id}">🗑️</button>
+                            ${client.isMonthly ? `<button class="action-btn reminder-btn" data-id="${client.id}">⏰</button>` : ''}
+                        </div>
+                    </td>
+                `;
+                
+                DOM.tableBody.appendChild(row);
+            });
+            
+            // Agregar event listeners a los botones de acción
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', () => editClient(parseInt(btn.dataset.id)));
+            });
+            
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', () => deleteClient(parseInt(btn.dataset.id)));
+            });
+            
+            document.querySelectorAll('.reminder-btn').forEach(btn => {
+                btn.addEventListener('click', () => setReminder(parseInt(btn.dataset.id)));
+            });
+        }
+        
+        // Formatear fecha
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('es-ES', options);
+        }
+        
+        // Editar cliente
+        function editClient(id) {
+            const client = clientsDB.clients.find(c => c.id === id);
+            if (!client) return;
+            
+            DOM.nameInput.value = client.name;
+            DOM.amountInput.value = client.amount;
+            DOM.monthlyCheckbox.checked = client.isMonthly;
+            
+            if (client.isMonthly) {
+                DOM.dateContainer.style.display = 'block';
+                DOM.dateInput.value = client.startDate;
+            } else {
+                DOM.dateContainer.style.display = 'none';
+            }
+            
+            // Scroll al formulario
+            document.querySelector('.client-form').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // Enfocar el nombre
+            DOM.nameInput.focus();
+            
+            // Opcional: Eliminar el cliente editado (o podrías implementar lógica de actualización)
+            // deleteClient(id);
+        }
+        
+        // Eliminar cliente
+        function deleteClient(id) {
+            if (!confirm('¿Estás seguro de eliminar este cliente?')) return;
+            
+            clientsDB.clients = clientsDB.clients.filter(c => c.id !== id);
+            saveToLocalStorage();
+            renderClients();
+        }
+        
+        // Establecer recordatorio (simulado)
+        function setReminder(id) {
+            const client = clientsDB.clients.find(c => c.id === id);
+            if (!client) return;
+            
+            alert(`Recordatorio configurado para ${client.name} ($${client.amount.toFixed(2)} mensuales)\nPróximo: ${getNextPaymentDate(client.startDate)}`);
+        }
+        
+        // Calcular próxima fecha de pago
+        function getNextPaymentDate(startDate) {
+            const start = new Date(startDate);
+            const today = new Date();
+            
+            let nextDate = new Date(start);
+            while (nextDate <= today) {
+                nextDate.setMonth(nextDate.getMonth() + 1);
+            }
+            
+            return formatDate(nextDate.toISOString().split('T')[0]);
+        }
+        
+        // Guardar en localStorage
+        function saveToLocalStorage() {
+            localStorage.setItem('nexusPayDB', JSON.stringify(clientsDB));
+        }
+        
+        // Cargar desde localStorage
+        function loadFromLocalStorage() {
+            const savedDB = localStorage.getItem('nexusPayDB');
+            if (savedDB) {
+                clientsDB = JSON.parse(savedDB);
+            }
+        }
+        
+        // Exportar a JSON
+        function exportToJSON() {
+            const dataStr = JSON.stringify(clientsDB, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportName = `nexuspay_clientes_${new Date().toISOString().split('T')[0]}.json`;
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportName);
+            linkElement.click();
+        }
+        
+        // Importar desde JSON
+        function importFromJSON() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = event => {
+                    try {
+                        const importedData = JSON.parse(event.target.result);
+                        
+                        if (!importedData.clients || !Array.isArray(importedData.clients)) {
+                            throw new Error('Formato de archivo inválido');
+                        }
+                        
+                        if (confirm(`¿Importar ${importedData.clients.length} clientes? Esto reemplazará tus datos actuales.`)) {
+                            clientsDB = importedData;
+                            clientsDB.lastId = Math.max(...clientsDB.clients.map(c => c.id), 0);
+                            saveToLocalStorage();
+                            renderClients();
+                            alert('Datos importados correctamente');
+                        }
+                    } catch (error) {
+                        alert('Error al importar: ' + error.message);
+                    }
+                };
+                
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        }
+        
+        // Iniciar la aplicación
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
