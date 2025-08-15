@@ -15,6 +15,13 @@
     { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false}
   ],
+  "COLORES": [
+    { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
+    { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
+    { "nombre": "LASAÑA DE CARNE", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "POLLO AL HORNO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
+  ],
   "MIERCOLES": [
     { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
     { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
@@ -31,12 +38,12 @@
     { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false}
   ],
   "VIERNES": [
-    { "nombre": "SOPA DE VERDURA", "color": "#e0ffe0", "negrita": true },
-    { "nombre": "MAJADITO TOSTAO", "color": "#f5deb3", "negrita": false },
-    { "nombre": "GUISO DE PAPALISA", "color": "#ffe4e1", "negrita": false },
-    { "nombre": "POLLO AL JUGO", "color": "#ffdab9", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#f0fff0", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4b595", "negrita": false }
+    { "nombre": "SOPA DE VERDURAS", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "MAJADITO TOSTADO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "GUISO DE PAPALISA", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "REVUELTO DE CARNE", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false }
   ],
   "SABADO": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
@@ -56,4 +63,3 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
-
