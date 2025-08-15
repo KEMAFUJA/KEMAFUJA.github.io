@@ -30,13 +30,15 @@
 
     #titulo {
       font-size: 3.5rem;
-    display: inline; /* o inline-block */
-    background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
-    -webkit-background-clip: text; /* Compatibilidad con navegadores WebKit (Chrome, Safari) */
-    background-clip: text; /* Recorta el fondo al área del texto */
-    color: transparent; /* Hace el texto transparente para mostrar el degradado de fondo */
-    background-size: 100% 500%;     
-    animation: animacion-degradado 50s infinite alternate; 
+      display: flex;          /* Cambiado a flex */
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center;    /* Centra horizontalmente (opcional) */
+      background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 100% 500%;
+      animation: animacion-degradado 50s infinite alternate;
     }
 
     @keyframes animacion-degradado {
@@ -55,12 +57,12 @@
 
     .bien{
       color: green;
-      text-shadow: 0 0 10px rgba(0, 128, 0, 0.5) !important;
+      text-shadow: 0 5px 5px hsla(120, 100%, 25%, 0.5) !important;
     }
 
     @font-face {
     font-family: 'PRISTINA';
-    src: url('PRISTINA.TTF');
+    src: url('/-LETRAS/fonts/PRISTINA.TTF');
     }
 
     #nombre {
@@ -110,6 +112,7 @@
       padding: 0.5em 1em;
       width: 200px;
       border-radius: 5px;
+      text-shadow: 0 5px 5px hsla(0, 0%, 0%, 0.5);
     }
 
     /* Fondos por tramo del día */
@@ -331,15 +334,3 @@
   padding: 2px 5px;
   
 }
-
-#mensaje, #menu-lista{
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-
-
-
-
-
-
-
