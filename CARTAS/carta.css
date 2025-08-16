@@ -1,0 +1,520 @@
+        /* --- ESTILOS GENERALES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Fondo con gradiente oscuro para contraste */
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Raleway', sans-serif;
+            min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+            display: flex;
+            flex-direction: column; /* Elementos en columna */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: auto; /* Oculta cualquier desbordamiento */
+        }
+
+        /* Fondo decorativo con formas radiales */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Crea un efecto de manchas de color en el fondo */
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 95, 109, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 195, 160, 0.1) 0%, transparent 20%);
+            z-index: -1; /* Coloca detrás del contenido */
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px; /* Ancho máximo para pantallas grandes */
+            gap: 40px; /* Espacio entre elementos */
+        }
+
+        /* --- TÍTULO PRINCIPAL --- */
+        .title {
+            color: #fff;
+            font-family: 'Playfair Display', serif; /* Fuente elegante */
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para mejor legibilidad */
+            opacity: 0.9;
+        } 
+
+        .title span {
+            color: #ff5f6d; /* Color de acento */
+            font-style: italic;
+        }
+
+        /* --- BOTÓN DE REVELACIÓN --- */
+        .btn-revelar {
+            padding: 18px 50px;
+            /* Gradiente atractivo para el botón */
+            background: linear-gradient(45deg, #ff5f6d, #ffc3a0);
+            color: white;
+            border: none;
+            border-radius: 50px; /* Bordes completamente redondeados */
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            cursor: pointer;
+            /* Sombra externa e interna para efecto de profundidad */
+            box-shadow: 
+                0 5px 20px rgba(210, 77, 87, 0.4),
+                0 0 20px rgba(255, 95, 109, 0.3) inset;
+            /* Transición suave con curva de aceleración personalizada */
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden; /* Oculta el exceso del pseudo-elemento */
+            z-index: 10; /* Asegura que esté sobre otros elementos */
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espacio entre icono y texto */
+        }
+
+        /* Efecto hover para el botón */
+        .btn-revelar:hover {
+            transform: translateY(-5px) scale(1.05); /* Levanta y agranda */
+            box-shadow: 
+                0 10px 30px rgba(210, 77, 87, 0.6),
+                0 0 30px rgba(255, 195, 160, 0.4) inset;
+        }
+
+        /* Efecto de clic */
+        .btn-revelar:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Efecto de brillo al pasar el mouse */
+        .btn-revelar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.8s;
+        }
+
+        .btn-revelar:hover::before {
+            left: 100%; /* Mueve el brillo de izquierda a derecha */
+        }
+
+        /* --- CONTENEDOR DE LA CARTA (INICIALMENTE OCULTO) --- */
+        .carta-container {
+            width: 100%;
+            perspective: 1200px; /* Para efectos 3D */
+            display: none; /* Oculto inicialmente */
+            /*display:block; /* BORRAR */
+            opacity: 0; /*ERA 0*/
+            transform: translateY(50px); /* Posición inicial para animación */
+        }
+
+        /* Clase que se añade al hacer clic para mostrar la carta */
+        .carta-container.mostrar {
+            display: block;
+            /* Animación de aparición con curva personalizada */
+            animation: cartaAparece 1.2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Definición de la animación de aparición */
+        @keyframes cartaAparece {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) rotateX(20deg); /* Inicia abajo y rotado */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0); /* Termina en posición normal */
+            }
+        }
+
+        /* --- ESTILO DE LA CARTA --- */
+        .carta {
+            /* Fondo con gradiente sutil */
+            background: linear-gradient(to bottom right, hsl(0, 0%, 100%, 0.8), hsl(12, 56%, 95%, 0.8));
+            padding: 50px;
+            border-radius: 15px;
+            /* Sombra sofisticada con múltiples capas */
+            box-shadow: 
+                0 25px 60px rgba(210, 77, 87, 0.25),
+                0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d; /* Para efectos 3D */
+            transition: transform 0.6s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.6); /* Borde sutil */
+        }
+
+        /* Efecto hover sobre la carta */
+        .carta:hover {
+            transform: translateY(10px) rotateX(2deg); /* Levanta y rota ligeramente */
+            box-shadow: 
+                0 35px 70px rgba(210, 77, 87, 0.35),
+                0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Barra decorativa en la parte superior */
+        .carta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #ff5f6d, #ffc3a0);
+        }
+
+        /* Icono de sobre decorativo */
+        .carta::after {
+            content: "✉";
+            position: absolute;
+            top: -25px;
+            right: 20px;
+            font-size: 50px;
+            color: #e31c79;
+            opacity: 0.15; /* Muy transparente */
+            transform: rotate(15deg); /* Rotado para efecto casual */
+        }
+
+        /* --- ENCABEZADO DE LA CARTA --- */
+        @font-face {
+            font-family: 'MrsSaintDelafield-Regular';
+            src: url('Inspiration-Regular.ttf');
+        }
+        .header {
+            text-align: center;
+            font-family: 'MrsSaintDelafield-Regular';
+            font-size: 3rem;            
+            color: #d24d57;
+            text-shadow:0 0 5px hsl(355, 50%, 40%);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            opacity: 0; /* Inicialmente invisible para animación */
+            animation: fadeIn 0.25s forwards 0.25s; /* Animación con retraso */
+        }
+
+        /* Línea decorativa bajo el título */
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            width: 40%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d24d57, transparent);
+        }
+
+        /* --- CONTENIDO DE LA CARTA --- */
+        .contenido {
+            font-size: 1.2rem;
+            line-height: 1.9; /* Espaciado entre líneas generoso */
+            color: hsl(0, 0%, 15%);
+            text-align: justify; /* Texto justificado */
+            position: relative;
+            z-index: 2; /* Asegura que esté sobre elementos decorativos */
+        }
+
+        .contenido .pa {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px; /* Espacio para la floritura */
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px); /* Posición inicial para animación */
+            /*animation: parrafoAparece 0.8s forwards; /* Animación de aparición */
+        }
+
+        .contenido p {
+            position:relative;
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px); /* Posición inicial para animación */
+            animation: parrafoAparece 1s forwards; /* Animación de aparición */
+            word-spacing: -0.5px; /* o un valor específico como -1px */
+            letter-spacing: -0.5px; /* también puedes ajustar esto si es necesario */
+            animation-delay: calc(1s + (var(--n) - 1) * 0.5s);
+        }
+
+        /* Floritura decorativa al inicio de cada párrafo */
+        .contenido .pa::before {
+            content: "❧"; /* Carácter decorativo */
+            position: absolute;
+            left: -10px;
+            top: -15px;
+            color: rgba(210, 77, 87, 0.25);
+            font-size: 2rem;
+        }
+
+        /* Animación de aparición de párrafos */
+        @keyframes parrafoAparece {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        } 
+
+        /* --- FIRMA --- */
+        @font-face {
+            font-family: 'ComforterBrush-Regular';
+            src: url('ComforterBrush-Regular.ttf');
+        }
+        @font-face {
+        font-family: 'Nosifer-Regular';
+        src: url('Nosifer-Regular.ttf');
+        }
+        @font-face {
+        font-family: 'RubikPuddles-Regular';
+        src: url('RubikPuddles-Regular.ttf');
+        }
+        @font-face {
+        font-family: 'LoveLight-Regular';
+        src: url('LoveLight-Regular.ttf');
+        }
+    
+        span {
+            font-family: 'ComforterBrush-Regular';
+            font-size: 2rem;
+        }
+        
+        .contenedor-firma {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Alinea a la derecha */
+        position: relative;
+        }
+        
+        .firma {
+            text-align: right;
+            font-family: 'Playfair Display', serif;                
+            font-style: italic;
+            font-size: 1.6rem;
+            color: #d24d57;
+            margin-bottom: 10px;
+            padding-bottom: 0px;
+            position: relative;
+            opacity: 1;
+            /*animation: fadeIn 10s forwards 20s; /* Animación con retraso */
+        }
+
+        .firmado {
+            text-align: right;               
+            font-style: italic;
+            font-size: 1.6rem;
+            color: rgba(0, 0, 0);
+            text-shadow: 0 0 5px hsla(0, 100%, 50%, 0.25);
+            margin-top: 2.5px;
+            
+            position: relative;
+            opacity: 1;
+            /*animation: fadeIn 15s forwards 25s; /* Animación con retraso */
+        }
+
+        /* Animación de aparición simple */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Línea decorativa sobre la firma */
+        .firma::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            height: 2px;
+            background: linear-gradient(to left, #d24d57, transparent);
+        }
+
+        /* --- ELEMENTOS ESPECIALES --- */
+        .highlight {
+            color: #d24d57;
+            font-weight: 500;
+            position: relative;
+            font-style: italic;
+        }
+
+        /* Corazón con animación de latido */
+        .corazon {
+            color: #e31c79;
+            font-size: 1.5rem;
+            vertical-align: middle;
+            display: inline-block;
+            animation: pulse 2s infinite; /* Animación infinita */
+        }
+
+        /* Animación de latido */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); } /* Agranda en el punto medio */
+            100% { transform: scale(1); }
+        }
+
+        /* --- SELLO DECORATIVO --- */
+        .sello {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 90px;
+            height: 90px;
+            /* Efecto de relieve */
+            background: radial-gradient(circle, #f8f8f8 0%, #e8e8e8 100%);
+            border-radius: 50%; /* Forma circular */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #e31c79; /* Borde punteado */
+            opacity: 0; /* Inicialmente invisible */
+            transform: rotate(-15deg); /* Rotado para efecto casual */
+            animation: selloAparece 1s forwards 2.5s; /* Animación con retraso */
+        }
+
+        /* Animación de aparición del sello */
+        @keyframes selloAparece {
+            to {
+                opacity: 0.25;
+            }
+        }
+
+        .sello::before {
+            content: "AMOR";
+            font-family: 'Playfair Display', serif;
+            color: #e31c79;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        /* --- CORAZONES FLOTANTES --- */
+        .corazones-flotantes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* No interfiere con clics */
+            z-index: -1; /* Detrás del contenido */
+        }
+
+        .corazon-flotante {
+            position: absolute;
+            color: rgba(255, 95, 109, 0.7);
+            font-size: 1.8rem;
+            opacity: 0; /* Inicialmente invisible */
+            animation: flotar 10s linear infinite; /* Animación infinita */
+        }
+
+        /* Animación de flotación */
+        @keyframes flotar {
+            0% {
+                transform: translateY(100vh) rotate(0deg); /* Comienza abajo */
+                opacity: 0;
+            }
+            10% {
+                opacity: 1; /* Aparece rápidamente */
+            }
+            90% {
+                opacity: 0.7; /* Comienza a desaparecer */
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg); /* Termina arriba rotando */
+                opacity: 0;
+            }
+        }
+
+        /* --- DISEÑO RESPONSIVE --- */
+        @media (max-width: 768px) {
+            /* Ajustes para tablets */
+            .title {
+                font-size: 2rem;
+            }
+            
+            .btn-revelar {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .carta {
+                padding: 35px 25px;
+            }
+            
+            .contenido p {
+                padding-left: 20px;
+            }
+
+            .header {
+                font-size: 3rem;
+            }
+            
+            .contenido {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .firma {
+                font-size: 1rem;
+            }
+            .firmado{
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .sello {
+                width: 70px;
+                height: 70px;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ajustes para móviles */
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .btn-revelar {
+                padding: 13px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .carta {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                font-size: 2.25rem;
+                margin-bottom: 20px;
+            }
+            
+            .contenido p {
+                padding-left: 20px;
+            }
+            
+            .contenido p::before {
+                left: -8px;
+            }
+            
+            .firma {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+            
+            /*.sello {
+                display: none; /* Oculta el sello en móviles }*/
+        }
