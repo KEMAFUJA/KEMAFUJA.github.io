@@ -32,13 +32,13 @@ h1 {
   display: flex;  /* Cambiado a flex */
   flex-direction: column; /* Apila los elementos verticalmente */
   align-items: center;/* Centra horizontalmente (opcional) */
-  background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
+  background: linear-gradient(to top, hsl(0, 100%, 30%), hsl(40, 100%, 30%), hsl(60, 100%, 30%));
   -webkit-background-clip: text;
   background-clip: text;
   color: hsla(0, 0%, 0%, 0.05);
   background-size: 100% 500%;
-  animation: animacion-degradado 50s infinite alternate;
-  animation: glowingText 25s infinite;
+  animation: animacion-degradado 10s infinite alternate;
+  animation: glowingText 10s infinite;
 }
 
 @keyframes animacion-degradado {
@@ -53,36 +53,36 @@ background-position: 0% 100%; /* Fin: degradado alineado a la derecha (último c
 @keyframes glowingText {
   0%, 100% {
 text-shadow:
-  0 0 2px hsla(0, 100%, 50%, 0.35),
-  0 0 3.5px hsl(16, 100%, 50%, 0.35),
-  0 0 5px hsl(39, 100%, 50%, 0.35),
-  0 0 6.5px hsl(9, 100%, 50%, 0.35),
-  0 0 8px hsl(0, 100%, 50%, 0.5),
-  0 10px 7.5px hsla(0, 0%, 0%, 0.25);
+  0 2px 5px hsla(0, 100%, 50%, 0.25),
+  0 3px 6.5px hsl(16, 100%, 50%, 0.25),
+  0 4px 8px hsl(39, 100%, 50%, 0.25),
+  0 -3px 9.5px hsl(9, 100%, 50%, 0.25),
+  0 -2px 11px hsl(0, 100%, 50%, 0.25),
+  0 10px 7.5px hsla(0, 0%, 0%, 0.125);
   }
   25%, 75% {
 text-shadow:
-  0 2px 2px hsla(0, 100%, 50%, 0.35),
-  0 3px 3.5px hsl(16, 100%, 50%, 0.35),
-  0 4px 5px hsl(39, 100%, 50%, 0.35),
-  0 -3px 6.5px hsl(9, 100%, 50%, 0.35),
-  0 -2px 8px hsl(0, 100%, 50%, 0.5),
-  0 10px 7.5px hsla(0, 0%, 0%, 0.25);
+  0 -2px 5px hsla(0, 100%, 50%, 0.25),
+  0 -3px 6.5px hsl(16, 100%, 50%, 0.25),
+  0 4px 8px hsl(39, 100%, 50%, 0.25),
+  0 3px 9.5px hsl(9, 100%, 50%, 0.25),
+  0 2px 11px hsl(0, 100%, 50%, 0.25),
+  0 0px 7.5px hsla(0, 0%, 0%, 0.125);
 }
   50% {
 text-shadow:
- 0 0 2px hsla(0, 100%, 50%, 0.35),
-  0 0 3.5px hsl(16, 100%, 50%, 0.35),
-  0 0 5px hsl(39, 100%, 50%, 0.35),
-  0 0 6.5px hsl(9, 100%, 50%, 0.35),
-  0 0 8px hsl(0, 100%, 50%, 0.5),
-  0 10px 7.5px hsla(0, 0%, 0%, 0.25);
+  0 2px 5px hsla(0, 100%, 50%, 0.25),
+  0 3px 6.5px hsl(16, 100%, 50%, 0.25),
+  0 4px 8px hsl(39, 100%, 50%, 0.25),
+  0 -3px 9.5px hsl(9, 100%, 50%, 0.25),
+  0 -2px 11px hsl(0, 100%, 50%, 0.25),
+  0 -10px 7.5px hsla(0, 0%, 0%, 0.125);
   }
 }
 
 @font-face {
   font-family: 'PRISTINA';
-  src: url('/-LETRAS/fonts/PRISTINA.TTF');
+  src: url('PRISTINA.TTF');
 }
 
 #nombre {
