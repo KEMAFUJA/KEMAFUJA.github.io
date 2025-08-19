@@ -1,8 +1,11 @@
 
-const dias = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
+const dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 const hoy = new Date();
-const diaNombre = dias[hoy.getDay()];
-
+let diaNombre = dias[hoy.getDay()];
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const diaNumero = hoy.getDate();
+const mesNombre = meses[hoy.getMonth()];
+const completo = diaNombre + " " + diaNumero + " de " + mesNombre;  
 fetch(`menu.json?t=${new Date().getTime()}`)
   .then(res => res.json())
   .then(data => {
@@ -14,8 +17,13 @@ fetch(`menu.json?t=${new Date().getTime()}`)
     
     // Crear elemento para el título del día con precio
     const tituloDia = document.createElement("div");
-    tituloDia.innerHTML = `🍽️ Menú "${diaNombre}" - Completo: <span class="precio">${diaNombre === "DOMINGO" ? "20" : "15"}Bs</span>`;
+    tituloDia.innerHTML = `🍽️ Menú "${completo}"`;
+    tituloDia.style.marginLeft='-7.5px';
     lista.appendChild(tituloDia);
+    const precio = document.createElement("div");
+    precio.innerHTML = `Completo: <span class="precio">${diaNombre === "DOMINGO" ? "20" : "15"}Bs</span>`;
+    precio.style.marginLeft='5px';
+    lista.appendChild(precio);
     
     if (comidas && comidas.length > 0) {
       comidas.forEach(comida => {
@@ -42,48 +50,48 @@ fetch(`menu.json?t=${new Date().getTime()}`)
       return num < 10 ? "0" + num : num;
     }
 
-    function actualizarFondoAnimado() {
-      const ahora = new Date();
-      const diasSemana = ["DOMINGO", "LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
-    const dia = diasSemana[ahora.getDay()];
-      const h = ahora.getHours();
-      const m = ahora.getMinutes();
-      const s = ahora.getSeconds();
+  function actualizarFondoAnimado() {
+  
+  const h = hoy.getHours();
+  const m = hoy.getMinutes();
+  const s = hoy.getSeconds();
 
-      const mensaje = document.getElementById("mensaje");
-      const body = document.body;
-      body.style.animationName = "";
+  const mensaje = document.getElementById("mensaje");
+  const body = document.body;
+  body.style.animationName = "";
 
-      let tramo = "";
-      if (h >= 0 && h < 6) {
-        tramo = "MADRUGADA";
-        mensaje.textContent = "🌃 Madrugada: ";
-      } else if (h >= 6 && h < 12) {
-        /*if(dia==="VIERNES"){
-        tramo = "MANANA3";
-        }else{*/
-        tramo = "MANANA";//}
-        mensaje.textContent = "🌞 Mañana: ";
-      } else if (h >= 12 && h < 18) {
-        tramo = "TARDE";
-        mensaje.textContent = "🏖️ Tarde: ";
-      } else if (h >= 18 && h <= 23) {
-        tramo = "NOCHE";
-        mensaje.textContent = "🌙 Noche: ";
-      }
+  let tramo = "";
+  let emoji = "";
+  let periodo = "";
+  
+  if (h >= 0 && h < 6) {
+    tramo = "MADRUGADA";
+    emoji = "🌃";
+    periodo = "Madrugada";
+  } else if (h >= 6 && h < 12) {
+    tramo = "MANANA";
+    emoji = "🌞";
+    periodo = "Mañana";
+  } else if (h >= 12 && h < 18) {
+    tramo = "TARDE";
+    emoji = "🏖️";
+    periodo = "Tarde";
+  } else if (h >= 18 && h <= 23) {
+    tramo = "NOCHE";
+    emoji = "🌙";
+    periodo = "Noche";
+  }
 
-      body.style.animationName = tramo;
-      mensaje.textContent += `\nSon las ${dosDigitos(h)}:${dosDigitos(m)}:${dosDigitos(s)}`;
-    }
+  body.style.animationName = tramo;
+  mensaje.textContent = `${emoji} ${periodo}:\na horas ${dosDigitos(h)}:${dosDigitos(m)}:${dosDigitos(s)}`;
+}
 
     actualizarFondoAnimado();
     setInterval(actualizarFondoAnimado, 1000);
 
 
-
-
-    const flameContainer = document.getElementById("flames");
-    for (let i = 0; i < 80; i++) {
+const flameContainer = document.getElementById("flames");
+    for (let i = 0; i < 150; i++) {
       const flame = document.createElement("div");
       flame.classList.add("flame");
       flame.style.left = `${Math.random() * 100}%`;
@@ -92,8 +100,6 @@ fetch(`menu.json?t=${new Date().getTime()}`)
       flame.style.height = `${10 + Math.random() * 10}px`;
       flameContainer.appendChild(flame);
     }
-
-
 
     
     const smokeEffect = document.getElementById('smokeEffect');
