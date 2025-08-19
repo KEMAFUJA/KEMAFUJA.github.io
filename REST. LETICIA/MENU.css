@@ -82,7 +82,7 @@ text-shadow:
 
 @font-face {
   font-family: 'PRISTINA';
-  src: url('/-LETRAS/fonts/PRISTINA.TTF');
+  src: url('PRISTINA.TTF');
 }
 
 #nombre {
@@ -355,3 +355,4 @@ li {
     font-size: 1.9rem;
   }
 }
+
