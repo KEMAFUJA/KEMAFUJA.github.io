@@ -13,7 +13,14 @@ body {
   overflow: auto;
   animation-duration: 30s;
   animation-iteration-count: infinite;
-  transition: background-color 1s;
+  background: linear-gradient(135deg, 
+    #f8e9e9 0%, 
+    #f2d1d1 25%, 
+    #eec9c9 50%, 
+    #e9baba 75%, 
+    #e4acac 100%
+);
+  /*transition: background-color 1s;*/
 }
 
 #mensaje {
@@ -324,4 +331,5 @@ li {
     font-size: 1.9rem;
   }
 }
+
 
