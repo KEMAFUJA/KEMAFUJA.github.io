@@ -41,9 +41,9 @@
   "Viernes": [
     { "nombre": "SOPA DE TRIGO", "color": "#f0f8ff95", "negrita": true },
     { "nombre": "MAJADITO BATIDO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "AJI DE PANZA", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "GUISO DE PAPALISA", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "CARNE CON PIMENTON", "color": "#ffe4e195", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
     { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4e195", "negrita": false }
   ],
   "Sabado": [
@@ -64,4 +64,5 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
