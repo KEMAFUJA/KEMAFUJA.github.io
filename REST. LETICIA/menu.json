@@ -1,19 +1,19 @@
 {
   "Lunes": [
     { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "CHULETA  DE RES", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "COSTILLA AL JUGO", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "PIQUE MACHO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "CHULETA  DE RES", "color": "#ffffff40", "negrita": false },
+    { "nombre": "COSTILLA AL JUGO", "color": "#ffffff40", "negrita": false}
   ],
   "Martes": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "TALLARIN CON CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "SALPICON DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "AJI DE PANZA", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "TALLARIN CON CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "POLLO AL HORNO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SALPICON DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "AJI DE PANZA", "color": "#ffffff40", "negrita": false}
   ],
   "COLORES": [
     { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
@@ -24,34 +24,35 @@
   ],
   "Miercoles": [
     { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL JUGO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "LASAÑA DE CARNE", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO A LA PLANCHA", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "POLLO AL JUGO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "LASAÑA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "POLLO A LA PLANCHA", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffffff40", "negrita": false}
   ],
   "Jueves": [
     { "nombre": "SOPA DE MANI", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "PICANTE DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "CHULETA  DE CERDO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "FALSO CONEJO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "LOMO SALTEADO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false}
+    { "nombre": "PICANTE DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "CHULETA  DE CERDO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SAICE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "LOMO SALTEADO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANEZA DE POLLO", "color": "#ffffff40", "negrita": false}
   ],
   "Viernes": [
-    { "nombre": "SOPA DE TRIGO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "MAJADITO BATIDO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "GUISO DE PAPALISA", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "CARNE CON PIMENTON", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "CHICHARRON DE POLLO", "color": "#ffe4e195", "negrita": false }
+    { "nombre": "SOPA DE TRIGO", "color": "#ffffff80", "negrita": true },
+    { "nombre": "MAJADITO BATIDO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "AJI DE PANZA", "color": "#ffffff40", "negrita": false },
+    { "nombre": "FALSO CONEJO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false }
   ],
   "Sabado": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "ASADITO COLORADO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "PIQUE MACHO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "POLLO AL HORNO", "color": "#ffe4e195", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffe4e195", "negrita": false }
+    { "nombre": "ASADITO COLORADO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "PIQUE MACHO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "POLLO AL HORNO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "FEIJOADA", "color": "#ffffff40", "negrita": false },
+    { "nombre": "POLLO A LA PLANCHA", "color": "#ffffff40", "negrita": false }
   ],
   "Domingo": [
     { "nombre": "SOPA DE MANI", "color": "#ff6d05a0", "negrita": true },
@@ -64,5 +65,3 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
-
-
