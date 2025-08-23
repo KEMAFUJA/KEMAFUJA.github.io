@@ -13,14 +13,26 @@ body {
   overflow: auto;
   animation-duration: 30s;
   animation-iteration-count: infinite;
-  background: linear-gradient(135deg, 
-    #f8e9e9 0%, 
-    #f2d1d1 25%, 
-    #eec9c9 50%, 
-    #e9baba 75%, 
-    #e4acac 100%
+ background: linear-gradient(135deg, 
+    hsl(280, 50%, 95%) 0%, 
+    hsl(280, 50%, 85%) 25%, 
+    hsl(280, 50%, 80%) 50%, 
+    hsl(280, 50%, 75%) 75%, 
+    hsl(280, 50%, 70%) 100%
 );
   /*transition: background-color 1s;*/
+}
+
+.menu-card {
+  background: hsla(0, 0%, 100%, 0.125);
+  border-radius: 5%;
+  padding: 10px 20px;  
+  max-width: 400px;  
+  text-align: center;
+  display: flex;            /* convierte en flexbox */
+  flex-direction: column;   /* para que los hijos se apilen verticalmente */
+  align-items: center;      /* centra horizontal */
+  justify-content: center;  /* centra vertical (si quieres) */
 }
 
 #mensaje {
@@ -30,12 +42,12 @@ body {
 }
 
 h1 {
-  margin: 0.5rem 0;
-  color: hsla(0, 0%, 0%, 0.5);
+  margin: 1rem 0 -1rem 0;
+  color: hsla(0, 100%, 50%, 0.5);
 }
 
 #titulo {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   display: flex;  /* Cambiado a flex */
   flex-direction: column; /* Apila los elementos verticalmente */
   align-items: center;/* Centra horizontalmente (opcional) */
@@ -94,10 +106,13 @@ text-shadow:
 
 #nombre {
   font-family: 'PRISTINA';
-  font-size: 5rem;
+  font-size: 6rem;
   margin-top: -10px;
 }
 
+#deli{
+  font-size: 15px; color: hsla(0, 0%, 20%, 0.125); margin-bottom: -2px; opacity: 0.95;
+}
 .precio {
   background: linear-gradient(to top, #ff0000, #ffa500, #ffff00);
   -webkit-background-clip: text;
@@ -141,11 +156,42 @@ li {
   40%,60% { background-color: hsl(51, 100%, 70%); }
 }
 
+
+/*MAÑANA*/
+@keyframes CELESTE {
+  0%,100% { background-color: hsl(205, 100%, 70%); }
+  20%,80% { background-color: hsl(205, 100%, 80%); }
+  40%,60% { background-color: hsl(205, 100%, 90%); }
+}
+
+@keyframes NOSIRVE {
+  0%,100% { background-color: hsl(300, 100%, 65%); }
+  20%,80% { background-color: hsl(300, 100%, 80%); }
+  40%,60% { background-color: hsl(300, 100%, 90%); }
+}
+
+@keyframes CAFE {
+  0%,100% { background-color: hsl(35, 100%, 25%); }
+  20%,80% { background-color: hsla(35, 100%, 25%, 0.5); }
+  40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
+}
+
 @keyframes MANANA {
   0%,100% { background-color: hsl(135, 100%, 80%); }
   20%,80% { background-color: hsl(135, 100%, 70%); }
   40%,60% { background-color: hsl(135, 100%, 50%); }
 }
+
+@keyframes BLANCO {
+  0%,100% { background-color: hsl(65, 100%, 99%); }
+  20%,80% { background-color: hsl(65, 100%, 99.5%); }
+  40%,60% { background-color: hsl(65, 100%, 100%); }
+}
+@keyframes NEGRO {
+  0%,100% { background-color: hsl(0, 0%, 0%); }
+}
+
+/*FIN*/
 
 @keyframes TARDE2 {
   0%,100% { background-color: hsl(205, 100%, 40%); }
@@ -323,13 +369,41 @@ li {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   body {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   #titulo{
-    font-size: 1.9rem;
+    font-size: 1.25rem;
   }
+  #nombre{
+    font-size: 4rem;
+  }
+  #deli{
+    font-size: 0.65rem;
+  }
+
+
+.menu-card {
+  padding: 10px 20px;  
+  max-width: 200px;  
 }
 
+ul {
+  font-size: 15px;
+  text-shadow: 0 5px 5px hsla(0, 0%, 0%, 0.5);
+  margin-bottom: 5px;
+  text-align: center;
+}
 
+li {
+  text-align: center;
+  margin-left: -8px;
+  padding: 0.5em 0.6em 0.5em 0.6em;
+  width: 200px;
+  border-radius: 5px;
+  text-shadow: 0 5px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+  
+}
