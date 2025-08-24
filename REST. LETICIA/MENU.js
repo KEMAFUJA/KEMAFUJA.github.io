@@ -1,1 +1,158 @@
-const _0x5cee04=_0x108d;(function(_0x97e3d7,_0x3fc80e){const _0x525a2e=_0x108d,_0x132b9b=_0x97e3d7();while(!![]){try{const _0x41e12c=parseInt(_0x525a2e(0x1a3))/0x1+-parseInt(_0x525a2e(0x18e))/0x2*(-parseInt(_0x525a2e(0x156))/0x3)+parseInt(_0x525a2e(0x15c))/0x4+-parseInt(_0x525a2e(0x155))/0x5*(parseInt(_0x525a2e(0x1a2))/0x6)+-parseInt(_0x525a2e(0x198))/0x7+-parseInt(_0x525a2e(0x1a6))/0x8*(parseInt(_0x525a2e(0x197))/0x9)+-parseInt(_0x525a2e(0x1a8))/0xa;if(_0x41e12c===_0x3fc80e)break;else _0x132b9b['push'](_0x132b9b['shift']());}catch(_0x5a28b9){_0x132b9b['push'](_0x132b9b['shift']());}}}(_0x4c12,0xeec93));const dias=['Domingo',_0x5cee04(0x17c),'Martes','Miercoles',_0x5cee04(0x167),_0x5cee04(0x1a0),_0x5cee04(0x165)],hoy=new Date();let diaNombre=dias[hoy[_0x5cee04(0x19b)]()];const meses=[_0x5cee04(0x15b),_0x5cee04(0x15f),_0x5cee04(0x19c),'Abril','Mayo',_0x5cee04(0x18a),'Julio',_0x5cee04(0x17d),_0x5cee04(0x186),_0x5cee04(0x158),'Noviembre',_0x5cee04(0x19a)],diaNumero=hoy[_0x5cee04(0x174)](),mesNombre=meses[hoy[_0x5cee04(0x18f)]()],completo=diaNombre+'\x20'+diaNumero+_0x5cee04(0x18d)+mesNombre;fetch(_0x5cee04(0x15a)+new Date()[_0x5cee04(0x185)]())[_0x5cee04(0x199)](_0xb16d4c=>_0xb16d4c['json']())['then'](_0x28fec3=>{const _0x3d0e3d=_0x5cee04,_0x51fa59=_0x28fec3[diaNombre],_0x2ad228=document[_0x3d0e3d(0x17b)]('menu-lista'),_0x22a0af=document[_0x3d0e3d(0x1a4)](_0x3d0e3d(0x192));_0x22a0af[_0x3d0e3d(0x194)]=_0x3d0e3d(0x159)+completo+'\x22',_0x22a0af[_0x3d0e3d(0x173)]['marginLeft']=_0x3d0e3d(0x160),_0x2ad228[_0x3d0e3d(0x16e)](_0x22a0af);const _0x2f5c9c=document['createElement'](_0x3d0e3d(0x192));_0x2f5c9c['innerHTML']=_0x3d0e3d(0x175)+(diaNombre===_0x3d0e3d(0x17a)?'20':'15')+_0x3d0e3d(0x157),_0x2f5c9c[_0x3d0e3d(0x173)][_0x3d0e3d(0x189)]=_0x3d0e3d(0x19d),_0x2ad228[_0x3d0e3d(0x16e)](_0x2f5c9c),_0x51fa59&&_0x51fa59[_0x3d0e3d(0x1a5)]>0x0?_0x51fa59['forEach'](_0x146a52=>{const _0x1013d5=_0x3d0e3d,_0x5e43c0=document[_0x1013d5(0x1a4)]('li');_0x5e43c0['innerHTML']=_0x1013d5(0x190)+_0x146a52[_0x1013d5(0x17f)],_0x5e43c0[_0x1013d5(0x173)][_0x1013d5(0x1a1)]=_0x146a52[_0x1013d5(0x17e)]||'white',_0x146a52[_0x1013d5(0x195)]&&(_0x5e43c0[_0x1013d5(0x173)][_0x1013d5(0x179)]=_0x1013d5(0x18c)),_0x2ad228[_0x1013d5(0x16e)](_0x5e43c0);}):_0x2ad228[_0x3d0e3d(0x194)]=_0x3d0e3d(0x184);})['catch'](_0x4c074b=>{const _0x44c8a6=_0x5cee04;console[_0x44c8a6(0x15e)](_0x44c8a6(0x1a9),_0x4c074b),document[_0x44c8a6(0x17b)](_0x44c8a6(0x178))['innerHTML']=_0x44c8a6(0x181);});function _0x4c12(){const _0x3fcb5f=['innerWidth','259209EheMhJ','1538418wQZCNM','then','Diciembre','getDay','Marzo','5px','NOCHE','random','Viernes','backgroundColor','300zBJMbJ','1023819ccKdXh','createElement','length','32lHRIhs','opacity','15340860vMAkZp','Error\x20cargando\x20el\x20JSON:','110710dqrCeU','399yQWEed','Bs</span>','Octubre','🍽️\x20Menú\x20\x22','menu.json?t=','Enero','4714676vwLGtL','Tarde','error','Febrero','-7.5px','smokeEffect','MANANA',':\x0aa\x20horas\x20','sparkLayer','Sabado','animationDuration','Jueves','textContent','height','Madrugada','🏖️','body','add','appendChild','getHours','Noche','classList','smoke','style','getDate','Completo:\x20<span\x20class=\x22precio\x22>','flames','width','menu-lista','fontWeight','DOMINGO','getElementById','Lunes','Agosto','color','nombre','remove','<li>Error\x20al\x20cargar\x20el\x20menú.</li>','TARDE','animationName','<li>No\x20hay\x20menú\x20disponible\x20para\x20hoy.</li>','getTime','Septiembre','flame','animationDelay','marginLeft','Junio','left','bold','\x20de\x20','26342USEYpR','getMonth','<span\x20class=\x22bien\x22>✔</span>\x20','mensaje','div','getSeconds','innerHTML','negrita'];_0x4c12=function(){return _0x3fcb5f;};return _0x4c12();}function dosDigitos(_0x329cc6){return _0x329cc6<0xa?'0'+_0x329cc6:_0x329cc6;}function actualizarFondoAnimado(){const _0x5849fe=_0x5cee04,_0x31bbdf=new Date(),_0x5ce9a7=_0x31bbdf[_0x5849fe(0x16f)](),_0xd399fe=_0x31bbdf['getMinutes'](),_0x89d52e=_0x31bbdf[_0x5849fe(0x193)](),_0x4e2f11=document['getElementById'](_0x5849fe(0x191)),_0x5add4b=document[_0x5849fe(0x16c)];_0x5add4b[_0x5849fe(0x173)][_0x5849fe(0x183)]='';let _0x45066e='',_0x26bb3b='',_0x3ada10='';if(_0x5ce9a7>=0x0&&_0x5ce9a7<0x6)_0x45066e='MADRUGADA',_0x26bb3b='🌃',_0x3ada10=_0x5849fe(0x16a);else{if(_0x5ce9a7>=0x6&&_0x5ce9a7<0xc)_0x45066e=_0x5849fe(0x162),_0x26bb3b='🌞',_0x3ada10='Mañana';else{if(_0x5ce9a7>=0xc&&_0x5ce9a7<0x12)_0x45066e=_0x5849fe(0x182),_0x26bb3b=_0x5849fe(0x16b),_0x3ada10=_0x5849fe(0x15d);else _0x5ce9a7>=0x12&&_0x5ce9a7<=0x17&&(_0x45066e=_0x5849fe(0x19e),_0x26bb3b='🌙',_0x3ada10=_0x5849fe(0x170));}}_0x5add4b[_0x5849fe(0x173)][_0x5849fe(0x183)]=_0x45066e,_0x4e2f11[_0x5849fe(0x168)]=_0x26bb3b+'\x20'+_0x3ada10+_0x5849fe(0x163)+dosDigitos(_0x5ce9a7)+':'+dosDigitos(_0xd399fe)+':'+dosDigitos(_0x89d52e);}actualizarFondoAnimado(),setInterval(actualizarFondoAnimado,0x3e8);const flameContainer=document['getElementById'](_0x5cee04(0x176));function _0x108d(_0x29df88,_0x20c5b6){const _0x4c12e2=_0x4c12();return _0x108d=function(_0x108db7,_0x3abb6f){_0x108db7=_0x108db7-0x155;let _0x34eb1c=_0x4c12e2[_0x108db7];return _0x34eb1c;},_0x108d(_0x29df88,_0x20c5b6);}for(let i=0x0;i<0x96;i++){const flame=document[_0x5cee04(0x1a4)](_0x5cee04(0x192));flame[_0x5cee04(0x171)][_0x5cee04(0x16d)](_0x5cee04(0x187)),flame[_0x5cee04(0x173)][_0x5cee04(0x18b)]=Math[_0x5cee04(0x19f)]()*0x64+'%',flame['style'][_0x5cee04(0x188)]=Math[_0x5cee04(0x19f)]()*1.5+'s',flame[_0x5cee04(0x173)][_0x5cee04(0x177)]=0xa+Math[_0x5cee04(0x19f)]()*0xa+'px',flame[_0x5cee04(0x173)][_0x5cee04(0x169)]=0xa+Math[_0x5cee04(0x19f)]()*0xa+'px',flameContainer[_0x5cee04(0x16e)](flame);}const smokeEffect=document['getElementById'](_0x5cee04(0x161));for(let i=0x0;i<0xf;i++){const smoke=document[_0x5cee04(0x1a4)]('div');smoke[_0x5cee04(0x171)][_0x5cee04(0x16d)](_0x5cee04(0x172)),smoke[_0x5cee04(0x173)][_0x5cee04(0x169)]=smoke[_0x5cee04(0x173)][_0x5cee04(0x177)]=Math['random']()*0x96+0x64+'px',smoke[_0x5cee04(0x173)][_0x5cee04(0x18b)]=Math[_0x5cee04(0x19f)]()*0x64+'%',smoke[_0x5cee04(0x173)][_0x5cee04(0x188)]=Math['random']()*0xf+'s',smoke[_0x5cee04(0x173)][_0x5cee04(0x1a7)]=Math['random']()*0.3,smokeEffect[_0x5cee04(0x16e)](smoke);}function createSpark(){const _0x3faab6=_0x5cee04,_0x517db1=document[_0x3faab6(0x1a4)](_0x3faab6(0x192));_0x517db1['classList']['add']('spark'),_0x517db1['style'][_0x3faab6(0x18b)]=Math[_0x3faab6(0x19f)]()*0x64+'%',_0x517db1[_0x3faab6(0x173)]['bottom']='0';const _0x51cf30=window[_0x3faab6(0x196)]<0x300,_0x1f6f96=_0x51cf30?Math['random']()*0x1+0x28:Math[_0x3faab6(0x19f)]()*0x1+0x14;_0x517db1[_0x3faab6(0x173)][_0x3faab6(0x166)]=_0x1f6f96+'s';const _0x2037a9=_0x51cf30?0x1f40:0xbb8;document[_0x3faab6(0x17b)](_0x3faab6(0x164))[_0x3faab6(0x16e)](_0x517db1),setTimeout(()=>{const _0x5b431f=_0x3faab6;_0x517db1[_0x5b431f(0x180)]();},_0x2037a9);}setInterval(createSpark,0x12c);
+const dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+const hoy = new Date();
+let diaNombre = dias[hoy.getDay()];
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const diaNumero = hoy.getDate();
+const mesNombre = meses[hoy.getMonth()];
+const completo = diaNombre + " " + diaNumero + " de " + mesNombre;  
+fetch(`menu.json?t=${new Date().getTime()}`)
+  .then(res => res.json())
+  .then(data => {
+    const comidas = data[diaNombre];
+    const lista = document.getElementById("menu-lista");
+    
+    const tituloDia = document.createElement("div");
+    tituloDia.innerHTML = `🍽️ Menú "${completo}"`;
+    lista.appendChild(tituloDia);
+
+    const precio = document.createElement("div");
+    precio.innerHTML = `Completo: <span class="precio">${diaNombre === "Domingo" ? "20" : "15"}Bs</span>`;
+    precio.style.marginLeft='5px';
+    lista.appendChild(precio);
+    
+    if (comidas && comidas.length > 0) {
+      comidas.forEach(comida => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="bien">✔</span> ${comida.nombre}`;
+        li.style.backgroundColor = comida.color || "white";
+        if (comida.negrita) {
+          li.style.fontWeight = "bold";
+        }
+        lista.appendChild(li);
+      });
+    } else {
+      lista.innerHTML = "<li>No hay menú disponible para hoy.</li>";
+    }
+  })
+  .catch(err => {
+    console.error("Error cargando el JSON:", err);
+    document.getElementById("menu-lista").innerHTML = "<li>Error al cargar el menú.</li>";
+  });
+
+function dosDigitos(num) {
+  return num < 10 ? "0" + num : num;
+}
+
+function actualizarFondoAnimado() {
+  const ahora = new Date();
+  const h = ahora.getHours();
+  const m = ahora.getMinutes();
+  const s = ahora.getSeconds();
+
+  const mensaje = document.getElementById("mensaje");
+  const body = document.body;
+  body.style.animationName = "";
+
+  let tramo = "";
+  let emoji = "";
+  let periodo = "";
+  
+  if (h >= 0 && h < 6) {
+    tramo = "MADRUGADA";
+    emoji = "🌃";
+    periodo = "Madrugada";
+  } else if (h >= 6 && h < 12) {
+    tramo = "MANANA";
+    emoji = "🌞";
+    periodo = "Mañana";
+  } else if (h >= 12 && h < 18) {
+    tramo = "TARDE";
+    emoji = "🏖️";
+    periodo = "Tarde";
+  } else if (h >= 18 && h <= 23) {
+    tramo = "NOCHE";
+    emoji = "🌙";
+    periodo = "Noche";
+  }
+
+  body.style.animationName = tramo;
+  mensaje.textContent = `${emoji} ${periodo}:\n${dosDigitos(h)}:${dosDigitos(m)}:${dosDigitos(s)}`;
+}
+
+actualizarFondoAnimado();
+setInterval(actualizarFondoAnimado, 1000);
+
+// 🔥 Flamas
+const flameContainer = document.getElementById("flames");
+for (let i = 0; i < 200; i++) {
+  const flame = document.createElement("div");
+  flame.classList.add("flame");
+
+  const size = 10 + Math.random() * 10; // 10–20px
+  flame.style.width = `${size}px`;
+  flame.style.height = `${size}px`;
+
+  const maxLeft = window.innerWidth - size;
+  flame.style.left = `${Math.random() * maxLeft}px`;
+
+  flame.style.animationDelay = `${Math.random() * 1.5}s`;
+  flameContainer.appendChild(flame);
+}
+
+// ☁️ Humo
+const smokeEffect = document.getElementById('smokeEffect');
+for (let i = 0; i < 15; i++) {
+  const smoke = document.createElement('div');
+  smoke.classList.add('smoke');
+
+  const size = Math.random() * 50 + 100; // 100–250px
+  smoke.style.width = smoke.style.height = `${size}px`;
+
+  // posición vertical desde abajo, pero no tan pegado
+  //const minBottom = 100;   // altura mínima
+  //const maxBottom = 500;  // altura máxima
+  smoke.style.bottom = `250px`;
+
+  const maxLeft = window.innerWidth - size;
+  smoke.style.left = `${Math.random() * maxLeft}px`;
+
+  smoke.style.animationDelay = `${Math.random() * 15}s`;
+  smoke.style.opacity = Math.random() * 0.3;
+  smokeEffect.appendChild(smoke);
+}
+
+// ✨ Chispas
+function createSpark() {
+  const spark = document.createElement('div');
+  spark.classList.add('spark');
+
+  // tamaño aleatorio (2–8px)
+  const size = Math.random() * 6 + 2;
+  spark.style.width = spark.style.height = `${size}px`;
+
+  // posición horizontal aleatoria
+  const maxLeft = window.innerWidth - size;
+  spark.style.left = `${Math.random() * maxLeft}px`;
+
+  // posición vertical desde abajo, pero no tan pegado
+  const minBottom = 150;   // altura mínima
+  const maxBottom = 350;  // altura máxima
+  spark.style.bottom = `${minBottom + Math.random() * (maxBottom - minBottom)}px`;
+
+  // duración de la animación (más lenta en móvil)
+  const isMobile = window.innerWidth < 768;
+  const duration = isMobile 
+      ? Math.random() * 1 + 40.0  
+      : Math.random() * 1 + 20.0; 
+  spark.style.animationDuration = `${duration}s`;
+
+  // tiempo de vida del spark
+  const timeout = isMobile ? 8000 : 3000;
+
+  document.getElementById("sparkLayer").appendChild(spark);
+
+  setTimeout(() => spark.remove(), timeout);
+}
+
+
+setInterval(createSpark, 300);
