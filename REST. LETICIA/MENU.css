@@ -8,8 +8,9 @@ html, body {
 body {
   text-align: center;
   font-family: sans-serif;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
+  
+  /*animation-iteration-count: infinite;
+  transition: background-color 1s;*/
   background: linear-gradient(135deg, 
     hsl(30, 50%, 95%) 0%, 
     hsl(30, 50%, 85%) 25%, 
@@ -17,8 +18,13 @@ body {
     hsl(30, 50%, 75%) 75%, 
     hsl(30, 50%, 70%) 100%
 );
-  /*transition: background-color 1s;*/
 }
+
+body.MADRUGADA { animation: MADRUGADA 30s infinite; }
+body.MANANA    { animation: MANANA 30s infinite; }
+body.TARDE     { animation: TARDE 30s infinite; }
+body.NOCHE     { animation: NOCHE 30s infinite; }
+
 
 @keyframes MADRUGADA {
   0%,100% { background-color: hsl(51, 100%, 50%); }
@@ -45,7 +51,7 @@ body {
   40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
 }
 
-@keyframes MANANA {
+@keyframes VERDE {
   0%,100% { background-color: hsl(135, 100%, 80%); }
   20%,80% { background-color: hsl(135, 100%, 70%); }
   40%,60% { background-color: hsl(135, 100%, 50%); }
@@ -176,7 +182,7 @@ text-shadow:
 #nombre {
   font-family: 'PRISTINA';
   font-size: 8rem;
-  margin: -10px;
+  margin: 5px;
   margin-bottom: -5px;
   
 }
@@ -382,4 +388,3 @@ li {
   }
 
 }
-
