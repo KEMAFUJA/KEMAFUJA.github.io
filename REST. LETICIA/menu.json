@@ -9,11 +9,11 @@
   ],
   "Martes": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "GUISO DE PAPALISA", "color": "#ffffff40", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false },
-    { "nombre": "TALLARIN CON CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "TALLARIN CON ", "color": "#ffffff40", "negrita": false },
     { "nombre": "POLLO AL HORNO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffffff40", "negrita": false}
+    { "nombre": "SALPICON DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "AJI DE PANZA", "color": "#ffffff40", "negrita": false}
   ],
   "COLORES": [
     { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
@@ -24,11 +24,11 @@
   ],
   "Miercoles": [
     { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL JUGO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false },
     { "nombre": "LASAÑA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "FALSO CONEJO", "color": "#ffffff40", "negrita": false },    
     { "nombre": "POLLO A LA PLANCHA", "color": "#ffffff40", "negrita": false },
-    { "nombre": "MILANEZA DE CARNE", "color": "#ffffff40", "negrita": false}
+    { "nombre": "CARNE CON PIMENTON", "color": "#ffffff40", "negrita": false}
   ],
   "Jueves": [
     { "nombre": "SOPA DE MANI", "color": "#f0f8ff95", "negrita": true },
