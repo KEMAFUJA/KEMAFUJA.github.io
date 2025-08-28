@@ -33,10 +33,10 @@
   "Jueves": [
     { "nombre": "SOPA DE MANI", "color": "#f0f8ff95", "negrita": true },
     { "nombre": "PICANTE DE POLLO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "CHULETA  DE CERDO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SALPICÓN DE POLLO", "color": "#ffffff40", "negrita": false },
     { "nombre": "SAICE", "color": "#ffffff40", "negrita": false },
     { "nombre": "LOMO SALTEADO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "#ffffff40", "negrita": false}
+    { "nombre": "MILANEZA DE CARNE", "color": "#ffffff40", "negrita": false}
   ],
   "Viernes": [
     { "nombre": "SOPA DE TRIGO", "color": "#ffffff80", "negrita": true },
@@ -65,3 +65,4 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
