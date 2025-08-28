@@ -175,7 +175,7 @@ text-shadow:
 }
 
 @font-face {
-  font-family: 'PRISTINA';
+  font-family: '-/PRISTINA';
   src: url('PRISTINA.TTF');
 }
 
@@ -388,4 +388,5 @@ li {
   }
 
 }
+
 
