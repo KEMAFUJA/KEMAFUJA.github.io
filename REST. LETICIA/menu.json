@@ -1,9 +1,10 @@
 {
   "Lunes": [
-    { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "ASAU EN OLLA", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SOPA DE ARROZ", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "ALBONDIGA AL JUGO", "color": "#ffffff40", "negrita": false },
     { "nombre": "PIQUE MACHO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "ALBÓNDIGA AL JUGO", "color": "#ffffff40", "negrita": false},
+    { "nombre": "SALPICON DE POLLO", "color": "#ffffff40", "negrita": false},
+    { "nombre": "MILNESA DE POLLO", "color": "#ffffff40", "negrita": false},
     { "nombre": "CHICHARRÓN DE POLLO", "color": "#ffffff40", "negrita": false }
   ],
   "Martes": [
@@ -62,6 +63,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
