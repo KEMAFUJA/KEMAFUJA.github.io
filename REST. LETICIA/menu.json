@@ -16,16 +16,16 @@
   "COLORES": [
     { "nombre": "SOPA DE SEMILLA", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": true },
     { "nombre": "KEPERI AL HORNO", "color": "hsl(5, 80%, 35%, 0.25)", "negrita": false },
-    { "nombre": "LASAÑA DE CARNE", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
-    { "nombre": "POLLO AL HORNO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
-    { "nombre": "MILANEZA DE POLLO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
+    { "nombre": "CHICHARRON DE POLLO", "color": "hsl(50, 100%, 45%, 0.25)", "negrita": false },
+    { "nombre": "POLLO A LA PLANCHA", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false },
+    { "nombre": "ALBONDIGAS AL JUGO", "color": "hsl(145, 100%, 15%, 0.25)", "negrita": false }
   ],
   "Miercoles": [
-    { "nombre": "SOPA DE YUCA", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "POLLO AL JUGO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "LASAÑA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SOPA DE FRANGOLLO", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "KEPERI AL HORNO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false },
     { "nombre": "POLLO A LA PLANCHA", "color": "#ffffff40", "negrita": false },
-    { "nombre": "CARNE CON PIMENTON", "color": "#ffffff40", "negrita": false}
+    { "nombre": "ALBONDIGAS AL JUGO", "color": "#ffffff40", "negrita": false}
   ],
   "Viernes": [
     { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
@@ -61,6 +61,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
