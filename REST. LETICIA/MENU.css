@@ -12,11 +12,11 @@ body {
   /*animation-iteration-count: infinite;
   transition: background-color 1s;*/
   background: linear-gradient(135deg, 
-    hsl(100, 50%, 95%) 0%, 
-    hsl(100, 50%, 85%) 25%, 
-    hsl(100, 50%, 80%) 50%, 
-    hsl(100, 50%, 75%) 75%, 
-    hsl(100, 50%, 70%) 100%
+    hsl(245, 50%, 95%) 0%, 
+    hsl(245, 50%, 85%) 25%, 
+    hsl(245, 50%, 80%) 50%, 
+    hsl(245, 50%, 75%) 75%, 
+    hsl(245, 50%, 70%) 100%
 );
 }
 
@@ -388,6 +388,7 @@ li {
   }
 
 }
+
 
 
 
