@@ -35,12 +35,11 @@
     { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false}
   ],
   "Jueves": [
-    { "nombre": "SOPA DE TRIGO", "color": "#ffffff80", "negrita": true },
-    { "nombre": "MAJADITO BATIDO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "GUISO DE PAPALISA", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SOPA DE MANI", "color": "#ffffff80", "negrita": true },
+    { "nombre": "PICANTE DE POLLO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANESA DE CARNE", "color": "#ffffff40", "negrita": false },
     { "nombre": "LOMO SALTEADO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "POLLO A LA PLANCHA", "color": "#ffffff40", "negrita": false },
-    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false }
+    { "nombre": "ROLLLITO DE POLLO", "color": "#ffffff40", "negrita": false }
   ],
   "Sabado": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },    
@@ -61,6 +60,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
