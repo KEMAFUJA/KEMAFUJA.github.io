@@ -28,11 +28,11 @@
     { "nombre": "ALBONDIGAS AL JUGO", "color": "#ffffff40", "negrita": false}
   ],
   "Viernes": [
-    { "nombre": "SOPA DE SEMILLA", "color": "#f0f8ff95", "negrita": true },
-    { "nombre": "CHICHARRON DE POLLO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "MAJADITO BATIDO", "color": "#ffffff40", "negrita": false },
+    { "nombre": "SOPA DE VERDURAS", "color": "#f0f8ff95", "negrita": true },
+    { "nombre": "POLLO CON CHAMPIÑONES", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MAJADITO TOSTAU", "color": "#ffffff40", "negrita": false },
     { "nombre": "AJI DE PANZA", "color": "#ffffff40", "negrita": false },
-    { "nombre": "REVUELTO DE CARNE", "color": "#ffffff40", "negrita": false}
+    { "nombre": "GUISO DE PAPALISA", "color": "#ffffff40", "negrita": false}
   ],
   "Jueves": [
     { "nombre": "SOPA DE MANI", "color": "#ffffff80", "negrita": true },
@@ -60,6 +60,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
