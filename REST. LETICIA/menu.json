@@ -44,7 +44,7 @@
   "Sabado": [
     { "nombre": "SOPA DE FIDEO", "color": "#f0f8ff95", "negrita": true },    
     { "nombre": "PIQUE MACHO", "color": "#ffffff40", "negrita": false },
-    { "nombre": "MILANESA DE CARNE", "color": "#ffffff40", "negrita": false },
+    { "nombre": "MILANESA DE POLLO", "color": "#ffffff40", "negrita": false },
     { "nombre": "POLLO AL HORNO", "color": "#ffffff40", "negrita": false },
     { "nombre": "FEIJOADA", "color": "#ffffff40", "negrita": false },
     { "nombre": "ASADITO COLORAU", "color": "#ffffff40", "negrita": false }
@@ -60,6 +60,7 @@
     { "nombre": "LIMONADA", "color": "#ffe4b58e", "negrita": false }
   ]
 }
+
 
 
 
