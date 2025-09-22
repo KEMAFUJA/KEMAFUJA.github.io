@@ -11,14 +11,42 @@ body {
   
   /*animation-iteration-count: infinite;
   transition: background-color 1s;*/
-  background: linear-gradient(135deg, 
-    hsl(245, 50%, 95%) 0%, 
-    hsl(245, 50%, 85%) 25%, 
-    hsl(245, 50%, 80%) 50%, 
-    hsl(245, 50%, 75%) 75%, 
-    hsl(245, 50%, 70%) 100%
-);
+    animation: CALIPSO 5s infinite alternate;
 }
+@keyframes ROJO {
+  0%,100% { background: linear-gradient(135deg, hsl(0, 52%, 95%) 0%, hsl(0, 50%, 85%) 25%, hsl(0, 50%, 80%) 50%, hsl(0, 50%, 75%) 75%, 
+    hsl(0, 50%, 70%) 100%);}}
+@keyframes NARANJA {
+  0%,100% {background: linear-gradient(135deg, hsl(30, 52%, 95%) 0%, hsl(30, 50%, 85%) 25%, hsl(30, 50%, 80%) 50%, hsl(30, 50%, 75%) 75%, 
+    hsl(30, 50%, 70%) 100%);}}
+@keyframes AMARILLO {
+  0%,100% {background: linear-gradient(135deg, hsl(55, 52%, 95%) 0%, hsl(55, 50%, 85%) 25%, hsl(55, 50%, 80%) 50%, hsl(55, 50%, 75%) 75%, 
+    hsl(55, 50%, 70%) 100%);}}
+@keyframes LECHUGA {
+  0%,100% {background: linear-gradient(135deg, hsl(85, 52%, 95%) 0%, hsl(85, 50%, 85%) 25%, hsl(85, 50%, 80%) 50%, hsl(85, 50%, 75%) 75%, 
+    hsl(85, 50%, 70%) 100%);}}
+@keyframes VERDE {
+  0%,100% {background: linear-gradient(135deg, hsl(120, 52%, 95%) 0%, hsl(120, 50%, 85%) 25%, hsl(120, 50%, 80%) 50%, hsl(120, 50%, 75%) 75%, 
+    hsl(120, 50%, 70%) 100%);}}
+@keyframes MARINO {
+  0%,100% {background: linear-gradient(135deg, hsl(160, 52%, 95%) 0%, hsl(160, 50%, 85%) 25%, hsl(160, 50%, 80%) 50%, hsl(160, 50%, 75%) 75%, 
+    hsl(160, 50%, 70%) 100%);}}
+@keyframes CALIPSO {
+  0%,100% {background: linear-gradient(135deg, hsl(190, 52%, 95%) 0%, hsl(190, 50%, 85%) 25%, hsl(190, 50%, 80%) 50%, hsl(190, 50%, 75%) 75%, 
+    hsl(190, 50%, 70%) 100%);}}
+@keyframes AZUL {
+  0%,100% {background: linear-gradient(135deg, hsl(245, 52%, 95%) 0%, hsl(245, 50%, 85%) 25%, hsl(245, 50%, 80%) 50%, hsl(245, 50%, 75%) 75%, 
+    hsl(245, 50%, 70%) 100%);}}
+@keyframes LILA {
+  0%,100% {background: linear-gradient(135deg, hsl(280, 52%, 95%) 0%, hsl(280, 50%, 85%) 25%, hsl(280, 50%, 80%) 50%, hsl(280, 50%, 75%) 75%, 
+    hsl(280, 50%, 70%) 100%);}}
+@keyframes ROSADO {
+ 0%,100% { background: linear-gradient(135deg, hsl(310, 52%, 95%) 0%, hsl(310, 50%, 85%) 25%, hsl(310, 50%, 80%) 50%, hsl(310, 50%, 75%) 75%, 
+    hsl(310, 50%, 70%) 100%);}}
+@keyframes GUINDO {
+ 0%,100% { background: linear-gradient(135deg, hsl(325, 52%, 95%) 0%, hsl(325, 50%, 85%) 25%, hsl(325, 50%, 80%) 50%, hsl(325, 50%, 75%) 75%, 
+    hsl(325, 50%, 70%) 100%);}}
+
 
 body.MADRUGADA { animation: MADRUGADA 30s infinite; }
 body.MANANA    { animation: MANANA 30s infinite; }
@@ -33,7 +61,7 @@ body.NOCHE     { animation: NOCHE 30s infinite; }
 }
 
 /*MAÑANA*/
-@keyframes CELESTE {
+@keyframes CELESTE1 {
   0%,100% { background-color: hsl(205, 100%, 70%); }
   20%,80% { background-color: hsl(205, 100%, 80%); }
   40%,60% { background-color: hsl(205, 100%, 90%); }
@@ -45,25 +73,25 @@ body.NOCHE     { animation: NOCHE 30s infinite; }
   40%,60% { background-color: hsl(300, 100%, 90%); }
 }
 
-@keyframes CAFE {
+@keyframes CAFE1 {
   0%,100% { background-color: hsl(35, 100%, 25%); }
   20%,80% { background-color: hsla(35, 100%, 25%, 0.5); }
   40%,60% { background-color: hsl(35, 100%, 25%, 0.25); }
 }
 
-@keyframes VERDE {
+@keyframes VERDE1 {
   0%,100% { background-color: hsl(135, 100%, 80%); }
   20%,80% { background-color: hsl(135, 100%, 70%); }
   40%,60% { background-color: hsl(135, 100%, 50%); }
 }
 
-@keyframes BLANCO {
+@keyframes BLANCO1 {
   0%,100% { background-color: hsl(65, 100%, 99%); }
   20%,80% { background-color: hsl(65, 100%, 99.5%); }
   40%,60% { background-color: hsl(65, 100%, 100%); }
 }
 
-@keyframes NEGRO {
+@keyframes NEGRO1 {
   0%,100% { background-color: hsl(0, 0%, 0%); }
 }
 /*FIN*/
@@ -176,11 +204,11 @@ text-shadow:
 
 @font-face {
   font-family: 'PRISTINA';
-  src: url('/-LETRAS/fonts/PRISTINA.TTF');
+  src: url('-LETRAS/fonts/PRISTINA.TTF');
 }
 
 #nombre {
-  font-family: 'PRISTINA';
+  
   font-size: 8rem;
   margin: 5px;
   margin-bottom: -5px;
@@ -388,7 +416,3 @@ li {
   }
 
 }
-
-
-
-
