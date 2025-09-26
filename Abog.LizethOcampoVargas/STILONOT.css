@@ -16,7 +16,7 @@
 @keyframes backgroundBody {
   0% { background-color: hsl(310, 100%, 40%); }
   20% { background-color: hsl(310, 100%, 30%); } 
-  40% { background-color: #660055; } 
+  40% { background-color: hsl(310, 100%, 20%); } 
   50% { background-color: hsl(310, 100%, 10%); } 
   60% { background-color: hsl(310, 100%, 20%); } 
   80% { background-color: hsl(310, 100%, 30%); } 
