@@ -197,7 +197,7 @@ body {
 
 @font-face {
   font-family: 'MTCORSVA';
-  src: url('MTCORSVA.woff2');
+  src: url('MTCORSVA.TTF');
 }
 
 .nombre-completo h2 {
@@ -206,7 +206,7 @@ body {
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    font-family: 'MTCORSVA', 'Lucida Calligraphy', cursive, serif;
+    font-family: 'MTCORSVA';
 }
 
 
@@ -546,3 +546,4 @@ body {
             opacity: 0;
         }
 }
+
