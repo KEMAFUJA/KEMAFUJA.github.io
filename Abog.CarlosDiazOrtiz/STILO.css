@@ -201,7 +201,7 @@ body {
 }
 
 .nombre-completo h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
     color: var(--dark-blue);
     margin: 5px 0;
@@ -546,4 +546,5 @@ body {
             opacity: 0;
         }
 }
+
 
