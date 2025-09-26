@@ -201,7 +201,9 @@ body {
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    font-family: 'Playfair Display', serif;
+  font-family: "Lucida Calligraphy", cursive;
+  font-weight: bold;
+    
 }
 
 .nombre-completo h3 {
@@ -539,4 +541,5 @@ body {
     100% {transform: translateY(-100vh) translateX(20px);
             opacity: 0;
         }
+
 }
