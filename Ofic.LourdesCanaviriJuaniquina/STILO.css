@@ -141,7 +141,7 @@ body {
 }
 
 .official-seal::before {
-    content: "NOTARÍA PÚBLICA N°135";
+    content: "REGISTRO CIVIL N°70101091";
     position: absolute;
     font-size: 12px;
     font-weight: bold;
@@ -539,4 +539,5 @@ body {
     100% {transform: translateY(-100vh) translateX(20px);
             opacity: 0;
         }
+
 }
