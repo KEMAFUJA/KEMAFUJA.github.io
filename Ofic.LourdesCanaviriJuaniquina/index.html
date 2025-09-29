@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta property="og:title" content="OFICIAL DE REGISTRO CIVIL N°70101091">
+    <meta property="og:description" content="Lourdes Canaviri Juaniquina">
+    <meta property="og:image" content="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina">
+    <meta name="twitter:card" content="summary_large_image">    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Oficial de Registro civil - Abog. Lourdes Canaviri Juaniquina</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="STILO.css">
+</head>
+
+<body>
+    <div class="gold-dust"></div>
+    <div class="gold-particles"></div>
+    
+    <div class="card">
+        <div class="seal-container">
+            <div class="official-seal"></div>
+        </div>
+        
+        <h1 class="letra">OFICIALIA DE REGISTRO CIVIL N°70101091</h1>
+        
+        <div class="nombre-completo">
+            <h2 class="inline-text">LOURDES</h2>
+            <h2>CANAVIRI JUANIQUINA</h2>
+            <h3 class="inline-text" style="font-size: 10px;">Of. de registro civil</h3>
+        </div>
+
+        <div class="divider"></div>
+        
+        <p class="intro-text">Para más información, contáctenos a través de:</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" href="tel:+59172628254">+591 72628254</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59172628254&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="ubicacionDropdown">
+            <a class="dropdown-toggle">
+                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
+                <span>Ubicación</span>
+            </a>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.342616140024!2d-63.17590092482604!3d-17.775587883179313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMyLjEiUyA2M8KwMTAnMjQuMCJX!5e0!3m2!1ses-419!2sbo!4v1759156550943!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="dropdown" id="horarioDropdown">
+            <a class="dropdown-toggle">
+                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
+                <span>Horario de atención</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
+                    <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown" id="serviciosDropdown">
+            <a class="dropdown-toggle">
+                <span>SERVICIOS:</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li> <strong>INSCRIPCIONES DE NACIMIENTOS</strong></li>
+                    <li> <strong>RECONOCIMIENTO DE HIJO MAYOR Y MENOR</strong></li>
+                    <li> <strong>CERTIFICADO DE MATRIMONIO</strong></li>
+                    <li> <strong>CERTIFICADO DE DEFUNCION</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=59172628254&&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%20135,%20en%20que%20podemos%20ayudarle?..." target="_blank" class="social-icon">
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
+            </a>
+            <a href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6" target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para los dropdowns
+            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.dropdown');
+                    dropdown.classList.toggle('active');
+                    
+                    // Cerrar otros dropdowns abiertos
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Cerrar dropdowns al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+
+            // Efecto de partículas doradas dinámicas
+            const goldParticles = document.querySelector('.gold-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('gold-particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                goldParticles.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
