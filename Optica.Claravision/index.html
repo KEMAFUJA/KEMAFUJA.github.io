@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta property="og:title" content="OPTICA - CLARAVISION">
+    <meta property="og:description" content="Sonia Zurita Alejo - Optica Oftálmica">
+    <meta property="og:image" content="https://kemafuja.github.io/Optica.Claravision/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://kemafuja.github.io/Optica.Claravision">
+    <meta name="twitter:card" content="summary_large_image">    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Optica - Claravision</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="STILO.css">
+</head>
+
+<body>
+    <div class="gold-dust"></div>
+    <div class="gold-particles"></div>
+    
+    <div class="card">
+        <div class="seal-container">
+            <div class="official-seal"></div>
+        </div>
+        
+        <h1 class="letra">
+            <img src="logo.png" alt="Logo Optica-Claravision" class="logo-optica" width="90%">
+        </h1>
+        
+        <div class="nombre-completo">
+            <h2 class="inline-text">SONIA ZURITA ALEJO</h2>
+            <h3 class="inline-text">Optica Oftálmica</h3>
+        </div>
+
+        <div class="divider"></div>
+        
+        <p class="intro-text">Para más información, contáctenos a través de:</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" href="tel:+59171076849">+591 71076849</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <!--img src="email-icon.png" alt="Correo" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">Correo:</p>
+                    <a class="contact-link fbcorr" href="mailto:claravisionopticas@hotmail.com?subject=Consulta&body=Buenas Dra., quisiera consultar sobre...">claravisionopticas@hotmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59171076849&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <!--img src="facebook-icon.png" alt="Facebook" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">Facebook:</p>
+                    <a class="contact-link fbcorr" href="https://www.facebook.com/profile.php?id=100079392616644" target="_blank">Visitar página</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="ubicacionDropdown">
+            <a class="dropdown-toggle">
+                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
+                <span>Ubicación</span>
+            </a>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d340.00080368103573!2d-63.17085529648623!3d-17.773042652122683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e819d62a1381%3A0xae02ffc1ef0f175f!2sOPTICA%20CLARAVISION!5e0!3m2!1ses-419!2sbo!4v1759192883611!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="dropdown" id="horarioDropdown">
+            <a class="dropdown-toggle">
+                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
+                <span>Horario de atención</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li><strong>LUNES A SABADO:</strong> 8:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="mailto:claravisionopticas@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">
+                <img src="../-LOGOS/Correo.png" alt="Correo">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=59171076849&&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%20135,%20en%20que%20podemos%20ayudarle?..." target="_blank" class="social-icon">
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567842524001&mibextid=ZbWKwL" target="_blank" class="social-icon">
+                <img src="../-LOGOS/FB.png" alt="Facebook">
+            </a>
+            <a href="https://maps.app.goo.gl/rsGreUA2FrESJjo27" target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para los dropdowns
+            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.dropdown');
+                    dropdown.classList.toggle('active');
+                    
+                    // Cerrar otros dropdowns abiertos
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Cerrar dropdowns al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+
+            // Efecto de partículas doradas dinámicas
+            const goldParticles = document.querySelector('.gold-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('gold-particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                goldParticles.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
