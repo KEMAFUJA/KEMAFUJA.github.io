@@ -14,13 +14,13 @@
             --accent-green: #2E8B57;
         }
 @keyframes backgroundBody {
-  0% { background-color: hsl(0, 100%, 50%); }
-  20% { background-color: hsl(0, 100%, 40%); } 
-  40% { background-color: hsl(0, 100%, 30%); }
-  50% { background-color: hsl(0, 100%, 20%) }
-  60% { background-color: hsl(0, 100%, 30%); }
-  80% { background-color: hsl(0, 100%, 40%); }
-  100% { background-color: hsl(0, 100%, 50%); }
+  0% { background-color: hsl(35, 40%, 50%); }
+  20% { background-color: hsl(35, 30%, 50%); } 
+  40% { background-color: hsl(35, 20%, 50%); }
+  50% { background-color: hsl(35, 10%, 50%); }
+  60% { background-color: hsl(35, 20%, 50%); }
+  80% { background-color: hsl(35, 30%, 50%); }
+  100% { background-color: hsl(35, 40%, 50%); }
 }
 
         /* Elimina o modifica estas propiedades del body */
@@ -80,7 +80,7 @@ body {
     width: 100%;
     max-width: 700px;
     text-align: center;
-    background: hsla(0, 0%, 100%, 0.0);
+    background: hsla(0, 0%, 100%, 0.75);
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3), 
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
                 0 0 30px rgba(212, 175, 55, 0.2) inset;
@@ -141,7 +141,7 @@ body {
 }
 
 .official-seal::before {
-    content: "OPTICA CLARAVISION";
+    content: "OPTICA GALVIZ";
     position: absolute;
     font-size: 12px;
     font-weight: bold;
@@ -170,60 +170,49 @@ body {
 
 /* Títulos */
 .letra {
-    font-size: 80px;
+    font-size: 125px;
     font-family: 'Playfair Display', serif;
-    /*color: var(--dark-blue);*/
     margin-bottom: 10px;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
+    margin-top: 0px;
     animation: ColorTitulo 50s ease-in-out infinite;
-}
-
-.letra::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold-primary), var(--gold-tertiary));
-    margin: 15px auto;
-    border-radius: 3px;
 }
 
 .nombre-completo {
     margin: 10px 0 30px;
     position: relative;
-    color: whitesmoke;
 }
 
 .nombre-completo h2 {
-    font-size: 2.2rem;
+    margin-top: -95px; 
+    font-size: 50px; 
+    letter-spacing: 5px;
     font-weight: 700;
-    
-    margin: 5px 0;
-    letter-spacing: 1px;
+    color: hsla(220, 75%, 15%, 0.5);
     font-family: 'Playfair Display', serif;
 }
 
 .nombre-completo h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    
-    margin-right: 10px;
-    display: inline;
+    margin-top: -40px; 
+    font-size: 10px; 
+    color: hsla(0, 0%, 0%, 0.25); 
+    letter-spacing: 5px;
+    font-weight: 400;    
 }
 
 .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
-    margin: 20px auto;
+    margin: 10px auto;
     width: 80%;
 }
 
 /* Texto introductorio */
 .intro-text {
     font-size: 1.1rem;
-    color: whitesmoke;
+    color: var(--text-dark);
     margin-bottom: 30px;
     font-weight: 300;
 }
@@ -484,13 +473,14 @@ body {
     .card {padding: 30px 20px;
         }
             
-    .letra {font-size: 2.5rem;
+    .letra {font-size: 6rem;
         }
             
-    .nombre-completo h2 {font-size: 1.8rem;
+    .nombre-completo h2 {font-size: 3rem;
+        margin-top: -75px;
         }
             
-    .contact-grid {grid-template-columns: 1fr;
+    .contact-grid {grid-template-columns: 2fr;
         }
             
     .seal-container {top: -30px;
@@ -501,14 +491,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    .letra {font-size: 2rem;
+    .letra {font-size: 5rem;
             }
             
-    .nombre-completo h2 {font-size: 1.5rem;
+    .nombre-completo h2 {margin-top: -73px; font-size: 2.5rem;
             }
             
-    .nombre-completo h3 {font-size: 1.2rem;
-            }
             
     .dropdown-toggle {padding: 12px 15px;
                         font-size: 0.9rem;
