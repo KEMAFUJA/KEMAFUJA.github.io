@@ -6,7 +6,7 @@
             --light: #ECF0F1;
             --accent: #27AE60;
             --text: #333333;
-            --bg-overlay: rgba(44, 62, 80, 0.25);
+            --bg-overlay: rgba(44, 62, 80, 0.85);
         }
         
         body {
@@ -431,5 +431,6 @@
     transition: all 0.3s;
     margin-bottom: 0.5rem; /* Separación entre items */
     }
+
 
 
