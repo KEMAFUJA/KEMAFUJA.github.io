@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Compra Masiva - Paletas y Fuentes</title>
+
+<!-- Google Fonts (5 fuentes más usadas por paletas) -->
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&family=Nunito:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Ubuntu:wght@400;700&family=Inter:wght@400;700&family=Fira+Sans:wght@400;700&family=Work+Sans:wght@400;700&family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Merriweather:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    body { margin:0; padding:0; font-family:'Lato', sans-serif; background-color:#F3F4F6; color:#111827; transition: all 0.3s; }
+    header { background-color:#1E3A8A; color:white; padding:2rem; text-align:center; transition: all 0.3s; }
+    header h1 { font-family:'Montserrat', sans-serif; font-size:2.5rem; margin-bottom:0.5rem; }
+    header p { font-size:1.2rem; }
+    main { padding:2rem; }
+    h2 { margin-bottom:1rem; }
+    p { margin-bottom:1rem; }
+    .btn { padding:0.8rem 1.5rem; border:none; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s; margin-right: 0.5rem; }
+    .btn-primary { color:white; }
+    .btn-acento { color:#111827; }
+    .alert { padding:1rem 1.5rem; border-radius:8px; margin-bottom:1rem; font-weight:600; transition: all 0.3s; }
+    #paletteSelector, #fontSelector { margin-bottom: 1rem; padding:0.5rem; border-radius:6px; font-size:1rem; }
+    #paletteInfo { padding:1rem; border-radius:8px; background-color:#FFFFFF; margin-bottom:2rem; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+    .color-label { font-weight:700; margin-right:0.5rem;}
+    .color-box { display:inline-block; width:20px; height:20px; margin-right:0.5rem; border-radius:4px; vertical-align:middle;}
+    section { margin-bottom:2rem; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Compra Masiva</h1>
+    <p>Gestiona tus compras y ventas de forma rápida y segura</p>
+</header>
+
+<main>
+    <label for="paletteSelector"><strong>Selecciona una paleta de colores:</strong></label>
+    <select id="paletteSelector"></select>
+
+    <label for="fontSelector"><strong>Selecciona la fuente de la paleta:</strong></label>
+    <select id="fontSelector"></select>
+
+    <div id="paletteInfo">
+        <p><span class="color-label">Primario:</span><span id="colorPrimario" class="color-box"></span><span id="namePrimario"></span></p>
+        <p><span class="color-label">Secundario:</span><span id="colorSecundario" class="color-box"></span><span id="nameSecundario"></span></p>
+        <p><span class="color-label">Acento:</span><span id="colorAcento" class="color-box"></span><span id="nameAcento"></span></p>
+        <p><span class="color-label">Éxito:</span><span id="colorExito" class="color-box"></span><span id="nameExito"></span></p>
+        <p><span class="color-label">Error:</span><span id="colorError" class="color-box"></span><span id="nameError"></span></p>
+        <p><span class="color-label">Advertencia:</span><span id="colorWarning" class="color-box"></span><span id="nameWarning"></span></p>
+    </div>
+
+    <section>
+        <h2>Panel de Usuario</h2>
+        <p>Bienvenido al sistema. Aquí podrás ver tus órdenes y el estado de tus compras.</p>
+        <button class="btn btn-primary">Realizar Compra</button>
+        <button class="btn btn-acento">Ver Historial</button>
+    </section>
+
+    <section>
+        <h2>Mensajes de Sistema</h2>
+        <div class="alert alert-success">Compra realizada correctamente.</div>
+        <div class="alert alert-error">Error: No se pudo procesar la compra.</div>
+        <div class="alert alert-warning">Advertencia: Stock limitado.</div>
+    </section>
+
+    <section>
+        <h2>Subtítulos y Notificaciones</h2>
+        <p>Subtítulo ejemplo: Últimas promociones y descuentos aplicables.</p>
+        <p>Notificación: Tu pedido llegará en 3-5 días hábiles.</p>
+    </section>
+</main>
+
+<script>
+// Paletas y 5 fuentes por cada una
+const palettes = {
+    paleta1: { nombre:"Moderna Corporativa", primario:"#1E3A8A", secundario:"#2563EB", acento:"#FBBF24", fondo:"#F3F4F6", texto:"#111827", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Lato','Montserrat','Poppins','Raleway','Nunito'] },
+    paleta2: { nombre:"Vibrante Comercial", primario:"#EF4444", secundario:"#F97316", acento:"#10B981", fondo:"#FFFFFF", texto:"#1F2937", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Nunito','Raleway','Source Sans Pro','Ubuntu','Poppins'] },
+    paleta3: { nombre:"Minimalista Elegante", primario:"#111827", secundario:"#374151", acento:"#6366F1", fondo:"#F9FAFB", texto:"#1F2937", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Fira Sans','Work Sans','Inter','Montserrat','Lato'] },
+    paleta4: { nombre:"Fresco y Energético", primario:"#22C55E", secundario:"#14B8A6", acento:"#FACC15", fondo:"#ECFDF5", texto:"#065F46", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Poppins','Alegreya','Nunito','Karla','Muli'] },
+    paleta5: { nombre:"Profesional y Segura", primario:"#0F172A", secundario:"#1E40AF", acento:"#FACC15", fondo:"#E5E7EB", texto:"#111827", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Roboto','Open Sans','Lato','Noto Sans','Montserrat'] },
+    paleta6: { nombre:"Optimista y Dinámica", primario:"#F97316", secundario:"#F43F5E", acento:"#3B82F6", fondo:"#FFF7ED", texto:"#1F2937", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Raleway','Poppins','Ubuntu','Quicksand','Nunito'] },
+    paleta7: { nombre:"Sólida y Neutral", primario:"#374151", secundario:"#6B7280", acento:"#F59E0B", fondo:"#F3F4F6", texto:"#111827", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Inter','Lato','Source Sans Pro','Open Sans','Montserrat'] },
+    paleta8: { nombre:"Tecnológica y Moderna", primario:"#0EA5E9", secundario:"#3B82F6", acento:"#8B5CF6", fondo:"#EFF6FF", texto:"#1E293B", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Roboto','Inter','Poppins','Fira Sans','Helvetica Neue'] },
+    paleta9: { nombre:"Elegante Cálida", primario:"#B45309", secundario:"#EA580C", acento:"#FCD34D", fondo:"#FFFBEB", texto:"#78350F", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Playfair Display','Lora','Merriweather','Cormorant Garamond','PT Serif'] },
+    paleta10:{ nombre:"Frescura Digital", primario:"#06B6D4", secundario:"#14B8A6", acento:"#10B981", fondo:"#ECFEFF", texto:"#0F172A", alertaExito:"#D1FAE5", alertaError:"#FEE2E2", alertaAdvertencia:"#FEF3C7", fuentes:['Nunito','Quicksand','Poppins','Raleway','Open Sans'] }
+};
+
+// Inicializa selectores
+const paletteSelector = document.getElementById('paletteSelector');
+const fontSelector = document.getElementById('fontSelector');
+
+Object.keys(palettes).forEach(p => {
+    let option = document.createElement('option');
+    option.value = p;
+    option.textContent = palettes[p].nombre;
+    paletteSelector.appendChild(option);
+});
+
+function updateFontSelector(p) {
+    fontSelector.innerHTML = '';
+    palettes[p].fuentes.forEach(f => {
+        let option = document.createElement('option');
+        option.value = f;
+        option.textContent = f;
+        fontSelector.appendChild(option);
+    });
+}
+
+function applyPaletteAndFont() {
+    const p = paletteSelector.value;
+    const f = fontSelector.value;
+    const palette = palettes[p];
+
+    // Colores
+    document.body.style.backgroundColor = palette.fondo;
+    document.body.style.color = palette.texto;
+    document.querySelector('header').style.backgroundColor = palette.primario;
+    document.querySelectorAll('h2').forEach(h => h.style.color = palette.secundario);
+    document.querySelectorAll('.btn-primary').forEach(b => {
+        b.style.backgroundColor = palette.primario;
+        b.onmouseover = () => b.style.backgroundColor = palette.secundario;
+        b.onmouseout = () => b.style.backgroundColor = palette.primario;
+    });
+    document.querySelectorAll('.btn-acento').forEach(b => b.style.backgroundColor = palette.acento);
+    document.querySelectorAll('.alert-success').forEach(a => a.style.backgroundColor = palette.alertaExito);
+    document.querySelectorAll('.alert-error').forEach(a => a.style.backgroundColor = palette.alertaError);
+    document.querySelectorAll('.alert-warning').forEach(a => a.style.backgroundColor = palette.alertaAdvertencia);
+
+    // Colores visibles al cliente
+    document.getElementById('colorPrimario').style.backgroundColor = palette.primario;
+    document.getElementById('namePrimario').innerText = palette.primario;
+    document.getElementById('colorSecundario').style.backgroundColor = palette.secundario;
+    document.getElementById('nameSecundario').innerText = palette.secundario;
+    document.getElementById('colorAcento').style.backgroundColor = palette.acento;
+    document.getElementById('nameAcento').innerText = palette.acento;
+    document.getElementById('colorExito').style.backgroundColor = palette.alertaExito;
+    document.getElementById('nameExito').innerText = palette.alertaExito;
+    document.getElementById('colorError').style.backgroundColor = palette.alertaError;
+    document.getElementById('nameError').innerText = palette.alertaError;
+    document.getElementById('colorWarning').style.backgroundColor = palette.alertaAdvertencia;
+    document.getElementById('nameWarning').innerText = palette.alertaAdvertencia;
+
+    // Fuente seleccionada
+    document.body.style.fontFamily = f;
+    document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(e => e.style.fontFamily = f);
+    document.querySelectorAll('.btn').forEach(e => e.style.fontFamily = f);
+    document.querySelectorAll('p').forEach(e => e.style.fontFamily = f);
+}
+
+// Eventos
+paletteSelector.addEventListener('change', () => { 
+    updateFontSelector(paletteSelector.value);
+    applyPaletteAndFont();
+});
+fontSelector.addEventListener('change', applyPaletteAndFont);
+
+// Inicial
+updateFontSelector(paletteSelector.value);
+applyPaletteAndFont();
+</script>
+
+</body>
+</html>
