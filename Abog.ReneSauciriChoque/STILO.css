@@ -96,21 +96,6 @@ body {
     
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, hsla(0, 0%, 0%, 0.15) 0%, transparent 100%);
-    animation: rotate 30s linear infinite;
-    z-index: -1; /* asegúrate de que quede detrás de la card */
-    pointer-events: none;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) rotate(0deg); /* centra el pseudo-elemento */
-    transform-origin: center center;
-}
 
 
 /* 🔥 Animaciones */
@@ -582,4 +567,5 @@ opacity: 0;
     100% {transform: translateY(-100vh) translateX(20px);
     opacity: 0;
 }
+
 }
