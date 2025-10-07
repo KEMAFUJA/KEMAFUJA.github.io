@@ -96,6 +96,21 @@ body {
     
 }
 
+.card::before {
+    content: "";
+    position: absolute;
+    top: 10%; /* centro vertical */
+    left: 0%; /* centro horizontal */
+    width: 300px; /* ancho fijo */
+    height: 400px; /* alto fijo */
+    background: radial-gradient(circle, hsla(0, 0%, 0%, 0.1) 0%, transparent 100%);
+    animation: rotate 30s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center center;
+}
 
 
 /* 🔥 Animaciones */
@@ -567,5 +582,4 @@ opacity: 0;
     100% {transform: translateY(-100vh) translateX(20px);
     opacity: 0;
 }
-
 }
