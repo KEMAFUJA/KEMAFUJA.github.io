@@ -4,8 +4,8 @@
     <meta property="og:title" content="Optica - RODAS">
     <meta property="og:description" content="Gerente General - Sonia Rodas A.">
     <meta property="og:image" content="https://kemafuja.github.io/Optica.Rodas/logo2.png">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="300">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://kemafuja.github.io/Optica.Rodas">
     <meta name="twitter:card" content="summary_large_image">    
 
@@ -191,21 +191,31 @@
             });
 
             // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
+const goldParticles = document.querySelector('.gold-particles');
+
+for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('gold-particle');
+
+    // posición inicial
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `100%`;
+
+    // tamaño aleatorio
+    const size = Math.random() * 20 + 5;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // duración aleatoria para que algunas vayan más lento
+    const duration = Math.random() * 5 + 10; // entre 10 y 20 segundos
+    particle.style.animationDuration = `${duration}s`;
+
+    // retardo aleatorio para que no todas empiecen juntas
+    particle.style.animationDelay = `${Math.random() * 5}s`;
+
+    goldParticles.appendChild(particle);
+}
         });
     </script>
 </body>
 </html>
-
-
-
