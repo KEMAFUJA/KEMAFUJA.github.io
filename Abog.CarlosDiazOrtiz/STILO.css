@@ -509,7 +509,7 @@ body {
     .letra {font-size: 2rem;
             }
             
-    .nombre-completo h2 {font-size: 1.5rem;
+    .nombre-completo h2 {font-size: 2rem;
             }
             
     .nombre-completo h3 {font-size: 1.2rem;
@@ -546,5 +546,6 @@ body {
             opacity: 0;
         }
 }
+
 
 
