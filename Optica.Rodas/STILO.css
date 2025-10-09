@@ -176,7 +176,7 @@ body {
 
 @font-face {
     font-family: 'Stalemate-Regular';
-    src: url('KUNSTLER.TTF');
+    src: url('/KUNSTLER.TTF');
 }
 
 .nombre-completo h2 {
@@ -501,4 +501,5 @@ body {
                     height: 40px;
             }
 }
+
 
