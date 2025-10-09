@@ -175,8 +175,8 @@ body {
 }
 
 @font-face {
-    font-family: 'Stalemate-Regular';
-    src: url('/KUNSTLER.TTF');
+    font-family: 'KUNSTLER';
+    src: url('KUNSTLER.TTF');
 }
 
 .nombre-completo h2 {
@@ -185,7 +185,7 @@ body {
     color: var(--dark-blue);
     margin-top: 5px;
     margin-bottom: -10px;
-    font-family: 'Stalemate-Regular';
+    font-family: 'KUNSTLER';
 
 }
 
@@ -501,4 +501,5 @@ body {
                     height: 40px;
             }
 }
+
 
