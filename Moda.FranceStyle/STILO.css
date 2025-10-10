@@ -150,7 +150,7 @@ transform: rotate(360deg);
 
 @font-face {
     font-family: 'Ballet-Regular-VariableFont_opsz';
-    src: url('/-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
+    src: url('Ballet-Regular-VariableFont_opsz.ttf');
 }
 
 .nombre-completo h2 {
@@ -433,4 +433,5 @@ grid-template-columns: 1fr;
     background-color: #333; /* Fondo al pasar mouse */
     color: #fff; /* Texto blanco al hover */
     transform: translateY(-2px); /* Sutil elevación */
+
 }
