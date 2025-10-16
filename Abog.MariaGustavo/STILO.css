@@ -140,7 +140,7 @@ body {
 }
 
 .official-seal::before {
-    content: "NOTARÍA PÚBLICA N°135";
+    content: "ASALVO";
     position: absolute;
     font-size: 12px;
     font-weight: bold;
