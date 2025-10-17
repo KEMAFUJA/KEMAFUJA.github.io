@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú Marino — Catálogo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #008cba;
+      --secondary: #00bfa6;
+      --accent: #ff7e5f;
+      --light: #ffffff;
+      --dark: #333333;
+      --gray: #f5f5f5;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    select {
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      background: var(--light);
+      color: var(--dark);
+      box-shadow: var(--shadow);
+      min-width: 200px;
+    }
+
+    .categorias {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.5rem 1rem;
+      flex-wrap: wrap;
+    }
+
+    .categorias button {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid var(--light);
+      color: var(--light);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .categorias button:hover,
+    .categorias button.active {
+      background: var(--light);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .plato-card {
+      background: var(--light);
+      color: var(--dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .plato-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .plato-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .plato-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .plato-info {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .plato-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .plato-info p {
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+      color: #666;
+      flex: 1;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--secondary);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-bar { flex-direction: column; align-items: center; }
+      select { width: 100%; max-width: 300px; }
+      main { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      main { grid-template-columns: 1fr; gap: 1rem; }
+      .categorias button {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-fish"></i> Restaurante El Sabor Marino</h1>
+  </header>
+
+  <div class="categorias">
+    <button data-cat="platos" class="active"><i class="fas fa-utensils"></i> Platos</button>
+    <button data-cat="guarniciones"><i class="fas fa-carrot"></i> Guarniciones</button>
+    <button data-cat="bebidas"><i class="fas fa-glass-cheers"></i> Bebidas</button>
+    <button data-cat="postres"><i class="fas fa-ice-cream"></i> Postres</button>
+    <button data-cat="todo"><i class="fas fa-list"></i> Ver Todo</button>
+  </div>
+
+  <main>
+    <!-- Platos -->
+    <div class="plato-card" data-cat="platos">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Plato Marino">
+      <div class="plato-info">
+        <h3>Plato Marino 1</h3>
+        <p>Delicioso plato preparado con ingredientes frescos.</p>
+        <div class="price">$15.99</div>
+      </div>
+    </div>
+
+    <div class="plato-card" data-cat="platos">
+      <img src="https://images.unsplash.com/photo-1601315471944-31c79a0b09f0" alt="Plato Marino 2">
+      <div class="plato-info">
+        <h3>Plato Marino 2</h3>
+        <p>Especialidad de la casa con sabor único.</p>
+        <div class="price">$18.50</div>
+      </div>
+    </div>
+
+    <!-- Guarniciones -->
+    <div class="plato-card" data-cat="guarniciones">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Guarnición">
+      <div class="plato-info">
+        <h3>Guarnición 1</h3>
+        <p>Perfecta para acompañar tus platos favoritos.</p>
+        <div class="price">$4.99</div>
+      </div>
+    </div>
+
+    <div class="plato-card" data-cat="guarniciones">
+      <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85" alt="Guarnición 2">
+      <div class="plato-info">
+        <h3>Guarnición 2</h3>
+        <p>Fresca y deliciosa.</p>
+        <div class="price">$3.99</div>
+      </div>
+    </div>
+
+    <!-- Bebidas -->
+    <div class="plato-card" data-cat="bebidas">
+      <img src="https://images.unsplash.com/photo-1601315481265-0e3852a6d0b2" alt="Bebida">
+      <div class="plato-info">
+        <h3>Bebida 1</h3>
+        <p>Refrescante y deliciosa.</p>
+        <div class="price">$2.99</div>
+      </div>
+    </div>
+
+    <div class="plato-card" data-cat="bebidas">
+      <img src="https://images.unsplash.com/photo-1571077825772-c54f7a7c1f9c" alt="Bebida 2">
+      <div class="plato-info">
+        <h3>Bebida 2</h3>
+        <p>El acompañamiento perfecto.</p>
+        <div class="price">$3.50</div>
+      </div>
+    </div>
+
+    <!-- Postres -->
+    <div class="plato-card" data-cat="postres">
+      <img src="https://images.unsplash.com/photo-1543332164-6e82f355bad2" alt="Postre">
+      <div class="plato-info">
+        <h3>Postre 1</h3>
+        <p>Un dulce final para tu comida.</p>
+        <div class="price">$6.99</div>
+      </div>
+    </div>
+
+    <div class="plato-card" data-cat="postres">
+      <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" alt="Postre 2">
+      <div class="plato-info">
+        <h3>Postre 2</h3>
+        <p>Hecho con amor y sabor.</p>
+        <div class="price">$5.50</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 El Sabor Marino · Todos los derechos reservados
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.categorias button');
+    const cards = document.querySelectorAll('.plato-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.getAttribute('data-cat');
+
+        cards.forEach(card => {
+          if (cat === 'todo' || card.getAttribute('data-cat') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
