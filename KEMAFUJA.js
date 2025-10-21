@@ -8,23 +8,31 @@ let fontConfig = {};
 let index = 0;
 let currentFontIndex = 0;
 
-// 🔹 Cargar los JSON antes de iniciar animaciones
+// =========================================================
+// 🔹 Cargar los JSON antes de iniciar animaciones (con diagnóstico)
+// =========================================================
 Promise.all([
-  fetch("./datos/fonts.json").then(res => res.json()),
-  fetch("./datos/fontConfig.json").then(res => res.json())
+  fetch("./datos/fonts.json").then(res => {
+    console.log("Respuesta fonts.json:", res.status, res);
+    return res.json();
+  }),
+  fetch("./datos/fontConfig.json").then(res => {
+    console.log("Respuesta fontConfig.json:", res.status, res);
+    return res.json();
+  })
 ])
 .then(([fontsData, fontConfigData]) => {
+  console.log("✅ JSON cargados correctamente:", fontsData, fontConfigData);
   fonts = fontsData.fonts;            // arreglo simple de nombres
   fontConfig = fontConfigData;        // objeto con configuraciones
   iniciarAnimaciones();               // iniciar solo después de cargar
 })
-.catch(err => console.error("Error cargando los JSON:", err));
+.catch(err => console.error("❌ Error cargando los JSON:", err));
 
 // =========================================================
 // 🔸 FUNCIONES PRINCIPALES
 // =========================================================
 
-// Función para obtener configuración responsiva desde JSON
 function getFontConfig(fontName) {
   const config = fontConfig[fontName] || fontConfig.default;
   const screenWidth = window.innerWidth;
@@ -50,7 +58,10 @@ function getFontConfig(fontName) {
   }
 }
 
-// Cargar fuentes desde Google Fonts dinámicamente
+// =========================================================
+// 🔸 CARGA Y APLICACIÓN DE FUENTES
+// =========================================================
+
 function loadGoogleFont(font) {
   const fontName = font.replace(/ /g, '+');
   if (!document.querySelector(`link[data-font="${fontName}"]`)) {
@@ -66,12 +77,10 @@ function loadGoogleFont(font) {
   }
 }
 
-// Aplicar la fuente y su configuración visual
 function applyFontWithConfig(font) {
   const config = getFontConfig(font);
   console.log(`Aplicando fuente: ${font}`, config);
 
-  // Aplicar fuente y estilos
   titulo.style.fontFamily  = `'${font}', sans-serif`;
   titulo2.style.fontFamily = `'${font}', sans-serif`;
 
@@ -84,22 +93,15 @@ function applyFontWithConfig(font) {
   const nombreFuenteEl = document.getElementById('nombre-fuente');
   nombreFuenteEl.style.fontFamily = `'${font}', sans-serif`;
 
-  // Ajustar tamaños
   setTimeout(() => {
-      // Título principal
-      adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
+    adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
+    adjustFontSize(titulo2, texto2, config.baseSize * 0.5, config.maxWidth);
 
-      // Título secundario = 50% del principal
-      adjustFontSize(titulo2, texto2, config.baseSize*0.5, config.maxWidth);
-
-      // Nombre de la fuente = 25% del principal
-      nombreFuenteEl.style.fontSize = config.baseSize* 0.25 + 'px';
-      nombreFuenteEl.textContent = font;
+    nombreFuenteEl.style.fontSize = config.baseSize * 0.25 + 'px';
+    nombreFuenteEl.textContent = font;
   }, 100);
 }
 
-
-// Ajuste automático del tamaño del texto según ancho máximo
 function adjustFontSize(element, text, baseSize, maxWidth) {
   const tempSpan = document.createElement('span');
   tempSpan.style.fontFamily = element.style.fontFamily;
@@ -129,39 +131,35 @@ function adjustFontSize(element, text, baseSize, maxWidth) {
 // =========================================================
 
 function iniciarAnimaciones() {
+  console.log("🎬 Iniciando animaciones...");
   escribirTitulo();
   iniciarCambioAutomaticoFuentes();
 }
 
-// Animación tipo máquina de escribir
 function escribirTitulo() {
   if (index < texto2.length) {
     titulo.textContent  += texto.charAt(index);
     titulo2.textContent += texto2.charAt(index);
     index++;
 
-    // Cambiar fuente cada 2 caracteres
     if (index % 2 === 0) cambiarFuenteAleatoria();
 
     setTimeout(escribirTitulo, 150);
   }
 }
 
-// Cambiar a una fuente aleatoria
 function cambiarFuenteAleatoria() {
   const randomIndex = Math.floor(Math.random() * fonts.length);
   const randomFont  = fonts[randomIndex];
   loadGoogleFont(randomFont);
 }
 
-// Cambiar a la siguiente fuente en secuencia
 function cambiarFuenteSecuencial() {
   currentFontIndex = (currentFontIndex + 1) % fonts.length;
   const nextFont = fonts[currentFontIndex];
   loadGoogleFont(nextFont);
 }
 
-// Cambio automático de fuentes
 function iniciarCambioAutomaticoFuentes() {
   const tiempoEscritura = texto.length * 150 + 2000;
   setTimeout(() => {
@@ -197,6 +195,3 @@ document.querySelector('.dropdown-header').addEventListener('click', function() 
   this.querySelector('i').classList.toggle('fa-chevron-down');
   document.querySelector('.dropdown-content').classList.toggle('show');
 });
-
-
-
