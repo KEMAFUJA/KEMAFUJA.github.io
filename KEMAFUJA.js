@@ -10,8 +10,8 @@ let currentFontIndex = 0;
 
 // 🔹 Cargar los JSON antes de iniciar animaciones
 Promise.all([
-  fetch("datos/fonts.json").then(res => res.json()),
-  fetch("datos/fontConfig.json").then(res => res.json())
+  fetch("/datos/fonts.json").then(res => res.json()),
+  fetch("/datos/fontConfig.json").then(res => res.json())
 ])
 .then(([fontsData, fontConfigData]) => {
   fonts = fontsData.fonts;            // arreglo simple de nombres
@@ -197,3 +197,4 @@ document.querySelector('.dropdown-header').addEventListener('click', function() 
   this.querySelector('i').classList.toggle('fa-chevron-down');
   document.querySelector('.dropdown-content').classList.toggle('show');
 });
+
