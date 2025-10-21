@@ -1,108 +1,199 @@
-
-// Efecto de máquina de escribir con cambio de fuentes
-const titulo = document.getElementById('titulo');
-const texto = "KEMAFUJA  ";
+const titulo  = document.getElementById('titulo');
 const titulo2 = document.getElementById('titulo2');
-const texto2 = "ENTERPRISE";
+const texto   = "KEMAFUJA";
+const texto2  = "ENTERPRISE";
+
+let fonts = [];
+let fontConfig = {};
 let index = 0;
+let currentFontIndex = 0;
 
-// Lista de fuentes para el efecto de cambio
-const fonts = [
-    "'Montserrat', sans-serif",
-    "'Playfair Display', serif",
-    "'Arial', sans-serif",
-    "'Courier New', monospace",
-    "'Georgia', serif",
-    "'Times New Roman', serif",
-    "'Verdana', sans-serif"
-];
+// 🔹 Cargar los JSON antes de iniciar animaciones
+Promise.all([
+  fetch("datos/fonts.json").then(res => res.json()),
+  fetch("datos/fontConfig.json").then(res => res.json())
+])
+.then(([fontsData, fontConfigData]) => {
+  fonts = fontsData.fonts;            // arreglo simple de nombres
+  fontConfig = fontConfigData;        // objeto con configuraciones
+  iniciarAnimaciones();               // iniciar solo después de cargar
+})
+.catch(err => console.error("Error cargando los JSON:", err));
 
-function escribirTitulo() {
-    if (index < texto.length) {
-        titulo.textContent += texto.charAt(index);
-        titulo2.textContent += texto2.charAt(index);
-        index++;
+// =========================================================
+// 🔸 FUNCIONES PRINCIPALES
+// =========================================================
 
-        // Cambiar la fuente periódicamente
-        if (index % 3 === 0) { // Cambia cada 3 caracteres
-            const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-            titulo.style.fontFamily = randomFont;
-            titulo2.style.fontFamily = randomFont;
-        }
+// Función para obtener configuración responsiva desde JSON
+function getFontConfig(fontName) {
+  const config = fontConfig[fontName] || fontConfig.default;
+  const screenWidth = window.innerWidth;
 
-setTimeout(escribirTitulo, 150);
-    } else {
-        titulo.style.borderRight = 'none';
-        titulo2.style.borderRight = 'none';
-
-// Continuar cambiando las fuentes después de terminar la escritura
-setInterval(() => {
-    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-    titulo.style.fontFamily = randomFont;
-    titulo2.style.fontFamily = randomFont;
-}, 3000); // Cambia cada 3 segundos
-    }
+  if (screenWidth <= 480) {
+    return {
+      baseSize: Math.floor(config.baseSize * 0.6),
+      maxWidth: screenWidth * 0.85,
+      marginBottom: config.marginBottom,
+      lineHeight: config.lineHeight,
+      letterSpacing: config.letterSpacing
+    };
+  } else if (screenWidth <= 768) {
+    return {
+      baseSize: Math.floor(config.baseSize * 0.8),
+      maxWidth: screenWidth * 0.75,
+      marginBottom: config.marginBottom,
+      lineHeight: config.lineHeight,
+      letterSpacing: config.letterSpacing
+    };
+  } else {
+    return config;
+  }
 }
-escribirTitulo();
 
-// Control de audio
+// Cargar fuentes desde Google Fonts dinámicamente
+function loadGoogleFont(font) {
+  const fontName = font.replace(/ /g, '+');
+  if (!document.querySelector(`link[data-font="${fontName}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `https://fonts.googleapis.com/css2?family=${fontName}&display=swap`;
+    link.dataset.font = fontName;
+    document.head.appendChild(link);
+
+    link.onload = () => applyFontWithConfig(font);
+  } else {
+    applyFontWithConfig(font);
+  }
+}
+
+// Aplicar la fuente y su configuración visual
+function applyFontWithConfig(font) {
+  const config = getFontConfig(font);
+  console.log(`Aplicando fuente: ${font}`, config);
+
+  // Aplicar fuente y estilos
+  titulo.style.fontFamily  = `'${font}', sans-serif`;
+  titulo2.style.fontFamily = `'${font}', sans-serif`;
+
+  titulo.style.lineHeight     = config.lineHeight;
+  titulo.style.letterSpacing  = config.letterSpacing;
+  titulo.style.marginBottom   = config.marginBottom;
+  titulo2.style.lineHeight    = config.lineHeight;
+  titulo2.style.letterSpacing = config.letterSpacing;
+
+  const nombreFuenteEl = document.getElementById('nombre-fuente');
+  nombreFuenteEl.style.fontFamily = `'${font}', sans-serif`;
+
+  // Ajustar tamaños
+  setTimeout(() => {
+      // Título principal
+      adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
+
+      // Título secundario = 50% del principal
+      adjustFontSize(titulo2, texto2, config.baseSize*0.5, config.maxWidth);
+
+      // Nombre de la fuente = 25% del principal
+      nombreFuenteEl.style.fontSize = config.baseSize* 0.25 + 'px';
+      nombreFuenteEl.textContent = font;
+  }, 100);
+}
+
+
+// Ajuste automático del tamaño del texto según ancho máximo
+function adjustFontSize(element, text, baseSize, maxWidth) {
+  const tempSpan = document.createElement('span');
+  tempSpan.style.fontFamily = element.style.fontFamily;
+  tempSpan.style.fontSize   = baseSize + 'px';
+  tempSpan.style.visibility = 'hidden';
+  tempSpan.style.position   = 'absolute';
+  tempSpan.style.whiteSpace = 'nowrap';
+  tempSpan.textContent = text;
+
+  document.body.appendChild(tempSpan);
+  const textWidth = tempSpan.offsetWidth;
+  document.body.removeChild(tempSpan);
+
+  if (textWidth > maxWidth) {
+    const scaleFactor = maxWidth / textWidth;
+    const adjustedSize = Math.floor(baseSize * scaleFactor);
+    element.style.fontSize = adjustedSize + 'px';
+    console.log(`Ajustada ${text}: ${baseSize}px → ${adjustedSize}px`);
+  } else {
+    element.style.fontSize = baseSize + 'px';
+    console.log(`Manteniendo ${text}: ${baseSize}px`);
+  }
+}
+
+// =========================================================
+// 🔸 ANIMACIÓN DE TEXTO Y FUENTES
+// =========================================================
+
+function iniciarAnimaciones() {
+  escribirTitulo();
+  iniciarCambioAutomaticoFuentes();
+}
+
+// Animación tipo máquina de escribir
+function escribirTitulo() {
+  if (index < texto2.length) {
+    titulo.textContent  += texto.charAt(index);
+    titulo2.textContent += texto2.charAt(index);
+    index++;
+
+    // Cambiar fuente cada 2 caracteres
+    if (index % 2 === 0) cambiarFuenteAleatoria();
+
+    setTimeout(escribirTitulo, 150);
+  }
+}
+
+// Cambiar a una fuente aleatoria
+function cambiarFuenteAleatoria() {
+  const randomIndex = Math.floor(Math.random() * fonts.length);
+  const randomFont  = fonts[randomIndex];
+  loadGoogleFont(randomFont);
+}
+
+// Cambiar a la siguiente fuente en secuencia
+function cambiarFuenteSecuencial() {
+  currentFontIndex = (currentFontIndex + 1) % fonts.length;
+  const nextFont = fonts[currentFontIndex];
+  loadGoogleFont(nextFont);
+}
+
+// Cambio automático de fuentes
+function iniciarCambioAutomaticoFuentes() {
+  const tiempoEscritura = texto.length * 150 + 2000;
+  setTimeout(() => {
+    setInterval(cambiarFuenteSecuencial, 3000);
+    cambiarFuenteSecuencial();
+  }, tiempoEscritura);
+}
+
+// =========================================================
+// 🔸 CONTROL DE AUDIO
+// =========================================================
+
 const miAudio = document.getElementById('background-audio');
 
 function playAudio() {
-    miAudio.play();
-    document.querySelector('.audio-controls .fa-play').parentNode.classList.add('active');
-    document.querySelector('.audio-controls .fa-pause').parentNode.classList.remove('active');
+  miAudio.play();
+  document.querySelector('.audio-controls .fa-play').parentNode.classList.add('active');
+  document.querySelector('.audio-controls .fa-pause').parentNode.classList.remove('active');
 }
 
 function pauseAudio() {
-    miAudio.pause();
-    document.querySelector('.audio-controls .fa-pause').parentNode.classList.add('active');
-    document.querySelector('.audio-controls .fa-play').parentNode.classList.remove('active');
+  miAudio.pause();
+  document.querySelector('.audio-controls .fa-pause').parentNode.classList.add('active');
+  document.querySelector('.audio-controls .fa-play').parentNode.classList.remove('active');
 }
 
-// Dropdown de servicios
+// =========================================================
+// 🔸 DROPDOWN DE SERVICIOS
+// =========================================================
+
 document.querySelector('.dropdown-header').addEventListener('click', function() {
-    this.querySelector('i').classList.toggle('fa-chevron-up');
-    this.querySelector('i').classList.toggle('fa-chevron-down');
-    document.querySelector('.dropdown-content').classList.toggle('show');
+  this.querySelector('i').classList.toggle('fa-chevron-up');
+  this.querySelector('i').classList.toggle('fa-chevron-down');
+  document.querySelector('.dropdown-content').classList.toggle('show');
 });
-
-// Modal para PDF
-
-    function openPDF() {
-      const modal = document.createElement("div");
-      modal.style.position = "fixed";
-      modal.style.top = "0";
-      modal.style.left = "0";
-      modal.style.width = "100%";
-      modal.style.height = "100%";
-      modal.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
-      modal.style.zIndex = "1000";
-      modal.style.display = "flex";
-      modal.style.alignItems = "center";
-      modal.style.justifyContent = "center";
-
-      const iframe = document.createElement("iframe");
-      iframe.src = "PAQUETES_KEMAFUJA.pdf";
-      iframe.style.border = "none";
-
-      const closeButton = document.createElement("button");
-      closeButton.textContent = "✖";
-      closeButton.style.position = "absolute";
-      closeButton.style.top = "20px";
-      closeButton.style.right = "30px";
-      closeButton.style.fontSize = "25px";
-      closeButton.style.background = "transparent";
-      closeButton.style.color = "#fff";
-      closeButton.style.border = "none";
-      closeButton.style.cursor = "pointer";
-
-      closeButton.onclick = () => document.body.removeChild(modal);
-
-      modal.appendChild(iframe);
-      modal.appendChild(closeButton);
-      document.body.appendChild(modal);
-    }
-
-
-    
