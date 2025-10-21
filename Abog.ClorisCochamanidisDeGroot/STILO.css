@@ -188,7 +188,7 @@ color: #987f03; /* Color del texto inicial */
 
 @font-face {
     font-family: 'Corinthia-Regular';
-    src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
+    src: url('Corinthia-Regular.ttf');
 }
 
 .nombre-completo h2 {
@@ -565,4 +565,5 @@ opacity: 0;
     100% {transform: translateY(-100vh) translateX(20px);
     opacity: 0;
 }
+
 }
