@@ -197,7 +197,7 @@ color: #987f03; /* Color del texto inicial */
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    margin-bottom: -20px;
+    margin-bottom: -15px;
 }
 
 .nombre-completo h3 {
@@ -590,6 +590,7 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
 
 
