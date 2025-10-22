@@ -192,12 +192,12 @@ color: #987f03; /* Color del texto inicial */
 }
 
 .nombre-completo h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 500;
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    margin-bottom: -30px;
+    margin-bottom: -25px;
 }
 
 .nombre-completo h3 {
@@ -557,7 +557,7 @@ color: #987f03; /* Color del texto inicial */
     .letra {font-size: 2rem;}
     
     .nombre-completo h2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 0.75; 
   margin-bottom: 0px;
 }
@@ -590,6 +590,7 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
 
 
