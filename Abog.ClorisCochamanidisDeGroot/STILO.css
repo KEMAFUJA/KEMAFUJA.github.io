@@ -192,7 +192,7 @@ color: #987f03; /* Color del texto inicial */
 }
 
 .nombre-completo h2 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 500;
     color: var(--dark-blue);
     margin: 5px 0;
@@ -540,7 +540,7 @@ color: #987f03; /* Color del texto inicial */
     .letra {font-size: 2.5rem;
 }
     
-    .nombre-completo h2 {font-size: 1.2rem;
+    .nombre-completo h2 {font-size: 1rem;
 }
     
     .contact-grid {grid-template-columns: 1fr 1fr;
@@ -590,5 +590,6 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
 
