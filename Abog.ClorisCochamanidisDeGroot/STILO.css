@@ -197,7 +197,7 @@ color: #987f03; /* Color del texto inicial */
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    margin-bottom: -15px;
+    margin-bottom: -10px;
 }
 
 .nombre-completo h3 {
@@ -542,6 +542,7 @@ color: #987f03; /* Color del texto inicial */
     
     .nombre-completo h2 {font-size: 0.75rem;
 }
+    . nombre-completo h3{font-size: 0.5rem;}
     
     .contact-grid {grid-template-columns: 1fr 1fr;
 }
@@ -590,6 +591,7 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
 
 
