@@ -188,7 +188,7 @@ color: #987f03; /* Color del texto inicial */
 
 @font-face {
     font-family: 'Corinthia-Regular';
-    src: url('Corinthia-Regular.ttf');
+    src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
 }
 
 .nombre-completo h2 {
@@ -476,6 +476,32 @@ color: #987f03; /* Color del texto inicial */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+
+
+/* Dropdown de imágenes con click */
+.content-img {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 10px; /* padding inicial cuando está cerrado */
+    background: rgba(255,255,255,0.14);
+    border-radius: 8px;
+}
+
+.dropdown.active .content-img {
+    max-height: 800px; /* ajusta según cantidad de imágenes */
+    padding: 10px;
+}
+
+.content-img img {
+    display: block;
+    margin: 5px auto; /* centra las imágenes */
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
 /* Iconos sociales */
 .social-icons {
     display: flex;
@@ -565,5 +591,4 @@ opacity: 0;
     100% {transform: translateY(-100vh) translateX(20px);
     opacity: 0;
 }
-
 }
