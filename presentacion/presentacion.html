@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Imágenes Moderna</title>
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --light-color: #f8f9fa;
+        --dark-color: #343a40;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: var(--dark-color);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+        animation: fadeIn 1s ease-out;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+    }
+
+    #imageList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+    .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+    .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+    .gallery-item:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(44, 62, 80, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .gallery-item:hover .overlay {
+        opacity: 1;
+    }
+
+    .btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .btn:hover {
+        background: #2980b9;
+        transform: translateY(-3px);
+        box-shadow: 0 7px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+    }
+
+    .btn-link {
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+        width: 80%;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-top: 40px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        #imageList {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #imageList {
+            grid-template-columns: 1fr;
+        }
+        
+        .container {
+            padding: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h2>Imágenes con enlace</h2>
+        <p class="subtitle">Descubre nuestras imágenes destacadas</p>
+    </header>
+    
+    <div id="imageList"></div>
+    
+    <footer>
+        <p>© 2023 Galería Moderna</p>
+    </footer>
+</div>
+
+<script>
+async function loadImages() {
+    try {
+        const res = await fetch('presentacion.json');
+        if (!res.ok) throw new Error('No se encontró presentacion.json');
+        const images = await res.json();
+        return images;
+    } catch(err) {
+        console.error(err);
+        return [];
+    }
+}
+
+function renderImages(images) {
+    const container = document.getElementById('imageList');
+    container.innerHTML = '';
+    images.forEach(img => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+
+        // Contenedor de imagen
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+
+        // Imagen clickeable
+        const imageEl = document.createElement('img');
+        imageEl.src = img.path;
+        imageEl.style.cursor = 'pointer';
+        imageEl.addEventListener('click', () => {
+            window.open(img.url, '_blank');
+        });
+
+        // Overlay con botón
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        const overlayBtn = document.createElement('button');
+        overlayBtn.className = 'btn';
+        overlayBtn.textContent = 'Ver imagen';
+        overlayBtn.addEventListener('click', () => {
+            window.open(img.url, '_blank');
+        });
+        overlay.appendChild(overlayBtn);
+        
+        imageContainer.appendChild(imageEl);
+        imageContainer.appendChild(overlay);
+        
+        // Botón opcional que redirige
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-link';
+        btn.textContent = 'Ir al enlace';
+        btn.addEventListener('click', () => {
+            window.open(img.url, '_blank');
+        });
+
+        galleryItem.appendChild(imageContainer);
+        galleryItem.appendChild(btn);
+        container.appendChild(galleryItem);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const images = await loadImages();
+    renderImages(images);
+});
+</script>
+
+</body>
+</html>
