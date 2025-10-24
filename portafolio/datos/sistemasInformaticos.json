@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "MENU VIRTUAL",
+    "description": "🍽️ Menú virtual elegante que transforma la experiencia gastronómica digital. Diseño intuitivo que destaca platillos y facilita la navegación para comensales.",
+    "tags": ["GASTRONOMÍA", "DIGITAL", "USUARIO"],
+    "filterCategory": "restaurante",
+    "thumbnail": "https://kemafuja.github.io/MENU/menu.png",
+    "imageStyle": {
+      "container": "height: 250px; padding: 10px; background: white; display: flex; align-items: center; justify-content: center;",
+      "image": " max-width: 100%; max-height: 100%; width: 300%; height: 300%;"
+    },
+    "url": "https://kemafuja.github.io/MENU/MENU.html"
+  },
+  {
+    "id": 2,
+    "title": "MENU VIRTUAL - PEDIDO",
+    "description": "📱 Sistema completo de menú digital con procesamiento de pedidos en tiempo real. Diseñado para restaurantes que buscan eficiencia y experiencia de usuario superior.",
+    "tags": ["PEDIDOS ONLINE", "SISTEMA RESTAURANTE", "PROCESAMIENTO"],
+    "filterCategory": "restaurante",
+    "thumbnail": "https://kemafuja.github.io/MENU/menu.png",
+    "imageStyle": {
+      "container": "height: 250px; padding: 10px; background: white; display: flex; align-items: center; justify-content: center;",
+      "image": " max-width: 100%; max-height: 100%; width: 300%; height: 300%;"
+    },
+    "url": "https://kemafuja.github.io/MENU/MENUWA.html"
+}
+]

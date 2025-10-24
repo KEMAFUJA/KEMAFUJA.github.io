@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Elegante</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="portafolio.css">
+</head>
+<body>
+<header>
+  <button class="back-btn" onclick="window.location.href='../'">
+    <i class="fas fa-arrow-left"></i>
+    Volver al Inicio
+  </button>
+  
+  <div class="header-content">
+    <h1>KEMAFUJA</h1>
+    <p class="subtitle">Portafolio</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="filter-bar" id="parentButtons">
+    <button class="filter-btn active" data-parent="all">TODO</button>
+    <button class="filter-btn" data-parent="tarjetaVirtual">Tarjeta Virtual</button>
+    <button class="filter-btn" data-parent="sistemasInformaticos">Sistemas Informáticos</button>
+    <button class="filter-btn" data-parent="office">Office</button>
+  </div>
+
+  <div class="filter-bar" id="childButtons">
+    <!-- Subcategorías aparecerán aquí -->
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<div class="modal" id="previewModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle">Título</h2>
+      <button class="close-btn" id="closeModal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="loading" id="loadingIndicator">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Cargando previsualización...</p>
+      </div>
+      <iframe id="modalFrame" class="modal-preview" src="" frameborder="0"></iframe>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="viewDetails"><i class="fas fa-info-circle"></i> Ver detalles</button>
+      <button class="btn btn-primary" id="visitSite"><i class="fas fa-external-link-alt"></i> Visitar sitio</button>
+    </div>
+  </div>
+</div>
+<script src="portafolio.js"></script>
+</body>
+</html>
