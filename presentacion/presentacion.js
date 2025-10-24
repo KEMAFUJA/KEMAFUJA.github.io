@@ -13,21 +13,20 @@ async function loadImages() {
 function renderImages(images) {
     const container = document.getElementById('imageList');
     container.innerHTML = '';
+
     images.forEach(img => {
         const galleryItem = document.createElement('div');
         galleryItem.className = 'gallery-item';
 
-        // Contenedor de imagen
+        // 🔹 Contenedor de QR
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
 
-        // Imagen clickeable
         const imageEl = document.createElement('img');
         imageEl.src = img.path;
+        imageEl.alt = 'Código QR';
         imageEl.style.cursor = 'pointer';
-        imageEl.addEventListener('click', () => {
-            window.open(img.url, '_blank');
-        });
+        imageEl.addEventListener('click', () => window.open(img.url, '_blank'));
 
         // Overlay con botón
         const overlay = document.createElement('div');
@@ -35,24 +34,37 @@ function renderImages(images) {
         const overlayBtn = document.createElement('button');
         overlayBtn.className = 'btn';
         overlayBtn.textContent = 'Ver imagen';
-        overlayBtn.addEventListener('click', () => {
-            window.open(img.url, '_blank');
-        });
+        overlayBtn.addEventListener('click', () => window.open(img.url, '_blank'));
         overlay.appendChild(overlayBtn);
-        
+
         imageContainer.appendChild(imageEl);
         imageContainer.appendChild(overlay);
-        
-        // Botón opcional que redirige
+
+        // 🔹 Contenedor centrado para IFRAME
+        const previewWrapper = document.createElement('div');
+        previewWrapper.style.display = 'flex';
+        previewWrapper.style.justifyContent = 'center';
+        previewWrapper.style.marginTop = '15px';
+        previewWrapper.style.marginBottom = '20px';
+
+        const preview = document.createElement('iframe');
+        preview.src = img.url;
+        preview.className = 'preview-frame';
+        preview.title = `Vista previa de ${img.url}`;
+
+        previewWrapper.appendChild(preview);
+
+        // 🔹 Botón para abrir página
         const btn = document.createElement('button');
         btn.className = 'btn btn-link';
         btn.textContent = 'Ir al enlace';
-        btn.addEventListener('click', () => {
-            window.open(img.url, '_blank');
-        });
+        btn.addEventListener('click', () => window.open(img.url, '_blank'));
 
+        // 🔹 Añadir todo a galleryItem
         galleryItem.appendChild(imageContainer);
+        galleryItem.appendChild(previewWrapper);
         galleryItem.appendChild(btn);
+
         container.appendChild(galleryItem);
     });
 }
