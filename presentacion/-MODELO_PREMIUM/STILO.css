@@ -173,7 +173,7 @@ body {
 
 /* Texto centrado */
 .official-seal::after {
-    content: "Abog. Cloris Cochamanidis De Groot";
+    content: "CARGO/NOMBRE";
     position: absolute;
     text-align: center;
     font-size: 12.5px;
@@ -233,7 +233,7 @@ color: #987f03; /* Color del texto inicial */
 
 @font-face {
     font-family: 'Corinthia-Regular';
-    src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
+    src: url('../Corinthia-Regular.ttf');
 }
 
 .nombre-completo h2 {
@@ -685,4 +685,5 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
