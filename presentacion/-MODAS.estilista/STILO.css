@@ -150,7 +150,7 @@ transform: rotate(360deg);
 
 @font-face {
     font-family: 'Ballet-Regular-VariableFont_opsz';
-    src: url('/-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
+    src: url('../Ballet-Regular-VariableFont_opsz.ttf');
 }
 
 .nombre-completo h2 {
@@ -443,4 +443,5 @@ grid-template-columns: 1fr;
 .intro-text {
     font-size: 12px;
     margin-top: -30px;
+
 }
