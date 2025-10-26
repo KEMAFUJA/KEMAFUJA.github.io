@@ -232,8 +232,8 @@ color: #987f03; /* Color del texto inicial */
 }
 
 @font-face {
-    font-family: 'Corinthia-Regular';
-    src: url('../Corinthia-Regular.ttf');
+    font-family: 'Ballet-Regular-VariableFont_opsz';
+    src: url('../Ballet-Regular-VariableFont_opsz.ttf');
 }
 
 .nombre-completo h2 {
@@ -242,7 +242,7 @@ color: #987f03; /* Color del texto inicial */
     color: var(--dark-blue);
     margin: 5px 0;
     letter-spacing: 1px;
-    font-family: 'Corinthia-Regular';
+    font-family: 'Ballet-Regular-VariableFont_opsz';
     margin-bottom: -30px;
 }
 
@@ -685,5 +685,6 @@ opacity: 0;
     opacity: 0;
 }
 }
+
 
 
