@@ -1,0 +1,15 @@
+{
+  "Estilo": [
+    { "src": "Estilo/Estilo (1).jpg", "alt": "Estilo 1" },
+    { "src": "Estilo/Estilo (2).jpg", "alt": "Estilo 2" },
+    { "src": "Estilo/Estilo (3).jpg", "alt": "Estilo 3" }
+  ],
+  "Maquillaje": [
+    { "src": "Maquillaje/Maquillaje (1).jpg", "alt": "Maquillaje 1" },
+    { "src": "Maquillaje/Maquillaje (2).jpg", "alt": "Maquillaje 2" },
+    { "src": "Maquillaje/Maquillaje (3).jpg", "alt": "Maquillaje 3" },
+    { "src": "Maquillaje/Maquillaje (4).jpg", "alt": "Maquillaje 4" },
+    { "src": "Maquillaje/Maquillaje (5).jpg", "alt": "Maquillaje 5" },
+    { "src": "Maquillaje/Maquillaje (6).jpg", "alt": "Maquillaje 6" }
+  ]
+}
