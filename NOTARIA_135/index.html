@@ -18,9 +18,8 @@
 </head>
 
 <body>
-    <div class="gold-dust"></div>
     <div class="gold-particles"></div>
-    
+<div class="card-wrapper">
     <div class="card">
         <div class="seal-container">
             <div class="official-seal"></div>
@@ -40,34 +39,31 @@
         
         <div class="contact-grid">
             <div class="contact-item">
-                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
                 <div>
                     <p class="contact-label">Teléfono:</p>
                     <a class="contact-link numwa" href="tel:+59167784775">+591 67784775</a>
                 </div>
             </div>
-            
+
             <div class="contact-item">
-                <!--img src="email-icon.png" alt="Correo" class="contact-icon"-->
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59167784775&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
                 <div>
                     <p class="contact-label">Correo:</p>
                     <a class="contact-link fbcorr" href="mailto:pablofuentes.notaria135@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">pablofuentes.notaria135@gmail.com</a>
                 </div>
             </div>
             
-            <div class="contact-item">
-                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
-                <div>
-                    <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59167784775&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
-                </div>
-            </div>
             
             <div class="contact-item">
-                <!--img src="facebook-icon.png" alt="Facebook" class="contact-icon"-->
                 <div>
-                    <p class="contact-label">Facebook:</p>
-                    <a class="contact-link fbcorr" href="https://www.facebook.com/Notaria.Nro135" target="_blank">Visitar página</a>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr" href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6" target="_blank">Calle Beni, entre calle Celso Castedo y calle Rafael Peña planta baja</a>
                 </div>
             </div>
         </div>
@@ -128,7 +124,7 @@
             </a>
         </div>
     </div>
-
+</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Funcionalidad para los dropdowns
@@ -156,19 +152,32 @@
                 }
             });
 
-            // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
+// Efecto de partículas doradas dinámicas
+const goldParticles = document.querySelector('.gold-particles');
+
+for (let i = 0; i < 40; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('gold-particle');
+
+    // posición inicial
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `100%`;
+
+    // tamaño aleatorio
+    particle.style.width = `${Math.random() *  50}px`;
+    particle.style.height = `${Math.random() * 50}px`;
+
+    // duración aleatoria para que algunas vayan más lento
+    const duration = Math.random() * 100 + 20; // entre 10 y 20 segundos
+    particle.style.animationDuration = `${duration}s`;
+
+    // retardo aleatorio para que no todas empiecen juntas
+    particle.style.animationDelay = `${Math.random() * 20}s`;
+
+    goldParticles.appendChild(particle);
+}
         });
+    
     </script>
 </body>
 </html>
