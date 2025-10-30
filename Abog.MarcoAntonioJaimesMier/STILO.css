@@ -582,7 +582,7 @@ color: #987f03; /* Color del texto inicial */
     .letra {font-size: 2rem;}
     
     .nombre-completo h2 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   line-height: 0.75; 
   margin-bottom: 0px;
 }
@@ -616,3 +616,4 @@ opacity: 0;
 }
 
 }
+
