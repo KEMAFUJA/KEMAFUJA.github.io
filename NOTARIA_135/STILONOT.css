@@ -135,10 +135,10 @@ body {
 .card::before {
     content: "";
     position: absolute;
-    top: -25%;
-    left: -25%;
-    width: 125%;
-    height: 125%;
+    top: -50%;
+    left: 0%;
+    width: 250%;
+    height: 250%;
     background: radial-gradient(
         circle,
         hsla(40, 100%, 75%) -100%,
@@ -529,38 +529,31 @@ body {
     .card {padding: 30px 20px;
         }
             
-    .letra {font-size: 2.5rem;
+    .letra {font-size: 4rem;
+        line-height: 4rem;            
         }
             
-    .nombre-completo h2 {font-size: 1.8rem;
+    .nombre-completo h2 {font-size: 1.5rem;
+        }
+            
+    .nombre-completo h3 {font-size: 1.2rem;
+        }
+            
+    .dropdown-toggle {padding: 12px 15px;
+        font-size: 0.9rem;
+        }
+            
+    .social-icon {width: 40px;
+        height: 40px;
         }
             
     .contact-grid {grid-template-columns: 1fr;
         }
             
     .seal-container {top: -30px;
-                    right: -30px;
-                    width: 100px;
-                    height: 100px;
+        right: -30px;
+        width: 100px;
+        height: 100px;
         }
-}
-
-@media (max-width: 480px) {
-    .letra {font-size: 4rem;
-        line-height: 4rem;            }
-            
-    .nombre-completo h2 {font-size: 1.5rem;
-            }
-            
-    .nombre-completo h3 {font-size: 1.2rem;
-            }
-            
-    .dropdown-toggle {padding: 12px 15px;
-                        font-size: 0.9rem;
-            }
-            
-    .social-icon {width: 40px;
-                    height: 40px;
-            }
 }
 
