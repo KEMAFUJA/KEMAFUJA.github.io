@@ -1,5 +1,3 @@
-// particles.js
-
 export function createGoldParticles(containerSelector, {
     cuantas = 40,
     tamMax = 50,
@@ -41,3 +39,4 @@ export function createGoldParticles(containerSelector, {
         container.appendChild(particle);
     }
 }
+
