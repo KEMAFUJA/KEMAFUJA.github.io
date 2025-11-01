@@ -19,6 +19,7 @@
 
 <body>
     <div class="gold-particles"></div>
+    <div id="dvd-container"></div>
 <div class="card-wrapper">
     <div class="card">
         <div class="seal-container">
@@ -52,15 +53,14 @@
                 </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
                     <a class="contact-link fbcorr" href="mailto:pablofuentes.notaria135@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">pablofuentes.notaria135@gmail.com</a>
                 </div>
             </div>
             
-            
-            <div class="contact-item">
+            <div class="contact-item full-width" style="margin-bottom: 20px;">
                 <div>
                     <p class="contact-label">Ubicacion:</p>
                     <a class="contact-link fbcorr" href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6" target="_blank">Calle Beni, entre calle Celso Castedo y calle Rafael Peña planta baja</a>
@@ -151,33 +151,30 @@
                     });
                 }
             });
-
-// Efecto de partículas doradas dinámicas
-const goldParticles = document.querySelector('.gold-particles');
-
-for (let i = 0; i < 40; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('gold-particle');
-
-    // posición inicial
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `100%`;
-
-    // tamaño aleatorio
-    particle.style.width = `${Math.random() *  50}px`;
-    particle.style.height = `${Math.random() * 50}px`;
-
-    // duración aleatoria para que algunas vayan más lento
-    const duration = Math.random() * 100 + 20; // entre 10 y 20 segundos
-    particle.style.animationDuration = `${duration}s`;
-
-    // retardo aleatorio para que no todas empiecen juntas
-    particle.style.animationDelay = `${Math.random() * 20}s`;
-
-    goldParticles.appendChild(particle);
-}
         });
     
     </script>
+    <script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 20,
+    tamMax: 50,
+    durMax: 20,
+    aparMax: 20
+});
+</script>
+    <script type="module">
+import { createFloatingShapes } from "/-OTROS/particulas_chocan.js";
+
+createFloatingShapes({
+    containerId: "dvd-container",
+    count: 10,
+    colors: ['hsl(235, 100%, 10%)','hsl(235, 100%, 15%)','hsl(235, 100%, 20%)','hsl(235, 100%, 25%)','hsl(235, 100%, 30%)','hsl(235, 100%, 35%)','hsl(235, 100%, 40%)','hsl(235, 100%, 45%)','hsl(235, 100%, 50%)', 'hsl(235, 100%, 55%)', 'hsl(235, 100%, 60%)', 'hsl(235, 100%, 65%)','hsl(235, 100%, 70%)', 'hsl(235, 100%, 75%)', 'hsl(235, 100%, 80%)', 'hsl(235, 100%, 85%)'],
+    maxSpeed: 1,
+    maxSize: 60
+});
+</script>
+
 </body>
 </html>
