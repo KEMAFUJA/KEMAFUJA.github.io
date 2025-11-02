@@ -25,19 +25,6 @@ body {
     animation: backgroundBody 15s ease-in-out infinite;
 }
 
-/* Efectos de partículas doradas */
-.gold-dust {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 20px 20px;
-    opacity: 0.3;
-    z-index: -1;
-    animation: float 60s linear infinite;
-}
-
 .gold-particles {
     position: fixed;
     top: 0;
@@ -48,10 +35,37 @@ body {
     overflow: hidden;
 }
 
-@keyframes float {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
+/* Efecto de partículas dinámicas */
+.gold-particle {
+    position: absolute;
+    background: var(--gold-primary);
+    border-radius: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    animation: floatAndRotate linear infinite;
 }
+
+@keyframes floatAndRotate {
+    0% {
+        transform: translateY(0vh) rotate(0deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+    10% {
+        opacity: 0.3;
+        box-shadow:0 0 20px hsla(50, 100%, 70%);
+    }
+    90% {
+        opacity: 0.7;
+        box-shadow:0 0 10px hsla(50, 100%, 50%);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+}
+
 
 /* Tarjeta principal */
 .card {
@@ -567,27 +581,4 @@ color: #987f03; /* Color del texto inicial */
 
     .dropdown-toggle {padding: 12px 15px;
 font-size: 0.9rem;}
-}
-
-/* Efecto de partículas dinámicas */
-.gold-particle {
-    position: absolute;
-    background: var(--gold-primary);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: floatParticle 15s infinite linear;
-    opacity: 0.7;
-}
-
-@keyframes floatParticle {
-    0% {transform: translateY(0) translateX(0);
-opacity: 0;
-}
-    10% {opacity: 0.7;
-}
-    90% {opacity: 0.7;
-}
-    100% {transform: translateY(-100vh) translateX(20px);
-    opacity: 0;
-}
 }
