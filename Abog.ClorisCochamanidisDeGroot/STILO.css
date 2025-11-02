@@ -200,11 +200,6 @@ color: #987f03; /* Color del texto inicial */
     position: relative;
 }
 
-@font-face {
-    font-family: 'Corinthia-Regular';
-    src: url('Corinthia-Regular.ttf');
-}
-
 .nombre-completo h2 {
     font-size: 3.5rem;
     font-weight: 500;
@@ -582,3 +577,4 @@ color: #987f03; /* Color del texto inicial */
     .dropdown-toggle {padding: 12px 15px;
 font-size: 0.9rem;}
 }
+
