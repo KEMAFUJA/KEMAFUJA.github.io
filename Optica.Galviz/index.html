@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <div class="gold-dust"></div>
     <div class="gold-particles"></div>
     
     <div class="card">
@@ -142,6 +141,17 @@
         </div>
     </div>
 
+<script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 40,
+    tamMax: 50,
+    durMax: 30,
+    aparMax: 60,
+    tamañoIgual: false
+});
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Funcionalidad para los dropdowns
@@ -168,19 +178,6 @@
                     });
                 }
             });
-
-            // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
         });
     </script>
 </body>
