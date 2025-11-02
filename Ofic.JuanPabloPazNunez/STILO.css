@@ -33,6 +33,46 @@ body {
   100% { background-color: hsl(49, 100%, 94%); }
 }
 
+.gold-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Efecto de partículas dinámicas */
+.gold-particle {
+    position: absolute;
+    background: var(--gold-primary);
+    border-radius: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    animation: floatAndRotate linear infinite;
+}
+
+@keyframes floatAndRotate {
+    0% {
+        transform: translateY(0vh) rotate(0deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+    10% {
+        opacity: 0.3;
+        box-shadow:0 0 20px hsla(50, 100%, 70%);
+    }
+    90% {
+        opacity: 0.7;
+        box-shadow:0 0 10px hsla(50, 100%, 50%);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+}
 
 .card {
     background-color: var(--bg-overlay);
@@ -68,49 +108,6 @@ transform: rotate(0deg);
     100% {
 transform: rotate(360deg);
     }
-}
-/* ✨ Efectos de partículas doradas */
-.gold-dust {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 20px 20px;
-    opacity: 0.1;
-    z-index: -1;
-    animation: float 60s linear infinite;
-}
-
-.gold-particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.gold-particle {
-    position: absolute;
-    background: hsla(50, 100%, 50%, 0.75);
-    border-radius: 100%;
-    pointer-events: none;
-    animation: floatParticle 15s infinite linear;
-    opacity: 0.1;
-}
-
-@keyframes float {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-}
-
-@keyframes floatParticle {
-    0% {transform: translateY(0) translateX(0); opacity: 0;}
-    10% {opacity: 0.2;}
-    90% {opacity: 0.3;}
-    100% {transform: translateY(-100vh) translateX(20px); opacity: 0;}
 }
 
 /* Títulos y animaciones de texto */
@@ -394,13 +391,14 @@ font-size: 200%;
     }
     
     .nombre-completo h2 {
-font-size: 150%;
+font-size: 300%;
 text-align: center;
+line-height: 4rem;
 margin-bottom: -15px;
     }
     .nombre-completo h3 {
-font-size: 60%;
-margin-left: 30%;
+font-size: 80%;
+margin-left: 20%;
     }
     
     .contact-grid {
@@ -441,5 +439,4 @@ grid-template-columns: 1fr;
 .intro-text {
     font-size: 12px;
     margin-top: -30px;
-
 }
