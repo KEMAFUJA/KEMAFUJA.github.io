@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <div class="gold-dust"></div>
     <div class="gold-particles"></div>
     <div class="seal-container">
         <div class="official-seal"></div>
@@ -109,7 +108,7 @@
             <li><strong>CONSTITUCIÓN DE SOCIEDADES</strong></li>
             <li><strong>CONTRATOS</strong></li>
             <li><strong>D.D.R.R.</strong></li>
-            <li><strong>ESPECIALISTA EN RECURSOS LEGALES</strong></li>            
+            <li><strong>ESPECIALISTA EN RECURSOS</strong></li>            
             </ul>
         </div>
         </div>
@@ -129,6 +128,18 @@
     </div>
     </div>
 </style>
+
+<script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 40,
+    tamMax: 5,
+    durMax: 30,
+    aparMax: 60,
+    tamañoIgual: false
+});
+</script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -156,41 +167,7 @@
                     });
                 }
             });
-
-            // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
         });
-
-
-        // Submenús desplegables con click
-document.querySelectorAll('.submenu > strong').forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.stopPropagation(); // evita cerrar el menú padre
-        const parent = this.parentElement;
-
-        // Toggle del submenú
-        parent.classList.toggle('active');
-
-        // Cerrar otros submenús abiertos dentro del mismo bloque
-        parent.parentElement.querySelectorAll('.submenu').forEach(sibling => {
-            if (sibling !== parent) {
-                sibling.classList.remove('active');
-            }
-        });
-    });
-});
-
     </script>
 </body>
 </html>
-
