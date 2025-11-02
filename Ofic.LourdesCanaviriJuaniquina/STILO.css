@@ -502,7 +502,7 @@ body {
     .nombre-completo h2 {font-size: 1.8rem;
         }
             
-    .contact-grid {grid-template-columns: 1fr;
+    .contact-grid {grid-template-columns: 1fr 1fr;
         }
             
     .seal-container {top: -30px;
