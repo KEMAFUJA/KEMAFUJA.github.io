@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <div class="gold-dust"></div>
     <div class="gold-particles"></div>
     
     <div class="card">
@@ -87,11 +86,8 @@
             <div class="content">
                 <ul>
                     <li> <strong>INSCRIPCIONES DE NACIMIENTOS</strong></li>
-                    <li> <strong>INSCRIPCIONES DE PERSONA MAYOR</strong></li>
                     <li> <strong>RECONOCIMIENTO DE HIJO MAYOR Y MENOR</strong></li>
-                    <li> <strong>CELEBRACION DE MATRIMONIO A EVENTO Y EN OFICINA</strong></li>
                     <li> <strong>CERTIFICADO DE MATRIMONIO</strong></li>
-                    <li> <strong>INSCRIPCION DE DEFUNCION</strong></li>
                     <li> <strong>CERTIFICADO DE DEFUNCION</strong></li>
                 </ul>
             </div>
@@ -107,6 +103,17 @@
         </div>
     </div>
 
+<script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 40,
+    tamMax: 10,
+    durMax: 30,
+    aparMax: 60,
+    tamañoIgual: true
+});
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Funcionalidad para los dropdowns
@@ -133,21 +140,7 @@
                     });
                 }
             });
-
-            // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
         });
     </script>
 </body>
 </html>
-
