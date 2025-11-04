@@ -8,6 +8,21 @@
             --text-light: #FFFFFF;
             --accent-green: #2E8B57;
         }
+.dvd-logo {
+position: absolute;
+width: 15px;
+height: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+font-size: 18px;
+transition: background-color 0.3s;
+z-index: 1;
+border-radius: 0%;
+opacity: 0.5;
+}
+
 @keyframes backgroundBody {
   0% { background-color: #00074b; }
   20% { background-color: #000a65; } 
@@ -276,23 +291,25 @@ body {
 /* Grid de contactos */
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas de igual ancho */
-    gap: 20px; /* Espacio entre elementos */
-    margin-bottom: 30px;
-    width: 100%; /* Ocupa todo el ancho disponible */
-    /*max-width: 600px; /* Ancho máximo opcional */
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    margin: 0 auto;
+    width: 100%; 
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 10px; /* Espacio interno */
+    padding: 10px;
     background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
     border-radius: 10px; /* Esquinas redondeadas */
     transition: all 0.3s ease; /* Transición suave */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-    min-height: 80px; /* Altura mínima */
+}
+
+.contact-item.full-width {
+    grid-column: span 2;
 }
 
 .contact-item:hover {
@@ -503,7 +520,7 @@ body {
 .social-icon {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,13 +560,9 @@ body {
         font-size: 0.9rem;
         }
             
-    .social-icon {width: 40px;
-        height: 40px;
+    .social-icon {width: 50px;
         }
-            
-    .contact-grid {grid-template-columns: 1fr;
-        }
-            
+                    
     .seal-container {top: -30px;
         right: -30px;
         width: 100px;
