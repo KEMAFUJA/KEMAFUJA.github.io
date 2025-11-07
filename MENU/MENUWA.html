@@ -62,8 +62,8 @@
           <span>Total:</span>
           <span id="totalCarrito">$0.00</span>
         </div>
-        <button class="boton-whatsapp" onclick="enviarWhatsApp()">
-          <i class="fab fa-whatsapp"></i>
+        <button class="boton-whatsapp" onclick="enviarTelegram()">
+          <i class="fab fa-telegram"></i>
           Enviar Pedido
         </button>
       </div>
@@ -106,9 +106,7 @@
     function renderCategoria(cat) {
       menu.innerHTML = "";
       categorias[cat].forEach(([nombre, img, precio], index) => {
-        // Añadir delay para animación escalonada
         const delay = index * 0.1;
-        
         const card = document.createElement("div");
         card.className = "plato-card";
         card.style.animationDelay = `${delay}s`;
@@ -147,8 +145,7 @@
           carrito.push({ nombre, cantidad, categoria, precio });
         }
         renderCarrito();
-        
-        // Feedback visual
+
         const button = document.querySelector(`button[onclick="agregarAlCarrito('${nombre}', '${categoria}', ${precio})"]`);
         const originalText = button.innerHTML;
         button.innerHTML = '<i class="fas fa-check"></i> ¡Agregado!';
@@ -205,13 +202,7 @@
       totalCarrito.textContent = `$${total.toFixed(2)}`;
     }
 
-    const numerosSucursal = {
-      centro: "59175614564",
-      norte: "5916000000",
-      sur: "59161000000"
-    };
-
-    function enviarWhatsApp() {
+    function enviarTelegram() {
       const sucursal = document.getElementById("sucursal").value;
       const mesa = document.getElementById("mesa").value;
 
@@ -225,21 +216,20 @@
       }
 
       let total = 0;
-      let mensaje = `📍 *Sucursal:* ${document.getElementById("sucursal").options[document.getElementById("sucursal").selectedIndex].text}\n`;
-      mensaje += `🪑 *Mesa:* ${mesa}\n\n`;
-      mensaje += `*PEDIDO:*\n\n`;
-      
+      let mensaje = `Hola, soy Majestic.\n📍 *Sucursal:* ${document.getElementById("sucursal").options[document.getElementById("sucursal").selectedIndex].text}\n`;
+      mensaje += `🪑 *Mesa:* ${mesa}\n\n*PEDIDO:*\n\n`;
+
       carrito.forEach(item => {
         const itemTotal = item.cantidad * parseFloat(item.precio);
         total += itemTotal;
         mensaje += `• ${item.cantidad} x ${item.nombre} - $${itemTotal.toFixed(2)}\n`;
       });
-      
+
       mensaje += `\n💰 *Total:* $${total.toFixed(2)}`;
       mensaje += `\n\n¡Gracias por tu pedido! 🍽️`;
 
-      const telefono = numerosSucursal[sucursal];
-      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+      const botUsername = "MajesChefBot";
+      const url = `https://t.me/${botUsername}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
 
@@ -248,6 +238,3 @@
   </script>
 </body>
 </html>
-
-
-
