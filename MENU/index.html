@@ -1,86 +1,115 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Enviar al Bot</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 18px; }
-    .card { max-width:720px; margin: 0 auto; padding: 18px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-    textarea { width:100%; min-height:120px; padding:10px; font-size:16px; border-radius:8px; border:1px solid #ddd; resize:vertical; }
-    .row { display:flex; gap:8px; margin-top:12px; }
-    button { padding:10px 14px; border-radius:8px; border:none; font-size:15px; cursor:pointer; }
-    .primary { background:#0b93f6; color:white; }
-    .secondary { background:#f1f3f5; color:#111; }
-    .info { font-size:13px; color:#666; margin-top:10px; }
-  </style>
+    <title>Enviar Mensaje al Bot</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <h2>Enviar mensaje al bot</h2>
-    <p class="info">Escribe lo que quieras y pulsa <strong>Enviar al bot</strong>. El contenido llegará al bot como <code>web_app_data</code>.</p>
-
-    <textarea id="text" placeholder="Escribe aquí..."></textarea>
-
-    <div class="row">
-      <button class="primary" id="sendBtn">Enviar al bot</button>
-      <button class="secondary" id="closeBtn">Cerrar</button>
+    <div class="container">
+        <h2>Enviar Mensaje al Bot 🤖</h2>
+        <textarea id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <button onclick="sendMessage()">Enviar Mensaje</button>
+        <div id="status"></div>
     </div>
 
-    <p id="status" class="info"></p>
-  </div>
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('message').value;
+            const statusDiv = document.getElementById('status');
+            
+            if (!message.trim()) {
+                statusDiv.innerHTML = '<div class="error">⚠️ Por favor escribe un mensaje</div>';
+                return;
+            }
 
-  <script>
-    // Inicializa la Web App (Telegram injecta la API)
-    const tg = window.Telegram ? window.Telegram.WebApp : null;
+            // Verificar si estamos en Telegram
+            if (window.Telegram && Telegram.WebApp) {
+                // Enviar datos a través de la WebApp de Telegram
+                Telegram.WebApp.sendData(message);
+                statusDiv.innerHTML = '<div class="success">✅ Mensaje enviado a través de Telegram</div>';
+            } else {
+                // Fallback para navegador normal
+                fetch('/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: {
+                            chat: { id: 123456789 }, // ID de ejemplo - deberías obtenerlo dinámicamente
+                            text: message,
+                            from: { first_name: 'Usuario Web' }
+                        }
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        statusDiv.innerHTML = '<div class="success">✅ Mensaje enviado (modo navegador)</div>';
+                    } else {
+                        throw new Error('Error en el servidor');
+                    }
+                })
+                .catch(error => {
+                    statusDiv.innerHTML = '<div class="error">❌ Error al enviar el mensaje</div>';
+                });
+            }
 
-    function setStatus(txt) {
-      document.getElementById('status').textContent = txt;
-    }
-
-    // Si estamos en Telegram, expandir la vista para mejor UX
-    if (tg) {
-      tg.expand(); // intenta expandir la ventana en Telegram
-      setStatus('Abierto dentro de Telegram. Usuario: ' + (tg.initDataUnsafe?.user?.username || tg.initDataUnsafe?.user?.first_name || 'desconocido'));
-    } else {
-      setStatus('No parece que estés dentro de Telegram. Para probar dentro de Telegram crea el botón web_app y ábrelo desde la app.');
-    }
-
-    document.getElementById('sendBtn').addEventListener('click', function () {
-      const text = document.getElementById('text').value.trim();
-      if (!text) {
-        setStatus('Escribe algo antes de enviar.');
-        return;
-      }
-
-      // Preparamos los datos que queremos enviar al bot
-      const payload = {
-        type: 'web_message',
-        text: text,
-        timestamp: Date.now()
-      };
-
-      if (tg) {
-        // Envía una cadena (máx 4096 bytes aprox). En el bot llegará en update["message"]["web_app_data"]["data"]
-        try {
-          tg.sendData(JSON.stringify(payload));
-          setStatus('Enviado al bot ✅ — puedes cerrar esta ventana.');
-          // opcional: cerrar la web app:
-          // tg.close();
-        } catch (err) {
-          setStatus('Error enviando: ' + err);
+            document.getElementById('message').value = '';
         }
-      } else {
-        // Fallback: mostrar la cadena para que la copies manualmente
-        setStatus('No estás en Telegram. Copia este JSON y pásalo al bot manualmente: ' + JSON.stringify(payload));
-      }
-    });
 
-    document.getElementById('closeBtn').addEventListener('click', function () {
-      if (tg) tg.close();
-      else setStatus('Cerrando (no dentro de Telegram).');
-    });
-  </script>
+        document.getElementById('message').addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>
