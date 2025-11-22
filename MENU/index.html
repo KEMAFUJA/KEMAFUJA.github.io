@@ -136,11 +136,12 @@
         }
         
         .debug {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
             margin-top: 20px;
-            padding: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
             font-size: 12px;
+            border: 1px solid #e9ecef;
         }
     </style>
 </head>
@@ -170,19 +171,35 @@
         
         <div id="status" class="status"></div>
         
-        <div class="info">
-            <p><strong>💡 Información:</strong> Los mensajes se envían directamente al chat del bot y aparecerán en la conversación.</p>
+        <div class="debug">
+            <h3>🔍 Información de Diagnóstico:</h3>
+            <div id="debugInfo">Cargando...</div>
         </div>
         
-        <div class="debug" id="debugInfo" style="display: none;">
-            <h3>Debug Info:</h3>
-            <div id="debugContent"></div>
+        <div class="info">
+            <p><strong>💡 Información:</strong> Los mensajes se envían directamente al chat del bot y aparecerán en la conversación.</p>
         </div>
     </div>
 
     <script>
         // Inicializar Telegram WebApp
         let tg = window.Telegram.WebApp;
+        
+        // Mostrar información de diagnóstico
+        function updateDebugInfo() {
+            const debugDiv = document.getElementById('debugInfo');
+            const user = tg.initDataUnsafe.user;
+            
+            let debugHTML = `
+                <p><strong>WebApp Inicializada:</strong> ${typeof tg !== 'undefined' ? '✅ Sí' : '❌ No'}</p>
+                <p><strong>Plataforma:</strong> ${tg.platform}</p>
+                <p><strong>Usuario:</strong> ${user ? user.first_name + ' ' + (user.last_name || '') : '❌ No detectado'}</p>
+                <p><strong>ID de Usuario:</strong> ${user ? user.id : 'N/A'}</p>
+                <p><strong>WebApp Version:</strong> ${tg.version}</p>
+            `;
+            
+            debugDiv.innerHTML = debugHTML;
+        }
         
         // Expandir la WebApp a pantalla completa
         tg.expand();
@@ -192,25 +209,6 @@
         tg.MainButton.onClick(function() {
             tg.close();
         });
-        
-        // Mostrar información de debug
-        function showDebugInfo() {
-            const debugDiv = document.getElementById('debugInfo');
-            const debugContent = document.getElementById('debugContent');
-            
-            let debugHTML = `
-                <p><strong>WebApp Initialized:</strong> ${typeof tg !== 'undefined'}</p>
-                <p><strong>Platform:</strong> ${tg.platform}</p>
-                <p><strong>Init Data:</strong> ${JSON.stringify(tg.initDataUnsafe)}</p>
-                <p><strong>User:</strong> ${tg.initDataUnsafe.user ? tg.initDataUnsafe.user.first_name : 'No user data'}</p>
-            `;
-            
-            debugContent.innerHTML = debugHTML;
-            debugDiv.style.display = 'block';
-        }
-        
-        // Mostrar debug info al cargar
-        showDebugInfo();
         
         function sendMessage() {
             const message = document.getElementById('message').value.trim();
@@ -226,12 +224,12 @@
                 return;
             }
             
-            console.log("Enviando mensaje:", message);
+            console.log("📤 Intentando enviar mensaje:", message);
             
             try {
                 // Enviar datos a través de Telegram WebApp
                 tg.sendData(message);
-                console.log("Mensaje enviado via sendData");
+                console.log("✅ tg.sendData() ejecutado correctamente");
                 
                 showStatus('✅ Mensaje enviado correctamente. Revisa el chat del bot.', 'success');
                 
@@ -241,7 +239,7 @@
                 }, 2000);
                 
             } catch (error) {
-                console.error("Error al enviar mensaje:", error);
+                console.error("❌ Error en tg.sendData():", error);
                 showStatus('❌ Error al enviar el mensaje: ' + error.message, 'error');
             }
         }
@@ -263,23 +261,22 @@
             }, 5000);
         }
         
-        // Enviar con Ctrl+Enter
         document.getElementById('message').addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === 'Enter') {
                 sendMessage();
             }
         });
         
-        // Mostrar información de depuración en consola
-        console.log('WebApp initialized:', tg);
-        console.log('Init data:', tg.initDataUnsafe);
-        console.log('Platform:', tg.platform);
-        console.log('Version:', tg.version);
+        // Mostrar información de diagnóstico al cargar
+        updateDebugInfo();
         
-        // Si hay datos de inicialización, mostrar información del usuario
+        console.log('🔍 WebApp initialized:', tg);
+        console.log('🔍 Init data:', tg.initDataUnsafe);
+        console.log('🔍 Platform:', tg.platform);
+        
         if (tg.initDataUnsafe.user) {
             const user = tg.initDataUnsafe.user;
-            console.log('Usuario de Telegram:', user);
+            console.log('🔍 Usuario de Telegram:', user);
         }
     </script>
 </body>
