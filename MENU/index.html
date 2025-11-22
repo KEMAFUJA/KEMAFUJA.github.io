@@ -134,6 +134,14 @@
             font-size: 12px;
             color: var(--tg-theme-hint-color, #666666);
         }
+        
+        .debug {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -165,6 +173,11 @@
         <div class="info">
             <p><strong>💡 Información:</strong> Los mensajes se envían directamente al chat del bot y aparecerán en la conversación.</p>
         </div>
+        
+        <div class="debug" id="debugInfo" style="display: none;">
+            <h3>Debug Info:</h3>
+            <div id="debugContent"></div>
+        </div>
     </div>
 
     <script>
@@ -180,6 +193,25 @@
             tg.close();
         });
         
+        // Mostrar información de debug
+        function showDebugInfo() {
+            const debugDiv = document.getElementById('debugInfo');
+            const debugContent = document.getElementById('debugContent');
+            
+            let debugHTML = `
+                <p><strong>WebApp Initialized:</strong> ${typeof tg !== 'undefined'}</p>
+                <p><strong>Platform:</strong> ${tg.platform}</p>
+                <p><strong>Init Data:</strong> ${JSON.stringify(tg.initDataUnsafe)}</p>
+                <p><strong>User:</strong> ${tg.initDataUnsafe.user ? tg.initDataUnsafe.user.first_name : 'No user data'}</p>
+            `;
+            
+            debugContent.innerHTML = debugHTML;
+            debugDiv.style.display = 'block';
+        }
+        
+        // Mostrar debug info al cargar
+        showDebugInfo();
+        
         function sendMessage() {
             const message = document.getElementById('message').value.trim();
             const statusDiv = document.getElementById('status');
@@ -194,15 +226,24 @@
                 return;
             }
             
-            // Enviar datos a través de Telegram WebApp
-            tg.sendData(message);
+            console.log("Enviando mensaje:", message);
             
-            showStatus('✅ Mensaje enviado correctamente. Revisa el chat del bot.', 'success');
-            
-            // Limpiar el campo después de 2 segundos
-            setTimeout(() => {
-                document.getElementById('message').value = '';
-            }, 2000);
+            try {
+                // Enviar datos a través de Telegram WebApp
+                tg.sendData(message);
+                console.log("Mensaje enviado via sendData");
+                
+                showStatus('✅ Mensaje enviado correctamente. Revisa el chat del bot.', 'success');
+                
+                // Limpiar el campo después de 2 segundos
+                setTimeout(() => {
+                    document.getElementById('message').value = '';
+                }, 2000);
+                
+            } catch (error) {
+                console.error("Error al enviar mensaje:", error);
+                showStatus('❌ Error al enviar el mensaje: ' + error.message, 'error');
+            }
         }
         
         function clearMessage() {
@@ -232,6 +273,8 @@
         // Mostrar información de depuración en consola
         console.log('WebApp initialized:', tg);
         console.log('Init data:', tg.initDataUnsafe);
+        console.log('Platform:', tg.platform);
+        console.log('Version:', tg.version);
         
         // Si hay datos de inicialización, mostrar información del usuario
         if (tg.initDataUnsafe.user) {
