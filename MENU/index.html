@@ -3,113 +3,241 @@
 <head>
     <title>Enviar Mensaje al Bot</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 20px auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
             padding: 20px;
-            background-color: #f5f5f5;
+            min-height: 100vh;
         }
+        
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 100%;
+            margin: 0 auto;
         }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--tg-theme-text-color, #000000);
+        }
+        
+        .header p {
+            color: var(--tg-theme-hint-color, #999999);
+            font-size: 14px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--tg-theme-text-color, #000000);
+        }
+        
         textarea {
             width: 100%;
-            height: 100px;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid var(--tg-theme-hint-color, #dddddd);
+            border-radius: 12px;
+            background: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            font-size: 16px;
             resize: vertical;
+            transition: border-color 0.3s ease;
         }
-        button {
-            background: #007bff;
-            color: white;
-            padding: 10px 20px;
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--tg-theme-button-color, #2481cc);
+        }
+        
+        textarea::placeholder {
+            color: var(--tg-theme-hint-color, #999999);
+        }
+        
+        .button {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--tg-theme-button-color, #2481cc);
+            color: var(--tg-theme-button-text-color, #ffffff);
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
-        button:hover {
-            background: #0056b3;
+        
+        .button:hover {
+            background: var(--tg-theme-button-color, #1a6fb3);
+            transform: translateY(-1px);
         }
-        #status {
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
+        
+        .button:active {
+            transform: translateY(0);
         }
-        .success {
+        
+        .button-secondary {
+            background: var(--tg-theme-secondary-bg-color, #f0f0f0);
+            color: var(--tg-theme-text-color, #000000);
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .status.success {
             background: #d4edda;
             color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
         }
-        .error {
+        
+        .status.error {
             background: #f8d7da;
             color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        .info {
+            background: var(--tg-theme-secondary-bg-color, #f8f9fa);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-size: 12px;
+            color: var(--tg-theme-hint-color, #666666);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Enviar Mensaje al Bot 🤖</h2>
-        <textarea id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
-        <button onclick="sendMessage()">Enviar Mensaje</button>
-        <div id="status"></div>
+        <div class="header">
+            <h1>📨 Enviar Mensaje</h1>
+            <p>Escribe tu mensaje y envíalo al bot</p>
+        </div>
+        
+        <div class="input-group">
+            <label for="message">Tu mensaje:</label>
+            <textarea 
+                id="message" 
+                placeholder="Escribe aquí lo que quieras enviar al bot..."
+                maxlength="4000"
+            ></textarea>
+        </div>
+        
+        <button class="button" onclick="sendMessage()">
+            📤 Enviar Mensaje
+        </button>
+        
+        <button class="button button-secondary" onclick="clearMessage()">
+            🗑️ Limpiar
+        </button>
+        
+        <div id="status" class="status"></div>
+        
+        <div class="info">
+            <p><strong>💡 Información:</strong> Los mensajes se envían directamente al chat del bot y aparecerán en la conversación.</p>
+        </div>
     </div>
 
     <script>
+        // Inicializar Telegram WebApp
+        let tg = window.Telegram.WebApp;
+        
+        // Expandir la WebApp a pantalla completa
+        tg.expand();
+        
+        // Configurar el botón de cierre
+        tg.MainButton.setText("CERRAR").show();
+        tg.MainButton.onClick(function() {
+            tg.close();
+        });
+        
         function sendMessage() {
-            const message = document.getElementById('message').value;
+            const message = document.getElementById('message').value.trim();
             const statusDiv = document.getElementById('status');
             
-            if (!message.trim()) {
-                statusDiv.innerHTML = '<div class="error">⚠️ Por favor escribe un mensaje</div>';
+            if (!message) {
+                showStatus('⚠️ Por favor escribe un mensaje antes de enviar', 'error');
                 return;
             }
-
-            // Verificar si estamos en Telegram
-            if (window.Telegram && Telegram.WebApp) {
-                // Enviar datos a través de la WebApp de Telegram
-                Telegram.WebApp.sendData(message);
-                statusDiv.innerHTML = '<div class="success">✅ Mensaje enviado a través de Telegram</div>';
-            } else {
-                // Fallback para navegador normal
-                fetch('/webhook', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: {
-                            chat: { id: 123456789 }, // ID de ejemplo - deberías obtenerlo dinámicamente
-                            text: message,
-                            from: { first_name: 'Usuario Web' }
-                        }
-                    })
-                })
-                .then(response => {
-                    if (response.ok) {
-                        statusDiv.innerHTML = '<div class="success">✅ Mensaje enviado (modo navegador)</div>';
-                    } else {
-                        throw new Error('Error en el servidor');
-                    }
-                })
-                .catch(error => {
-                    statusDiv.innerHTML = '<div class="error">❌ Error al enviar el mensaje</div>';
-                });
+            
+            if (message.length > 4000) {
+                showStatus('❌ El mensaje es demasiado largo (máximo 4000 caracteres)', 'error');
+                return;
             }
-
-            document.getElementById('message').value = '';
+            
+            // Enviar datos a través de Telegram WebApp
+            tg.sendData(message);
+            
+            showStatus('✅ Mensaje enviado correctamente. Revisa el chat del bot.', 'success');
+            
+            // Limpiar el campo después de 2 segundos
+            setTimeout(() => {
+                document.getElementById('message').value = '';
+            }, 2000);
         }
-
+        
+        function clearMessage() {
+            document.getElementById('message').value = '';
+            document.getElementById('status').style.display = 'none';
+        }
+        
+        function showStatus(text, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = text;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+            
+            // Ocultar después de 5 segundos
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Enviar con Ctrl+Enter
         document.getElementById('message').addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === 'Enter') {
                 sendMessage();
             }
         });
+        
+        // Mostrar información de depuración en consola
+        console.log('WebApp initialized:', tg);
+        console.log('Init data:', tg.initDataUnsafe);
+        
+        // Si hay datos de inicialización, mostrar información del usuario
+        if (tg.initDataUnsafe.user) {
+            const user = tg.initDataUnsafe.user;
+            console.log('Usuario de Telegram:', user);
+        }
     </script>
 </body>
 </html>
