@@ -14,13 +14,13 @@
             --accent-green: #2E8B57;
         }
 @keyframes backgroundBody {
-  0% { background-color: hsl(0, 100%, 25%); }
-  20% { background-color: hsl(0, 100%, 20%); } 
-  40% { background-color: hsl(0, 100%, 15%); }
-  50% { background-color: hsl(0, 100%, 10%); }
-  60% { background-color: hsl(0, 100%, 15%); }
-  80% { background-color: hsl(0, 100%, 20%); }
-  100% { background-color: hsl(0, 100%, 25%); }
+  0% { background-color: hsl(0, 100%, 50%); }
+  20% { background-color: hsl(0, 100%, 40%); } 
+  40% { background-color: hsl(0, 100%, 30%); }
+  50% { background-color: hsl(0, 100%, 20%) }
+  60% { background-color: hsl(0, 100%, 30%); }
+  80% { background-color: hsl(0, 100%, 40%); }
+  100% { background-color: hsl(0, 100%, 50%); }
 }
 
         /* Elimina o modifica estas propiedades del body */
@@ -93,7 +93,7 @@ body {
     width: 100%;
     max-width: 700px;
     text-align: center;
-    background: hsla(23, 100%, 72%, 0.5);
+    background: hsla(23, 100%, 72%, 0.1);
     box-shadow: 0 10px 50px hsla(25, 100%, 80%, 0.1), 
                 0 0 0 2px hsla(25, 100%, 70%, 0.3) inset,
                 0 0 90px hsla(25, 100%, 60%, 0.5) inset;
