@@ -220,7 +220,7 @@ body {
 }
 
 .official-seal::before {
-    content: "NOTARÍA PÚBLICA N°135";
+    content: "Jesús & Noemý";
     position: absolute;
     font-size: 12px;
     font-weight: bold;
@@ -350,7 +350,7 @@ body {
 }
 
 .contact-label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--medium-blue);
     margin-bottom: 5px;
     font-weight: 600;
@@ -575,10 +575,11 @@ body {
         line-height: 4rem;            
         }
             
-    .nombre-completo h2 {font-size: 3rem;
+    .nombre-completo h2 {font-size: 3.5rem;
+        line-height: 80%;
         }
             
-    .nombre-completo h3 {font-size: 1.2rem;
+    .nombre-completo h3 {font-size: 1.25rem;
         }
             
     .dropdown-toggle {padding: 12px 15px;
