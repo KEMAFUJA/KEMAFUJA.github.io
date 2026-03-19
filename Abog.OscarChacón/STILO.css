@@ -1,26 +1,32 @@
-        /* Variables de color */
-        :root {
-            --gold-primary: #D4AF37;
-            --gold-tertiary: #FFD700;
-            --dark-blue: #0A1F44;
-            --medium-blue: #1A3A8F;
-            --text-dark: #333333;
-            --text-light: #FFFFFF;
-            --accent-green: #2E8B57;
-        }
+:root {
+    --gold-primary: #D4AF37;
+    --gold-tertiary: #FFD700;
+    --dark-blue: #0A1F44;
+    --medium-blue: #1A3A8F;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --accent-green: #2E8B57;
+
+    --gold: hsl(40, 47%, 40%);
+    --dark: #1A1A1A;
+    --light: #b9b9b9ac;
+    --gray: #333333;
+
+}
+
 .dvd-logo {
-position: absolute;
-width: 15px;
-height: 15px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-weight: bold;
-font-size: 18px;
-transition: background-color 0.3s;
-z-index: 1;
-border-radius: 0%;
-opacity: 0.25;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    z-index: 1;
+    border-radius: 0%;
+    opacity: 0.25;
 }
 
 @keyframes backgroundBody {
@@ -259,7 +265,7 @@ body {
 .nombre-completo h2 {
     font-size: 4.5rem;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--text-light);
     margin: 10px 0px 0px 0px;
     letter-spacing: 1px;
     font-family: 'Ballet-Regular-VariableFont_opsz';
@@ -269,7 +275,7 @@ body {
 .nombre-completo h3 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--medium-blue);
+    color: var(--text-light);
     margin-right: 10px;
     display: inline;
 }
@@ -303,10 +309,9 @@ body {
     align-items: center;
     text-align: left;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
     border-radius: 10px; /* Esquinas redondeadas */
     transition: all 0.3s ease; /* Transición suave */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
 .contact-item.full-width {
@@ -316,7 +321,7 @@ body {
 .contact-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    background: white;
+    background: hsla(0, 0%, 100%, 0.25);
 }
 
 .contact-icon {
@@ -328,7 +333,7 @@ body {
 
 .contact-label {
     font-size: 0.9rem;
-    color: var(--medium-blue);
+    color: var(--text-light);
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -338,86 +343,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-}
-
-/*COLORES LINKS*/
-@keyframes backgroundnumwa {
-    0% {color: #00ff59; /* Cambia el color del texto en esta etapa */
-        }
-    33% {color: #005a1f; /* Color del texto inicial */
-        } 
-    66% {color: #008930; /* Cambia el color del texto en esta etapa */
-        }
-    100% {color: #00ff59; /* Cambia el color del texto en esta etapa */
-        }
-}
-
-@keyframes backgroundFBCORR {
-    0% {color: #1100ff; /* Cambia el color del texto en esta etapa */
-        }
-    33% {color: #06005a; /* Color del texto inicial */
-        } 
-    66% {color: #090084; /* Cambia el color del texto en esta etapa */
-        }
-    100% {color: #1100ff; /* Cambia el color del texto en esta etapa */
-        }
-}
-
-/*PALPITO*/
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-}
-
-/* Efectos de enlaces */
-.numwa {
-    color: var(--accent-green);
-    position: relative;
-    animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
-}
-
-.numwa::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-green);
-    transition: width 0.3s ease;
-}
-
-.numwa:hover {
-    color: var(--accent-green);
-}
-
-.numwa:hover::after {
-    width: 100%;
-}
-
-.fbcorr {
-    color: var(--medium-blue);
-    position: relative;
-    animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
-}
-
-.fbcorr::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--medium-blue);
-    transition: width 0.3s ease;
-}
-
-.fbcorr:hover {
-    color: var(--medium-blue);
-}
-
-.fbcorr:hover::after {
-    width: 100%;
+    color: var(--text-light);
 }
 
 /* Dropdowns mejorados */
