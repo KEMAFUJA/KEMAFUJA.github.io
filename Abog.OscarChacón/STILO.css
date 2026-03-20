@@ -264,7 +264,7 @@ body {
 
 .nombre-completo h2 {
     font-size: 4.5rem;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text-light);
     margin: 10px 0px 0px 0px;
     letter-spacing: 1px;
