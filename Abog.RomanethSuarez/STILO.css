@@ -54,7 +54,7 @@ body {
     background: hsl(0, 0%, 50%, 0.25);
     border-radius: 100%;
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.025;
     animation: floatAndRotate linear infinite;
 }
 
@@ -364,7 +364,7 @@ body {
 }
 
 .fbcorr {
-    text-shadow: 0 0 5px var(--medium-blue);
+    text-shadow: 0 0 5px hsl(40, 100%, 100%);
     position: relative;
     animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
 }
@@ -376,12 +376,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--medium-blue);
+    background: hsl(40, 100%, 100%);
     transition: width 0.3s ease;
 }
 
 .fbcorr:hover {
-    color: var(--medium-blue);
+    color: hsl(40, 100%, 100%);
 }
 
 .fbcorr:hover::after {
