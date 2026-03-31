@@ -15,13 +15,13 @@
 }
 
 @keyframes backgroundBody {
-  0% { background-color: hsl(245, 100%, 25%); }
-  20% { background-color: hsl(245, 100%, 20%); } 
-  40% { background-color: hsl(245, 100%, 15%); }
-  50% { background-color: hsl(245, 100%, 10%); }
-  60% { background-color: hsl(245, 100%, 15%); }
-  80% { background-color: hsl(245, 100%, 20%); }
-  100% { background-color: hsl(245, 100%, 25%); }
+  0% { background-color: hsl(40, 30%, 80%); }
+  20% { background-color: hsl(40, 30%, 70%); } 
+  40% { background-color: hsl(40, 30%, 60%); }
+  50% { background-color: hsl(40, 30%, 50%); }
+  60% { background-color: hsl(40, 30%, 60%); }
+  80% { background-color: hsl(40, 30%, 70%); }
+  100% { background-color: hsl(40, 30%, 80%); }
 }
 
 
@@ -35,7 +35,7 @@ body {
     margin: 0;
     padding: 20px;
     position: relative;
-    animation: backgroundBody 15s ease-in-out infinite;
+    animation: backgroundBody 50s ease-in-out infinite;
 }
 
 .gold-particles {
@@ -114,7 +114,7 @@ body {
 
 /* 💎 Card */
 .card {
-    background: hsla(60, 100%, 35%, 0.25);
+    background: hsla(60, 100%, 35%, 0.05);
     border-radius: 16px;
     width: 100%;
     max-width: 700px;
@@ -221,7 +221,7 @@ body {
 
 @font-face {
     font-family: 'Corinthia-Regular';
-    src: url('Corinthia-Regular.ttf');
+    src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
 }
 
 .nombre-completo h2 {
@@ -321,13 +321,13 @@ body {
 }
 
 @keyframes backgroundFBCORR {
-    0% {color: hsl(245, 100%, 100%); /* Cambia el color del texto en esta etapa */
+    0% {color: hsl(40, 100%, 100%); /* Cambia el color del texto en esta etapa */
         }
-    33% {color: hsl(245, 100%, 70%); /* Color del texto inicial */
+    33% {color: hsl(40, 100%, 70%); /* Color del texto inicial */
         } 
-    66% {color: hsl(245, 100%, 70%); /* Cambia el color del texto en esta etapa */
+    66% {color: hsl(40, 100%, 70%); /* Cambia el color del texto en esta etapa */
         }
-    100% {color: hsl(245, 100%, 100%); /* Cambia el color del texto en esta etapa */
+    100% {color: hsl(40, 100%, 100%); /* Cambia el color del texto en esta etapa */
         }
 }
 
