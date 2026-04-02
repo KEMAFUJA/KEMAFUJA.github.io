@@ -13,13 +13,13 @@
     --accent-green: #2E8B57;
 }
 @keyframes backgroundBody {
-  0% { background-color: hsl(175, 100%, 50%); }
+  0% { background-color: hsl(175, 100%, 60%); }
   20% { background-color: hsl(175, 100%, 40%); } 
-  40% { background-color: hsl(175, 100%, 30%); } 
-  50% { background-color: hsl(175, 100%, 20%); } 
-  60% { background-color: hsl(175, 100%, 30%); } 
+  40% { background-color: hsl(175, 100%, 20%); } 
+  50% { background-color: hsl(175, 100%, 10%); } 
+  60% { background-color: hsl(175, 100%, 20%); } 
   80% { background-color: hsl(175, 100%, 40%); } 
-  100% { background-color:hsl(175, 100%, 50%); }
+  100% { background-color:hsl(175, 100%, 60%); }
 }
 
 body {
@@ -32,7 +32,7 @@ body {
     margin: 0;
     padding: 20px;
     position: relative;
-    animation: backgroundBody 15s ease-in-out infinite;
+    animation: backgroundBody 30s ease-in-out infinite;
 }
 
 .gold-particles {
@@ -201,7 +201,7 @@ body {
 
 @font-face {
   font-family: 'MTCORSVA';
-  src: url('MTCORSVA.TTF');
+  src: url('/-LETRAS/fonts/MTCORSVA.TTF');
 }
 
 .nombre-completo h2 {
@@ -251,12 +251,15 @@ body {
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 10px; /* Espacio interno */
-    background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
     border-radius: 10px; /* Esquinas redondeadas */
     transition: all 0.3s ease; /* Transición suave */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-    min-height: 80px; /* Altura mínima */
+}
+
+.contact-item.full-width {
+    grid-column: span 2;
 }
 
 .contact-item:hover {
@@ -264,6 +267,7 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     background: white;
 }
+
 
 .contact-icon {
     width: 30px;
