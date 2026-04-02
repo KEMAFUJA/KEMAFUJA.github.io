@@ -87,6 +87,91 @@
             </div>
         </div>
 
+
+        <div class="dropdown" id="serviciosDropdown">
+        <a class="dropdown-toggle">
+            <span>Se realizan:</span>
+        </a>
+
+        <div class="content">
+            <ul>
+                <li><strong>PROCESOS:</strong></li>
+                <li class="submenu">
+                    <strong>Penales:</strong>
+                    <ul>
+                        <li>Violación</li>
+                        <li>Abuso</li>
+                        <li>Ley 348</li>
+                        <li>Violencia</li>
+                        <li>Fisica</li>
+                        <li>Psicologica</li>
+                        <li>Economica</li>
+                        <li>Estafa</li>
+                        <li>Hurto</li>
+                        <li>Ley 1008</li>
+                        <li>Estupro</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <strong>Civil:</strong>
+                    <ul>
+                        <li>Cobro de deuda</li>
+                        <li>Coactiva y ejecutiva</li>
+                        <li>Derecho propietario</li>
+                        <li>Ley 247</li>
+                        <li>Usucapion</li>
+                        <li>Ordinarios</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <strong>Familiar:</strong>
+                    <ul>
+                        <li>Asistencia Familiar</li>
+                        <li>Divorcio</li>
+                        <li>Reconocimiento de union libre</li>
+                        <li>Division y particion de bienes</li>
+                        <li>Homologaciones de acuerdo</li>                    
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <strong>Laboral:</strong>
+                    <ul>
+                        <li>Cobro de beneficios sociales y otros</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <strong>Elaboracion de contrato:</strong>
+                    <ul>
+                        <li>Conpra venta</li>
+                        <li>Anticresis</li>
+                        <li>Alquileres</li>
+                        <li>Acuerdo</li>
+                        <li>Instructivas</li>
+                        <li>Tramites en gral.</li>
+                        <li>otros</li>
+                    </ul>
+                </li>
+                <li></li>
+                <li class="submenu">
+                    <strong>TRÁMITES:</strong>
+                    <ul>
+                        <li>Divorcio juducial y notarial</li>
+                        <li>Declaratoria de herederos</li>
+                        <li>Judicial y notarial</li>
+                        <li>Derecho propietario</li>
+                        <li>Ley 247</li>
+                        <li>Segip Seresi</li>
+                        <li>Alcaldia</li>
+                        <li>Plan regulador</li>
+                        <li>Derechos Reales</li>
+                        <li>Alodiales DDRR</li>
+                        <li>Vista rapida DDRR</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+
         <div class="dropdown" id="serviciosDropdown">
             <a class="dropdown-toggle">
                 <span>Se atienden:</span>
@@ -163,35 +248,50 @@
         </div>
     </div>
 </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Dropdown principal
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.closest('.dropdown');
+            dropdown.classList.toggle('active');
+
+            document.querySelectorAll('.dropdown').forEach(item => {
+                if (item !== dropdown) {
+                    item.classList.remove('active');
                 }
             });
         });
-    
-    </script>
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    });
+
+    // ✅ SUBMENÚS (AQUÍ estaba el fallo)
+    document.querySelectorAll('.submenu > strong').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            const parent = this.parentElement;
+            parent.classList.toggle('active');
+
+            parent.parentElement.querySelectorAll('.submenu').forEach(sibling => {
+                if (sibling !== parent) {
+                    sibling.classList.remove('active');
+                }
+            });
+        });
+    });
+
+});
+</script>
 <script type="module">
 import { createGoldParticles } from "/-OTROS/particulas_suben.js";
 
