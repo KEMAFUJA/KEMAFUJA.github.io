@@ -8,6 +8,8 @@ let fontConfig = {};
 let index = 0;
 let currentFontIndex = 0;
 let fuenteActual = "";
+let intervaloFuentes = null;
+let pausadoPorUsuario = false;
 
 const elementosTexto = [titulo, titulo2, document.getElementById('nombre-fuente')];
 
@@ -20,10 +22,8 @@ Promise.all([
   fonts = fontsData.fonts;
   fontConfig = fontConfigData;
 
-  // ✅ Cargar la primera fuente para que fuenteActual quede definida
-  // y los textos tengan un tamaño inicial coherente
   if (fonts.length) {
-    loadGoogleFont(fonts[0]);  // esto llamará a aplicarFuenteInterna y seteará fuenteActual
+    loadGoogleFont(fonts[0]);
   }
 
   iniciarAnimaciones();
@@ -37,7 +37,7 @@ function getFontConfig(fontName) {
 
   if (screenWidth <= 480) {
     return {
-      baseSize: Math.floor(config.baseSize * 0.6),  // ajusta este valor para móviles
+      baseSize: Math.floor(config.baseSize * 0.6),
       maxWidth: screenWidth * 0.85,
       marginBottom: config.marginBottom,
       lineHeight: config.lineHeight,
@@ -45,7 +45,7 @@ function getFontConfig(fontName) {
     };
   } else if (screenWidth <= 768) {
     return {
-      baseSize: Math.floor(config.baseSize * 0.1),  // ajusta este valor para tablets
+      baseSize: Math.floor(config.baseSize * 0.1),
       maxWidth: screenWidth * 0.75,
       marginBottom: config.marginBottom,
       lineHeight: config.lineHeight,
@@ -82,12 +82,10 @@ function adjustFontSize(element, text, baseSize, maxWidth) {
 
 // 🔁 REAJUSTE AL REDIMENSIONAR
 function reajustarTextos() {
-  // Si aún no hay fuente actual, intentar obtenerla desde el estilo del título
   let fuente = fuenteActual;
   if (!fuente) {
     const family = titulo.style.fontFamily;
     if (family) {
-      // Extrae el nombre de la fuente (ej: 'Montserrat', sans-serif)
       const match = family.match(/'([^']+)'/);
       fuente = match ? match[1] : family.split(',')[0].replace(/['"]/g, '').trim();
     }
@@ -103,7 +101,6 @@ function reajustarTextos() {
   titulo2.style.lineHeight = config.lineHeight;
   titulo2.style.letterSpacing = config.letterSpacing;
 
-  // ✅ Usamos la misma relación que en aplicarFuenteInterna
   adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
   adjustFontSize(titulo2, texto2, config.baseSize * 0.5, config.maxWidth);
   nombreFuenteEl.style.fontSize = config.baseSize * 0.15 + 'px';
@@ -209,10 +206,34 @@ function cambiarFuenteSecuencial() {
 function iniciarCambioAutomaticoFuentes() {
   const tiempoEscritura = texto.length * 150 + 2000;
   setTimeout(() => {
-    setInterval(cambiarFuenteSecuencial, 3000);
+    intervaloFuentes = setInterval(cambiarFuenteSecuencial, 3000);
     cambiarFuenteSecuencial();
   }, tiempoEscritura);
 }
+
+// =========================================================
+// 🔸 PAUSA / REANUDA FUENTES POR INTERACCIÓN
+// =========================================================
+function pausarFuentes() {
+  if (intervaloFuentes) {
+    clearInterval(intervaloFuentes);
+    intervaloFuentes = null;
+    pausadoPorUsuario = true;
+  }
+}
+
+function reanudarFuentes() {
+  if (pausadoPorUsuario) {
+    intervaloFuentes = setInterval(cambiarFuenteSecuencial, 3000);
+    pausadoPorUsuario = false;
+  }
+}
+
+// Mantener presionado o click = pausa mientras sostienes, reanuda al soltar
+document.querySelector('.card').addEventListener('mousedown', pausarFuentes);
+document.querySelector('.card').addEventListener('mouseup', reanudarFuentes);
+document.querySelector('.card').addEventListener('touchstart', pausarFuentes, { passive: true });
+document.querySelector('.card').addEventListener('touchend', reanudarFuentes);
 
 // =========================================================
 // 🔸 CONTROL DE AUDIO
@@ -234,7 +255,7 @@ function pauseAudio() {
 // =========================================================
 // 🔸 DROPDOWN DE SERVICIOS
 // =========================================================
-document.querySelector('.dropdown-header').addEventListener('click', function() {
+document.querySelector('.dropdown-header').addEventListener('click', function () {
   this.querySelector('i').classList.toggle('fa-chevron-up');
   this.querySelector('i').classList.toggle('fa-chevron-down');
   document.querySelector('.dropdown-content').classList.toggle('show');
