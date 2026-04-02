@@ -1,6 +1,6 @@
 :root {
-    --primary-color: hsla(210, 30%, 50%, 0);
-    --secondary-color: hsl(205, 70%, 90%, 0.1);
+    --primary-color: hsla(210, 30%, 50%);
+    --secondary-color: hsl(205, 70%, 90%);
     --text-color: #333;
 
     --transition: all 0.3s ease;
@@ -10,24 +10,68 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
+    height: 700px;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 20px;
     position: relative;
     overflow: auto; 
-    height: auto;
+    
     animation: backgroundColorChange 60s ease-in-out infinite;
 }
 
-/* Fondo animado */
 @keyframes backgroundColorChange {
-    0%, 100% { background-color: hsl(0, 0%, 100%); }
-    10%, 90% { background-color: hsl(0, 0%, 80%); }
-    20%, 80%{ background-color: hsl(0, 0%, 60%); }
-    30%, 70%{ background-color: hsl(0, 0%, 40%); }
-    40%, 60%{ background-color: hsl(0, 0%, 20%); }
-    50% { background-color: hsl(0, 0%, 0%); }
+    0%   { background-color: hsl(0, 100%, 50%, 0.01); }
+    2%   { background-color: hsl(7, 100%, 50%, 0.01); }
+    4%   { background-color: hsl(14, 100%, 50%, 0.01); }
+    6%   { background-color: hsl(21, 100%, 50%, 0.01); }
+    8%   { background-color: hsl(28, 100%, 50%, 0.01); }
+    10%  { background-color: hsl(35, 100%, 50%, 0.01); }
+    12%  { background-color: hsl(42, 100%, 50%, 0.01); }
+    14%  { background-color: hsl(49, 100%, 50%, 0.01); }
+    16%  { background-color: hsl(56, 100%, 50%, 0.01); }
+    18%  { background-color: hsl(63, 100%, 50%, 0.01); }
+    20%  { background-color: hsl(70, 100%, 50%, 0.01); }
+    22%  { background-color: hsl(77, 100%, 50%, 0.01); }
+    24%  { background-color: hsl(84, 100%, 50%, 0.01); }
+    26%  { background-color: hsl(91, 100%, 50%, 0.01); }
+    28%  { background-color: hsl(98, 100%, 50%, 0.01); }
+    30%  { background-color: hsl(105, 100%, 50%, 0.01); }
+    32%  { background-color: hsl(112, 100%, 50%, 0.01); }
+    34%  { background-color: hsl(119, 100%, 50%, 0.01); }
+    36%  { background-color: hsl(126, 100%, 50%, 0.01); }
+    38%  { background-color: hsl(133, 100%, 50%, 0.01); }
+    40%  { background-color: hsl(140, 100%, 50%, 0.01); }
+    42%  { background-color: hsl(147, 100%, 50%, 0.01); }
+    44%  { background-color: hsl(154, 100%, 50%, 0.01); }
+    46%  { background-color: hsl(161, 100%, 50%, 0.01); }
+    48%  { background-color: hsl(168, 100%, 50%, 0.01); }
+    50%  { background-color: hsl(175, 100%, 50%, 0.01); }
+    52%  { background-color: hsl(182, 100%, 50%, 0.01); }
+    54%  { background-color: hsl(189, 100%, 50%, 0.01); }
+    56%  { background-color: hsl(196, 100%, 50%, 0.01); }
+    58%  { background-color: hsl(203, 100%, 50%, 0.01); }
+    60%  { background-color: hsl(210, 100%, 50%, 0.01); }
+    62%  { background-color: hsl(217, 100%, 50%, 0.01); }
+    64%  { background-color: hsl(224, 100%, 50%, 0.01); }
+    66%  { background-color: hsl(231, 100%, 50%, 0.01); }
+    68%  { background-color: hsl(238, 100%, 50%, 0.01); }
+    70%  { background-color: hsl(245, 100%, 50%, 0.01); }
+    72%  { background-color: hsl(252, 100%, 50%, 0.01); }
+    74%  { background-color: hsl(259, 100%, 50%, 0.01); }
+    76%  { background-color: hsl(266, 100%, 50%, 0.01); }
+    78%  { background-color: hsl(273, 100%, 50%, 0.01); }
+    80%  { background-color: hsl(280, 100%, 50%, 0.01); }
+    82%  { background-color: hsl(287, 100%, 50%, 0.01); }
+    84%  { background-color: hsl(294, 100%, 50%, 0.01); }
+    86%  { background-color: hsl(301, 100%, 50%, 0.01); }
+    88%  { background-color: hsl(308, 100%, 50%, 0.01); }
+    90%  { background-color: hsl(315, 100%, 50%, 0.01); }
+    92%  { background-color: hsl(322, 100%, 50%, 0.01); }
+    94%  { background-color: hsl(329, 100%, 50%, 0.01); }
+    96%  { background-color: hsl(336, 100%, 50%, 0.01); }
+    98%  { background-color: hsl(343, 100%, 50%, 0.01); }
+    100% { background-color: hsl(350, 100%, 50%, 0.01); }
 }
 
 body::before {
@@ -42,22 +86,77 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -5;
-    opacity: 0.01;
+    opacity: 0.0125;
     mix-blend-mode: overlay;
+    
 }
 
-.card {
-    position: relative;
-    border-radius: 16px;
-    padding: 40px;
+.gold-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 700px;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Efecto de partículas dinámicas */
+.gold-particle {
+    position: absolute;
+    background: var(--gold-primary);
+    border-radius: 100%;
+    pointer-events: none;
+    animation: floatAndRotate linear infinite;
+}
+
+@keyframes floatAndRotate {
+    0% {
+        transform: translateY(0vh) rotate(0deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+    10% {
+        opacity: 0.125;
+        box-shadow:0 0 20px hsla(50, 100%, 70%);
+    }
+    90% {
+        opacity: 0.25;
+        box-shadow:0 0 10px hsla(50, 100%, 50%);
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+        box-shadow:0 0 5px hsla(50, 100%, 35%);
+    }
+}
+
+.dvd-logo {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    z-index: 1;
+    border-radius: 0%;
+    opacity: 0.125;
+}
+
+.card-wrapper {
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* opcional, si querés centrar vertical */
+    margin: 40px 0;
+    border-radius: 16px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    color: hsl(0, 0%, 15%);
     z-index: 1;
     transition: transform 1s ease, box-shadow 1s ease;
-    margin: 40px 0; 
     max-height: none; 
     overflow: visible; 
     animation: brillo 60s linear infinite alternate;
@@ -119,7 +218,7 @@ body::before {
     100% { box-shadow: 0 10px 50px hsla(350,100%,70%,0.5), 0 0 0 2px hsla(350,100%,70%,0.7) inset, 0 0 90px hsla(350,100%,60%,0.9) inset; }
 }
 
-.card::before {
+.card-wrapper::before {
     content: "";
     position: absolute;
     top: -10px;
@@ -140,11 +239,47 @@ body::before {
     100% { opacity: 0.5; }
 }
 
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* 💎 Card */
+.card {
+    margin: auto;
+    background: hsla(0, 0%, 100%, 0.5);
+    border-radius: 16px;
+    width: 500px;
+    max-width: 700px;
+    height: 600px;
+    padding: 40px;
+    box-shadow:
+        0 10px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 0 30px rgba(212, 175, 55, 0.2) inset;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(1000px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* ✨ Luz interna giratoria */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    backdrop-filter: blur(100px);
+    animation: rotate 60s linear infinite, brillo 60s linear alternate-reverse;
+    z-index: -1;
+}
+
+/* 🔄 Animaciones */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 /* Logo */
 .sphere-logo {
@@ -158,16 +293,27 @@ body::before {
     border-radius: 50%;
     display: grid;
     place-items: center;
-    box-shadow: 
-        inset 0 -3px 5px hsla(0, 0%, 100%, 0.9),
-        inset 0 3px 5px hsla(0, 0%, 0%, 0.9),
-        0 5px 5px hsla(0, 0%, 0%, 0.9);
     position: relative;
+    left: 45%;
     margin: 10px;
-    animation:palpitar-ambos 10s ease-in-out infinite, 
-        brillo 60s
-        ; 
+    animation: brillo 60s linear infinite alternate, palpitar 6s ease-in-out infinite;
     opacity: 0.25;
+}
+
+.sphere-logo::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.3) 0%, rgba(0,0,0,0) 70%);
+    opacity: 1;
+    pointer-events: none;
+    animation: palpitar-sombra 6s ease-in-out infinite;
+    filter: blur(5px);
+    z-index: -1;
 }
 
 .sphere-text {
@@ -191,20 +337,27 @@ body::before {
     border-radius: 50%;
 }
 
-@keyframes palpitar-ambos {
+@keyframes palpitar-sombra {
     0%, 100% {
-        transform: scale(1);
         box-shadow: 
             inset 0 -3px 5px hsla(0, 0%, 100%, 0.9),
             inset 0 3px 5px hsla(0, 0%, 0%, 0.9),
             0 5px 5px hsla(0, 0%, 0%, 0.9);
     }
     50% {
-        transform: scale(1.08);
         box-shadow: 
             inset 0 -4px 7px hsla(0, 0%, 100%, 0.95),
             inset 0 4px 7px hsla(0, 0%, 0%, 0.95),
             0 7px 10px hsla(0, 0%, 0%, 0.7);
+    }
+}
+
+@keyframes palpitar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
     }
 }
 
@@ -224,22 +377,19 @@ body::before {
     50% { text-shadow: 0 0 5px hsl(0, 0%, 100%); }
 }
 
+
 h1 {
-    white-space: nowrap;
-    overflow: hidden;
     border-right: 3px solid var(--secondary-color);
-    margin: 0;
-    font-weight: 700;
     animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .size1 {
     color: hsla(210, 30%, 25%, 0.75);
-    margin-bottom: -35px;
     transition: font-family 0.5s ease;
 }
 
 .size2 {
+    margin-top: 1.5%;
     color: hsl(205, 70%, 50%, 0.75);
     transition: font-family 0.5s ease;
 }
@@ -255,11 +405,31 @@ h1 {
     50% { border-color: var(--secondary-color); }
 }
 
+.font-changing {
+  transition: all 0.25s ease-out;
+  transform: scale(0.98);
+  opacity: 0.7;
+  filter: blur(2px);
+}
+.font-changing-restore {
+  transition: all 0.25s ease-in;
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.nombre-fuente{
+    margin-bottom: -10%;
+    color: hsla(0, 0%, 20%, 0.5);
+}
+
+
 /* Información de contacto */
 .contact-info {
     margin: -5px 0;
     text-align: center;
     width: 100%;
+    
 }
 
 .contact-info p {
@@ -269,12 +439,16 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .contact-info i {
-    margin-right: 10px;
-    color: var(--secondary-color);
-    font-size: 1.1rem;
+    margin-right: 2.5%;
+    font-size: 1rem;
+}
+
+.contact-info a{
+    text-decoration: none;
 }
 
 /* Sección de redes sociales */
@@ -295,8 +469,7 @@ h1 {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: -30px;
+    gap: 15px;   
 }
 
 .social-icon {
@@ -308,9 +481,10 @@ h1 {
     justify-content: center;
     color: white;
     font-size: 1.2rem;
-    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: moveAndPulse 10s ease-in-out infinite; /* Aplica la nueva animación combinada */
+    animation: moveAndPulse 10s ease-in-out infinite;
+    text-decoration: none;   /* ← Agrega esta línea */
 }
 
 @keyframes moveAndPulse {
@@ -326,6 +500,7 @@ h1 {
 }
 
 .social-icon:hover {
+    animation: none;          /* ← Detiene la animación al hacer hover */
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
@@ -337,22 +512,9 @@ h1 {
 .youtube { background-color: #FF0000; }
 .tiktok { background-color: #000000; }
 
-a{
-    text-decoration: none;
-}
-
-@keyframes colorboton {
-    0%, 100% { color: hsl(0, 0%, 0%); }
-    10%, 90% { color: hsl(0, 0%, 20%); }
-    20%, 80%{ color: hsl(0, 0%, 40%); }
-    30%, 70%{ color: hsl(0, 0%, 60%); }
-    40%, 60%{ color: hsl(0, 0%, 80%); }
-    50% { color: hsl(0, 0%, 100%); }
-}
 /* Botón de portafolio */
 .portfolio-btn {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    animation: brilo 60s ease-in-out, colorboton 60s ease-in-out;
+    animation: brillo 60s linear infinite alternate, colorboton 60s ease-in-out;
     border: none;
     padding: 12px 25px;
     font-size: 1rem;
@@ -360,9 +522,8 @@ a{
     border-radius: 30px;
     cursor: pointer;
     transition: var(--transition);
-    margin: 20px 0;
-    display: flex;
     align-items: center;
+    
 }
 
 .portfolio-btn i {
@@ -380,6 +541,16 @@ a{
     transform: translateX(10px);
 }
 
+@keyframes colorboton {
+    0%, 100% { color: hsl(0, 0%, 0%); }
+    10%, 90% { color: hsl(0, 0%, 20%); }
+    20%, 80%{ color: hsl(0, 0%, 40%); }
+    30%, 70%{ color: hsl(0, 0%, 60%); }
+    40%, 60%{ color: hsl(0, 0%, 80%); }
+    50% { color: hsl(0, 0%, 100%); }
+}
+
+
 /* Dropdown de servicios */
 .services-dropdown {
     width: 100%;
@@ -390,9 +561,10 @@ a{
 }
 
 .dropdown-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    animation: brillo 60s linear infinite alternate, colorboton 60s ease-in-out;
+    color: rgb(0, 0, 0);
     padding: 15px;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
@@ -456,6 +628,7 @@ a{
     gap: 15px;
     margin-top: 20px;
     width: 100%;
+    z-index: 10000;
 }
 
 .audio-btn {
@@ -481,63 +654,64 @@ a{
     color: white;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
-    body::before {
-        background-size: contain; /* Cambia a 'contain' en móviles si es necesario */
-        background-position: center top;
-        height: 100%; /* Asegura que cubra toda la altura */
-    }
-    
     .card {
-        padding: 30px 20px;
-        width: 90%; /* Ajusta el ancho en móviles */
-        margin: 20px auto; /* Centrado adicional */
+        max-width: 250px;
+        max-height: 500px;
+    }    
+
+    .sphere-logo {
+        --sphere-size: 50px;
+        width: var(--sphere-size);
+        height: var(--sphere-size);
+        left: 40%;
     }
-    
-    .size1 {
-        font-size: 275%;
-        margin-bottom: -20px;
+
+    .sphere-logo::after {
+        width: 100%;
+        height: 100%;
     }
-    
-    .size2 {
-        font-size: 150%; /* Tamaño más adecuado para móviles */
-    }
-    
-    .social-icons {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
+
     .contact-info p {
-        font-size: 0.9rem; /* Texto más pequeño en móviles */
-        flex-direction: column; /* Apila icono y texto en móviles */
-        align-items: center;
+        font-size: 0.75rem;
+        
+    }
+
+    .nombre-fuente{
+        margin-bottom: -12%;
+    }
+
+    .social-section h4 {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .portfolio-btn {
+        font-size: 0.6rem;    
     }
     
-    .contact-info i {
-        margin-right: 0;
+    .dropdown-header{
+        font-size: 0.75rem;
+    }
+    .service-category {
+        padding: 10px;
+    }
+
+    .service-category h3 {
+        font-size: 0.75rem;
         margin-bottom: 5px;
     }
-}
 
-@media (max-width: 480px) {
-    body::before {
-        background-image: url('Picsart_24-11-04_21-27-40-849.png');
-        background-size: contain;
-        background-position: center center;
-        opacity: 0.03;
-        height: 100vh; /* Asegurar que cubra toda la pantalla */
-    }
-
-    body {
-        padding: 15px; /* Reducir padding en móviles */
-        align-items: center; /* Centrar contenido en móviles */
-    }
-
-    .card {
-        margin: 10px 0; /* Menos margen en móviles */
-        padding: 20px 10px; /* Padding reducido */
+    .service-category li {
+        margin-bottom: 2.5px;
+        font-size: 0.75rem;
+        
     }
 }
+
