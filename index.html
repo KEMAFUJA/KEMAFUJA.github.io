@@ -19,23 +19,27 @@
     <link rel="stylesheet" href="stilo.css">
 </head>
 <body>
-<div class="card">
-    <div class="card-content">
+    <div class="gold-particles"></div>
+    <div id="dvd-container"></div>
+
+<div class="card-wrapper">
+    <div class="card">
         <div class="sphere-logo">
             <div class="sphere-text">K.E.</div>
         </div>
 
         <div class="contenedor-titulos">
+            <div id="nombre-fuente" class="nombre-fuente"></div>
             <h1 id="titulo" class="size1"></h1>
             <h1 id="titulo2" class="size2"></h1>
-            <div id="nombre-fuente" class="nombre-fuente" style="color: hsla(0, 0%, 0%, 0.25);"></div>
+            
         </div>
 
         <div class="divider"></div>
 
         <div class="contact-info">
             <p><i class="fas fa-envelope"></i> <a href="mailto:kemafuja.enterprise@hotmail.com?subject=Consulta&body=Hola, quisiera consultar sobre..."> KEMAFUJA.ENTERPRISE@hotmail.com </a></p>
-            <p><i class="fas fa-phone-alt"></i> <a class="numwa" href="tel:+59175614564"> +591 75614564</a> </p>
+            <p><i class="fas fa-phone-alt"></i> <a class="numwa" href="tel:+59175614564"> 75614564</a> </p>
         </div>
 
         <div class="social-section">
@@ -119,5 +123,27 @@
     Tu navegador no soporta el elemento de audio.
 </audio>
 <script src="KEMAFUJA.js"></script>
+<script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 40,
+    tamMax: 50,
+    durMax: 30,
+    aparMax: 60,
+    tamañoIgual: true
+});
+</script>
+<script type="module">
+import { createFloatingShapes } from "/-OTROS/particulas_chocan.js";
+
+createFloatingShapes({
+    containerId: "dvd-container",
+    count: 10,
+    colors: ['hsl(235, 100%, 10%)','hsl(235, 100%, 15%)','hsl(235, 100%, 20%)','hsl(235, 100%, 25%)','hsl(235, 100%, 30%)','hsl(235, 100%, 35%)','hsl(235, 100%, 40%)','hsl(235, 100%, 45%)','hsl(235, 100%, 50%)', 'hsl(235, 100%, 55%)', 'hsl(235, 100%, 60%)', 'hsl(235, 100%, 65%)','hsl(235, 100%, 70%)', 'hsl(235, 100%, 75%)', 'hsl(235, 100%, 80%)', 'hsl(235, 100%, 85%)'],
+    maxSpeed: 1,
+    maxSize: 60
+});
+</script>
 </body>
 </html>
