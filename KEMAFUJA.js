@@ -1,37 +1,43 @@
-const titulo  = document.getElementById('titulo');
+const titulo = document.getElementById('titulo');
 const titulo2 = document.getElementById('titulo2');
-const texto   = "KEMAFUJA";
-const texto2  = "ENTERPRISE";
+const texto = "KEMAFUJA";
+const texto2 = "ENTERPRISE";
 
 let fonts = [];
 let fontConfig = {};
 let index = 0;
 let currentFontIndex = 0;
+let fuenteActual = "";
 
-// 🔹 Cargar los JSON antes de iniciar animaciones
+const elementosTexto = [titulo, titulo2, document.getElementById('nombre-fuente')];
+
+// 🔹 CARGA INICIAL DE JSON
 Promise.all([
   fetch("datos/fonts.json").then(res => res.json()),
   fetch("datos/fontconfig.json").then(res => res.json())
 ])
 .then(([fontsData, fontConfigData]) => {
-  fonts = fontsData.fonts;            // arreglo simple de nombres
-  fontConfig = fontConfigData;        // objeto con configuraciones
-  iniciarAnimaciones();               // iniciar solo después de cargar
+  fonts = fontsData.fonts;
+  fontConfig = fontConfigData;
+
+  // ✅ Cargar la primera fuente para que fuenteActual quede definida
+  // y los textos tengan un tamaño inicial coherente
+  if (fonts.length) {
+    loadGoogleFont(fonts[0]);  // esto llamará a aplicarFuenteInterna y seteará fuenteActual
+  }
+
+  iniciarAnimaciones();
 })
 .catch(err => console.error("Error cargando los JSON:", err));
 
-// =========================================================
 // 🔸 FUNCIONES PRINCIPALES
-// =========================================================
-
-// Función para obtener configuración responsiva desde JSON
 function getFontConfig(fontName) {
   const config = fontConfig[fontName] || fontConfig.default;
   const screenWidth = window.innerWidth;
 
   if (screenWidth <= 480) {
     return {
-      baseSize: Math.floor(config.baseSize * 0.6),
+      baseSize: Math.floor(config.baseSize * 0.6),  // ajusta este valor para móviles
       maxWidth: screenWidth * 0.85,
       marginBottom: config.marginBottom,
       lineHeight: config.lineHeight,
@@ -39,7 +45,7 @@ function getFontConfig(fontName) {
     };
   } else if (screenWidth <= 768) {
     return {
-      baseSize: Math.floor(config.baseSize * 0.8),
+      baseSize: Math.floor(config.baseSize * 0.1),  // ajusta este valor para tablets
       maxWidth: screenWidth * 0.75,
       marginBottom: config.marginBottom,
       lineHeight: config.lineHeight,
@@ -50,62 +56,12 @@ function getFontConfig(fontName) {
   }
 }
 
-// Cargar fuentes desde Google Fonts dinámicamente
-function loadGoogleFont(font) {
-  const fontName = font.replace(/ /g, '+');
-  if (!document.querySelector(`link[data-font="${fontName}"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = `https://fonts.googleapis.com/css2?family=${fontName}&display=swap`;
-    link.dataset.font = fontName;
-    document.head.appendChild(link);
-
-    link.onload = () => applyFontWithConfig(font);
-  } else {
-    applyFontWithConfig(font);
-  }
-}
-
-// Aplicar la fuente y su configuración visual
-function applyFontWithConfig(font) {
-  const config = getFontConfig(font);
-  console.log(`Aplicando fuente: ${font}`, config);
-
-  // Aplicar fuente y estilos
-  titulo.style.fontFamily  = `'${font}', sans-serif`;
-  titulo2.style.fontFamily = `'${font}', sans-serif`;
-
-  titulo.style.lineHeight     = config.lineHeight;
-  titulo.style.letterSpacing  = config.letterSpacing;
-  titulo.style.marginBottom   = config.marginBottom;
-  titulo2.style.lineHeight    = config.lineHeight;
-  titulo2.style.letterSpacing = config.letterSpacing;
-
-  const nombreFuenteEl = document.getElementById('nombre-fuente');
-  nombreFuenteEl.style.fontFamily = `'${font}', sans-serif`;
-
-  // Ajustar tamaños
-  setTimeout(() => {
-      // Título principal
-      adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
-
-      // Título secundario = 50% del principal
-      adjustFontSize(titulo2, texto2, config.baseSize*0.5, config.maxWidth);
-
-      // Nombre de la fuente = 25% del principal
-      nombreFuenteEl.style.fontSize = config.baseSize* 0.25 + 'px';
-      nombreFuenteEl.textContent = font;
-  }, 100);
-}
-
-
-// Ajuste automático del tamaño del texto según ancho máximo
 function adjustFontSize(element, text, baseSize, maxWidth) {
   const tempSpan = document.createElement('span');
   tempSpan.style.fontFamily = element.style.fontFamily;
-  tempSpan.style.fontSize   = baseSize + 'px';
+  tempSpan.style.fontSize = baseSize + 'px';
   tempSpan.style.visibility = 'hidden';
-  tempSpan.style.position   = 'absolute';
+  tempSpan.style.position = 'absolute';
   tempSpan.style.whiteSpace = 'nowrap';
   tempSpan.textContent = text;
 
@@ -124,44 +80,132 @@ function adjustFontSize(element, text, baseSize, maxWidth) {
   }
 }
 
+// 🔁 REAJUSTE AL REDIMENSIONAR
+function reajustarTextos() {
+  // Si aún no hay fuente actual, intentar obtenerla desde el estilo del título
+  let fuente = fuenteActual;
+  if (!fuente) {
+    const family = titulo.style.fontFamily;
+    if (family) {
+      // Extrae el nombre de la fuente (ej: 'Montserrat', sans-serif)
+      const match = family.match(/'([^']+)'/);
+      fuente = match ? match[1] : family.split(',')[0].replace(/['"]/g, '').trim();
+    }
+  }
+  if (!fuente) return;
+
+  const config = getFontConfig(fuente);
+  const nombreFuenteEl = document.getElementById('nombre-fuente');
+
+  titulo.style.lineHeight = config.lineHeight;
+  titulo.style.letterSpacing = config.letterSpacing;
+  titulo.style.marginBottom = config.marginBottom;
+  titulo2.style.lineHeight = config.lineHeight;
+  titulo2.style.letterSpacing = config.letterSpacing;
+
+  // ✅ Usamos la misma relación que en aplicarFuenteInterna
+  adjustFontSize(titulo, texto, config.baseSize, config.maxWidth);
+  adjustFontSize(titulo2, texto2, config.baseSize * 0.5, config.maxWidth);
+  nombreFuenteEl.style.fontSize = config.baseSize * 0.15 + 'px';
+}
+
+// =========================================================
+// 🔸 LÓGICA CON EFECTO DE TRANSFORMACIÓN
+// =========================================================
+function loadGoogleFont(font) {
+  const fontName = font.replace(/ /g, '+');
+  if (!document.querySelector(`link[data-font="${fontName}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `https://fonts.googleapis.com/css2?family=${fontName}&display=swap`;
+    link.dataset.font = fontName;
+    document.head.appendChild(link);
+    link.onload = () => aplicarConEfecto(font);
+  } else {
+    aplicarConEfecto(font);
+  }
+}
+
+function aplicarConEfecto(font) {
+  elementosTexto.forEach(el => {
+    if (el) el.classList.add('font-changing');
+  });
+
+  setTimeout(() => {
+    aplicarFuenteInterna(font).then(() => {
+      elementosTexto.forEach(el => {
+        if (el) {
+          el.classList.remove('font-changing');
+          el.classList.add('font-changing-restore');
+          setTimeout(() => {
+            el.classList.remove('font-changing-restore');
+          }, 250);
+        }
+      });
+    });
+  }, 150);
+}
+
+function aplicarFuenteInterna(font) {
+  return new Promise((resolve) => {
+    const config = getFontConfig(font);
+    console.log(`Aplicando fuente: ${font}`, config);
+    fuenteActual = font;
+
+    titulo.style.fontFamily = `'${font}', sans-serif`;
+    titulo2.style.fontFamily = `'${font}', sans-serif`;
+
+    titulo.style.lineHeight = config.lineHeight;
+    titulo.style.letterSpacing = config.letterSpacing;
+    titulo.style.marginBottom = config.marginBottom;
+    titulo2.style.lineHeight = config.lineHeight;
+    titulo2.style.letterSpacing = config.letterSpacing;
+
+    const nombreFuenteEl = document.getElementById('nombre-fuente');
+    nombreFuenteEl.style.fontFamily = `'${font}', sans-serif`;
+
+    setTimeout(() => {
+      adjustFontSize(titulo, texto, config.baseSize * 0.8, config.maxWidth);
+      adjustFontSize(titulo2, texto2, config.baseSize * 0.35, config.maxWidth);
+      nombreFuenteEl.style.fontSize = config.baseSize * 0.3 + 'px';
+      nombreFuenteEl.textContent = font;
+      resolve();
+    }, 100);
+  });
+}
+
 // =========================================================
 // 🔸 ANIMACIÓN DE TEXTO Y FUENTES
 // =========================================================
-
 function iniciarAnimaciones() {
   escribirTitulo();
   iniciarCambioAutomaticoFuentes();
 }
 
-// Animación tipo máquina de escribir
 function escribirTitulo() {
   if (index < texto2.length) {
-    titulo.textContent  += texto.charAt(index);
+    titulo.textContent += texto.charAt(index);
     titulo2.textContent += texto2.charAt(index);
     index++;
 
-    // Cambiar fuente cada 2 caracteres
     if (index % 2 === 0) cambiarFuenteAleatoria();
 
     setTimeout(escribirTitulo, 150);
   }
 }
 
-// Cambiar a una fuente aleatoria
 function cambiarFuenteAleatoria() {
   const randomIndex = Math.floor(Math.random() * fonts.length);
-  const randomFont  = fonts[randomIndex];
+  const randomFont = fonts[randomIndex];
   loadGoogleFont(randomFont);
 }
 
-// Cambiar a la siguiente fuente en secuencia
 function cambiarFuenteSecuencial() {
   currentFontIndex = (currentFontIndex + 1) % fonts.length;
   const nextFont = fonts[currentFontIndex];
   loadGoogleFont(nextFont);
 }
 
-// Cambio automático de fuentes
 function iniciarCambioAutomaticoFuentes() {
   const tiempoEscritura = texto.length * 150 + 2000;
   setTimeout(() => {
@@ -173,7 +217,6 @@ function iniciarCambioAutomaticoFuentes() {
 // =========================================================
 // 🔸 CONTROL DE AUDIO
 // =========================================================
-
 const miAudio = document.getElementById('background-audio');
 
 function playAudio() {
@@ -191,9 +234,20 @@ function pauseAudio() {
 // =========================================================
 // 🔸 DROPDOWN DE SERVICIOS
 // =========================================================
-
 document.querySelector('.dropdown-header').addEventListener('click', function() {
   this.querySelector('i').classList.toggle('fa-chevron-up');
   this.querySelector('i').classList.toggle('fa-chevron-down');
   document.querySelector('.dropdown-content').classList.toggle('show');
+});
+
+// =========================================================
+// 🔸 EVENTO RESIZE (RESPONSIVIDAD)
+// =========================================================
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    reajustarTextos();
+    console.log('Texto reajustado por resize');
+  }, 150);
 });
