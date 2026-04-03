@@ -201,7 +201,7 @@ body {
 
 @font-face {
   font-family: 'MTCORSVA';
-  src: url('MTCORSVA.TTF');
+  src: url('../-LETRAS/fonts/MTCORSVA.TTF');
 }
 
 .nombre-completo h2 {
@@ -426,7 +426,7 @@ body {
 
 .dropdown.active .content,
 .dropdown.active .content2 {
-    max-height: 1000px;
+    max-height: 500px;
     padding: 20px;
 }
 
@@ -450,6 +450,7 @@ body {
 .content li strong {
     color: var(--dark-blue);
     font-weight: 600;
+    font-size: 15px;
 }
 
 .content2 iframe {
