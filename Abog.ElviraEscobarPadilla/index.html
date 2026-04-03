@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta property="og:title" content="Abog. Elvira Escobar Padilla">
+    <meta property="og:description" content="Cel: 63383402">
+    <meta property="og:image" content="https://kemafuja.github.io/Abog.ElviraEscobarPadilla/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://kemafuja.github.io/Abog.ElviraEscobarPadilla/">
+    <meta name="twitter:card" content="summary_large_image">    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Abog. Elvira Escobar Padilla</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="STILO.css">
+</head>
+
+<body>
+    <div class="gold-particles"></div>
+    
+    <div class="card">
+        <div class="seal-container">
+            <div class="official-seal"></div>
+        </div>
+        
+        <div class="nombre-completo">
+            <h2 class="inline-text">Elvira Escobar Padilla</h2>
+            <h3 class="inline-text">Abog.</h3>
+        </div>
+
+        <div class="divider"></div>
+        
+        <p class="intro-text">Para más información, contáctenos a través de:</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" style="margin-left: 5px" href="tel:+59163383402">+591 63383402</a>             
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59163383402&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Msj: 63383402</a>
+                </div>
+            </div>
+
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Correo:</p>
+                    <a class="contact-link fbcorr" href="mailto:elviescobarpad@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">elviescobarpad@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr" href="https://maps.app.goo.gl/pSz1tzAWr1zFydGq7">Edificio Arnez número 27, pasaje Beni, oficina 01, planta baja</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown" id="ubicacionDropdown">
+            <a class="dropdown-toggle">
+                <span>Ubicación</span>
+            </a>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d950.0972034620785!2d-63.180627818715216!3d-17.775063072790058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMwLjQiUyA2M8KwMTAnNTAuNCJX!5e0!3m2!1ses!2sbo!4v1775179284056!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="dropdown" id="horarioDropdown">
+            <a class="dropdown-toggle">
+                <span>Horario de atención</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li><strong>LUNES A VIERNES:</strong> 8:00 -  17:00</li>
+                    <li><strong>SABADO:</strong> Solo llamadas/mensajes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown" id="serviciosDropdown">
+            <a class="dropdown-toggle">
+                <span>Se hacen:</span>
+            </a>
+            <div class="content">
+                <ul>
+                    <li> <strong>Procesos penales</strong></li>
+                    <li> <strong>Laborales</strong></li>                    
+                </ul>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="mailto:elviescobarpad@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">                
+                <img src="../-LOGOS/Correo.png" alt="Correo">            
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=59163383402&text=Buenas%20quisiera%20saber%20sobre..." target="_blank" class="social-icon"> 
+                <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 25px; height: 25px;">
+            </a>
+            <a href="https://maps.app.goo.gl/pSz1tzAWr1zFydGq7" target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para los dropdowns
+            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.dropdown');
+                    dropdown.classList.toggle('active');
+                    
+                    // Cerrar otros dropdowns abiertos
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Cerrar dropdowns al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
+<script type="module">
+import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+
+createGoldParticles('.gold-particles', {
+    cuantas: 40,
+    tamMax: 5,
+    durMax: 20,
+    aparMax: 20,
+    tamañoIgual: true
+});
+</script>
+
+</body>
+</html>
