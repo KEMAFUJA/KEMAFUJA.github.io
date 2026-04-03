@@ -201,7 +201,7 @@ body {
 
 @font-face {
   font-family: 'MTCORSVA';
-  src: url('MTCORSVA.TTF');
+  src: url('../-LETRAS/fonts/MTCORSVA.TTF');
 }
 
 .nombre-completo h2 {
@@ -550,7 +550,7 @@ body {
     .letra {font-size: 2rem;
             }
             
-    .nombre-completo h2 {font-size: 3rem;
+    .nombre-completo h2 {font-size: 2.5rem;
         line-height: 2.5rem;
             }
             
@@ -564,5 +564,8 @@ body {
     .social-icon {width: 40px;
                     height: 40px;
             }
+    .correo{
+        font-size: 0.95rem;
+    }
 }
 
