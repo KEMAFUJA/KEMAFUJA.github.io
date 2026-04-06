@@ -154,46 +154,7 @@ body {
     letter-spacing: 2px;
 }
 
-@keyframes ColorTitulo {
-    0% {filter: drop-shadow(#fff2ae) ; 
-        color: #987f03; /* Color del texto inicial */
-        }
-    30% {filter: drop-shadow( #d4c67e); 
-        color: #ffe76e; /* Cambia el color del texto en esta etapa */
-        } 
-    60% {filter: drop-shadow(#c3af50); 
-        color: #ffde38; /* Cambia el color del texto en esta etapa */
-        }
-    90% {filter: drop-shadow( #ffd500); 
-        color: #fff280; /* Vuelve al color del texto inicial */
-        }
-    100% {filter: drop-shadow(#fff2ae) ; 
-        color: #987f03; /* Color del texto inicial */
-        }
-}
-
-/* Títulos */
-.letra {
-    font-size: 80px;
-    font-family: 'Playfair Display', serif;
-    /*color: var(--dark-blue);*/
-    margin-bottom: 10px;
-    position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    letter-spacing: 2px;
-    animation: ColorTitulo 50s ease-in-out infinite;
-}
-
-.letra::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold-primary), var(--gold-tertiary));
-    margin: 15px auto;
-    border-radius: 3px;
-}
-
+/*Nombre */
 .nombre-completo {
     margin: 10px 0 30px;
     position: relative;
@@ -201,7 +162,7 @@ body {
 
 @font-face {
   font-family: 'MTCORSVA';
-  src: url('MTCORSVA.TTF');
+  src: url('../-LETRAS/fonts/MTCORSVA.TTF');
 }
 
 .nombre-completo h2 {
@@ -227,7 +188,7 @@ body {
     background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
     margin: 20px auto;
     width: 80%;
-}
+}   
 
 /* Texto introductorio */
 .intro-text {
@@ -244,7 +205,6 @@ body {
     gap: 20px; /* Espacio entre elementos */
     margin-bottom: 30px;
     width: 100%; /* Ocupa todo el ancho disponible */
-    /*max-width: 600px; /* Ancho máximo opcional */
 }
 
 .contact-item {
@@ -252,7 +212,7 @@ body {
     align-items: center;
     text-align: left;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.75); /* Fondo semitransparente */
     border-radius: 10px; /* Esquinas redondeadas */
     transition: all 0.3s ease; /* Transición suave */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra sutil */
@@ -268,14 +228,6 @@ body {
     background: white;
 }
 
-
-.contact-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
-    object-fit: contain;
-}
-
 .contact-label {
     font-size: 0.9rem;
     color: var(--medium-blue);
@@ -289,6 +241,9 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
+.full { display: inline; }
+.short { display: none; }
 
 /*COLORES LINKS*/
 @keyframes backgroundnumwa {
@@ -321,9 +276,8 @@ body {
 
 /* Efectos de enlaces */
 .numwa {
-    color: var(--accent-green);
     position: relative;
-    animation: backgroundnumwa 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
+    animation: backgroundnumwa 60s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
 }
 
 .numwa::after {
@@ -334,11 +288,8 @@ body {
     width: 0;
     height: 2px;
     background: var(--accent-green);
+    opacity: 0.5;
     transition: width 0.3s ease;
-}
-
-.numwa:hover {
-    color: var(--accent-green);
 }
 
 .numwa:hover::after {
@@ -346,9 +297,8 @@ body {
 }
 
 .fbcorr {
-    color: var(--medium-blue);
     position: relative;
-    animation: backgroundFBCORR 40s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
+    animation: backgroundFBCORR 60s ease-in-out infinite, heartbeat 3s ease-in-out infinite;
 }
 
 .fbcorr::after {
@@ -357,13 +307,10 @@ body {
     bottom: -2px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--medium-blue);
+    opacity: 0.5;
     transition: width 0.3s ease;
-}
-
-.fbcorr:hover {
-    color: var(--medium-blue);
 }
 
 .fbcorr:hover::after {
@@ -375,13 +322,14 @@ body {
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background: hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
     transition: all 0.3s ease;
 }
 
 .dropdown:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .dropdown-toggle {
@@ -397,12 +345,6 @@ body {
 
 .dropdown-toggle:hover {
     color: var(--gold-primary);
-}
-
-.dropdown-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
 }
 
 .dropdown-toggle::after {
@@ -426,20 +368,18 @@ body {
 
 .dropdown.active .content,
 .dropdown.active .content2 {
-    max-height: 500px;
-    padding: 20px;
+    max-height: 700px;
 }
 
 .content ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .content li {
     padding: 8px 0;
     color: var(--text-dark);
-    font-size: 0.95rem;
+    font-size: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -454,8 +394,8 @@ body {
 }
 
 .content2 iframe {
-    width: 100%;
-    height: 300px;
+    width: 90%;
+    height: 500px;
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -493,70 +433,23 @@ body {
     object-fit: contain;
 }
 
-.whatsapp-dropdown {
-    position: relative;
-}
 
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-}
 
-.dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #25D366;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background-color 0.3s;
-}
-
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
-}
-
-.whatsapp-dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .card {padding: 30px 20px;
-        }
-            
-    .letra {font-size: 2.5rem;
-        }
-            
-    .nombre-completo h2 {font-size: 1.8rem;
-        }
-            
-    .contact-grid {grid-template-columns: 1fr;
-        }
-            
-    .seal-container {top: -30px;
-                    right: -30px;
-                    width: 100px;
-                    height: 100px;
-        }
-}
-
-@media (max-width: 480px) {
-    .letra {font-size: 2rem;
-            }
-            
-    .nombre-completo h2 {font-size: 2.5rem;
+@media (max-width: 450px) {
+    .card{
+        padding: 25px;
+    }
+    .nombre-completo h2 {font-size: 3rem;
         line-height: 2.5rem;
+        margin-top: 40px;
             }
             
     .nombre-completo h3 {font-size: 1rem;
             }
+    
+    .full { display: inline; }
+    .short { display: none; }
             
     .dropdown-toggle {padding: 12px 15px;
                         font-size: 0.9rem;
@@ -567,6 +460,49 @@ body {
             }
     .correo{
         font-size: 0.95rem;
+    }
+
+    .content2 iframe {
+        height: 300px;
+    }
+
+    .content li, 
+    .content li strong{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .card{
+    padding: 20px;
+    }
+    .nombre-completo h2 {font-size: 2.5rem;
+        line-height: 2.5rem;
+            }
+            
+    .nombre-completo h3 {font-size: 0.75rem;
+            }
+
+    .intro-text,
+    .contact-label,
+    .contact-link{
+        font-size: 0.75rem;
+    }
+
+    .full { display: none; }
+    .short { display: inline; }    
+         
+    .correo{
+        font-size: 0.8rem;
+    }
+    
+    .dropdown-toggle{
+         font-size: 0.75rem;
+    }
+
+    .content li, 
+    .content li strong{
+        font-size: 0.75rem;
     }
 }
 
