@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta property="og:title" content="Abogado">
-    <meta property="og:description" content="Carlos A. Diaz Ortiz">
+    <meta property="og:title" content="Abog. Carlos A. Diaz Ortiz">
+    <meta property="og:description" content="WA: 78413065">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.CarlosDiazOrtiz/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -14,7 +14,9 @@
     <link rel="icon" href="logo.png" type="image/png">
     <title>Abog. Carlos A. Diaz Ortiz</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="/-OTROS/General.css">
+    
 </head>
 
 <body>
@@ -36,27 +38,35 @@
         
         <div class="contact-grid">
             <div class="contact-item">
-                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" style="margin-right: 5px;" href="tel:+59176609671">+591 76609671</a>
-                    <a class="contact-link numwa" style="margin-left: 5px;"href="tel:+59178413065">+591 78413065</a>                    
+                    <a class="contact-link numwa" href="tel:+59176609671">
+                        <span class="full">+591 76609671</span>
+                        <span class="short">76609671</span>
+                    </a> <br>                    
+                    <a class="contact-link numwa" href="tel:+59178413065">
+                        <span class="full">+591 78413065</span>
+                        <span class="short">78413065</span>
+                    </a>                    
                 </div>
             </div>
             
             <div class="contact-item">
-                <!--img src="email-icon.png" alt="Correo" class="contact-icon"-->
-                <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">carlos.diaz.o0958@gmail.com</a>
-                </div>
-            </div>
-            
-            <div class="contact-item">
-                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59178413065&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59178413065&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                        <span class="full">Msj: 78413065</span>
+                        <span class="short">78413065</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Correo:</p>
+                    <a class="contact-link fbcorr correo" href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        <span class="full">carlos.diaz.o0958@gmail.com</span>
+                        <span class="short correo-s">carlos.diaz.o0958 @gmail.com</span></a>
                 </div>
             </div>
         
@@ -64,7 +74,6 @@
 
         <div class="dropdown" id="ubicacionDropdown">
             <a class="dropdown-toggle">
-                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
                 <span>Ubicación</span>
             </a>
             <div class="content2">
@@ -74,7 +83,6 @@
         
         <div class="dropdown" id="horarioDropdown">
             <a class="dropdown-toggle">
-                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
                 <span>Horario de atención</span>
             </a>
             <div class="content">
@@ -115,34 +123,7 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
-        });
-    </script>
+<script src="/-OTROS/Dropdown.js"></script>
 <script type="module">
 import { createGoldParticles } from "/-OTROS/particulas_suben.js";
 
