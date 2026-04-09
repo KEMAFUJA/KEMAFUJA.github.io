@@ -37,47 +37,73 @@
     }
 }
 
+/* ✨ Borde brillante alrededor */
+.card-wrapper::after {
+    height: 103%;
+    width: 103%;
+    top: 50%;
+    left: 50%;
+    border: 1.5px solid transparent;
+    border-image: linear-gradient(
+        45deg,
+        var(--gold-primary),
+        var(--gold-tertiary),
+        var(--gold-primary)
+    );
+    border-image-slice: 1;
+    border-radius: 100%;
+}
+
+/* 💎 Card */
 .card {
+    background: hsla(0, 0%, 100%, 0.5);
     border-radius: 16px;
-    padding: 40px;
     width: 100%;
     max-width: 700px;
-    text-align: center;
-    background: hsla(0, 0%, 100%, 0.25);
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3), 
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-                0 0 30px rgba(212, 175, 55, 0.2) inset;
-    backdrop-filter: blur(1px);
-    color: var(--text-dark);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 40px;
+    box-shadow:
+        0 10px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 0 30px rgba(212, 175, 55, 0.2) inset;
+    backdrop-filter: blur(5px);
 }
 
+/* ✨ Luz interna giratoria */
 .card::before {
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary), var(--gold-primary));
+    top: -50%;
+    left: 0%;
+    width: 250%;
+    height: 250%;
 }
-
 
 .seal-container {
-    top: -20px;
-    right: -20px;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
 }
 
 .official-seal {
     height: 100%;
     width: 100%;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-primary);
 }
 
 .official-seal::before {
     content: "Abog. Candido Arancibia Salazar";
     color: var(--gold-primary);
+    text-shadow:0 0 5px hsl(50, 100%, 35%);
+    letter-spacing: 2px;
     border-radius: 50%;
-    border: 1px dotted var(--gold-primary);
+    border: 2px dotted var(--gold-primary);
+    font-size: 0.7rem;
+    font-weight: bold;
 }
 
 .official-seal::after {
     border-radius: 50%;
-    border: 3px solid var(--gold-primary);
+    border: 1.5px solid var(--gold-primary);
     inset: 10px;
 }
 
@@ -294,12 +320,27 @@
     .content li strong{
         font-size: 0.9rem;
     }
+
+    .seal-container {
+        top: -70px;
+        right: -70px;
+    }
+
+    .official-seal{
+        height: 80%;
+        width: 80%;
+    }
+
+    .official-seal::before {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
 }
 
 
 @media (max-width: 380px) {
     .nombre-completo h2 {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
         line-height: 2.5rem;
             }
             
@@ -327,8 +368,8 @@
     }
 
     .seal-container {
-        top: -40px;
-        right: -40px;
+        top: -70px;
+        right: -70px;
     }
 
     .official-seal{
@@ -337,7 +378,7 @@
     }
 
     .official-seal::before {
-        font-size: 7.5px;
+        font-size: 9px;
         letter-spacing: 1px;
     }
 
