@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 20px;
     position: relative;
-
+    animation: backgroundBody 30s ease-in-out infinite;
 }
 
 .gold-particles {
@@ -57,55 +57,58 @@ body {
     pointer-events: none;
 }
 
-/* Tarjeta principal */
+/* 🔸 Contenedor del card con borde */
+.card-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* opcional, si querés centrar vertical */
+}
+
+/* ✨ Borde brillante alrededor */
+.card-wrapper::after {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: borderGlow 1s infinite ease-in-out;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 💎 Card */
 .card {
+    overflow: hidden;
     position: relative;
     z-index: 1;
-    overflow: hidden;
-    margin: 40px 0; /* Añade margen superior e inferior */
-    max-height: none; /* Asegúrate que no tenga altura máxima fija */
-    overflow: visible; /* Cambia de hidden a visible si es necesario */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ✨ Luz interna giratoria */
 .card::before {
     content: "";
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-image-slice: 1;
+    animation: rotate 60s linear infinite;
     z-index: -1;
-    pointer-events: none;
-    animation: borderGlow 6s linear infinite;
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary), var(--gold-primary));
-    border-image-slice: 1;
-    z-index: -1;
-    pointer-events: none;
-    animation: borderGlow 6s linear infinite;
+/* 🔄 Animaciones */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes borderGlow {
-    0% { opacity: 0.5; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.5; }
+    0% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+    50% { filter: drop-shadow(0 0 12px var(--gold-tertiary)); }
+    100% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
 }
+
 
 /* Sello oficial */
 .seal-container {
     position: absolute;
-    width: 150px;
-    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,6 +130,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .official-seal::after {
@@ -337,7 +341,7 @@ body {
 
 @media (max-width: 450px) {
     .card{
-        padding: 25px;
+        padding: 20px;
     }
 
     .full { display: inline; }
@@ -359,8 +363,8 @@ body {
 
 @media (max-width: 380px) {
     .card{
-        width: 1000px;
-    padding: 20px;
+    padding: 10px;
+    
     }
 
     .full { display: none; }
