@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta property="og:title" content="Abog. Candido Arancibia Salazar">
@@ -13,22 +13,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Abog. Candido Arancibia Salazar</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="/-OTROS/General.css">
 </head>
 
-<body>
-    <div class="gold-particles"></div>
-    
+<body>    
+<div id="sube-contenedor"></div>
 <div class="card-wrapper">
     <div class="card">
 
-        <div class="seal-container">
-            <div class="official-seal"></div>
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <div class="nombre-completo">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <div class="nombre-completo degradado-animado3">
             <h2 class="inline-text">Candido Arancibia Salazar</h2>
             <h3 class="inline-text">Abogado</h3>
         </div>
@@ -51,7 +51,9 @@
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59170449544&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59170449544&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
                         <span class="full">Msj: 70449544</span>
                         <span class="short">70449544</span>
                     </a>
@@ -61,31 +63,35 @@
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" href="mailto:Corporacionlegalarancibia@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">Corporacionlegalarancibia@gmail.com</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:Corporacionlegalarancibia@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        Corporacionlegalarancibia@gmail.com
+                    </a>
                 </div>
             </div>
             
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" href="https://maps.app.goo.gl/v3GDB85faVTHDHHX7">Calle Beni 755 primer piso oficina 5</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/v3GDB85faVTHDHHX7"> 
+                        Calle Beni 755 primer piso oficina 5
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1899.6746869774474!2d-63.18104700000001!3d-17.77527!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMwLjkiUyA2M8KwMTAnNTIuMiJX!5e0!3m2!1ses!2sbo!4v1775509103339!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:00 -  17:00</li>
@@ -94,68 +100,71 @@
             </div>
         </div>
 
-
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>Se atiende:</span>
-            </a>
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
             <div class="content">
                 <ul>
-                <li class="submenu">
-                    <strong>PROCESOS:</strong>
-                    <ul>
-                    <li></li>
-                    <li>Civiles</li>
-                    <li>Penales</li>
-                    <li>Familiares</li>
-                    <li>Laborales</li>
-                    <li>Voluntarios</li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <strong>TRÁMITES ANTE:</strong>
-                    <ul>
-                    <li></li>
-                    <li>Alcaldia Municipal</li>
-                    <li>SER</li>
-                    <li>Catastro</li>
-                    <li>Derechos Reales (DDRR)</li>
-                    <li>Plan Regulador</li>
-                    <li>Segip</li>
-                    <li>Sereci</li>                
-                    </ul>
-                </li>
-                
+                    <li class="submenu">
+                        <strong>PROCESOS:</strong>
+                        <ul>
+                        <li></li>
+                        <li>Civiles</li>
+                        <li>Penales</li>
+                        <li>Familiares</li>
+                        <li>Laborales</li>
+                        <li>Voluntarios</li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <strong>TRÁMITES ANTE:</strong>
+                        <ul>
+                        <li></li>
+                        <li>Alcaldia Municipal</li>
+                        <li>SER</li>
+                        <li>Catastro</li>
+                        <li>Derechos Reales (DDRR)</li>
+                        <li>Plan Regulador</li>
+                        <li>Segip</li>
+                        <li>Sereci</li>                
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="mailto:Corporacionlegalarancibia@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">                
+            <a href="mailto:Corporacionlegalarancibia@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
+                target="_blank" class="social-icon">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-
-            <a href="https://api.whatsapp.com/send?phone=59170449544&text=Buenas%20quisiera%20saber%20sobre..." target="_blank" class="social-icon"> 
-                <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 25px; height: 25px;">
+            <a href="https://api.whatsapp.com/send?phone=59170449544&text=Buenas%20quisiera%20saber%20sobre..." 
+                target="_blank" class="social-icon"> 
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/v3GDB85faVTHDHHX7" target="_blank" class="social-icon">
+            <a href="https://maps.app.goo.gl/v3GDB85faVTHDHHX7" 
+                target="_blank" class="social-icon">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
 </div>
-<script src="/-OTROS/Dropdown.js"></script>
-<script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
+<script src="/-OTROS/despegable.js"></script>
+<script type="module">
+import { createGoldParticles } from '/-OTROS/particulas_suben.js';
+
+createGoldParticles('#sube-contenedor', {
+    cuantas: 50,
     tamMax: 5,
     durMax: 20,
+    durMin: 1,
     aparMax: 20,
-    tamañoIgual: true
+    tamIgual: true,
+    forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+    color: 'gold',
+    r_opacidad: false
 });
 </script>
-
 </body>
 </html>
