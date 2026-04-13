@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Galería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../logo2.png" type="image/png">
+<link rel="stylesheet" href="Stilo.css">
+</head>
+<body>
+<div id="sube-contenedor"></div>
+<div id="chocan-contenedor"></div>
+
+<div class="nombre-completo degradado-animado3">
+    <h2 class="inline-text degradado-animado3">Galeria de</h2>
+    <h3 class="inline-text degradado-animado3">KEMAFUJA ENTERPRISE</h3>
+</div>
+
+<a class="button-back" href="../">&larr; Volver al Inicio</a>
+
+<div id="galeria-contenedor"></div>
+
+<div id="modalOverlay">
+    <button id="cerrarModal">&times;</button>
+    <img id="modalImg" src="" alt="Imagen ampliada">
+</div>
+
+<script src="galeria.js"></script>
+<script type="module">
+import { createGoldParticles } from '../../-OTROS/particulas_suben.js';
+
+createGoldParticles('#sube-contenedor', {
+    cuantas: 50,
+    tamMax: 10,
+    durMax: 20,
+    durMin: 1,
+    aparMax: 20,
+    tamIgual: true,
+    forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+    color: 'gold',
+    r_opacidad: true
+});
+</script>
+<script type="module">
+import { createFloatingShapes } from '../../-OTROS/particulas_chocan.js';
+
+const controlador = createFloatingShapes({
+    cantidad: 15,
+    tamMin: 10,
+    tamMax: 60,
+    velMax: 10,
+    multVel: 0.1,
+    forma: 'triangulos' //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+});
+
+setTimeout(() => {
+    console.log("Shapes creados:", document.querySelectorAll(".chocan-logo").length);
+}, 1000);
+
+window.addEventListener("click", () => controller.reload());
+
+window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") controller.stop();
+});
+</script>
+
+</body>
+</html>

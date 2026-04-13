@@ -1,0 +1,24 @@
+{
+  "Novia": [
+    { "src": "Novia/Novia (1).jpg", "alt": "Novia 1" },
+    { "src": "Novia/Novia (2).jpg", "alt": "Novia 2" },
+    { "src": "Novia/Novia (3).jpg", "alt": "Novia 3" },
+    { "src": "Novia/Novia (4).jpg", "alt": "Novia 4" },
+    { "src": "Novia/Novia (5).jpg", "alt": "Novia 5" },
+    { "src": "Novia/Novia (6).jpg", "alt": "Novia 6" },
+    { "src": "Novia/Novia (7).jpg", "alt": "Novia 7" },
+    { "src": "Novia/Novia (8).jpg", "alt": "Novia 8" },
+    { "src": "Novia/Novia (9).jpg", "alt": "Novia 9" }
+  ],
+  "Gala": [
+    { "src": "Gala/Gala (1).jpg", "alt": "Gala 1" },
+    { "src": "Gala/Gala (2).jpg", "alt": "Gala 2" },
+    { "src": "Gala/Gala (3).jpg", "alt": "Gala 3" },
+    { "src": "Gala/Gala (4).jpg", "alt": "Gala 4" }
+  ],
+  "15_anos": [
+    { "src": "15 años/15 años (1).jpg", "alt": "15 años 1" },
+    { "src": "15 años/15 años (2).jpg", "alt": "15 años 2" },
+    { "src": "15 años/15 años (3).jpg", "alt": "15 años 3" }
+  ]
+}
