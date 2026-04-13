@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> 
     <meta property="og:title" content="Abog. Carlos A. Diaz Ortiz">
     <meta property="og:description" content="WA: 78413065">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.CarlosDiazOrtiz/logo.png">
@@ -13,21 +13,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Abog. Carlos A. Diaz Ortiz</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="Stilo.css">
-    <link rel="stylesheet" href="/-OTROS/General.css">
-    
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
-    <div class="gold-particles"></div>
-    
+<div id="sube-contenedor"></div>    
+<div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <div class="nombre-completo">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <div class="nombre-completo degradado-animado3">
             <h2 class="inline-text">Carlos A. Diaz Ortiz</h2>
             <h3 class="inline-text">Abogado</h3>
         </div>
@@ -43,20 +44,18 @@
                     <a class="contact-link numwa" href="tel:+59176609671">
                         <span class="full">+591 76609671</span>
                         <span class="short">76609671</span>
-                    </a> <br>                    
-                    <a class="contact-link numwa" href="tel:+59178413065">
-                        <span class="full">+591 78413065</span>
-                        <span class="short">78413065</span>
-                    </a>                    
+                    </a>
                 </div>
             </div>
             
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59178413065&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
-                        <span class="full">Msj: 78413065</span>
-                        <span class="short">78413065</span>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59176609671&text=Buenas Abg.,%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 76609671</span>
+                        <span class="short">76609671</span>
                     </a>
                 </div>
             </div>
@@ -64,27 +63,35 @@
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
-                        <span class="full">carlos.diaz.o0958@gmail.com</span>
-                        <span class="short correo-s">carlos.diaz.o0958 @gmail.com</span></a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        carlos.diaz.o0958@gmail.com
+                    </a>
                 </div>
             </div>
-        
+            
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/dBj3m2vNf3gzuG8eA"> 
+                        Pasaje Beni, cerca a la calle Beni
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.350003209417!2d-63.180969899999994!3d-17.775240399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e90056b11699%3A0x9d39fafee0c46242!2sAbog.%20Carlos%20D%C3%ADaz%20Ortiz!5e0!3m2!1ses-419!2sbo!4v1775057201374!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:00 -  18:00</li>
@@ -92,10 +99,10 @@
                 </ul>
             </div>
         </div>
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>Se atiende:</span>
-            </a>
+
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
             <div class="content">
                 <ul>
                     <li> <strong>ADMINISTRATIVO</strong></li>
@@ -106,35 +113,43 @@
                     <li> <strong>INSTRUCTIVAS DE PODER</strong></li>
                     <li> <strong>LABORAL</strong></li>
                     <li> <strong>PENAL</strong></li>
-                    <li> <strong>TRAMITES DE DD.RR.</strong></li>                    
+                    <li> <strong>TRAMITES DE DD.RR.</strong></li>
                 </ul>
             </div>
         </div>
+
         <div class="social-icons">
-            <a href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">                
+            <a href="mailto:carlos.diaz.o0958@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
+                target="_blank" class="social-icon">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59178413065&&text=Buenas%20quisiera%20saber%20sobre..." target="_blank" class="social-icon">                
-                <img src="../-LOGOS/WA.png" alt="WhatsApp">            
+            <a href="https://api.whatsapp.com/send?phone=59176609671&text=Buenas%20quisiera%20saber%20sobre..." 
+                target="_blank" class="social-icon"> 
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/dBj3m2vNf3gzuG8eA" target="_blank" class="social-icon">
+            <a href="https://maps.app.goo.gl/dBj3m2vNf3gzuG8eA" 
+                target="_blank" class="social-icon">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
+</div>
 
-<script src="/-OTROS/Dropdown.js"></script>
+<script src="../-OTROS/Despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
-    tamMax: 5,
+createGoldParticles('#sube-contenedor', {
+    cuantas: 50,
+    tamMax: 10,
     durMax: 20,
+    durMin: 1,
     aparMax: 20,
-    tamañoIgual: true
+    tamIgual: true,
+    forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+    color: 'gold',
+    r_opacidad: true
 });
 </script>
-
 </body>
 </html>
