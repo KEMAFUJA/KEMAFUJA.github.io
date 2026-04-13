@@ -388,13 +388,12 @@ iframe {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
-    animation: moveAndPulse 60s ease-in-out infinite;   
+    animation: moveAndPulse 10s ease-in-out infinite;   
 }
-
 
 .social-icon:hover {
     animation: none; 
-    transform: translateY(-5px);
+    transform: translateY(-3px) translateX(auto);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -404,13 +403,13 @@ iframe {
 
 @keyframes moveAndPulse {
   0% {
-    transform: translateX(-30px) scale(0.9);
+    transform: translateX(-10px) scale(0.9);
   }
   50% {
-    transform: translateX(5px) scale(1); 
+    transform: translateX(0px) scale(1); 
   }
   100% {
-    transform: translateX(-30px) scale(0.9); 
+    transform: translateX(-10px) scale(0.9); 
   }
 }
 
