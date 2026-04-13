@@ -227,8 +227,8 @@
 /* ===== Cajas de contacto ===== */
 .contact-grid {
     grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
-    margin-bottom: 20px;
+    gap: 10px; 
+    margin-bottom: 15px;
     width: 100%; 
 }
 
@@ -309,6 +309,7 @@
 
 .despegable:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .despegable-toggle {
