@@ -190,17 +190,17 @@
 
 @keyframes boxShadowCard {
   0%, 100% { box-shadow:
-        0 10px 50px rgba(0, 0, 0, 0.75),
-        0 0 0 1px rgba(255, 255, 255, 0.25) inset,
-        0 0 20px rgba(212, 175, 55, 0.75) inset; }
+        0 10px 50px hsla(0, 0%, 0%, 0.75),
+        0 0 0 1px hsla(0, 0%, 100%, 0.25) inset,
+        0 0 20px hsla(46, 65%, 52%, 0.75) inset; }
  25%,  75% { box-shadow:
-        0 10px 50px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.125) inset,
-        0 0 40px rgba(212, 175, 55, 0.75) inset; }
+        0 10px 50px hsla(0, 0%, 0%, 0.5),
+        0 0 0 1px hsla(0, 0%, 100%, 0.125) inset,
+        0 0 40px hsla(46, 65%, 52%, 0.75) inset; }
  50% { box-shadow:
-        0 10px 50px rgba(0, 0, 0, 0.25),
-        0 0 0 1px rgba(255, 255, 255, 0.025) inset,
-        0 0 60px rgba(212, 175, 55, 0.75) inset; }
+        0 10px 50px hsla(0, 0%, 0%, 0.25),
+        0 0 0 1px hsla(0, 0%, 100%, 0.025) inset,
+        0 0 60px hsla(46, 65%, 52%, 0.75) inset; }
 }
 
 /* ----- Luz interna giratoria  ----- */
@@ -255,10 +255,10 @@
 
 @keyframes brillo {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 5px hsla(51, 100%, 50%, 0.2);
     }
     50% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+        box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.9);
     }
 }
 
@@ -288,7 +288,11 @@
     font-family: 'FUENTE';
 }
 
-.degradado-animado3 h2,
+.degradado-animado3 h2 {
+    background: linear-gradient(45deg, hsl(195, 100%, 50%, 0.5), hsl(215, 100%, 50%, 0.75), hsl(195, 100%, 50%, 1));
+    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+}
+
 .degradado-animado3 h3 {
     background: linear-gradient(45deg, hsl(195, 100%, 50%, 0.5), hsl(215, 100%, 50%, 0.75), hsl(195, 100%, 50%, 1));
     animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
@@ -319,9 +323,9 @@
 }
 
 .contact-item {
-    background: rgba(255, 255, 255, 0.125); 
+    background: hsla(0, 0%, 100%, 0.125); 
     border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.025); 
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.025); 
 }
 
 .contact-item.full-width {
@@ -385,8 +389,8 @@
 
 /* ===== Despegables ===== */
 .despegable {
-    background: rgba(255, 255, 255, 0.125);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background: hsla(0, 0%, 100%, 0.125);
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.05);
     border-radius: 10px;
     max-width: 400px;
     margin-bottom: 10px;
@@ -394,7 +398,7 @@
 }
 
 .despegable:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15);
 }
 
 .despegable-toggle {
@@ -410,7 +414,7 @@
 }
 
 .content, .content2 {
-    background: rgba(255, 255, 255, 0.14);
+    background: hsla(0, 0%, 100%, 0.14);
 }
 
 .despegable.active .content,
@@ -421,7 +425,7 @@
 li {
     color: var(--text-dark);
     font-size: 0.95rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
 }
 
 .submenu > ul {
@@ -451,12 +455,12 @@ li {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: hsla(0, 0%, 100%, 0.7);
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
 }
 
 .social-icon:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
     background: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary));
 }
 
