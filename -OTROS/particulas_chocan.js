@@ -1,133 +1,250 @@
 export function createFloatingShapes({
-    containerId = "dvd-container",
-    count = 10,
-    colors = ["red","blue","yellow","green"],
-    minSize = 15,
-    maxSize = 50,
-    maxSpeed = 3
+    contenedorId = "chocan-contenedor",
+    cantidad = 10,
+    tamMin = 15,
+    tamMax = 50,
+    velMax = 3,
+    multVel = 1, // 👈 control global
+    forma = null
 } = {}) {
 
-    const container = document.getElementById(containerId);
-    if (!container) {
-        console.error(`❌ Contenedor ${containerId} no existe`);
-        return;
-    }
+const simbolos = {
+    estrella: ['★','✦','✧','✩','✪','✫','✬','✭','✮','✯'],
+    sol: ['☀','⚡','❇','✺','✹','✸'],
+    carta: ['♥', '♦', '♣', '♠'],
+    diamante: ['♦'],
+    trebol: ['♣','☘'],
+    pica: ['♠'],
+    brillo: ['✨','✴','✵','✶','✷','❂','❉'],
+    luna: ['☾','☽'],
+    nube: ['☁','☁︎'],
+    fuego: ['🔥','♨'],
+    naturaleza: ['🍃','🌿','☘','❀','✿','❃'],
+    hielo: ['❄','❅','❆','✻','✼'],
+    geometrico: ['◆','◇','◈','◉','◎','●','○','◌'],
+    pixel: ['■','□','▢','▣','▤','▥','▦'],
+    triangulos: ['▲','△','▴','▵','▶','▷'],
+    abstracto: ['۞','࿔','༄','༒','☯','☢','☣'],
+    espacio: ['⭒','⭑'],
+    tech: ['⌘','⎔','⌬','⌗','⛶','⛭'],
+    corazon: ['❤','♡','❥','❣','♥']
+};
 
-    let objects = [];
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) return;
+
+    let objetos = [];
     let animationId = null;
 
-    class Shape {
-        constructor(id) {
-            this.id = id;
-            this.element = document.createElement("div");
-            this.element.className = "dvd-logo";
+    let velocidadGlobal = multVel; 
 
-            // Tamaño
-            this.width = minSize + Math.random() * (maxSize - minSize);
-            this.height = this.width;
+    // ===== COLORES DESDE CSS =====
+    function obtenerColoresCSS() {
+        const styles = getComputedStyle(document.documentElement);
+        const colores = [];
 
-            // Posición inicial
-            this.x = Math.random() * (window.innerWidth - this.width);
-            this.y = Math.random() * (window.innerHeight - this.height);
-
-            // Velocidad inicial
-            const speed = Math.random() * maxSpeed + 0.5;
-            const angle = Math.random() * Math.PI * 2;
-            this.vx = Math.cos(angle) * speed;
-            this.vy = Math.sin(angle) * speed;
-
-            // Estilo inicial
-            this.randomColor();
-            this.render();
-            container.appendChild(this.element);
+        for (let i = 1; i <= 20; i++) {
+            const value = styles.getPropertyValue(`--color-${i}`).trim();
+            if (value) colores.push(value);
         }
 
-        randomColor() {
+        return colores.length ? colores : ["red", "blue"];
+    }
+
+    const colores = obtenerColoresCSS();
+
+    const formasDisponibles = [
+        'circulo', 'triangulo', 'cuadrado','estrella','sol', 'carta', 'diamante','trebol', 'pica', 'brillo', 'luna', 
+        'nube', 'fuego', 'naturaleza', 'hielo', 'geomatrico', 'pixel', 'triangulos', 'abstractos', 'espacio', 'tech', 'corazon'
+    ];
+
+    class Forma {
+        constructor(id) {
+            this.id = id;
+            this.elemento = document.createElement("div");
+            this.elemento.className = "chocan-logo";
+
+            // ===== FORMA =====
+            this.forma = (forma && formasDisponibles.includes(forma))
+                ? forma
+                : formasDisponibles[Math.floor(Math.random() * formasDisponibles.length)];
+
+            this.elemento.classList.add(`c-${this.forma}`);
+
+            // ===== TAMAÑO =====
+            this.ancho = tamMin + Math.random() * (tamMax - tamMin);
+            this.alto = this.ancho;
+
+            // ===== POSICIÓN =====
+            this.x = Math.random() * (window.innerWidth - this.ancho);
+            this.y = Math.random() * (window.innerHeight - this.alto);
+
+            // ===== VELOCIDAD =====
+            const velocidadBase = Math.random() * velMax + 0.5;
+            const angulo = Math.random() * Math.PI * 2;
+
+            this.vx = Math.cos(angulo) * velocidadBase;
+            this.vy = Math.sin(angulo) * velocidadBase;
+
+            this.cambiarColor();
+            this.aplicarForma();
+            this.render();
+
+            contenedor.appendChild(this.elemento);
+        }
+
+        cambiarColor() {
             let i;
-            do { i = Math.floor(Math.random() * colors.length) } 
-            while (colors.length > 1 && this.colorIndex === i);
+            do {
+                i = Math.floor(Math.random() * colores.length);
+            } while (colores.length > 1 && this.colorIndex === i);
 
             this.colorIndex = i;
-            const bg = colors[i];
 
-            let shadow;
-            do { shadow = Math.floor(Math.random() * colors.length) }
-            while (shadow === i && colors.length > 1);
+            const colorBase = colores[i];
 
-            this.element.style.background = bg;
-            this.element.style.boxShadow = `0 10px 40px ${colors[shadow]}, 0 -10px 40px ${colors[shadow]}`;
+            this.elemento.style.setProperty('--chocan-color', colorBase);
+
+            const colorSombra = this.aplicarOpacidad(colorBase);
+            this.elemento.style.setProperty('--chocan-shadow-color', colorSombra);
+        }
+
+        aplicarForma() {
+            if (this.forma === 'circulo' || this.forma === 'cuadrado') {
+                this.elemento.style.width = this.ancho + "px";
+                this.elemento.style.height = this.alto + "px";
+                this.elemento.style.background = "var(--chocan-color)";
+            }
+
+            else if (this.forma === 'triangulo') {
+                this.elemento.style.width = '0';
+                this.elemento.style.height = '0';
+                this.elemento.style.borderLeft = `${this.ancho / 2}px solid transparent`;
+                this.elemento.style.borderRight = `${this.ancho / 2}px solid transparent`;
+                this.elemento.style.borderBottom = `${this.alto}px solid var(--chocan-color)`;
+            }
+
+            else {
+                let char = '';
+
+                if (simbolos[this.forma]) {
+                    const lista = simbolos[this.forma];
+                    char = lista[Math.floor(Math.random() * lista.length)];
+                }
+                this.elemento.textContent = char;
+                this.elemento.style.fontSize = this.ancho*2 + "px";
+                this.elemento.style.color = "var(--chocan-color)";
+            }
         }
 
         render() {
-            this.element.style.width = this.width + "px";
-            this.element.style.height = this.height + "px";
-            this.element.style.left = this.x + "px";
-            this.element.style.top = this.y + "px";
-            this.element.style.position = "fixed";
-            this.element.style.borderRadius = "0%";
+            this.elemento.style.left = this.x + "px";
+            this.elemento.style.top = this.y + "px";
+            this.elemento.style.position = "fixed";
         }
 
-        move() {
-            this.x += this.vx;
-            this.y += this.vy;
+        mover() {
+            this.x += this.vx * velocidadGlobal;
+            this.y += this.vy * velocidadGlobal;
 
-            // Bordes
-            if (this.x <= 0 || this.x >= window.innerWidth - this.width) {
+            if (this.x <= 0 || this.x >= window.innerWidth - this.ancho) {
                 this.vx *= -1;
-                this.randomColor();
+                this.cambiarColor();
             }
-            if (this.y <= 0 || this.y >= window.innerHeight - this.height) {
+
+            if (this.y <= 0 || this.y >= window.innerHeight - this.alto) {
                 this.vy *= -1;
-                this.randomColor();
+                this.cambiarColor();
             }
 
             this.render();
         }
+
+        cambiarTamaño() {
+            const nuevo = tamMin + Math.random() * (tamMax - tamMin);
+            this.ancho = nuevo;
+            this.alto = nuevo;
+            this.aplicarForma();
+        }
+
+        cambiarSimbolo() {
+            if (!['estrella', 'sol', 'carta'].includes(this.forma)) return;
+
+            const lista = simbolos[this.forma];
+
+            let nuevo;
+            do {
+                nuevo = lista[Math.floor(Math.random() * lista.length)];
+            } while (this.elemento.textContent === nuevo);
+
+            this.elemento.textContent = nuevo;
+        }
+
+        aplicarOpacidad(color) {
+            const alpha = Math.min(0.8, 0.2 + Math.abs(this.vx + this.vy) * 0.1);
+
+            const temp = document.createElement("div");
+            temp.style.color = color;
+            document.body.appendChild(temp);
+
+            const rgb = getComputedStyle(temp).color;
+            document.body.removeChild(temp);
+
+            return rgb.replace("rgb(", "rgba(").replace(")", `, ${alpha})`);
+        }        
     }
 
-    // Detectar rebotes entre objetos
-    function handleCollisions() {
-        for (let i = 0; i < objects.length; i++) {
-            for (let j = i + 1; j < objects.length; j++) {
-                const a = objects[i];
-                const b = objects[j];
+    function detectarColisiones() {
+        for (let i = 0; i < objetos.length; i++) {
+            for (let j = i + 1; j < objetos.length; j++) {
+                const a = objetos[i];
+                const b = objetos[j];
 
                 if (
-                    a.x < b.x + b.width &&
-                    a.x + a.width > b.x &&
-                    a.y < b.y + b.height &&
-                    a.y + a.height > b.y
+                    a.x < b.x + b.ancho &&
+                    a.x + a.ancho > b.x &&
+                    a.y < b.y + b.alto &&
+                    a.y + a.alto > b.y
                 ) {
-                    // Intercambiar velocidades
                     [a.vx, b.vx] = [b.vx, a.vx];
                     [a.vy, b.vy] = [b.vy, a.vy];
 
-                    a.randomColor();
-                    b.randomColor();
+                    a.cambiarColor();
+                    b.cambiarColor();
+
+                    a.cambiarTamaño();
+                    b.cambiarTamaño();
+
+                    a.cambiarSimbolo();
+                    b.cambiarSimbolo();
                 }
             }
         }
     }
 
-    function animate() {
-        objects.forEach(o => o.move());
-        handleCollisions();
-        animationId = requestAnimationFrame(animate);
+    function animar() {
+        objetos.forEach(o => o.mover());
+        detectarColisiones();
+        animationId = requestAnimationFrame(animar);
     }
 
-    function init() {
+    function iniciar() {
         cancelAnimationFrame(animationId);
-        objects.forEach(o => o.element.remove());
-        objects = [];
+        objetos.forEach(o => o.elemento.remove());
+        objetos = [];
 
-        for (let i = 0; i < count; i++) objects.push(new Shape(i));
-        animate();
+        for (let i = 0; i < cantidad; i++) {
+            objetos.push(new Forma(i));
+        }
+
+        animar();
     }
 
-    init();
+    iniciar();
 
     return {
-        stop: () => cancelAnimationFrame(animationId),
-        reload: init
+        detener: () => cancelAnimationFrame(animationId),
+        reiniciar: iniciar,
+        cambiarVelocidad: (v) => velocidadGlobal = v // 🔥 control en tiempo real
     };
 }
