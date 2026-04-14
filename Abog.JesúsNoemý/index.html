@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta property="og:description" content="Cel: 77694666/67745696 73698110-">
     <meta property="og:title" content="Jesús & Noemý">
-    <meta property="og:description" content="Jesús Fernandez Gudino & Noemý Calle Mansilla">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.JesúsNoemý/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -13,20 +13,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Jesús & Noemý</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
-    <div class="gold-particles"></div>
-
+<div id="sube-contenedor"></div>
+    
 <div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <div class="nombre-completo">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
             <h2 class="inline-text">Jesús Fernandez Gudino</h2>
         </div>
@@ -39,64 +42,47 @@
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59177694666">+591 77694666</a>
-                    <a class="contact-link numwa" href="tel:+59167745696">+591 67745696</a>
+                    <a class="contact-link numwa" href="tel:+59177694666">
+                        <span class="full">+591 77694666</span>
+                        <span class="short">77694666</span>
+                    </a><br>
+                    <a class="contact-link numwa" href="tel:+59167745696">
+                        <span class="full">+591 67745696</span>
+                        <span class="short">67745696</span>
+                    </a>
                 </div>
             </div>
-
+            
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59177694666&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59167745696&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59177694666&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 77694666</span>
+                        <span class="short">77694666</span>
+                    </a><br>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59167745696&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 67745696</span>
+                        <span class="short">67745696</span>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:jesusfernandezgudino@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">jesusfernandezgudino@gmail.com</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:jesusfernandezgudino@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        jesusfernandezgudino@gmail.com
+                    </a>
                 </div>
             </div>
-        </div>
+        </div>  
 
-        <div class="dropdown" id="serviciosDropdown">
-        <a class="dropdown-toggle">
-            <span>Se atiende:</span>
-        </a>
-
-        <div class="content">
-            <ul>
-            <li>
-                <strong>PROCESOS:</strong>
-                <ul>
-                <li></li>
-                <li>Civiles</li>
-                <li>Penales</li>
-                <li>Familiares</li>
-                <li>Laborales</li>
-                <li>Voluntarios</li>
-                </ul>
-            </li>
-            <li>
-                <strong>TRÁMITES ANTE:</strong>
-                <ul>
-                <li></li>
-                <li>Alcaldia Municipal</li>
-                <li>SER</li>
-                <li>Catastro</li>
-                <li>Derechos Reales (DDRR)</li>
-                <li>Plan Regulador</li>
-                <li>Segip</li>
-                <li>Sereci</li>                
-                </ul>
-            </li>
-            
-            </ul>
-        </div>
-        </div><br>
-
-        <div class="nombre-completo">
+        <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
             <h2 class="inline-text">Noemý Calle Mansilla</h2>
         </div>
@@ -104,91 +90,104 @@
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
-        
+
         <div class="contact-grid">
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59173698110">+591 73698110</a>
+                    <a class="contact-link numwa" href="tel:+59173698110">
+                        <span class="full">+591 73698110</span>
+                        <span class="short">73698110</span>
+                    </a>
                 </div>
             </div>
-
+            
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59173698110&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59173698110&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 73698110</span>
+                        <span class="short">73698110</span>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:mansillaabogados2106@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">mansillaabogados2106@gmail.com</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:mansillaabogados2106@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        mansillaabogados2106@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/kZPzyimMNtYiNttm8"> 
+                        Calle Beni y casi esquina Calle Rafael Peña - Estudio Juridico mansilla y Abogados
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="dropdown" id="serviciosDropdown">
-        <a class="dropdown-toggle">
-            <span>Se atiende:</span>
-        </a>
-
-        <div class="content">
-            <ul>
-            <li>
-                <strong>PROCESOS:</strong>
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
+            <div class="content">
                 <ul>
-                <li></li>
-                <li>Civiles</li>
-                <li>Penales</li>
-                <li>Familiares</li>
-                <li>Laborales</li>
-                <li>Voluntarios</li>
+                    <li class="submenu">
+                        <strong>PROCESOS:</strong>
+                        <ul>
+                        <li></li>
+                        <li>Civiles</li>
+                        <li>Penales</li>
+                        <li>Familiares</li>
+                        <li>Laborales</li>
+                        <li>Voluntarios</li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <strong>TRÁMITES ANTE:</strong>
+                        <ul>
+                        <li></li>
+                        <li>Alcaldia Municipal</li>
+                        <li>SER</li>
+                        <li>Catastro</li>
+                        <li>Derechos Reales (DDRR)</li>
+                        <li>Plan Regulador</li>
+                        <li>Segip</li>
+                        <li>Sereci</li>                
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <strong>TRÁMITES ANTE:</strong>
-                <ul>
-                <li></li>
-                <li>Alcaldia Municipal</li>
-                <li>SER</li>
-                <li>Catastro</li>
-                <li>Derechos Reales (DDRR)</li>
-                <li>Plan Regulador</li>
-                <li>Segip</li>
-                <li>Sereci</li>                
-                </ul>
-            </li>
-            
-            </ul>
-        </div>
+            </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d326.1753873222936!2d-63.18124608598867!3d-17.777088211521836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e9eb19c92cfb%3A0xc854619fb7ed7cf5!2sEstudio%20Juridico%20mansilla%20y%20Abogados!5e0!3m2!1ses-419!2sbo!4v1773535761470!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown">
-            <a class="dropdown-toggle">
-                <span>Fotos del edificio:</span>
-            </a>
+
+        <!-- IMAGENES -->
+         <div class="despegable">
+            <div class="despegable-toggle">Fotos:</div>
             <div class="content-img">
                 <img src="Foto.jpeg" alt="Imagen">
-                <img src="Foto 1.jpg" alt="Imagen">
+                <img src="Foto 1.jpeg" alt="Imagen">
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:00 - 16:00</li>
@@ -197,14 +196,12 @@
             </div>
         </div>
 
-        
-        
         <div class="social-icons">
-            <div class="whatsapp-dropdown">
+            <div class="whatsapp-despegable">
                 <button class="social-icon" style="border: none;">
-                    <img src="../-LOGOS/Correo.png" alt="Correo" style="width: 25px; height: 25px;">
+                    <img src="../-LOGOS/Correo.png" alt="Correo">
                 </button>
-                <div class="dropdown-content">
+                <div class="despegable-content">
                     <a href="mailto:jesusfernandezgudino@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank">
                         jesusfernandezgudino@gmail.com
                     </a>
@@ -214,11 +211,11 @@
                     
                 </div>
             </div>
-            <div class="whatsapp-dropdown">
+            <div class="whatsapp-despegable">
                 <button class="social-icon" style="border: none;">
-                    <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 25px; height: 25px;">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
                 </button>
-                <div class="dropdown-content">
+                <div class="despegable-content">
                     <a href="https://api.whatsapp.com/send?phone=59177694666&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
                         +591 77694666
                     </a>
@@ -230,52 +227,29 @@
                     </a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6" target="_blank" class="social-icon">
-                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            <a href="https://maps.app.goo.gl/kZPzyimMNtYiNttm8" 
+                target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
 </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
-        });
-        
-    </script>
+
+<script src="../-OTROS/despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
-    tamMax: 50,
-    durMax: 30,
-    aparMax: 60,
-    tamañoIgual: false
-});
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 10,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
 </script>
-
 </body>
 </html>
