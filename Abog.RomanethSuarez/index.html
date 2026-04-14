@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta property="og:description" content="Cel: 68922215">
     <meta property="og:title" content="Abog. Romaneth Suarez">
-    <meta property="og:description" content="Celular: 68922215">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.RomanethSuarez/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -13,23 +13,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Abog. Romaneth Suarez</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
- 
+
 <body>
-    <div class="gold-particles"></div>
-    <div id="dvd-container"></div>
+<div id="sube-contenedor"></div>
+ 
 <div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <div class="nombre-completo">
-            <h3 class="inline-text">Abog.</h3>
-            <h2 class="inline-text">Romaneth</h2>
-            <h2>Suarez</h2>
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <div class="nombre-completo degradado-animado3">
+            <h3 class="inline-text">Abogada</h3>
+            <h2 class="inline-text">Romaneth Suarez</h2>
         </div>
 
         <div class="divider"></div>
@@ -37,48 +39,60 @@
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
-            <div class="contact-item full-width">
+            <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59168922215">+591 68922215</a>
+                    <a class="contact-link numwa" href="tel:+59168922215">
+                        <span class="full">+591 68922215</span>
+                        <span class="short">68922215</span>
+                    </a>
                 </div>
             </div>
-
-            <div class="contact-item full-width">
+            
+            <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 68922215</span>
+                        <span class="short">68922215</span>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">romitadccc@gmail.com</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                        romitadccc@gmail.com
+                    </a>
                 </div>
             </div>
-
-            <div class="contact-item full-width" style="margin-bottom: 20px;">
+            
+            <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr" href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7" target="_blank">Calle Beni 682 esq. Celso Castedo</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7"> 
+                        Calle Beni 682 esq. Celso Castedo
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d754.1501186562288!2d-63.18121291242176!3d-17.776268919417586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM0LjUiUyA2M8KwMTAnNTIuNCJX!5e0!3m2!1ses!2sbo!4v1774488164032!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
@@ -87,71 +101,73 @@
             </div>
         </div>
 
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
+            <div class="content">
+                <ul>
 
-        <div class="dropdown" id="serviciosDropdown">
-        <a class="dropdown-toggle">
-            <span>Se realizan:</span>
-        </a>
-
-        <div class="content">
-            <ul>
-                <li><strong>PROCESOS:</strong></li>
                 <li class="submenu">
-                    <strong>Penales:</strong>
+                    <strong>PROCESOS:</strong>
                     <ul>
-                        <li>Violación</li>
-                        <li>Abuso</li>
-                        <li>Ley 348</li>
-                        <li>Violencia</li>
-                        <li>Fisica</li>
-                        <li>Psicologica</li>
-                        <li>Economica</li>
-                        <li>Estafa</li>
-                        <li>Hurto</li>
-                        <li>Ley 1008</li>
-                        <li>Estupro</li>
+                        <li class="submenu">
+                            <strong>Penales:</strong>
+                            <ul>
+                                <li>Violación</li>
+                                <li>Abuso</li>
+                                <li>Ley 348</li>
+                                <li>Violencia</li>
+                                <li>Fisica</li>
+                                <li>Psicologica</li>
+                                <li>Economica</li>
+                                <li>Estafa</li>
+                                <li>Hurto</li>
+                                <li>Ley 1008</li>
+                                <li>Estupro</li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <strong>Civil:</strong>
+                            <ul>
+                                <li>Cobro de deuda</li>
+                                <li>Coactiva y ejecutiva</li>
+                                <li>Derecho propietario</li>
+                                <li>Ley 247</li>
+                                <li>Usucapion</li>
+                                <li>Ordinarios</li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <strong>Familiar:</strong>
+                            <ul>
+                                <li>Asistencia Familiar</li>
+                                <li>Divorcio</li>
+                                <li>Reconocimiento de union libre</li>
+                                <li>Division y particion de bienes</li>
+                                <li>Homologaciones de acuerdo</li>                    
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <strong>Laboral:</strong>
+                            <ul>
+                                <li>Cobro de beneficios sociales y otros</li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <strong>Elaboracion de contrato:</strong>
+                            <ul>
+                                <li>Conpra venta</li>
+                                <li>Anticresis</li>
+                                <li>Alquileres</li>
+                                <li>Acuerdo</li>
+                                <li>Instructivas</li>
+                                <li>Tramites en gral.</li>
+                                <li>otros</li>
+                            </ul>
+                        </li>
+                        <li></li>
                     </ul>
                 </li>
-                <li class="submenu">
-                    <strong>Civil:</strong>
-                    <ul>
-                        <li>Cobro de deuda</li>
-                        <li>Coactiva y ejecutiva</li>
-                        <li>Derecho propietario</li>
-                        <li>Ley 247</li>
-                        <li>Usucapion</li>
-                        <li>Ordinarios</li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <strong>Familiar:</strong>
-                    <ul>
-                        <li>Asistencia Familiar</li>
-                        <li>Divorcio</li>
-                        <li>Reconocimiento de union libre</li>
-                        <li>Division y particion de bienes</li>
-                        <li>Homologaciones de acuerdo</li>                    
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <strong>Laboral:</strong>
-                    <ul>
-                        <li>Cobro de beneficios sociales y otros</li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <strong>Elaboracion de contrato:</strong>
-                    <ul>
-                        <li>Conpra venta</li>
-                        <li>Anticresis</li>
-                        <li>Alquileres</li>
-                        <li>Acuerdo</li>
-                        <li>Instructivas</li>
-                        <li>Tramites en gral.</li>
-                        <li>otros</li>
-                    </ul>
-                </li>
-                <li></li>
                 <li class="submenu">
                     <strong>TRÁMITES:</strong>
                     <ul>
@@ -168,140 +184,43 @@
                         <li>Vista rapida DDRR</li>
                     </ul>
                 </li>
-            </ul>
-        </div>
-        </div>
 
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>Se atienden:</span>
-            </a>
-            <div class="content">
-                <ul>
-                    <li> <strong>PROCESOS:</strong></li>
-                    <li> <strong>Penal</strong></li>
-                    <li>Violación</li>
-                    <li>Abuso</li>
-                    <li>Ley 348</li>
-                    <li>Violencia</li>
-                    <li>Fisica</li>
-                    <li>Psicologica</li>
-                    <li>Economica</li>
-                    <li>Estafa</li>
-                    <li>Hurto</li>
-                    <li>Ley 1008</li>
-                    <li>Estupro</li>
-
-                    <li><strong>Civil</strong></li>
-                    <li>Cobro de deuda</li>
-                    <li>Coactiva y ejecutiva</li>
-                    <li>Derecho propietario</li>
-                    <li>Ley 247</li>
-                    <li>Usucapion</li>
-                    <li>Ordinarios</li>
-
-                    <li><strong>Familiar</strong></li>
-                    <li>Asistencia Familiar</li>
-                    <li>Divorcio</li>
-                    <li>Reconocimiento de union libre</li>
-                    <li>Division y particion de bienes</li>
-                    <li>Homologaciones de acuerdo</li>
-
-                    <li> <strong>Laboral</strong></li>
-                    <li>Cobro de beneficios sociales y otros</li>
-
-                    <li> <strong>Elaboracion de contrato</strong></li>
-                    <li>Conpra venta</li>
-                    <li>Anticresis</li>
-                    <li>Alquileres</li>
-                    <li>Acuerdo</li>
-                    <li>Instructivas</li>
-                    <li>Tramites en gral.</li>
-                    <li>otros</li>
-                    <li> </li>
-                    <li> <strong>TRAMITES:</strong></li>
-                    <li>Divorcio juducial y notarial</li>
-                    <li>Declaratoria de herederos</li>
-                    <li>Judicial y notarial</li>
-                    <li>Derecho propietario</li>
-                    <li>Ley 247</li>
-                    <li>Segip Seresi</li>
-                    <li>Alcaldia</li>
-                    <li>Plan regulador</li>
-                    <li>Derechos Reales</li>
-                    <li>Alodiales DDRR</li>
-                    <li>Vista rapida DDRR</li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="social-icons">
-            <a href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">
-                <img src="../-LOGOS/Correo.png" alt="Correo">
+            <a href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
+                target="_blank" class="social-icon">                
+                <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59168922215&&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%20135,%20en%20que%20podemos%20ayudarle?..." target="_blank" class="social-icon">
+            <a href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20saber%20sobre..." 
+                target="_blank" class="social-icon"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7" target="_blank" class="social-icon">
-                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            <a href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7" 
+                target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
 
-    // Dropdown principal
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdown = this.closest('.dropdown');
-            dropdown.classList.toggle('active');
-
-            document.querySelectorAll('.dropdown').forEach(item => {
-                if (item !== dropdown) {
-                    item.classList.remove('active');
-                }
-            });
-        });
-    });
-
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown').forEach(item => {
-                item.classList.remove('active');
-            });
-        }
-    });
-
-    // ✅ SUBMENÚS (AQUÍ estaba el fallo)
-    document.querySelectorAll('.submenu > strong').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.stopPropagation();
-
-            const parent = this.parentElement;
-            parent.classList.toggle('active');
-
-            parent.parentElement.querySelectorAll('.submenu').forEach(sibling => {
-                if (sibling !== parent) {
-                    sibling.classList.remove('active');
-                }
-            });
-        });
-    });
-
-});
-</script>
+<script src="../-OTROS/despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 50,
-    tamMax: 50,
-    durMax: 60,
-    aparMax: 10,
-    tamañoIgual: false
-});
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 10,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
 </script>
 </body>
 </html>
