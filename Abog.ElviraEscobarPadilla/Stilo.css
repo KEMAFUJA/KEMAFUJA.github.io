@@ -1,16 +1,3 @@
-/* ===== Colores chocan ===== */
-:root {
-    --color-1: hsl(50, 100%, 20%);
-    --color-2: hsl(50, 100%, 30%);
-    --color-3: hsl(50, 100%, 40%);
-    --color-4: hsl(50, 100%, 50%);
-    --color-5: hsl(50, 100%, 60%);
-    --color-6: hsl(50, 100%, 70%);
-    --color-7: hsl(50, 100%, 80%);
-    --color-8: hsl(50, 100%, 90%);
-}
- 
-
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
   0%, 100% { background-color: hsl(175, 100%, 60%); }
@@ -81,70 +68,6 @@
     50%  { filter: drop-shadow(0 -10px 8px var(--particle-color)); }
     75%  { filter: drop-shadow(-10px 0 10px var(--particle-color)); }
     100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
-}
-
-/* ===== Chocan ===== */
-.chocan-logo {
-    opacity: 0.25;
-}
-/* ----- Formas ----- */
-.c-circulo {
-    animation: rotateOnly 60s linear infinite, c-shadowPulse 5s infinite;
-}
-
-.c-cuadrado {
-    animation: rotateOnly 60s linear infinite, c-shadowPulse 5s infinite;
-}
-
-.c-triangulo {
-    animation: rotateOnly 60s linear infinite, c-shadowPulseTriangulo 5s infinite;
-}
-
-.c-estrella,
-.c-sol,
-.c-corazon,
-.c-diamante,
-.c-trebol,
-.c-pica,
-.c-carta,
-.c-brillo,
-.c-luna,
-.c-nube,
-.c-fuego,
-.c-naturaleza,
-.c-hielo,
-.c-geometrico,
-.c-pixel,
-.c-triangulos,
-.c-abstracto,
-.c-espacio,
-.c-tech {
-    animation: rotateOnly 60s linear infinite, c-colorPulse 5s infinite;
-}
-
-/* ----- Efectos de color (Chocan) ----- */
-@keyframes c-shadowPulse {
-    0%   { box-shadow: 0 0 5px var(--chocan-shadow-color); }
-    25%  { box-shadow: 10px 0 15px var(--chocan-shadow-color); }
-    50%  { box-shadow: 0 -10px 10px var(--chocan-shadow-color); }
-    75%  { box-shadow: -10px 0 15px var(--chocan-shadow-color); }
-    100% { box-shadow: 0 0 5px var(--chocan-shadow-color); }
-}
-
-@keyframes c-shadowPulseTriangulo {
-    0%   { filter: drop-shadow(0 0 3px var(--chocan-shadow-color)); }
-    25%  { filter: drop-shadow(10px 0 10px var(--chocan-shadow-color)); }
-    50%  { filter: drop-shadow(0 -10px 8px var(--chocan-shadow-color)); }
-    75%  { filter: drop-shadow(-10px 0 10px var(--chocan-shadow-color)); }
-    100% { filter: drop-shadow(0 0 3px var(--chocan-shadow-color)); }
-}
-
-@keyframes c-colorPulse {
-    0%   { text-shadow: 0 0 5px var(--chocan-shadow-color); }
-    25%  { text-shadow: 10px 0 15px var(--chocan-shadow-color); }
-    50%  { text-shadow: 0 -10px 10px var(--chocan-shadow-color); }
-    75%  { text-shadow: -10px 0 15px var(--chocan-shadow-color); }
-    100% { text-shadow: 0 0 5px var(--chocan-shadow-color); }
 }
 
 
