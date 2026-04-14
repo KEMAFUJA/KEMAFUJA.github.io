@@ -1,0 +1,533 @@
+/* ===== Fondo Body ===== */
+@keyframes backgroundBody {
+  0% { background-color: hsl(49, 100%, 94%); }
+  20% { background-color: hsl(49, 100%, 96%); }
+  40% { background-color: hsl(49, 100%, 98%); }
+  50% { background-color: hsl(49, 100%, 100%); }
+  60% { background-color: hsl(49, 100%, 98%); }
+  80% { background-color: hsl(49, 100%, 96%); }
+  100% { background-color: hsl(49, 100%, 94%); }
+}
+
+
+/* ===== Sube ===== */
+.sube-particle {
+    opacity: 1;
+}
+/* ----- FORMAS ----- */
+.s-circulo {
+    animation: floatUp 20s linear infinite, s-shadowPulse 1s infinite;
+}
+
+.s-cuadrado {
+    animation: floatUp 20s linear infinite, s-shadowPulse 1s infinite;
+}
+
+.s-triangulo {
+    animation: floatUp 20s linear infinite, s-shadowPulseTriangulo 1s infinite;
+}
+
+.s-estrella,
+.s-sol,
+.s-corazon,
+.s-diamante,
+.s-trebol,
+.s-pica,
+.s-carta,
+.s-brillo,
+.s-luna,
+.s-nube,
+.s-fuego,
+.s-naturaleza,
+.s-hielo,
+.s-geometrico,
+.s-pixel,
+.s-triangulos,
+.s-abstracto,
+.s-espacio,
+.s-tech {
+    animation: floatUp 20s linear infinite, s-colorPulse 1s infinite;
+}
+/* ----- Efectos de color (SUBE) ----- */
+@keyframes s-colorPulse {
+    0%   { text-shadow: 0 0 5px var(--particle-color); }
+    25%  { text-shadow: 10px 0 15px var(--particle-color); }
+    50%  { text-shadow: 0 -10px 10px var(--particle-color); }
+    75%  { text-shadow: -10px 0 15px var(--particle-color); }
+    100% { text-shadow: 0 0 5px var(--particle-color); }
+}
+
+@keyframes s-shadowPulse {
+    0%   { box-shadow: 0 0 5px var(--particle-color); }
+    25%  { box-shadow: 10px 0 15px var(--particle-color); }
+    50%  { box-shadow: 0 -10px 10px var(--particle-color); }
+    75%  { box-shadow: -10px 0 15px var(--particle-color); }
+    100% { box-shadow: 0 0 5px var(--particle-color); }
+}
+
+@keyframes s-shadowPulseTriangulo {
+    0%   { filter: drop-shadow(0 0 3px var(--particle-color)); }
+    25%  { filter: drop-shadow(10px 0 10px var(--particle-color)); }
+    50%  { filter: drop-shadow(0 -10px 8px var(--particle-color)); }
+    75%  { filter: drop-shadow(-10px 0 10px var(--particle-color)); }
+    100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
+}
+
+
+/* ===== Card borde brillante===== */
+/* ----- Borde brillante ----- */
+.card-wrapper::after {
+    height: 102%;
+    width: 55%;
+    top: 50%;
+    left: 50%;
+    border: 1.5px solid transparent;
+    border-image: linear-gradient(
+        45deg,
+        var(--gold-primary),
+        var(--gold-tertiary),
+        var(--gold-primary)
+    );
+    border-image-slice: 1;
+    border-radius: 100%;
+    animation: borderGlow 1s infinite ease-in-out;
+}
+
+@keyframes borderGlow {
+    0% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+    50% { filter: drop-shadow(0 0 12px var(--gold-tertiary)); }
+    100% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+}
+
+
+/* ===== Card Informacion ===== */
+.card {
+    background: hsla(0, 0%, 100%, 0.25);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    backdrop-filter: blur(5px);
+    animation: boxShadowCard 10s infinite ease-in-out;
+}
+
+@keyframes boxShadowCard {
+  0%, 100% { box-shadow:
+        0 10px 50px hsla(0, 0%, 0%, 0.75),
+        0 0 0 1px hsla(0, 0%, 100%, 0.25) inset,
+        0 0 20px hsla(46, 65%, 52%, 0.5) inset; }
+ 25%,  75% { box-shadow:
+        0 10px 50px hsla(0, 0%, 0%, 0.5),
+        0 0 0 1px hsla(0, 0%, 100%, 0.125) inset,
+        0 0 40px hsla(46, 65%, 52%, 0.5) inset; }
+ 50% { box-shadow:
+        0 10px 50px hsla(0, 0%, 0%, 0.25),
+        0 0 0 1px hsla(0, 0%, 100%, 0.025) inset,
+        0 0 60px hsla(46, 65%, 52%, 0.5) inset; }
+}
+
+
+/* ===== Sello ===== */
+.sello-contenedor {
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.25;
+}
+
+.official-sello {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-primary);
+}
+
+.official-sello::before {
+    content: "Jesús & Noemý";
+    color: var(--gold-primary);
+    text-shadow:0 0 5px hsl(50, 100%, 35%);
+    letter-spacing: 5px;
+    line-height: 1rem;
+    border-radius: 50%;
+    border: 2px dotted var(--gold-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'FUENTE';
+}
+
+.official-sello::after {
+    border-radius: 50%;
+    border: 1.5px solid var(--gold-primary);
+    inset: 10px;
+    animation: brillo 2s infinite ease-in-out;
+}
+
+@keyframes brillo {
+    0%, 100% {
+        box-shadow: 0 0 5px hsla(51, 100%, 50%, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.9);
+    }
+}
+
+/* ===== Nombre ===== */
+@font-face {
+  font-family: 'FUENTE';
+  src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
+}
+
+/*Nombre */
+.nombre-completo {
+    margin: 10px 0 30px;
+}
+
+.nombre-completo h2 {
+    font-size: 5.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: 'FUENTE';
+}
+/* ---- Ocupacion ---- */
+.nombre-completo h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'FUENTE';
+}
+
+.degradado-animado3 h2 {
+    background: linear-gradient(45deg, hsla(0, 0%, 0%), hsla(0, 0%, 20%), hsla(0, 0%, 30%));
+    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+}
+
+.degradado-animado3 h3 {
+    background: linear-gradient(45deg, hsl(245, 100%, 20%, 0.75), hsl(245, 100%, 30%, 0.5), hsl(245, 100%, 40%, 0.25));
+    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+}
+
+/* ===== Linea divisoria ===== */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* ===== Texto ===== */
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* ===== Cajas de contacto ===== */
+.contact-grid {
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    margin-bottom: 15px;
+    width: 100%; 
+}
+
+.contact-item {
+    background: hsla(0, 0%, 100%, 0.125); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.025); 
+}
+
+.contact-item.full-width {
+    grid-column: span 2;
+}
+
+.contact-item:hover {
+    background: hsl(0, 0%, 100%,0.25);
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--medium-blue);
+}
+
+.contact-link {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ===== Colores de contacto ===== */
+@keyframes backgroundnumwa {
+    0% {color: #00ff59; }
+    33% {color: #005a1f; } 
+    66% {color: #008930; }
+    100% {color: #00ff59; }
+}
+
+@keyframes backgroundFBCORR {
+    0% {color: #1100ff; }
+    33% {color: #06005a; } 
+    66% {color: #090084; }
+    100% {color: #1100ff; }
+}
+
+/* ===== Palpito ===== */
+@keyframes palpito {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+/* ----- Efectos de enlace ----- */
+.numwa {
+    animation: backgroundnumwa 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
+}
+
+.numwa::after {
+    background: var(--accent-green);
+    opacity: 0.5;
+}
+
+.fbcorr {
+    animation: backgroundFBCORR 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
+}
+
+.fbcorr::after {
+    background: var(--medium-blue);
+    opacity: 0.5;
+}
+
+/* ===== Despegables ===== */
+.despegable {
+    background: hsla(0, 0%, 100%, 0.125);
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.05);
+    border-radius: 10px;
+    max-width: 400px;
+    margin-bottom: 10px;
+    margin-left: 20.25%;
+}
+
+.despegable:hover {
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15);
+    background: hsla(0, 0%, 100%, 0.25);
+}
+ 
+.despegable-toggle {
+    color: var(--dark-blue);
+}
+
+.despegable-toggle:hover {
+    color: var(--gold-primary);
+}
+
+.despegable-toggle::after {
+    color: var(--gold-primary);
+}
+
+.content, .content2 {
+    background: hsla(0, 0%, 100%, 0.14);
+}
+
+.despegable.active .content,
+.despegable.active .content2,
+.despegable.active .content-img {
+    max-height: 2000px;
+}
+
+li {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+}
+
+.submenu > ul {
+    border-left: 2px solid hsl(51, 100%, 50%, 0.5);
+}
+
+.submenu.active > ul {
+    max-height: 1000px;
+}
+
+.submenu > strong {
+    color: var(--dark-blue);
+}
+
+.submenu > strong:hover {
+    color: var(--gold-primary);
+}
+
+/*Galeria*/
+#galeria .button {
+    display: inline-block;
+    margin-left: auto;
+    padding: 5px 20px;
+    background-color: transparent; /* Fondo transparente */
+    color: #333; /* Color de texto neutro */
+    border: 2px solid #333; /* Borde fino */
+    border-radius: 5px; /* Bordes suaves */
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+#galeria .button:hover {
+    background-color: #333; /* Fondo al pasar mouse */
+    color: #fff; /* Texto blanco al hover */
+    transform: translateY(-2px); /* Sutil elevación */
+}
+
+/* ===== Iconos sociables ===== */
+.social-icons {
+    gap: 15px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.social-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: hsla(0, 0%, 100%, 0.7);
+    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+}
+
+.social-icon:hover {
+    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
+    background: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary));
+}
+
+.social-icon img {
+    width: 60%;
+    height: 60%;
+}
+
+.whatsapp-despegable {
+    position: relative;
+}
+
+.despegable-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    bottom: 100%;
+    min-width: 200px;
+}
+
+.despegable-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #25D366;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.despegable-content a:last-child {
+    border-bottom: none;
+}
+
+.despegable-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.whatsapp-despegable:hover .despegable-content {
+    display: block;
+}
+
+@media (max-width: 450px) {
+    .card-wrapper::after {
+        height: 102%;
+        width: 102%;
+    }
+    
+    .nombre-completo h2 {
+        font-size: 4.25rem;
+        margin-top: 35px;
+        line-height: 3.5rem;
+            }
+            
+    .nombre-completo h3 {
+        font-size: 2rem;
+            }
+           
+
+    .despegable-toggle {
+        font-size: 0.9rem;
+            }
+            
+    .correo{
+        font-size: 1rem;
+    }
+
+    .content li, 
+    .content li strong{
+        font-size: 0.9rem;
+    }
+
+    .sello-contenedor {
+        top: -70px;
+        right: -70px;
+    }
+
+    .official-sello{
+        height: 80%;
+        width: 80%;
+    }
+
+    .official-sello::before {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+    .nombre-completo h2 {
+        font-size: 3rem;
+        line-height: 2.6rem;
+    }
+            
+    .nombre-completo h3 {
+        font-size: 1.5rem;
+    }
+    .degradado-animado3 h2,
+    .degradado-animado3 h3 {
+        background-size: 100% 100%;
+    }
+    .intro-text,
+    .contact-label,
+    .contact-link{
+        font-size: 0.75rem;
+    }
+
+    .correo{
+        font-size: 0.8rem;
+    }
+    
+    .despegable-toggle{
+         font-size: 0.75rem;
+    }
+
+    .content li, 
+    .content li strong{
+        font-size: 0.75rem;
+    }
+
+    .sello-contenedor {
+        top: -80px;
+        right: -80px;
+    }
+
+    .official-sello{
+        height: 60%;
+        width: 60%;
+    }
+
+    .official-sello::before {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+
+}
