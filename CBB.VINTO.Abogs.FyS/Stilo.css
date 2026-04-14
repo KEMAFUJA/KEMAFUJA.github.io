@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(234, 100%, 15%); }
-  20%, 80% { background-color: hsl(234, 100%, 20%); } 
-  40%, 60% { background-color: hsl(234, 100%, 26%); }
-  50% { background-color: hsl(234, 100%, 31%); }
+  0%, 100% { background-color: hsl(0, 100%, 50%); }
+  20%, 80% { background-color: hsl(0, 100%, 40%); } 
+  40%, 60% { background-color: hsl(0, 100%, 30%); }
+  50% { background-color: hsl(0, 100%, 20%) }
 }
 
 /* ===== Sube ===== */
@@ -98,7 +98,7 @@
 
 /* ===== Card Informacion ===== */
 .card {
-    background: hsla(0, 0%, 100%, 0.25);
+    background: hsla(23, 100%, 72%, 0.5);
     border-radius: 16px;
     width: 100%;
     max-width: 700px;
@@ -122,19 +122,6 @@
         0 0 60px hsla(46, 65%, 52%, 0.5) inset; }
 }
 
-/* ----- Luz interna giratoria  ----- */
-.card::before {
-    top: 0%;
-    left: 0%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-        circle,
-        hsl(57, 100%, 72%) -100%,
-        transparent 100%
-    );
-}
-
 
 /* ===== Sello ===== */
 .sello-contenedor {
@@ -153,7 +140,7 @@
 }
 
 .official-sello::before {
-    content: "NOTARÍA PÚBLICA N°1";
+    content: "ABOGADOS VINTO-CBB";
     color: var(--gold-primary);
     text-shadow:0 0 5px hsl(50, 100%, 35%);
     letter-spacing: 5px;
@@ -181,44 +168,23 @@
     }
 }
 
-/* Títulos */
-.letra {
-    font-size: 80px;
-    font-family: 'Playfair Display', serif;
-    color: var(--gold-primary);
-    margin-bottom: 10px;
-    position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    letter-spacing: 2px;
-    animation: ColorTitulo 50s ease-in-out infinite;
-}
-
-.letra::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold-primary), var(--gold-tertiary));
-    margin: 15px auto;
-    border-radius: 3px;
-}
-
 /* ===== Nombre ===== */
+/*Nombre */
 .nombre-completo {
     margin: 10px 0 30px;
 }
 
 .nombre-completo h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 500;
     letter-spacing: 1px;
     font-family: 'FUENTE';
+    line-height: 4rem;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: 'FUENTE';
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .degradado-animado3 h2 {
@@ -230,7 +196,6 @@
     background: linear-gradient(45deg, hsl(245, 100%, 20%, 0.75), hsl(245, 100%, 30%, 0.5), hsl(245, 100%, 40%, 0.25));
     animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
 }
-
 
 /* ===== Linea divisoria ===== */
 .divider {
@@ -433,16 +398,15 @@ li {
         height: 102%;
         width: 102%;
     }
-    .letra{
-        font-size: 3rem;
-    }
+    
     .nombre-completo h2 {
-        font-size: 1.5rem;
-        margin-top: 35px;
+        font-size: 2rem;
+        margin-top: 10rem;
+        line-height: 2rem;
             }
             
     .nombre-completo h3 {
-        font-size: 0.75rem;
+        font-size: 1rem;
             }
            
 
@@ -478,11 +442,9 @@ li {
 
 
 @media (max-width: 380px) {
-    .letra{
-        font-size: 2rem;
-    }
     .nombre-completo h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
     }
             
     .nombre-completo h3 {
