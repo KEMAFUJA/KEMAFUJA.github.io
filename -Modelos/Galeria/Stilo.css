@@ -1,0 +1,351 @@
+/* ===== Colores chocan ===== */
+:root {
+    --color-1: hsl(50, 100%, 20%);
+    --color-2: hsl(50, 100%, 30%);
+    --color-3: hsl(50, 100%, 40%);
+    --color-4: hsl(50, 100%, 50%);
+    --color-5: hsl(50, 100%, 60%);
+    --color-6: hsl(50, 100%, 70%);
+    --color-7: hsl(50, 100%, 80%);
+    --color-8: hsl(50, 100%, 90%);
+}
+
+@keyframes backgroundBody {
+  0% { background-color: hsl(0, 0%, 100%); }
+  20% { background-color: hsl(0, 0%, 0%); } 
+  40% { background-color: hsl(0, 0%, 100%); } 
+  50% { background-color: hsl(0, 0%, 0%); } 
+  60% { background-color: hsl(0, 0%, 100%); } 
+  80% { background-color: hsl(0, 0%, 0%); } 
+  100% { background-color:hsl(0, 0%, 100%); }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ===== Sube ===== */
+.sube-particle {
+    opacity: 1;
+}
+/* ----- FORMAS ----- */
+.s-circulo {
+    animation: floatUp 20s linear infinite, s-shadowPulse 1s infinite;
+}
+
+.s-cuadrado {
+    animation: floatUp 20s linear infinite, s-shadowPulse 1s infinite;
+}
+
+.s-triangulo {
+    animation: floatUp 20s linear infinite, s-shadowPulseTriangulo 1s infinite;
+}
+
+.s-estrella,
+.s-sol,
+.s-corazon,
+.s-diamante,
+.s-trebol,
+.s-pica,
+.s-carta,
+.s-brillo,
+.s-luna,
+.s-nube,
+.s-fuego,
+.s-naturaleza,
+.s-hielo,
+.s-geometrico,
+.s-pixel,
+.s-triangulos,
+.s-abstracto,
+.s-espacio,
+.s-tech {
+    animation: floatUp 20s linear infinite, s-colorPulse 1s infinite;
+}
+/* ----- Efectos de color (SUBE) ----- */
+@keyframes s-colorPulse {
+    0%   { text-shadow: 0 0 5px var(--particle-color); }
+    25%  { text-shadow: 10px 0 15px var(--particle-color); }
+    50%  { text-shadow: 0 -10px 10px var(--particle-color); }
+    75%  { text-shadow: -10px 0 15px var(--particle-color); }
+    100% { text-shadow: 0 0 5px var(--particle-color); }
+}
+
+@keyframes s-shadowPulse {
+    0%   { box-shadow: 0 0 5px var(--particle-color); }
+    25%  { box-shadow: 10px 0 15px var(--particle-color); }
+    50%  { box-shadow: 0 -10px 10px var(--particle-color); }
+    75%  { box-shadow: -10px 0 15px var(--particle-color); }
+    100% { box-shadow: 0 0 5px var(--particle-color); }
+}
+
+@keyframes s-shadowPulseTriangulo {
+    0%   { filter: drop-shadow(0 0 3px var(--particle-color)); }
+    25%  { filter: drop-shadow(10px 0 10px var(--particle-color)); }
+    50%  { filter: drop-shadow(0 -10px 8px var(--particle-color)); }
+    75%  { filter: drop-shadow(-10px 0 10px var(--particle-color)); }
+    100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
+}
+
+/* ===== Chocan ===== */
+.chocan-logo {
+    opacity: 0.25;
+}
+/* ----- Formas ----- */
+.c-circulo {
+    animation: rotateOnly 60s linear infinite, c-shadowPulse 5s infinite;
+}
+
+.c-cuadrado {
+    animation: rotateOnly 60s linear infinite, c-shadowPulse 5s infinite;
+}
+
+.c-triangulo {
+    animation: rotateOnly 60s linear infinite, c-shadowPulseTriangulo 5s infinite;
+}
+
+.c-estrella,
+.c-sol,
+.c-corazon,
+.c-diamante,
+.c-trebol,
+.c-pica,
+.c-carta,
+.c-brillo,
+.c-luna,
+.c-nube,
+.c-fuego,
+.c-naturaleza,
+.c-hielo,
+.c-geometrico,
+.c-pixel,
+.c-triangulos,
+.c-abstracto,
+.c-espacio,
+.c-tech {
+    animation: rotateOnly 60s linear infinite, c-colorPulse 5s infinite;
+}
+
+/* ----- Efectos de color (Chocan) ----- */
+@keyframes c-shadowPulse {
+    0%   { box-shadow: 0 0 5px var(--chocan-shadow-color); }
+    25%  { box-shadow: 10px 0 15px var(--chocan-shadow-color); }
+    50%  { box-shadow: 0 -10px 10px var(--chocan-shadow-color); }
+    75%  { box-shadow: -10px 0 15px var(--chocan-shadow-color); }
+    100% { box-shadow: 0 0 5px var(--chocan-shadow-color); }
+}
+
+@keyframes c-shadowPulseTriangulo {
+    0%   { filter: drop-shadow(0 0 3px var(--chocan-shadow-color)); }
+    25%  { filter: drop-shadow(10px 0 10px var(--chocan-shadow-color)); }
+    50%  { filter: drop-shadow(0 -10px 8px var(--chocan-shadow-color)); }
+    75%  { filter: drop-shadow(-10px 0 10px var(--chocan-shadow-color)); }
+    100% { filter: drop-shadow(0 0 3px var(--chocan-shadow-color)); }
+}
+
+@keyframes c-colorPulse {
+    0%   { text-shadow: 0 0 5px var(--chocan-shadow-color); }
+    25%  { text-shadow: 10px 0 15px var(--chocan-shadow-color); }
+    50%  { text-shadow: 0 -10px 10px var(--chocan-shadow-color); }
+    75%  { text-shadow: -10px 0 15px var(--chocan-shadow-color); }
+    100% { text-shadow: 0 0 5px var(--chocan-shadow-color); }
+}
+
+/*Nombre */
+/* ── Encabezado ── */
+.nombre-completo {
+  text-align: center;
+  
+  margin-bottom: -5rem;
+}
+
+
+@font-face {
+    font-family: 'FUENTE';
+    src: url('/-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
+}
+@font-face {
+  font-family: 'FUENTE2';
+  src: url('/-LETRAS/fonts/MajorMonoDisplay-Regular.ttf');
+}
+
+.nombre-completo h2 {
+  font-size: 2.5rem;
+  font-family: 'FUENTE';
+  font-weight:200;
+}
+
+.nombre-completo h3 {
+  font-size: 4rem;
+  font-family: 'FUENTE2';
+  font-weight: 200;
+  
+}
+
+.degradado-animado3 h2 {
+    background: linear-gradient(45deg, hsl(50, 100%, 20%,0.5), hsl(50, 100%, 40%,0.75), hsl(50, 100%, 60%, 1));
+    animation: animacion-sombra 60s infinite ease-in-out, animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+}
+
+.degradado-animado3 h3 {
+    background: linear-gradient(45deg, hsl(50, 100%, 20%,0.5), hsl(50, 100%, 40%,0.75), hsl(50, 100%, 60%, 1));
+    animation: animacion-sombra 60s infinite ease-in-out, animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+}
+
+
+/* ── Botón ── */
+.button-back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #7666;
+  z-index: 9999;
+  font-size: 1rem;
+}
+
+.button-back:hover {
+  background: #eee;
+}
+
+/* ── Contenedor ── */
+#galeria-contenedor {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px;
+  margin-top: 5rem;
+}
+
+/* ── Categorías ── */
+.category {
+  margin-bottom: 50px;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 200;
+  font-family: 'FUENTE';
+  margin-bottom: -1.25rem;
+  color: #ccc;
+}
+
+.category-desc {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* ── Grid ── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+/* ── Imagen ── */
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/4;
+  z-index: 5;
+  border-radius: 5%;
+  object-fit: cover;
+
+  -webkit-mask-image: radial-gradient(circle, black 100%, transparent 100%);
+  mask-image: radial-gradient(circle, black 70%, transparent 100%);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  border-radius: 5%;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+#modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;              
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+/* 🔥 ESTO ES LO QUE HACE QUE FUNCIONE */
+#modalOverlay.active {
+  display: flex;
+}
+
+/* Imagen grande */
+#modalImg {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.1s;
+}
+
+/* Botón cerrar */
+#cerrarModal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── Responsive ── */
+@media (max-width: 450px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .button-back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.75rem;
+}
+
+  .nombre-completo h2 {
+  font-size: 1.5rem;
+}
+
+.nombre-completo h3 {
+  font-size: 3rem;
+}
+
+#galeria-contenedor {
+  padding: 10px;
+}
+
+.gallery-item img {
+  border-radius: 10%;
+}
+}
+
+@media (max-width: 380px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+    .nombre-completo h2 {
+     font-size: 1.5rem;
+    }
+
+.nombre-completo h3 {
+  font-size: 2.25rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+}
+}
