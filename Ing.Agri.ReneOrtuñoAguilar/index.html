@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta property="og:title" content="Ing. Agrimensor">
-    <meta property="og:description" content="Rene Ortuño Aguilar">
+    <meta property="og:description" content="Cel: 77028304">
+    <meta property="og:title" content="Ing. Agrimensor - Rene Ortuño Aguilar">
     <meta property="og:image" content="https://kemafuja.github.io/Ing.Agri.ReneOrtuñoAguilar/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -13,19 +13,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Ing. Agrim. Rene Ortuño Aguilar</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
-    <div class="gold-particles"></div>
-    
+<div id="sube-contenedor"></div>
+<div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <div class="nombre-completo">
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <div class="nombre-completo degradado-animado3">
             <h2 class="inline-text">Rene Ortuño Aguilar</h2>
             <h3 class="inline-text">Ing. Agrim.</h3>
         </div>
@@ -38,49 +41,67 @@
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" style="margin-left: 5px" href="tel:+59177028304"> 77028304</a><br>
-                    <a class="contact-link numwa" style="margin-left: 5px" href="tel:+59163763217"> 63763217</a>                    
+                    <a class="contact-link numwa" href="tel:+59177028304">
+                        <span class="full">+591 77028304</span>
+                        <span class="short">77028304</span>
+                    </a><br>
+                    <a class="contact-link numwa" href="tel:+59163763217">
+                        <span class="full">+591 63763217</span>
+                        <span class="short">63763217</span>
+                    </a>
                 </div>
             </div>
             
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59177028304&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Msj: 77028304</a><br>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59163763217&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Msj: 63763217</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59177028304&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 77028304</span>
+                        <span class="short">77028304</span>
+                    </a><br>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59163763217&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 63763217</span>
+                        <span class="short">63763217</span>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:reneagrimensor@yahoo.es?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">reneagrimensor@yahoo.es</a>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:reneagrimensor@yahoo.es?subject=Consulta&body=Buenas, quisiera consultar sobre...">
+                        reneagrimensor@yahoo.es
+                    </a>
                 </div>
             </div>
-            
-            
             
             <div class="contact-item full-width">
                 <div>
                     <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr" href="https://maps.app.goo.gl/844Ya8bFFndL332t9">Pasaje Beni, Edificio Beni of#36 </a>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/844Ya8bFFndL332t9"> 
+                        Pasaje Beni, Edificio Beni of#36
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d651.3515163373745!2d-63.18097502739002!3d-17.77515572537663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMwLjciUyA2M8KwMTAnNTEuMyJX!5e0!3m2!1ses!2sbo!4v1775090278873!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:00 -  17:00</li>
@@ -88,90 +109,74 @@
                 </ul>
             </div>
         </div>
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>Servicios de:</span>
-            </a>
+
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
             <div class="content">
                 <ul>
+                    <li class="submenu"> 
+                        <strong>PLANOS DE USO DE SUELO EN:</strong>
+                        <ul>
+                            <li> Santa Cruz</li>
+                            <li> Warnes</li>
+                            <li> Porongo</li>
+                            <li> Colpa Belgica</li>
+                        </ul>
+                    </li>
                     <li> <strong>URBANIZACION</strong></li>
                     <li> <strong>LEVANTAMIENTO TOPOGRAFICO</strong></li>
-                    <li> <strong>PLANOS DE USO DE SUELO EN:</strong></li>
-                    <li> Santa Cruz</li>
-                    <li> Warnes</li>
-                    <li> Porongo</li>
-                    <li> Colpa Belgica</li>
                     <li> <strong>PROCESO DE REGULARIZACION DE DERECHO DE PROPIETARIO (LEY 247)</strong></li>                    
                     <li> <strong>CORRECION DE DATOS TECNICOS</strong></li>
                     <li> <strong>PLANIMETRIAS</strong></li>
                     <li> <strong>PERITAJES</strong></li>
                     <li> <strong>AVALUOS</strong></li>
-                    <li> <strong>PROYECTO Y EJECUCION DE PAVIMENTACION</strong></li>
+                    <li> <strong>PROYECTO Y EJECUCION DE PAVIMENTACION</strong></li>                
                 </ul>
             </div>
         </div>
+
         <div class="social-icons">
-            <a href="mailto:reneagrimensor@yahoo.es?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">                
+            <a href="mailto:reneagrimensor@yahoo.es?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
+                target="_blank" class="social-icon">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <div class="whatsapp-dropdown">
+            <div class="whatsapp-despegable">
                 <button class="social-icon" style="border: none;">
-                    <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 25px; height: 25px;">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
                 </button>
-                <div class="dropdown-content">
+                <div class="despegable-content">
+                    <a href="https://api.whatsapp.com/send?phone=59163763217&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                        +591 63763217
+                    </a>
                     <a href="https://api.whatsapp.com/send?phone=59177028304&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
                         +591 77028304
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=59163763217&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
-                        +591 75527576
-                    </a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/844Ya8bFFndL332t9" target="_blank" class="social-icon">
+            <a href="https://maps.app.goo.gl/844Ya8bFFndL332t9" 
+                target="_blank" class="social-icon">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
-        });
-    </script>
+<script src="../-OTROS/despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
-    tamMax: 5,
-    durMax: 20,
-    aparMax: 20,
-    tamañoIgual: true
-});
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 10,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
 </script>
-
 </body>
 </html>
