@@ -209,6 +209,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    -webkit-text-fill-color: transparent;
     background-size: 400% 400%;
 }
 
@@ -225,12 +226,10 @@ body {
 }
 
 @keyframes animacion-sombra {
-    0% { filter: drop-shadow(0 5px 2.5px hsl(0, 0%, 0%, 0.25)); }
-    20% { filter: drop-shadow(0 10px 2.5px hsla(0, 0%, 100%, 0.25)); }
-    40% { filter: drop-shadow(0 15px 2.5px hsl(0, 0%, 0%, 0.25)); }
-    60% { filter: drop-shadow(0 15px 2.5px hsla(0, 0%, 100%, 0.25)); }
-    80% { filter: drop-shadow(0 10px 2.5px hsla(0, 0%, 0%, 0.25)); }
-    100% { filter: drop-shadow(0 5px 2.5px hsla(0, 0%, 100%, 0.25)); }
+    0%, 100% { filter: drop-shadow(0 5px 2.5px hsl(0, 0%, 0%, 0.25)); }
+    20%, 80% { filter: drop-shadow(0 10px 2.5px hsla(0, 0%, 100%, 0.25)); }
+    40%, 60% { filter: drop-shadow(0 15px 2.5px hsl(0, 0%, 0%, 0.25)); }
+    50% { filter: drop-shadow(0 15px 2.5px hsla(0, 0%, 100%, 0.25)); }
 }
 
 /* ===== Cajas de contacto ===== */
@@ -410,6 +409,7 @@ iframe {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; 
+    opacity: 0.75;
 }
 
 .social-icon {
@@ -429,6 +429,25 @@ iframe {
 .social-icon img {
     object-fit: contain;
 }
+
+.Whatsapp { background-color: #25D366;
+filter: drop-shadow(0 10px 5px #008000); }
+.Telegram { background-color: #ffffff;
+filter: drop-shadow(0 10px 5px #303030); }
+.Facebook { background-color: #3B5998; 
+filter: drop-shadow(0 10px 5px #3B5998);}
+.Instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+filter: 
+  drop-shadow(0 5px 2.5px #405DE6)
+  drop-shadow(0 5px 5px #5851DB); }
+.Youtube { background-color: #FF0000; 
+filter: drop-shadow(0 10px 5px #c10000);}
+.Tiktok { background-color: #ffffff; 
+filter: drop-shadow(0 10px 5px #303030); }
+.Correo { background-color: #ffffff; 
+filter: drop-shadow(0 10px 5px #303030); }
+.Mapa { background-color: #ffffff; 
+filter: drop-shadow(0 10px 5px #303030); }
 
 .whatsapp-despegable {
     position: relative;
@@ -499,32 +518,15 @@ iframe {
         margin-left: 7.5%;
     }
 
-    .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-
     .content2 iframe {
         height: 300px;
-    }
-
-    .social-icons {
-        gap: 0.25rem;
-        margin-left: 20px;
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-
-    .social-icon img {
-        width: 60%;
-        height: 60%;
     }
 
 }
 
 @media (max-width: 380px) {
     .card{
-    padding: 10px;
+        padding: 10px;
     }
 
     .logo{
@@ -541,16 +543,5 @@ iframe {
         margin-left: 2.5%;
     }
 
-        .social-icons {
-        gap: 0.5rem;
-        margin-left: 20px;
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-
-    .social-icon img {
-        width: 60%;
-        height: 60%;
-    }
 }
 
