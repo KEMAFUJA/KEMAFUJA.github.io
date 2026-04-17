@@ -13,25 +13,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo2.png" type="image/png">
     <title>Gerente Sonia Rodas A.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
-    <div class="gold-particles"></div>
+<div id="sube-contenedor"></div>
+<div id="chocan-contenedor"></div>
     
+<div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <h1 class="letra">
-            <img src="logo.png" alt="Logo Optica-Rodas" class="logo-optica" width="50%">
-        </h1>
+        <img src="logo.png" alt="Logo" class="logo" style="width: 70%; opacity: 1 !important;">
 
-        <div class="nombre-completo">
-            <h2>Sonia Rodas A.</h2>
-            <h3>Gerente General</h3>
+        <div class="nombre-completo degradado-animado3">
+            <h2 class="inline-text">Sonia Rodas A.</h2>
+            <h3 class="inline-text">Gerente General</h3>
         </div>
 
         <div class="divider"></div>
@@ -42,57 +43,71 @@
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" style="margin-right: 10px;" href="tel:+59173459315">+591 73459315</a>
+                    <a class="contact-link numwa" href="tel:+59173459315">
+                        <span class="full">+591 73459315</span>
+                        <span class="short">73459315</span>
+                    </a>
                 </div>
             </div>
-                        
+            
             <div class="contact-item">
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" style="margin-right: 10px;" href="https://api.whatsapp.com/send?phone=59173459315&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">73459315</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59173459315&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 73459315</span>
+                        <span class="short">73459315</span>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-item">
                 <div>
                     <p class="contact-label">Facebook:</p>
-                    <a class="contact-link fbcorr" href="https://www.facebook.com/share/19bMt1nCKN/" target="_blank">Visitar página</a>
+                    <a class="contact-link fbcorr" href="https://www.facebook.com/share/19bMt1nCKN/" target="_blank">Optica Rodas</a>
                 </div>
             </div>
 
             <div class="contact-item">
                 <div>
                     <p class="contact-label">TIK TOK:</p>
-                    <a class="contact-link fbcorr" href="https://www.tiktok.com/@opticarodas" target="_blank">Visitar página</a>
+                    <a class="contact-link fbcorr" href="https://www.tiktok.com/@opticarodas" target="_blank">opticarodas</a>
                 </div>
             </div>
-
             
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/vmBWjfxFUdgccocNA"> 
+                        Calle Caballero entre calle 24 de septiembre y calle Beni
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.2568922787837!2d-63.1814854!3d-17.7796198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e90003d77b41%3A0x32542ecc5a183088!2sOPTICA%20RODAS!5e0!3m2!1ses-419!2sbo!4v1760031992229!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
-                    <li><strong>LUNES A SABADO:</strong> 8:00 -  18:00</li>
+                    <li><strong>LUNES A SABADO:</strong> 8:00 -  18:00</li>                
                 </ul>
             </div>
         </div>
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>SERVICIOS:</span>
-            </a>
+
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
             <div class="content">
                 <ul>
                     <li> <strong>ORAGANICO BLANCO</strong></li>
@@ -102,10 +117,10 @@
                     <li> <strong>MR8 Foto Blue</strong></li>
                     <li> <strong>BIFOCALES</strong></li>
                     <li> <strong>PROGRESIVO DE ALTA GAMA</strong></li>
-                    
                 </ul>
             </div>
         </div>
+
         <div class="social-icons">
             <a href="https://api.whatsapp.com/send?phone=59173459315&&text=Buenas%20quisiera%20saber%20sobre..." target="_blank" class="social-icon">                
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">            
@@ -116,51 +131,29 @@
             <a href="https://www.tiktok.com/@opticarodas" target="_blank" class="social-icon tiktok">
                 <img src="../-LOGOS/TT.png" alt="Facebook">
             </a>
-            <a href="https://maps.app.goo.gl/RHL4ML6DSFTJp39T9" target="_blank" class="social-icon">
-                <img src="../-LOGOS/Maps.png" alt="Ubicación" style="width: 30px; height: 30px;">
+            <a href="https://maps.app.goo.gl/vmBWjfxFUdgccocNA" 
+                target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
+</div>
 
+<script src="../-OTROS/despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
-    tamMax: 50,
-    durMax: 30,
-    aparMax: 60,
-    tamañoIgual: true
-});
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 10,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
 </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
-
-        });
-    </script>
 </body>
 </html>
