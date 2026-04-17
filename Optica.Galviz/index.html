@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta property="og:description" content="Cel: 63422151">
     <meta property="og:title" content="ÓPTICA - GALVIZ">
     <meta property="og:image" content="https://kemafuja.github.io/Optica.Galviz/logo.png">
     <meta property="og:image:width" content="1200">
@@ -11,79 +12,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
-    <title>OPTICA - GalvIz</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="STILO.css">
+    <title>OPTICA - Galviz</title>
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
-    <div class="gold-particles"></div>
-    
+<div id="sube-contenedor"></div>
+<div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
-        <h1 class="letra">
-            <img src="TARJETAS OPTICA GALVIZ PNG.png" alt="Logo Optica-Galviz" class="logo-optica" width="40%">
-        </h1>
-        
+        <img src="TARJETAS OPTICA GALVIZ PNG.png" alt="Logo" class="logo" style="width: 50%; opacity: 1 !important;">
+
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
             <div class="contact-item">
-                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59163422151">+591 63422151</a>
+                    <a class="contact-link numwa" href="tel:+59163422151">
+                        <span class="full">+591 63422151</span>
+                        <span class="short">63422151</span>
+                    </a>
                 </div>
             </div>
+            
             <div class="contact-item">
-                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 63422151</span>
+                        <span class="short">63422151</span>
+                    </a>
                 </div>
             </div>
-        </div>
 
-        <div class="contact-grid" style="grid-template-columns: 1fr 1fr;">
-            
-            
             <div class="contact-item">
-                <!--img src="facebook-icon.png" alt="Facebook" class="contact-icon"-->
                 <div>
                     <p class="contact-label">Facebook:</p>
                     <a class="contact-link fbcorr" href="https://www.facebook.com/share/17GhgJQpn9/" target="_blank">Óptica "Galviz" </a>
                 </div>
             </div>
-            
+
             <div class="contact-item">
-                <!--img src="facebook-icon.png" alt="Facebook" class="contact-icon"-->
                 <div>
                     <p class="contact-label">TIK TOK:</p>
                     <a class="contact-link fbcorr" href="https://www.tiktok.com/@ptica.galviz.vision" target="_blank">optica.galviz</a>
                 </div>
             </div>
+           
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/Xyc4wTVcDpRkM2jYA"> 
+                        Calle Bernabe Sosa entre calle Pedro Antelo y calle S. Ortiz
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d578.3392170839771!2d-63.1726392261172!3d-17.7747224911877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzI5LjMiUyA2M8KwMTAnMjIuMSJX!5e0!3m2!1ses-419!2sbo!4v1759196631432!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
@@ -92,10 +99,9 @@
             </div>
         </div>
 
-        <div class="dropdown" id="serviciosDropdown">
-            <a class="dropdown-toggle">
-                <span>SE HACEN:</span>
-            </a>
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
             <div class="content">
                 <ul>
                     <li> <strong>GAFAS</strong></li>
@@ -105,80 +111,42 @@
             </div>
         </div>
 
-        <div class="dropdown" id="servicios2Dropdown">
-            <a class="dropdown-toggle">
-                <span>MATERIAL OPTICO:</span>
-            </a>
-            <div class="content">
-                <ul>
-                    <li> <strong>ORGÁNICO BLANCO</strong></li>
-                    <li> <strong>ANTIRREFLEJO</strong></li>
-                    <li> <strong>BLUE BLOCK</strong></li>
-                    <li> <strong>FOTOCROMATICO</strong></li>
-                    <li> <strong>POLICARBONATO</strong></li>
-                    <li> <strong>PRO MAX MR8</strong></li>
-                    <li> <strong>HIGH INDEX</strong></li>
-                    <li> <strong>BIFOCALES</strong></li>
-                    <li> <strong>PROGRESIVOS DIGITALES</strong></li>
-                   
-                </ul>
-            </div>
-        </div>
-
         <div class="social-icons">
-            <a href="https://api.whatsapp.com/send?phone=59163422151&&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%20135,%20en%20que%20podemos%20ayudarle?..." target="_blank" class="social-icon">
+            <a href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20saber%20sobre..." 
+                target="_blank" class="social-icon"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://www.facebook.com/share/17GhgJQpn9/" target="_blank" class="social-icon">
+            <a href="https://www.facebook.com/share/17GhgJQpn9/" 
+                target="_blank" class="social-icon">
                 <img src="../-LOGOS/FB.png" alt="Facebook">
             </a>
-            <a href="https://www.tiktok.com/@ptica.galviz.vision" target="_blank" class="social-icon">
+            <a href="https://www.tiktok.com/@ptica.galviz.vision" 
+                target="_blank" class="social-icon">
                 <img src="../-LOGOS/TT.png" alt="TikTok">
             </a>
-            <a href="https://maps.app.goo.gl/6DMzW2Xhc4tmyW2b6" target="_blank" class="social-icon">
-                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            <a href="https://maps.app.goo.gl/Xyc4wTVcDpRkM2jYA" 
+                target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
+</div>
 
+<script src="../-OTROS/despegable.js"></script>
 <script type="module">
-import { createGoldParticles } from "/-OTROS/particulas_suben.js";
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-createGoldParticles('.gold-particles', {
-    cuantas: 40,
-    tamMax: 50,
-    durMax: 30,
-    aparMax: 60,
-    tamañoIgual: false
-});
-</script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
-        });
-    </script>
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 10,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
+</script>   
 </body>
 </html>
