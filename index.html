@@ -3,7 +3,7 @@
 <head>
     <meta property="og:title" content="KEMAFUJA - ENTERPRISE">
     <meta property="og:description" content="Innovacion y creatividad en tus proyectos.">
-    <meta property="og:image" content="https://kemafuja.github.io/logo_c.png">
+    <meta property="og:image" content="https://kemafuja.github.io/KEAMFUJA/logo_c.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://kemafuja.github.io">
@@ -11,7 +11,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo_c.png" type="image/png">
+    <link rel="icon" href="KEMAFUJA/logo_c.png" type="image/png">
     <title>KEMAFUJA ENTERPRISE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="KEMAFUJA/Stilo.css">
@@ -89,10 +89,10 @@
          <div class="despegable">
             <div class="despegable-toggle">Fotos:</div>
             <div class="content-img">
-                <img src="/KEMAFUJA/imagenes/Imagen (1).jpg" alt="Imagen 1">
-                <img src="/KEMAFUJA/imagenes/Imagen (2).jpg" alt="Imagen 2">
-                <img src="/KEMAFUJA/imagenes/Imagen (3).jpg" alt="Imagen 3">
-                <img src="/KEMAFUJA/imagenes/Imagen (4).jpg" alt="Imagen 4">
+                <img src="KEMAFUJA/imagenes/Imagen (1).jpg" alt="Imagen 1">
+                <img src="KEMAFUJA/imagenes/Imagen (2).jpg" alt="Imagen 2">
+                <img src="KEMAFUJA/imagenes/Imagen (3).jpg" alt="Imagen 3">
+                <img src="KEMAFUJA/imagenes/Imagen (4).jpg" alt="Imagen 4">
             </div>
         </div>
 
@@ -205,66 +205,13 @@
             <source src="KEMAFUJA/FIESTA MIEL SAN MARCO.mp3" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
         </audio>
-        
-
     </div>
 </div>
 
-<script src="KEMAFUJA/maquina.js"></script>
 <script src="-OTROS/despegable.js"></script>
-<script type="module">
-    import { createGoldParticles } from '-OTROS/particulas_suben.js';
-
-    createGoldParticles('#sube-contenedor', {
-        cuantas: 20,
-        tamMax: 20,
-        durMax: 10,
-        durMin: 1,
-        aparMax: 20,
-        tamIgual: true,
-        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
-        color: 'gold',
-        r_opacidad: true
-    });
-</script>
-
-<script type="module">
-    import { createFloatingShapes } from '-OTROS/particulas_chocan.js';
-
-    const controlador = createFloatingShapes({
-        cantidad: 15,
-        tamMin: 10,
-        tamMax: 60,
-        velMax: 10,
-        multVel: 0.1,
-        forma: 'cuadrado' //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
-    });
-
-    setTimeout(() => {
-        console.log("Shapes creados:", document.querySelectorAll(".chocan-logo").length);
-    }, 1000);
-
-    window.addEventListener("click", () => controller.reload());
-
-    window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") controller.stop();
-    });
-</script>
-<script>
-    const miAudio = document.getElementById('background-audio');
-
-    function playAudio() {
-    miAudio.play();
-    document.querySelector('.audio-controls .fa-play').parentNode.classList.add('active');
-    document.querySelector('.audio-controls .fa-pause').parentNode.classList.remove('active');
-    }
-
-    function pauseAudio() {
-    miAudio.pause();
-    document.querySelector('.audio-controls .fa-pause').parentNode.classList.add('active');
-    document.querySelector('.audio-controls .fa-play').parentNode.classList.remove('active');
-    }
-
-</script>
+<script type="module" src="./KEMAFUJA/js/chocan.js"></script>
+<script type="module" src="./KEMAFUJA/js/suben.js"></script>
+<script type="module" src="./KEMAFUJA/js/titulo.js"></script>
+<script src="KEMAFUJA/js/audio.js"></script>
 </body>
 </html>
