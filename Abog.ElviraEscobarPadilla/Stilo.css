@@ -141,7 +141,7 @@
 }
 
 .official-sello::before {
-    content: "Abog. Candido Arancibia Salazar";
+    content: "Abog. Elvira Escobar Padilla";
     color: var(--gold-primary);
     text-shadow:0 0 5px hsl(50, 100%, 35%);
     letter-spacing: 5px;
