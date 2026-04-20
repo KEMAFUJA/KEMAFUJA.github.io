@@ -188,6 +188,16 @@ body {
     }
 }
 
+/* ===== Letra ===== */
+.letra {
+    position: relative;
+}
+
+.letra::after {
+    content: "";
+    display: block;
+}
+
 /* ===== Nombre ===== */
 .nombre-completo {
     position: relative;
@@ -430,25 +440,7 @@ iframe {
     object-fit: contain;
 }
 
-.Whatsapp { background-color: #25D366;
-filter: drop-shadow(0 10px 5px #008000); }
-.Telegram { background-color: #ffffff;
-filter: drop-shadow(0 10px 5px #303030); }
-.Facebook { background-color: #3B5998; 
-filter: drop-shadow(0 10px 5px #3B5998);}
-.Instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-filter: 
-  drop-shadow(0 5px 2.5px #405DE6)
-  drop-shadow(0 5px 5px #5851DB); }
-.Youtube { background-color: #FF0000; 
-filter: drop-shadow(0 10px 5px #c10000);}
-.Tiktok { background-color: #ffffff; 
-filter: drop-shadow(0 10px 5px #303030); }
-.Correo { background-color: #ffffff; 
-filter: drop-shadow(0 10px 5px #303030); }
-.Mapa { background-color: #ffffff; 
-filter: drop-shadow(0 10px 5px #303030); }
-
+            
 .whatsapp-despegable {
     position: relative;
 }
