@@ -355,13 +355,18 @@ body {
     50% { filter: drop-shadow(0 15px 2.5px hsla(0, 0%, 100%, 0.25)); }
 }
 
+#p1 .botones {
+    display: flex;
+    gap: 1rem;
+}
+
 #p1 .social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
     gap: 0.5rem;
-    margin-bottom: -0.5rem;
+    margin-top: 1rem;
     border-radius: 50px;
     text-decoration: none;
     color: black;
@@ -713,10 +718,11 @@ li {
 
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
 
     .book {
         width: 95vw;
+        height: 170vw;
     }
 
     .front, .back{
@@ -757,13 +763,15 @@ li {
     }
 
     #p1 .degradado-animado3 h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     #p1 .degradado-animado3 h3 {
         font-size: 0.75rem;
     }
-
+    #p1 .social-icon{
+        font-size: 0.75rem;
+    }
     #p3 .front .ubi-letra{
         font-size: 1.25rem;
         opacity: 0.5;
