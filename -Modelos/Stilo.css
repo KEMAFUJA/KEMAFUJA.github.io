@@ -262,6 +262,34 @@
     }
 }
 
+/* ===== Letra ===== */
+.letra {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: -1rem;
+    letter-spacing: 2.5px;
+    animation: ColorTitulo 50s ease-in-out infinite;
+}
+
+@keyframes ColorTitulo {
+    0% {filter: drop-shadow(#fff2ae) ; 
+        color: #987f03;
+        }
+    30% {filter: drop-shadow( #d4c67e); 
+        color: #ffe76e;
+        } 
+    60% {filter: drop-shadow(#c3af50); 
+        color: #ffde38;
+        }
+    90% {filter: drop-shadow( #ffd500); 
+        color: #fff280;
+        }
+    100% {filter: drop-shadow(#fff2ae) ; 
+        color: #987f03;
+        }
+}
 /* ===== Nombre ===== */
 @font-face {
   font-family: 'FUENTE';
@@ -477,8 +505,7 @@ li {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: hsla(0, 0%, 100%, 0.7);
-    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+
 }
 
 .social-icon:hover {
@@ -487,8 +514,56 @@ li {
 }
 
 .social-icon img {
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
+}
+         
+
+.Whatsapp { 
+    background-color: #25D366;
+    filter: drop-shadow(0 10px 5px #008000); 
+}
+
+.Telegram { 
+    background-color: #ffffff;
+    filter: drop-shadow(0 10px 5px #006699); 
+}
+
+.Facebook { 
+    background-color: #3B5998; 
+    filter: drop-shadow(0 10px 5px #3B5998);
+}
+
+.Instagram { 
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    filter: drop-shadow(0 5px 2.5px #405DE6)
+            drop-shadow(0 5px 5px #5851DB); 
+}
+
+.Youtube { 
+    background-color: #FF0000; 
+    filter: drop-shadow(0 10px 5px #c10000);
+}
+
+.Tiktok { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 5px 2.5px #40e6e6)
+            drop-shadow(0 5px 5px #db5151); 
+}
+
+.Correo { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #303030); 
+}
+
+.Mapa { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #960000); 
+}
+
+.Telefono { 
+    background-color: #ffffff;
+    filter: drop-shadow(0 10px 5px #006699); 
 }
 
 
@@ -496,6 +571,11 @@ li {
     .card-wrapper::after {
         height: 102%;
         width: 102%;
+    }
+    
+    .letra{
+        font-size: 0.8rem;
+        letter-spacing: 0rem;
     }
     .nombre-completo h2 {
         font-size: 3.5rem;
