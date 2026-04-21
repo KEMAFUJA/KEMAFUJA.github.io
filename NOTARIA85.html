@@ -3,35 +3,37 @@
 <head>
     <meta property="og:title" content="NOTARÍA DE FÉ PÚBLICA NRO.85">
     <meta property="og:description" content="Mary Lidia Ramirez Tapia">
-    
+    <meta property="og:image" content="https://kemafuja.github.io/NOTARIA_85/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/NOTARIA85.html">
+    <meta property="og:url" content="https://kemafuja.github.io/NOTARIA_85">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Notaría N°85 - Abog. Mary Lidia Ramirez Tapia</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="StiloNOT85.css">
+    <link rel="stylesheet" href="/NOTARIA_85/Stilo.css">
+    <link rel="stylesheet" href="-OTROS/General.css">
 </head>
 
-<body>
-    <div class="gold-dust"></div>
-    <div class="gold-particles"></div>
+<body> 
+<div id="sube-contenedor"></div>
+<div id="chocan-contenedor"></div>
     
+<div class="card-wrapper">
     <div class="card">
-        <div class="seal-container">
-            <div class="official-seal"></div>
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
         </div>
         
         <h1 class="letra">NOTARÍA N°85</h1>
-        
-        <div class="nombre-completo">
+
+        <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
             <h2 class="inline-text">MARY LIDIA</h2>
-            <h2>RAMIREZ TAPIA</h2>
+            <h2 class="inline-text">RAMIREZ TAPIA</h2>
         </div>
 
         <div class="divider"></div>
@@ -40,53 +42,59 @@
         
         <div class="contact-grid">
             <div class="contact-item">
-                <!--img src="phone-icon.png" alt="Teléfono" class="contact-icon"-->
                 <div>
                     <p class="contact-label">Teléfono:</p>
-                    <a class="contact-link numwa" href="tel:+59167855097">+591 67855097</a>
+                    <a class="contact-link numwa" href="tel:+59167855097">
+                        <span class="full">+591 67855097</span>
+                        <span class="short">67855097</span>
+                    </a>
                 </div>
             </div>
             
             <div class="contact-item">
-                <!--img src="email-icon.png" alt="Correo" class="contact-icon"-->
-                <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:notaria85marylidia@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">notaria85marylidia@hotmail.com</a>
-                </div>
-            </div>
-            
-            <div class="contact-item">
-                <!--img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"-->
                 <div>
                     <p class="contact-label">WhatsApp:</p>
-                    <a class="contact-link numwa" href="https://api.whatsapp.com/send?phone=59167855097&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">Enviar mensaje</a>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59167855097&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2085,%20en%20que%20podemos%20ayudarle?..." 
+                        target="_blank">
+                        <span class="full">Msj: 67855097</span>
+                        <span class="short">67855097</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Correo:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="mailto:notaria85marylidia@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
+                        notaria85marylidia@hotmail.com
+                    </a>
                 </div>
             </div>
             
-            <div class="contact-item">
-                <!--img src="facebook-icon.png" alt="Facebook" class="contact-icon"-->
+            <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Facebook:</p>
-                    <a class="contact-link fbcorr" href="https://www.facebook.com/profile.php?id=100054753190776" target="_blank">Visitar página</a>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/YjDEi5GR9wF5xAkd9"> 
+                        Av. Santos Dumont casi 3° anillo
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="dropdown" id="ubicacionDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="location-icon.png" alt="Ubicación" class="dropdown-icon"-->
-                <span>Ubicación</span>
-            </a>
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
             <div class="content2">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3798.577822623323!2d-63.181638899999996!3d-17.8115278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ4JzQxLjUiUyA2M8KwMTAnNTMuOSJX!5e0!3m2!1ses-419!2sbo!4v1754349958517!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        
-        <div class="dropdown" id="horarioDropdown">
-            <a class="dropdown-toggle">
-                <!--img src="clock-icon.png" alt="Horario" class="dropdown-icon"-->
-                <span>Horario de atención</span>
-            </a>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
             <div class="content">
                 <ul>
                     <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
@@ -94,66 +102,82 @@
                 </ul>
             </div>
         </div>
-        
+
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
+            <div class="content">
+                <ul>
+                    <li> <strong>ACTAS NOTARIADAS</strong></li>
+                    <li> <strong>CERTIFICACIONES DE FIRMA</strong></li>
+                    <li> <strong>CERTIFICACIONES Y OTROS</strong></li>
+                    <li> <strong>DECLARACIONES VOLUNTÁRIAS</strong></li>
+                    <li> <strong>ESCRITURAS PÚBLICAS</strong></li>
+                    <li> <strong>PERMISOS DE VIAJE PARA MENORES DE EDAD</strong></li>
+                    <li> <strong>PODERES</strong></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="social-icons">
-            <a href="mailto:notaria85marylidia@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." target="_blank" class="social-icon">
-                <img src="../-LOGOS/Correo.png" alt="Correo">
+            <a href="mailto:notaria85marylidia@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." 
+                target="_blank" class="social-icon Correo">                
+                <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59167855097&&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2085,%20en%20que%20podemos%20ayudarle?..." target="_blank" class="social-icon">
+            <a href="https://api.whatsapp.com/send?phone=59167855097&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2085,%20en%20que%20podemos%20ayudarle?..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100054753190776" target="_blank" class="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=100054753190776" target="_blank" 
+            class="social-icon Facebook">
                 <img src="../-LOGOS/FB.png" alt="Facebook">
             </a>
-            <a href="https://maps.app.goo.gl/TVCnsQAY4FEuxzLq6" target="_blank" class="social-icon">
-                <img src="../-LOGOS/Maps.png" alt="Ubicación">
+            <a href="https://maps.app.goo.gl/YjDEi5GR9wF5xAkd9" 
+                target="_blank" class="social-icon Mapa">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Funcionalidad para los dropdowns
-            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
-                    dropdown.classList.toggle('active');
-                    
-                    // Cerrar otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        if (item !== dropdown) {
-                            item.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Cerrar dropdowns al hacer clic fuera
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropdown')) {
-                    document.querySelectorAll('.dropdown').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                }
-            });
+<script src="../-OTROS/despegable.js"></script>
+<script type="module">
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
-            // Efecto de partículas doradas dinámicas
-            const goldParticles = document.querySelector('.gold-particles');
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('gold-particle');
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.width = `${Math.random() * 3 + 1}px`;
-                particle.style.height = particle.style.width;
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                goldParticles.appendChild(particle);
-            }
-        });
-    </script>
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 50,
+        durMax: 30,
+        durMin: 10,
+        aparMax: 60,
+        tamIgual: true,
+        forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'white',
+        r_opacidad: true
+    });
+</script>
+<script type="module">
+    import { createFloatingShapes } from '../-OTROS/particulas_chocan.js';
+
+    const controlador = createFloatingShapes({
+        cantidad: 15,
+        tamMin: 10,
+        tamMax: 60,
+        velMax: 20,
+        multVel: 0.1,
+        forma: 'cuadrado' //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+    });
+
+    setTimeout(() => {
+        console.log("Shapes creados:", document.querySelectorAll(".chocan-logo").length);
+    }, 1000);
+
+    window.addEventListener("click", () => controller.reload());
+
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") controller.stop();
+    });
+</script>
+
 </body>
 </html>
-
-
-
