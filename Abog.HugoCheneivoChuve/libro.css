@@ -718,7 +718,7 @@ li {
 
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
 
     .book {
         width: 95vw;
