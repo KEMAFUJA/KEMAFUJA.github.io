@@ -93,8 +93,7 @@ body {
 }
 
 /* ========= PORTADA ========= */
-#contraportada .back,
-#contraportada .front,
+#p3 .back,
 #portada .front,
 #portada .back {
     background-image: 
