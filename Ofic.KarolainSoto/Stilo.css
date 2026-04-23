@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(0, 0%, 50%); }
-  20%, 80% { background-color: hsl(0, 0%, 40%); } 
-  40%, 60% { background-color: hsl(0, 0%, 30%); }
-  50% { background-color: hsl(0, 0%, 20%); }
+  0%, 100% { background-color: hsl(170, 45%, 30%); }
+  20%, 80% { background-color: hsl(170, 45%, 25%); } 
+  40%, 60% { background-color: hsl(170, 45%, 20%); }
+  50% { background-color: hsl(170, 45%, 15%); }
 }
 
 
@@ -86,13 +86,13 @@
     );
     border-image-slice: 1;
     border-radius: 100%;
-    animation: borderGlow 1s infinite ease-in-out;
+    animation: borderGlow 10s infinite ease-in-out;
 }
 
 @keyframes borderGlow {
-    0% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
-    50% { filter: drop-shadow(0 0 12px var(--gold-tertiary)); }
-    100% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+    0% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
+    50% { filter: drop-shadow(0 0 10px var(--gold-tertiary)); }
+    100% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
 }
 
 
@@ -188,19 +188,19 @@
 }
 
 @keyframes ColorTitulo {
-    0% {filter: drop-shadow(#fff2ae) ; 
+    0% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%) ; 
         color: #987f03;
         }
-    30% {filter: drop-shadow( #d4c67e); 
+    30% {text-shadow: 0 0 7.5px hsl(50, 50%, 60%); 
         color: #ffe76e;
         } 
-    60% {filter: drop-shadow(#c3af50); 
+    60% {text-shadow: 0 0 7.5px hsl(50, 49%, 40%); 
         color: #ffde38;
         }
-    90% {filter: drop-shadow( #ffd500); 
+    90% {text-shadow: 0 0 7.5px hsl(50, 100%, 60%); 
         color: #fff280;
         }
-    100% {filter: drop-shadow(#fff2ae) ; 
+    100% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%); 
         color: #987f03;
         }
 }
