@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(95, 40%, 60%); }
-  20%, 80% { background-color: hsl(95, 40%, 50%); } 
-  40%, 60% { background-color: hsl(95, 40%, 40%); }
-  50% { background-color: hsl(95, 40%, 45%); }
+  0%, 100% { background-color: hsl(49, 100%, 94%); }
+  20%, 80% { background-color: hsl(49, 100%, 96%); }
+  40%, 60% { background-color: hsl(49, 100%, 98%); }
+  50% { background-color: hsl(49, 100%, 100%); }
 }
 
 
@@ -458,7 +458,7 @@ li {
     .intro-text{
         font-size: 0.75rem;
     }
-    
+
     .despegable-toggle {
         font-size: 0.9rem;
             }
