@@ -126,10 +126,19 @@
         </div>
 </div>
         <div class="social-icons">
-            <a href="https://api.whatsapp.com/send?phone=59172951589&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon Whatsapp"> 
-                <img src="../-LOGOS/WA.png" alt="WhatsApp">
-            </a>
+            <div class="whatsapp-despegable">
+                <button class="social-icon" style="border: none;">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
+                </button>
+                <div class="despegable-content">
+                    <a href="https://api.whatsapp.com/send?phone=59172951589&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                        +591 72951589
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=59162658255&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                        +591 62658255
+                    </a>
+                </div>
+            </div>
             <a href="https://maps.app.goo.gl/VfEpsi2WNR7MyTfd7" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
@@ -176,25 +185,5 @@
         if (e.key === "Escape") controller.stop();
     });
 </script>
-<script type="module">
-  import { createTypewriter } from './typewriter.js';
-
-  const writer = createTypewriter({
-    modo: "simultaneo",
-    velocidadEscritura: 80,
-    velocidadBorrado: 30,
-    pausaEscritura: 1000,
-    pausaFinal: 2000,
-    texto1: "HOLA",
-    texto2: "MUNDO"
-  });
-
-  // controles tipo gamer 😏
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") writer.stop();
-    if (e.key === "Enter") writer.restart();
-  });
-</script>
-
 </body>
 </html>
