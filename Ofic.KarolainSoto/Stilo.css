@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(170, 45%, 30%); }
-  20%, 80% { background-color: hsl(170, 45%, 25%); } 
-  40%, 60% { background-color: hsl(170, 45%, 20%); }
-  50% { background-color: hsl(170, 45%, 15%); }
+  0%, 100% { background-color: hsl(95, 40%, 60%); }
+  20%, 80% { background-color: hsl(95, 40%, 50%); } 
+  40%, 60% { background-color: hsl(95, 40%, 40%); }
+  50% { background-color: hsl(95, 40%, 45%); }
 }
 
 
@@ -77,7 +77,7 @@
     width: 55%;
     top: 50%;
     left: 50%;
-    border: 1.5px solid transparent;
+    border: 2px solid transparent;
     border-image: linear-gradient(
         45deg,
         var(--gold-primary),
@@ -91,14 +91,14 @@
 
 @keyframes borderGlow {
     0% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
-    50% { filter: drop-shadow(0 0 10px var(--gold-tertiary)); }
+    50% { filter: drop-shadow(0 0 7.5px var(--gold-tertiary)); }
     100% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
 }
 
 
 /* ===== Card Informacion ===== */
 .card {
-    background: hsla(0, 0%, 100%, 0.25);
+    background: hsla(0, 0%, 100%, 0.5);
     border-radius: 16px;
     width: 100%;
     max-width: 700px;
@@ -172,7 +172,7 @@
     font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
     position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 2px hsla(0, 0%, 0%, 0.5) !important;
     letter-spacing: 2px;
     animation: ColorTitulo 50s ease-in-out infinite;
 }
@@ -188,20 +188,20 @@
 }
 
 @keyframes ColorTitulo {
-    0% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%) ; 
-        color: #987f03;
+    0% {filter: drop-shadow( 0 0 7.5px hsl(50, 100%, 70%) ); 
+        color: hsl(50, 95%, 40%);
         }
-    30% {text-shadow: 0 0 7.5px hsl(50, 50%, 60%); 
-        color: #ffe76e;
+    30% {filter: drop-shadow( 0 0 7.5px hsl(50, 50%, 50%)); 
+        color: hsl(55, 100%, 60%);
         } 
-    60% {text-shadow: 0 0 7.5px hsl(50, 49%, 40%); 
-        color: #ffde38;
+    60% {filter: drop-shadow( 0 0 7.5px hsl(50, 49%, 30%)); 
+        color: hsl(50, 100%, 70%);
         }
-    90% {text-shadow: 0 0 7.5px hsl(50, 100%, 60%); 
-        color: #fff280;
+    90% {filter: drop-shadow( 0 0 7.5px hsl(50, 100%, 50%)); 
+        color: hsl(55, 100%, 60%);
         }
-    100% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%); 
-        color: #987f03;
+    100% {text-shadow: 0 0 7.5px hsl(50, 100%, 70%); 
+        color: hsl(50, 95%, 40%);
         }
 }
 
@@ -226,6 +226,7 @@
 .degradado-animado3 h2 {
     background: linear-gradient(45deg, hsl(0, 0%, 0%), hsla(0, 0%, 20%), hsla(0, 0%, 30%));
     animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+    filter: drop-shadow(0 0 2.5px hsla(0, 0%, 0%, 0.5));
 }
 
 .degradado-animado3 h3 {
@@ -285,10 +286,10 @@
 
 /* ===== Colores de contacto ===== */
 @keyframes backgroundnumwa {
-    0% {color: #00ff59; }
-    33% {color: #005a1f; } 
-    66% {color: #008930; }
-    100% {color: #00ff59; }
+    0% {color: hsl(140, 100%, 15%); }
+    33% {color: hsl(140, 100%, 25%); } 
+    66% {color: hsl(140, 100%, 35%); }
+    100% {color: hsl(140, 100%, 50%); }
 }
 
 @keyframes backgroundFBCORR {
@@ -432,11 +433,11 @@ li {
 @media (max-width: 450px) {
     .card-wrapper::after {
         height: 102%;
-        width: 102%;
+        width: 105%;
     }
 
     .letra{
-        font-size: 3rem;
+        font-size: 2.75rem;
         letter-spacing: 0rem;
     }
 
@@ -445,18 +446,19 @@ li {
     }
     
     .nombre-completo h2 {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
         margin-top: 0px;
             }
             
     .nombre-completo h3 {
-        font-size: 1rem;
+        font-size: 0.75rem;
         margin-top: -30px;
             }
            
     .intro-text{
         font-size: 0.75rem;
     }
+    
     .despegable-toggle {
         font-size: 0.9rem;
             }
@@ -491,7 +493,7 @@ li {
 
 @media (max-width: 380px) {
     .letra{
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
     .letra::after{
@@ -499,7 +501,7 @@ li {
     }
 
     .nombre-completo h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
             
     .nombre-completo h3 {
