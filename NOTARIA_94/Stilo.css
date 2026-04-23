@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(170, 45%, 30%); }
-  20%, 80% { background-color: hsl(170, 45%, 25%); } 
-  40%, 60% { background-color: hsl(170, 45%, 20%); }
-  50% { background-color: hsl(170, 45%, 15%); }
+  0%, 100% { background-color: hsl(234, 100%, 15%); }
+  20%, 80% { background-color: hsl(234, 100%, 20%); } 
+  40%, 60% { background-color: hsl(234, 100%, 26%); }
+  50% { background-color: hsl(234, 100%, 31%); }
 }
 
 
@@ -70,6 +70,7 @@
     100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
 }
 
+
 /* ===== Card borde brillante===== */
 /* ----- Borde brillante ----- */
 .card-wrapper::after {
@@ -86,19 +87,19 @@
     );
     border-image-slice: 1;
     border-radius: 100%;
-    animation: borderGlow 10s infinite ease-in-out;
+    animation: borderGlow 1s infinite ease-in-out;
 }
 
 @keyframes borderGlow {
-    0% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
-    50% { filter: drop-shadow(0 0 10px var(--gold-tertiary)); }
-    100% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
+    0% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+    50% { filter: drop-shadow(0 0 12px var(--gold-tertiary)); }
+    100% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
 }
 
 
 /* ===== Card Informacion ===== */
 .card {
-    background: hsla(0, 0%, 100%, 0.25);
+    background: hsla(0, 0%, 100%, 0.5);
     border-radius: 16px;
     width: 100%;
     max-width: 700px;
@@ -122,6 +123,7 @@
         0 0 60px hsla(46, 65%, 52%, 0.25) inset; }
 }
 
+
 /* ===== Sello ===== */
 .sello-contenedor {
     top: -50px;
@@ -139,7 +141,7 @@
 }
 
 .official-sello::before {
-    content: "REGISTRO CIVIL";
+    content: "NOTARÍA PÚBLICA N°94";
     color: var(--gold-primary);
     text-shadow:0 0 5px hsl(50, 100%, 35%);
     letter-spacing: 10px;
@@ -168,7 +170,7 @@
 }
 
 .letra {
-    font-size: 5.5rem;
+    font-size: 5.75rem;
     font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
     position: relative;
@@ -188,43 +190,41 @@
 }
 
 @keyframes ColorTitulo {
-    0% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%) ; 
+    0% {filter: drop-shadow(#fff2ae) ; 
         color: #987f03;
         }
-    30% {text-shadow: 0 0 7.5px hsl(50, 50%, 60%); 
+    30% {filter: drop-shadow( #d4c67e); 
         color: #ffe76e;
         } 
-    60% {text-shadow: 0 0 7.5px hsl(50, 49%, 40%); 
+    60% {filter: drop-shadow(#c3af50); 
         color: #ffde38;
         }
-    90% {text-shadow: 0 0 7.5px hsl(50, 100%, 60%); 
+    90% {filter: drop-shadow( #ffd500); 
         color: #fff280;
         }
-    100% {text-shadow: 0 0 7.5px hsl(50, 100%, 80%); 
+    100% {filter: drop-shadow(#fff2ae) ; 
         color: #987f03;
         }
 }
 
 /* ===== Nombre ===== */
-.nombre-completo {
-    margin: 10px 0 30px;
-}
-
 .nombre-completo h2 {
-    font-size: 3.25rem;
+    font-size:  2.75rem;
     font-weight: 500;
     letter-spacing: 1px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'FUENTE';
+    margin-top: -2.5%;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
-    
+    z-index: 1;
+    margin-top: -5.5%;
 }
 
 .degradado-animado3 h2 {
-    background: linear-gradient(45deg, hsl(0, 0%, 0%), hsla(0, 0%, 20%), hsla(0, 0%, 30%));
+    background: linear-gradient(45deg, hsl(0, 0%, 0%), hsla(0, 0%, 10%), hsla(0, 0%, 20%));
     animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
 }
 
@@ -258,7 +258,7 @@
 }
 
 .contact-item {
-    background: hsla(0, 0%, 100%, 0.125); 
+    background: hsla(0, 0%, 100%, 0.25); 
     border-radius: 10px; 
     box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.025); 
 }
@@ -381,6 +381,7 @@ li {
     color: var(--gold-primary);
 }
 
+
 /*Galeria*/
 #galeria .button {
     display: inline-block;
@@ -429,15 +430,14 @@ li {
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
     .card-wrapper::after {
         height: 102%;
         width: 102%;
     }
 
     .letra{
-        font-size: 3rem;
-        letter-spacing: 0rem;
+        font-size: 3.5rem;
     }
 
     .letra::after{
@@ -445,17 +445,16 @@ li {
     }
     
     .nombre-completo h2 {
-        font-size: 2.25rem;
-        margin-top: 0px;
+        font-size: 2rem;
+        margin-top: 35px;
             }
             
     .nombre-completo h3 {
-        font-size: 1rem;
-        margin-top: -30px;
+        font-size: 0.75rem;
             }
            
     .intro-text{
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
     .despegable-toggle {
         font-size: 0.9rem;
@@ -491,7 +490,7 @@ li {
 
 @media (max-width: 380px) {
     .letra{
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
 
     .letra::after{
@@ -504,7 +503,6 @@ li {
             
     .nombre-completo h3 {
         font-size: 0.75rem;
-        margin-top: -15px;
     }
     .degradado-animado3 h2,
     .degradado-animado3 h3 {
