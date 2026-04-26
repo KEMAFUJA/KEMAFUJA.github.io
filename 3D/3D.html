@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Logo AR PRO</title>
+<style>
+body { margin:0; overflow:hidden; }
+</style>
+</head>
+
+<body>
+
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158/build/three.module.js';
+import { ARButton } from 'https://cdn.jsdelivr.net/npm/three@0.158/examples/jsm/webxr/ARButton.js';
+
+let camera, scene, renderer, controller;
+let logo;
+
+init();
+
+function init() {
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
+
+    renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.xr.enabled = true;
+    document.body.appendChild(renderer.domElement);
+
+    document.body.appendChild(ARButton.createButton(renderer, {
+        requiredFeatures: ['hit-test'] // 🔥 clave para fijar en el mundo real
+    }));
+
+    const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+    scene.add(light);
+
+    controller = renderer.xr.getController(0);
+    controller.addEventListener('select', onSelect);
+    scene.add(controller);
+
+    // 🔥 Logo como imagen
+    const texture = new THREE.TextureLoader().load('logo.png');
+    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+    const geometry = new THREE.PlaneGeometry(0.3, 0.3);
+    logo = new THREE.Mesh(geometry, material);
+
+    renderer.setAnimationLoop(render);
+}
+
+let hitTestSource = null;
+let localSpace = null;
+let hitTestSourceRequested = false;
+
+function render(timestamp, frame) {
+
+    if (frame) {
+        const referenceSpace = renderer.xr.getReferenceSpace();
+        const session = renderer.xr.getSession();
+
+        if (!hitTestSourceRequested) {
+            session.requestReferenceSpace('viewer').then((space) => {
+                session.requestHitTestSource({ space: space }).then((source) => {
+                    hitTestSource = source;
+                });
+            });
+
+            session.requestReferenceSpace('local').then((space) => {
+                localSpace = space;
+            });
+
+            hitTestSourceRequested = true;
+        }
+
+        if (hitTestSource) {
+            const hitTestResults = frame.getHitTestResults(hitTestSource);
+
+            if (hitTestResults.length > 0) {
+                const hit = hitTestResults[0];
+                const pose = hit.getPose(localSpace);
+
+                if (logo) {
+                    logo.position.set(
+                        pose.transform.position.x,
+                        pose.transform.position.y,
+                        pose.transform.position.z
+                    );
+                }
+            }
+        }
+    }
+
+    renderer.render(scene, camera);
+}
+
+function onSelect() {
+    if (logo) {
+        const clone = logo.clone();
+        clone.position.copy(logo.position);
+        scene.add(clone);
+    }
+}
+</script>
+
+</body>
+</html>
