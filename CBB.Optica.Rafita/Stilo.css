@@ -168,6 +168,44 @@
     }
 }
 
+.letra {
+    font-size: 5.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    animation: ColorTitulo 50s ease-in-out infinite;
+}
+
+.letra::after {
+    content: "";
+    display: block;
+    width: 20%;
+    height: 0.5px;
+    background: linear-gradient(to right, transparent, var(--gold-tertiary), var(--gold-primary), var(--gold-tertiary), transparent);
+    margin: 15px auto;
+    border-radius: 3px;
+}
+
+@keyframes ColorTitulo {
+    0% {filter: drop-shadow(#fff2ae) ; 
+        color: #987f03;
+        }
+    30% {filter: drop-shadow( #d4c67e); 
+        color: #ffe76e;
+        } 
+    60% {filter: drop-shadow(#c3af50); 
+        color: #ffde38;
+        }
+    90% {filter: drop-shadow( #ffd500); 
+        color: #fff280;
+        }
+    100% {filter: drop-shadow(#fff2ae) ; 
+        color: #987f03;
+        }
+}
+
 /* ===== Nombre ===== */
 .nombre-completo {
     margin: 10px 0 30px;
@@ -398,6 +436,10 @@ li {
         width: 102%;
     }
     
+    .letra{
+        font-size: 4.5rem;
+        line-height: 3.75rem;
+    }
     .nombre-completo h2 {
         font-size: 2.125rem;
         margin-top: 35px;
