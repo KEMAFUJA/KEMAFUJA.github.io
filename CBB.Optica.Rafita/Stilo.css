@@ -187,7 +187,7 @@
 }
 
 .degradado-animado3 h2 {
-    background: linear-gradient(45deg, hsla(0, 0%, 100%), hsla(0, 0%, 90%), hsla(0, 0%, 80%));
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.75), hsla(0, 0%, 100%, 1));
     animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
 }
 
@@ -248,10 +248,10 @@
 
 /* ===== Colores de contacto ===== */
 @keyframes backgroundnumwa {
-    0% {color: hsl(140, 100%, 50%); }
-    33% {color: hsl(140, 100%, 20%); } 
-    66% {color: hsl(140, 100%, 25%); }
-    100% {color: hsl(140, 100%, 50%); }
+    0% {color: hsl(140, 0%, 100%); }
+    33% {color: hsl(140, 0%, 95%); } 
+    66% {color: hsl(140, 0%, 90%); }
+    100% {color: hsl(140, 0%, 85%); }
 }
 
 @keyframes backgroundFBCORR {
@@ -277,7 +277,7 @@
 }
 
 .fbcorr {
-    animation: backgroundFBCORR 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
+    animation: backgroundnumwa 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
 }
 
 .fbcorr::after {
