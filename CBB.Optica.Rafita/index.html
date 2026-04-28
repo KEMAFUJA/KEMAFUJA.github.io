@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta property="og:title" content="OPTICA - RAFITA">
+    <meta property="og:description" content="Neysa Siancas Mamani - Optica Oftálmica">
+    <meta property="og:image" content="https://kemafuja.github.io/Optica.Claravision/logo.png">
+    <meta property="og:image:width" content="50">
+    <meta property="og:image:height" content="50">
+    <meta property="og:url" content="https://kemafuja.github.io/Optica.Claravision">
+    <meta name="twitter:card" content="summary_large_image">    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Optica - Rafita</title>
+
+    <link rel="stylesheet" href="Stilo.css">
+    <link rel="stylesheet" href="../-OTROS/General.css">
+</head>
+
+<body>
+<div id="sube-contenedor"></div>
+    
+<div class="card-wrapper">
+    <div class="card">
+
+        <div class="sello-contenedor">
+            <div class="official-sello"></div>
+        </div>
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="nombre-completo degradado-animado3">
+            <h2 class="inline-text">Neysa Siancas Mamani</h2>
+            <h3 class="inline-text">Optica Oftálmica</h3>
+        </div>        
+        
+        <div class="divider"></div>
+
+        <p class="intro-text">Para más información, contáctenos a través de:</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">Teléfono:</p>
+                    <a class="contact-link numwa" href="tel:+59174803195">
+                        <span class="full">+591 74803195</span>
+                        <span class="short">74803195</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div>
+                    <p class="contact-label">WhatsApp:</p>
+                    <a class="contact-link numwa" 
+                        href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20saber%20sobre..." 
+                        target="_blank">
+                        <span class="full">Msj: 74803195</span>
+                        <span class="short">74803195</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item full-width">
+                <div>
+                    <p class="contact-label">Ubicacion:</p>
+                    <a class="contact-link fbcorr correo" 
+                        href="https://maps.app.goo.gl/tzR7SbHJ8VXPt9TY8"> 
+                        aV. San Martin N°472 entre Calama y Jordan
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- UBICACIÓN -->
+        <div class="despegable">
+            <div class="despegable-toggle">Ubicación</div>
+            <div class="content2">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.3354739811407!2d-66.15306958703307!3d-17.395680909357825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373392313cbbb%3A0x6a2e7d1118c267ed!2sOptica%20Rafita!5e0!3m2!1ses-419!2sbo!4v1777416905930!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- HORARIO -->
+        <div class="despegable">
+            <div class="despegable-toggle">Horario de atención</div>
+            <div class="content">
+                <ul>
+                    <li><strong>LUNES A VIERNES:</strong> 9:00 - 19:00</li>
+                    <li><strong>SABADO:</strong> 9:00 - 14:00</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SERVICIOS -->
+        <div class="despegable">
+            <div class="despegable-toggle">Se atiende:</div>
+            <div class="content">
+                <ul>
+                    <li> <strong>FOTOCROMATICO</strong></li>
+                    <li> <strong>POLICARBONATO</strong></li>
+                    <li> <strong>ORGANICO</strong></li>
+                    <li> <strong>ANTIREFLEX</strong></li>
+                    <li> <strong>BIFOCALES Y MULTIFOCALES</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20saber%20sobre..." 
+                target="_blank" class="social-icon"> 
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
+            </a>
+            <a href="https://maps.app.goo.gl/tzR7SbHJ8VXPt9TY8" 
+                target="_blank" class="social-icon">
+                <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="../-OTROS/despegable.js"></script>
+<script type="module">
+    import { createGoldParticles } from '../-OTROS/particulas_suben.js';
+
+    createGoldParticles('#sube-contenedor', {
+        cuantas: 50,
+        tamMax: 30,
+        durMax: 20,
+        durMin: 1,
+        aparMax: 20,
+        tamIgual: true,
+        forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'gold',
+        r_opacidad: true
+    });
+</script>
+</body>
+</html>
