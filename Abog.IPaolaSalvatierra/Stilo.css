@@ -508,7 +508,7 @@ li {
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 405px) {
     .letra{
         font-size: 2.75rem;
         line-height: 2.75rem;
