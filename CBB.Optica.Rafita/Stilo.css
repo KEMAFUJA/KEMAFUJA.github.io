@@ -175,7 +175,7 @@
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
-    animation: ColorTitulo 50s ease-in-out infinite;
+    animation: ColorTitulo 60s ease-in-out infinite;
 }
 
 .letra::after {
@@ -189,20 +189,20 @@
 }
 
 @keyframes ColorTitulo {
-    0% {filter: drop-shadow(#fff2ae) ; 
-        color: #987f03;
+    0% {filter: drop-shadow(0 0 5px hsl(50, 0%, 5%, 0.5)) ; 
+        color: hsl(50, 0%, 0%);
         }
-    30% {filter: drop-shadow( #d4c67e); 
-        color: #ffe76e;
+    30% {filter: drop-shadow(0 0 5px hsl(50, 0%, 10%, 0.5)); 
+        color: hsl(50, 0%, 5%);
         } 
-    60% {filter: drop-shadow(#c3af50); 
-        color: #ffde38;
+    60% {filter: drop-shadow(0 0 5px hsl(50, 0%, 15% 0.5)); 
+        color: hsl(50, 0%, 10%);
         }
-    90% {filter: drop-shadow( #ffd500); 
-        color: #fff280;
+    90% {filter: drop-shadow(0 0 5px  hsl(50, 0%, 20%, 0.5)); 
+        color: hsl(54, 0%, 15%);
         }
-    100% {filter: drop-shadow(#fff2ae) ; 
-        color: #987f03;
+    100% {filter: drop-shadow(0 0 5px hsl(50, 0%, 25%, 0.5)) ; 
+        color: hsl(50, 0%, 20%);
         }
 }
 
