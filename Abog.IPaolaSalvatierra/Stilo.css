@@ -441,17 +441,16 @@ li {
 
 /* ===== Iconos sociables ===== */
 .social-icons {
-    gap: 15px;
-    margin-left: 40px;
+    gap: 1rem;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .social-icon {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: hsla(0, 0%, 100%, 0.7);
-    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+
 }
 
 .social-icon:hover {
@@ -460,8 +459,56 @@ li {
 }
 
 .social-icon img {
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
+}
+         
+
+.Whatsapp { 
+    background-color: #25D366;
+    filter: drop-shadow(0 10px 5px #008000); 
+}
+
+.Telegram { 
+    background-color: #ffffff;
+    filter: drop-shadow(0 10px 5px #006699); 
+}
+
+.Facebook { 
+    background-color: #3B5998; 
+    filter: drop-shadow(0 10px 5px #3B5998);
+}
+
+.Instagram { 
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    filter: drop-shadow(0 5px 2.5px #405DE6)
+            drop-shadow(0 5px 5px #5851DB); 
+}
+
+.Youtube { 
+    background-color: #FF0000; 
+    filter: drop-shadow(0 10px 5px #c10000);
+}
+
+.Tiktok { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 5px 2.5px #40e6e6)
+            drop-shadow(0 5px 5px #db5151); 
+}
+
+.Correo { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #303030); 
+}
+
+.Mapa { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #960000); 
+}
+
+.Telefono { 
+    background-color: #ffffff;
+    filter: drop-shadow(0 10px 5px #006699); 
 }
 
 
@@ -523,6 +570,15 @@ li {
         font-size: 0.85rem;
         letter-spacing: 1px;
         line-height: 0.75rem;
+    }
+
+        .social-icons{
+        gap: 0.5rem;
+    }
+
+    .social-icon {
+    width: 2rem;
+    height: 2rem;
     }
 }
 
