@@ -279,7 +279,7 @@ body {
 }
 
 .full { display: inline; }
-.short { display: none; word-spacing: -6px;}
+.short { display: none;}
 
 
 /* ----- Efectos de enlace ----- */
@@ -536,4 +536,3 @@ iframe {
     }
 
 }
-
