@@ -516,7 +516,7 @@ li {
 
 @media (max-width: 380px) {
     .letra{
-        font-size: 3.25rem;
+        font-size: 3rem;
         line-height: 3.25rem;
     }
 
@@ -542,7 +542,8 @@ li {
     .intro-text,
     .contact-label,
     .contact-link{
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+
     }
 
     .correo{
