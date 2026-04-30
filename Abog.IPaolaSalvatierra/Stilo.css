@@ -91,6 +91,17 @@ body{
     100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
 }
 
+    .logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30% !important;
+        opacity: 0.5 !important;
+        z-index: -10;
+        pointer-events: none;
+    }
+
 /* ===== Card Informacion ===== */
 .card {
     background: hsla(0, 0%, 0%, 0.75);
@@ -184,7 +195,7 @@ body{
     font-size: 7rem;
     font-family: 'FUENTE2';
     font-weight: 100;
-    margin-top: -15%;
+    margin-top: 0%;
     margin-bottom: 10px;
     line-height: 7rem;
     position: relative;
@@ -203,6 +214,12 @@ body{
     border-radius: 3px;
 }
 
+.Est{
+    font-size: 2rem;
+    color: whitesmoke;
+    margin-bottom: 1.25%;
+    font-family: 'FUENTE2';
+}
 @keyframes ColorTitulo {
     0% {filter: drop-shadow(0 0 5px #fff2ae) ; 
         color: #987f03;
@@ -348,6 +365,7 @@ body{
     max-width: 400px;
     margin-bottom: 10px;
     margin-left: 20.25%;
+    z-index: 10;
 }
 
 .despegable:hover {
@@ -452,11 +470,17 @@ li {
         height: 102%;
         width: 102%;
     }
-    
+    .logo {
+        width: 70% !important;
+    }
     .letra{
         font-size: 3.75rem;
         line-height: 3.75rem;
-        margin-top: -15%;
+        margin-top: 3%;
+    }
+    .Est{
+        margin-top: 5%;
+        font-size: 1.5rem;
     }
     .nombre-completo h2 {
         font-size: 1.5rem;
@@ -507,7 +531,11 @@ li {
     .letra{
         font-size: 2.5rem;
         line-height: 2.75rem;
-        margin-top: -15%;
+        margin-top: 2%;
+    }
+    .Est{
+        margin-top: 5%;
+        font-size: 1.25rem;
     }
     .nombre-completo h2 {
         font-size: 1rem;
