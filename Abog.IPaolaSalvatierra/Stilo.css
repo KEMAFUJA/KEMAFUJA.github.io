@@ -222,11 +222,6 @@ body{
 }
 
 /* ===== Nombre ===== */
-@font-face {
-  font-family: 'FUENTE';
-  src: url('../-LETRAS/fonts/MajorMonoDisplay-Regular.ttf');
-}
-
 /*Nombre */
 .nombre-completo {
     margin: 10px 0 30px;
