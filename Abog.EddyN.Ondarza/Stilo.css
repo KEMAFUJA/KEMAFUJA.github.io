@@ -157,7 +157,7 @@
 }
 
 .official-sello::before {
-    content: "KEMAFUJA Estilista";
+    content: "Eddy N. Ondarza Pelaez";
     color: var(--gold-primary);
     text-shadow:0 0 5px hsl(50, 100%, 35%);
     letter-spacing: 0.5rem;
@@ -186,11 +186,6 @@
 }
 
 /* ===== Nombre ===== */
-@font-face {
-  font-family: 'FUENTE';
-  src: url('../../-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
-}
-
 /*Nombre */
 .nombre-completo h2 {
     font-size: 5rem;
@@ -601,8 +596,9 @@ li {
     }
 
     .official-sello::before {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
         letter-spacing: 1px;
+        line-height: 0.5rem;
     }
 
     
