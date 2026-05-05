@@ -169,11 +169,6 @@
 }
 
 /* ===== Nombre ===== */
-@font-face {
-  font-family: 'FUENTE';
-  src: url('../../-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
-}
-
 /*Nombre */
 .nombre-completo h2 {
     font-size: 5rem;
