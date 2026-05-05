@@ -1,14 +1,9 @@
-/* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0% { background-color: hsl(175, 100%, 35%); }
-  20% { background-color: hsl(175, 100%, 30%); } 
-  40% { background-color: hsl(175, 100%, 25%); } 
+  0%, 100% { background-color: hsl(175, 100%, 35%); }
+  20%, 80% { background-color: hsl(175, 100%, 30%); } 
+  40%, 60% { background-color: hsl(175, 100%, 25%); } 
   50% { background-color: hsl(175, 100%, 20%); } 
-  60% { background-color: hsl(175, 100%, 25%); } 
-  80% { background-color: hsl(175, 100%, 30%); } 
-  100% { background-color:hsl(175, 100%, 35%); }
 }
-
 
 /* ===== Sube ===== */
 .sube-particle {
@@ -73,7 +68,6 @@
     100% { filter: drop-shadow(0 0 3px var(--particle-color)); }
 }
 
-
 /* ===== Card borde brillante===== */
 /* ----- Borde brillante ----- */
 .card-wrapper::after {
@@ -126,7 +120,6 @@
         0 0 60px rgba(212, 175, 55, 0.5) inset; }
 }
 
-
 /* ===== Sello ===== */
 .sello-contenedor {
     top: -50px;
@@ -165,12 +158,13 @@
 
 @keyframes brillo {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 5px hsla(51, 100%, 50%, 0.2);
     }
     50% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+        box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.9);
     }
 }
+
 
 /* ===== Nombre ===== */
 @font-face {
@@ -179,17 +173,14 @@
 }
 
 /*Nombre */
-.nombre-completo {
-    margin: 10px 0 30px;
-    position: relative;
-    text-align: center;
-}
-
 .nombre-completo h2 {
     font-size: 4.25rem;
     font-weight: 400;
     letter-spacing: 1px;
     font-family: 'FUENTE';
+    margin-top: -2.5%;
+    margin-bottom: -2.5%;
+    z-index: -1;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
@@ -199,13 +190,24 @@
 }
 
 .degradado-animado3 h2 {
-    background: linear-gradient(45deg, hsla(0, 0%, 0%), hsla(0, 0%, 20%), hsla(0, 0%, 30%));
-    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+    background: linear-gradient(45deg,
+                                hsla(60, 0%, 20%, 0.5),
+                                hsl(60, 0%, 25%),
+                                hsl(60, 0%, 50%),
+                                hsl(60, 0%, 25%),
+                                hsl(60, 0%, 20%, 0.5));
+    animation: animacion-degradado 10s infinite, animacion-aparicion 1.5s ease-in;
 }
 
 .degradado-animado3 h3 {
-    background: linear-gradient(45deg, hsl(245, 100%, 20%, 0.75), hsl(245, 100%, 30%, 0.5), hsl(245, 100%, 40%, 0.25));
-    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+    background: linear-gradient(45deg,
+                                hsla(245, 100%, 20%, 0.5),
+                                hsl(245, 100%, 25%),
+                                hsl(245, 100%, 50%),
+                                hsl(245, 100%, 25%),
+                                hsl(245, 100%, 20%, 0.5));
+    opacity: 0.75;
+    animation: animacion-degradado 10s infinite reverse;
 }
 
 /* ===== Linea divisoria ===== */
@@ -233,9 +235,9 @@
 }
 
 .contact-item {
-    background: rgba(255, 255, 255, 0.125); 
+    background: hsla(0, 0%, 100%, 0.125); 
     border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.025); 
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.025); 
 }
 
 .contact-item.full-width {
@@ -299,17 +301,17 @@
 
 /* ===== Despegables ===== */
 .despegable {
-    background: rgba(255, 255, 255, 0.125);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background: hsla(0, 0%, 100%, 0.125);
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.05);
     border-radius: 10px;
+    width: 100%;
     max-width: 400px;
-    margin-bottom: 10px;
-    margin-left: 17.5%;
+    margin: 0 0 10px 0;
 }
 
 .despegable:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.15);
+    background: hsla(0, 0%, 100%, 0.25);
 }
 
 .despegable-toggle {
@@ -325,7 +327,7 @@
 }
 
 .content, .content2 {
-    background: rgba(255, 255, 255, 0.14);
+    background: hsla(0, 0%, 100%, 0.14);
 }
 
 .despegable.active .content,
@@ -336,7 +338,7 @@
 li {
     color: var(--text-dark);
     font-size: 0.95rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
 }
 
 .submenu > ul {
@@ -357,57 +359,81 @@ li {
 
 /* ===== Iconos sociables ===== */
 .social-icons {
-    gap: 15px;
-    margin-left: 40px;
+    gap: 1rem;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .social-icon {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .social-icon:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
     background: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary));
 }
 
 .social-icon img {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
+}
+         
+.Whatsapp { 
+    background-color: #25D366;
+    filter: drop-shadow(0 10px 5px #008000); 
+}
+
+.Correo { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #303030); 
+}
+
+.Mapa { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #960000); 
 }
 
 
 @media (max-width: 450px) {
     .card-wrapper::after {
         height: 102%;
-        width: 102%;
+        width: 104%;
     }
     
     .nombre-completo h2 {
-        font-size: 3rem;
-        margin-top: 35px;
-        line-height: 2.5rem;
+        font-size: 2.75rem;
+        line-height: 2.7rem;
+        margin-bottom: -1.5%;
     }
             
     .nombre-completo h3 {
-        font-size: 1rem;
+        font-size: 1.25rem;
+        
     }
            
-    .despegable-toggle {
-        font-size: 0.9rem;
-    }
-            
-    .correo{
-        font-size: 1rem;
+    .intro-text{
+        font-size: 0.75rem;
     }
 
-    .content li, 
-    .content li strong{
+    .despegable-toggle {
         font-size: 0.9rem;
+            }
+    
+    .contact-label,
+    .contact-link,
+    .despegable-toggle,
+    li{
+        font-size: 0.8rem;
+    }
+
+    .contact-label{
+        margin-bottom: -1.5%;
+    }
+    .correo{
+        font-size: 0.8rem;
     }
 
     .sello-contenedor {
@@ -416,29 +442,38 @@ li {
     }
 
     .official-sello{
-        height: 70%;
-        width: 70%;
+        height: 80%;
+        width: 80%;
     }
 
     .official-sello::before {
-        font-size: 0.4rem;
+        font-size: 0.75rem;
         letter-spacing: 1px;
-        line-height: 0.5rem;
     }
+
+    .social-icons{
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    }
+
+
 }
 
 
 @media (max-width: 380px) {
     .nombre-completo h2 {
-        font-size: 2.75rem;
+        font-size: 2rem;
+        line-height: 1.75rem;
+        margin-bottom: 1%;
     }
             
     .nombre-completo h3 {
         font-size: 1rem;
-    }
-    .degradado-animado3 h2,
-    .degradado-animado3 h3 {
-        background-size: 100% 100%;
     }
     .intro-text,
     .contact-label,
@@ -473,4 +508,10 @@ li {
         font-size: 0.65rem;
         letter-spacing: 1px;
     }
+
+    .social-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    }
+   
 }
