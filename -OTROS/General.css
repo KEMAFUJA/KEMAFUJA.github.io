@@ -148,7 +148,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-transform: uppercase;
 }
 
 .official-sello::after {
@@ -204,13 +203,8 @@ body {
     text-align: center;
 }
 
-.nombre-completo h2 {
-    margin: 0;
-}
-
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
-    margin: 0px;
     display: inline;
 }
 
@@ -235,12 +229,18 @@ body {
     opacity: 1; }
 }
 
+@keyframes animacion-aparicion2 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes animacion-sombra {
     0%, 100% { filter: drop-shadow(0 5px 2.5px hsl(0, 0%, 0%, 0.25)); }
     20%, 80% { filter: drop-shadow(0 10px 2.5px hsla(0, 0%, 100%, 0.25)); }
     40%, 60% { filter: drop-shadow(0 15px 2.5px hsl(0, 0%, 0%, 0.25)); }
     50% { filter: drop-shadow(0 15px 2.5px hsla(0, 0%, 100%, 0.25)); }
 }
+
 
 /* ===== Cajas de contacto ===== */
 .contact-grid {
@@ -279,7 +279,7 @@ body {
 }
 
 .full { display: inline; }
-.short { display: none;}
+.short { display: none; word-spacing: -6px;}
 
 
 /* ----- Efectos de enlace ----- */
@@ -306,6 +306,13 @@ body {
 }
 
 /* ===== Despegables ===== */
+.despegables-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 CENTRADO REAL */
+}
+ 
 .despegable {
     overflow: hidden;
     transition: all 0.3s ease;
@@ -506,8 +513,7 @@ iframe {
     }
     
     .despegable {
-        max-width: 300px;
-        margin-left: 7.5%;
+        max-width: 250px;
     }
 
     .content2 iframe {
@@ -531,8 +537,8 @@ iframe {
     .short { display: inline; }  
     
     .despegable {
-        max-width: 250px;
-        margin-left: 2.5%;
+        max-width: 200px;
     }
 
 }
+
