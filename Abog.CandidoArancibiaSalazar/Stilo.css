@@ -407,6 +407,7 @@ li {
         font-size: 2.75rem;
         line-height: 2.7rem;
         margin-bottom: -1.5%;
+        margin-top: 5%;
     }
             
     .nombre-completo h3 {
@@ -460,10 +461,7 @@ li {
     width: 2.75rem;
     height: 2.75rem;
     }
-
-
 }
-
 
 @media (max-width: 380px) {
     .nombre-completo h2 {
