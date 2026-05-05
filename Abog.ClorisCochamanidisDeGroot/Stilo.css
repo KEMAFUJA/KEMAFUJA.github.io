@@ -8,7 +8,7 @@
 
 /* ===== Sube ===== */
 .sube-particle {
-    opacity: 0.25;
+    opacity: 1;
 }
 /* ----- FORMAS ----- */
 .s-circulo {
@@ -149,7 +149,7 @@
     border: 2px dotted var(--gold-primary);
     font-size: 0.75rem;
     font-weight: bold;
-    font-family: 'FUENTE';
+    text-transform: uppercase;
 }
 
 .official-sello::after {
@@ -169,17 +169,21 @@
 }
 
 /* ===== Nombre ===== */
-
-/*Nombre */
-.nombre-completo {
-    margin: 10px 0 30px;
+@font-face {
+  font-family: 'FUENTE';
+  src: url('../../-LETRAS/fonts/Ballet-Regular-VariableFont_opsz.ttf');
 }
 
+/*Nombre */
 .nombre-completo h2 {
     font-size: 5rem;
+    line-height: 4.25rem;
     font-weight: 500;
     letter-spacing: 1px;
     font-family: 'FUENTE';
+    margin-top: -2.5%;
+    margin-bottom: 0%;
+    z-index: -1;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
@@ -189,13 +193,24 @@
 }
 
 .degradado-animado3 h2 {
-    background: linear-gradient(45deg, hsla(0, 0%, 0%), hsla(0, 0%, 20%), hsla(0, 0%, 30%));
-    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+    background: linear-gradient(45deg,
+                                hsla(60, 0%, 20%, 0.5),
+                                hsl(60, 0%, 25%),
+                                hsl(60, 0%, 50%),
+                                hsl(60, 0%, 25%),
+                                hsl(60, 0%, 20%, 0.5));
+    animation: animacion-degradado 10s infinite, animacion-aparicion 1.5s ease-in;
 }
 
 .degradado-animado3 h3 {
-    background: linear-gradient(45deg, hsl(245, 100%, 20%, 0.75), hsl(245, 100%, 30%, 0.5), hsl(245, 100%, 40%, 0.25));
-    animation: animacion-degradado 6s infinite alternate linear, animacion-aparicion 1.5s ease-in;
+    background: linear-gradient(45deg,
+                                hsla(245, 100%, 20%, 0.5),
+                                hsl(245, 100%, 25%),
+                                hsl(245, 100%, 50%),
+                                hsl(245, 100%, 25%),
+                                hsl(245, 100%, 20%, 0.5));
+    opacity: 0.75;
+    animation: animacion-degradado 10s infinite reverse;
 }
 
 /* ===== Linea divisoria ===== */
@@ -292,9 +307,9 @@
     background: hsla(0, 0%, 100%, 0.125);
     box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.05);
     border-radius: 10px;
+    width: 100%;
     max-width: 400px;
-    margin-bottom: 10px;
-    margin-left: 20.25%;
+    margin: 0 0 10px 0;
 }
 
 .despegable:hover {
@@ -346,41 +361,19 @@ li {
     color: var(--gold-primary);
 }
 
-/*Galeria*/
-#galeria .button {
-    display: inline-block;
-    margin-left: auto;
-    padding: 5px 20px;
-    background-color: transparent; /* Fondo transparente */
-    color: #333; /* Color de texto neutro */
-    border: 2px solid #333; /* Borde fino */
-    border-radius: 5px; /* Bordes suaves */
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-}
-
-#galeria .button:hover {
-    background-color: #333; /* Fondo al pasar mouse */
-    color: #fff; /* Texto blanco al hover */
-    transform: translateY(-2px); /* Sutil elevación */
-}
 
 /* ===== Iconos sociables ===== */
 .social-icons {
-    gap: 15px;
-    margin-left: 40px;
+    gap: 1rem;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .social-icon {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    background: hsla(0, 0%, 100%, 0.7);
-    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+
 }
 
 .social-icon:hover {
@@ -389,38 +382,61 @@ li {
 }
 
 .social-icon img {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
+}
+         
+
+.Whatsapp { 
+    background-color: #25D366;
+    filter: drop-shadow(0 10px 5px #008000); 
 }
 
+.Correo { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #303030); 
+}
+
+.Mapa { 
+    background-color: #ffffff; 
+    filter: drop-shadow(0 10px 5px #960000); 
+}
 
 @media (max-width: 450px) {
     .card-wrapper::after {
         height: 102%;
-        width: 102%;
+        width: 104%;
     }
     
     .nombre-completo h2 {
-        font-size: 3.5rem;
-        margin-top: 35px;
-            }
+        font-size: 2.4rem;
+        line-height: 1.75rem;
+        margin-top: 5%;
+    }
             
     .nombre-completo h3 {
         font-size: 1rem;
-            }
+    }
            
-
+    .intro-text{
+        font-size: 0.75rem;
+    }
     .despegable-toggle {
         font-size: 0.9rem;
             }
-            
-    .correo{
-        font-size: 1rem;
+    
+    .contact-label,
+    .contact-link,
+    .despegable-toggle,
+    li{
+        font-size: 0.85rem;
     }
 
-    .content li, 
-    .content li strong{
-        font-size: 0.9rem;
+    .contact-label{
+        margin-bottom: -1.5%;
+    }
+    .correo{
+        font-size: 0.85rem;
     }
 
     .sello-contenedor {
@@ -434,21 +450,33 @@ li {
     }
 
     .official-sello::before {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        line-height: 0.65rem;
         letter-spacing: 1px;
     }
+
+    .social-icons{
+        gap: 1rem;
+    }
+
+    .social-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-top: -1rem;
+    }
+
 
 }
 
 
 @media (max-width: 380px) {
     .nombre-completo h2 {
-        font-size: 2.75rem;
-        line-height: 2.5rem;
+        font-size: 1.75rem;
+        line-height: 1.25rem;
     }
             
     .nombre-completo h3 {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
     .degradado-animado3 h2,
     .degradado-animado3 h3 {
@@ -484,10 +512,18 @@ li {
     }
 
     .official-sello::before {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
         letter-spacing: 1px;
-        line-height: 0.5rem;
     }
 
+    .social-icons{
+        gap: 0.75rem;
+    }
 
+    .social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: -1rem;
+    }
+   
 }
