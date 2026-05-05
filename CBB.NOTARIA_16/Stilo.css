@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(234, 100%, 100%); }
-  20%, 80% { background-color: hsl(234, 100%, 95%); } 
-  40%, 60% { background-color: hsl(234, 100%, 90%); }
-  50% { background-color: hsl(234, 100%, 85%); }
+  0%, 100% { background-color: hsl(234, 0%, 100%); }
+  20%, 80% { background-color: hsl(234, 0%, 75%); } 
+  40%, 60% { background-color: hsl(234, 0%, 25%); }
+  50% { background-color: hsl(234, 100%, 0%); }
 }
 
 
@@ -80,9 +80,9 @@
     border: 1.5px solid transparent;
     border-image: linear-gradient(
         45deg,
-        var(--gold-primary),
-        var(--gold-tertiary),
-        var(--gold-primary)
+        hsl(0, 0%, 0%),
+        hsl(0, 0%, 10%),
+        hsl(0, 0%, 0%)
     );
     border-image-slice: 1;
     border-radius: 100%;
@@ -90,20 +90,20 @@
 }
 
 @keyframes borderGlow {
-    0% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
-    50% { filter: drop-shadow(0 0 12px var(--gold-tertiary)); }
-    100% { filter: drop-shadow(0 0 4px var(--gold-primary)); }
+    0% { filter: drop-shadow(0 0 4px hsl(0, 0%, 0%)); }
+    50% { filter: drop-shadow(0 0 12px hsl(0, 0%, 10%)); }
+    100% { filter: drop-shadow(0 0 4px hsl(0, 0%, 0%)); }
 }
 
 
 /* ===== Card Informacion ===== */
 .card {
-    background: hsla(0, 0%, 100%, 0.25);
+    background: hsla(0, 0%, 100%, 0.15);
     border-radius: 16px;
     width: 100%;
     max-width: 700px;
     padding: 40px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     animation: boxShadowCard 10s infinite ease-in-out;
 }
 
@@ -111,15 +111,15 @@
   0%, 100% { box-shadow:
         0 10px 50px hsla(0, 0%, 0%, 0.75),
         0 0 0 1px hsla(0, 0%, 100%, 0.25) inset,
-        0 0 20px hsla(45, 65%, 50%, 0.25) inset; }
+        0 0 20px hsla(45, 65%, 0%, 0.25) inset; }
  25%,  75% { box-shadow:
         0 10px 50px hsla(0, 0%, 0%, 0.5),
         0 0 0 1px hsla(0, 0%, 100%, 0.125) inset,
-        0 0 40px hsla(45, 65%, 50%, 0.25) inset; }
+        0 0 40px hsla(45, 65%, 10%, 0.25) inset; }
  50% { box-shadow:
         0 10px 50px hsla(0, 0%, 0%, 0.25),
         0 0 0 1px hsla(0, 0%, 100%, 0.025) inset,
-        0 0 60px hsla(45, 65%, 50%, 0.25) inset; }
+        0 0 60px hsla(45, 65%, 15%, 0.25) inset; }
 }
 
 /* ----- Luz interna giratoria  ----- */
@@ -149,17 +149,18 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    border: 1.5px solid var(--gold-primary);
+    border: 1.5px solid hsl(0, 0%, 0%);
+    
 }
 
 .official-sello::before {
-    content: "NOTARÍA PÚBLICA N°118";
-    color: var(--gold-primary);
-    text-shadow:0 0 5px hsl(50, 100%, 35%);
+    content: "NOTARÍA PÚBLICA N°16";
+    color: hsl(0, 0%, 0%);
+    text-shadow:0 0 5px hsl(50, 100%, 0%);
     letter-spacing: 10px;
     line-height: 0.75rem;
     border-radius: 50%;
-    border: 2px dotted var(--gold-primary);
+    border: 2px dotted hsl(0, 0%, 0%);
     font-size: 0.85rem;
     font-weight: bold;
 
@@ -167,14 +168,14 @@
 
 .official-sello::after {
     border-radius: 50%;
-    border: 1.5px solid var(--gold-primary);
+    border: 1.5px solid hsl(0, 0%, 0%);
     inset: 10px;
     animation: brillo 60s infinite ease-in-out;
 }
 
 @keyframes brillo {
     0%, 100% {
-        box-shadow: 0 0 5px hsla(51, 100%, 30%, 0.9);
+        box-shadow: 0 0 5px hsla(51, 100%, 10%, 0.9);
     }
     50% {
         box-shadow: 0 0 20px hsla(51, 100%, 0%, 0.9);
@@ -196,26 +197,26 @@
     display: block;
     width: 20%;
     height: 0.5px;
-    background: linear-gradient(to right, transparent, var(--gold-tertiary), var(--gold-primary), var(--gold-tertiary), transparent);
+    background: linear-gradient(to right, transparent, hsl(0, 0%, 10%), hsl(0, 0%, 0%), hsl(0, 0%, 10%), transparent);
     margin: 15px auto;
     border-radius: 3px;
 }
 
 @keyframes ColorTitulo {
-    0% {filter: drop-shadow(0 0 2.5px #fff2ae) ; 
-        color: #987f03;
+    0% {filter: drop-shadow(0 0 2.5px hsl(0, 0%, 20%, 0.5)) ; 
+        color: hsl(0, 0%, 0%);
         }
-    30% {filter: drop-shadow(0 0 2.5px #d4c67e); 
-        color: #ffe76e;
+    30% {filter: drop-shadow(0 0 2.5px hsl(0, 0%, 15%, 0.5)); 
+        color: hsl(0, 0%, 10%);
         } 
-    60% {filter: drop-shadow(0 0 2.5px #c3af50); 
-        color: #ffde38;
+    60% {filter: drop-shadow(0 0 2.5px hsl(0, 0%, 10%, 0.5)); 
+        color: hsl(0, 0%, 15%);
         }
-    90% {filter: drop-shadow(0 0 2.5px #ffd500); 
-        color: #fff280;
+    90% {filter: drop-shadow(0 0 2.5px hsl(0, 0%, 0%, 0.5)); 
+        color: hsl(0, 0%, 12.5%);
         }
-    100% {filter: drop-shadow(0 0 2.5px #fff2ae) ; 
-        color: #987f03;
+    100% {filter: drop-shadow(0 0 2.5px hsl(0, 0%, 20%, 0.5)) ; 
+        color: hsl(0, 0%, 0%);
         }
 }
 
@@ -258,7 +259,7 @@
 /* ===== Linea divisoria ===== */
 .divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+    background: linear-gradient(to right, transparent, hsl(0, 0%, 0%), transparent);
     margin: 20px auto;
     width: 100%;
 }
@@ -364,11 +365,11 @@
 }
 
 .despegable-toggle:hover {
-    color: var(--gold-primary);
+    color: hsl(0, 0%, 0%);
 }
 
 .despegable-toggle::after {
-    color: var(--gold-primary);
+    color: hsl(0, 0%, 0%);
 }
 
 .content, .content2 {
@@ -400,7 +401,7 @@ li {
 }
 
 .submenu > strong:hover {
-    color: var(--gold-primary);
+    color: hsl(0, 0%, 0%);
 }
 
 /*Galeria*/
@@ -442,7 +443,7 @@ li {
 
 .social-icon:hover {
     box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
-    background: linear-gradient(45deg, var(--gold-primary), var(--gold-tertiary));
+    background: linear-gradient(45deg, hsl(0, 0%, 0%), hsl(0, 0%, 10%));
 }
 
 .social-icon img {
@@ -466,7 +467,7 @@ li {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
     .card-wrapper::after {
         height: 102%;
         width: 102%;
@@ -542,6 +543,11 @@ li {
 
 
 @media (max-width: 380px) {
+    .card-wrapper::after {
+        height: 102%;
+        width: 105%;
+    }
+
     .letra{
         font-size: 2.5rem;
     }
@@ -599,7 +605,7 @@ li {
     }
 
     .official-sello::before {
-        font-size: 0.5rem;
+        font-size: 0.55rem;
         letter-spacing: 5px;
         line-height: 0.5rem;
     }
