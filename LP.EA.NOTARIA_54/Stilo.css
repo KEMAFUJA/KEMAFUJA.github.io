@@ -299,20 +299,6 @@
     font-weight: 500;
 }
 
-/* ===== Colores de contacto ===== */
-@keyframes backgroundnumwa {
-    0% {color: #00ff59; }
-    33% {color: #005a1f; } 
-    66% {color: #008930; }
-    100% {color: #00ff59; }
-}
-
-@keyframes backgroundFBCORR {
-    0% {color: #1100ff; }
-    33% {color: #06005a; } 
-    66% {color: #090084; }
-    100% {color: #1100ff; }
-}
 
 /* ===== Palpito ===== */
 @keyframes palpito {
@@ -320,17 +306,14 @@
     50% { transform: scale(1.01); }
 }
 /* ----- Efectos de enlace ----- */
-.numwa {
-    animation: backgroundnumwa 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
+.numwa,
+.fbcorr {
+    color:white;
 }
 
 .numwa::after {
     background: var(--accent-green);
     opacity: 0.5;
-}
-
-.fbcorr {
-    animation: backgroundFBCORR 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
 }
 
 .fbcorr::after {
