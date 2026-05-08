@@ -306,7 +306,11 @@
     50% { transform: scale(1.01); }
 }
 /* ----- Efectos de enlace ----- */
-.numwa,
+.numwa {
+    color:black;
+}
+
+
 .fbcorr {
     color:white;
 }
@@ -458,10 +462,11 @@ li {
     .despegable-toggle,
     li{
         font-size: 0.85rem;
+        
     }
 
     .correo{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .sello-contenedor {
