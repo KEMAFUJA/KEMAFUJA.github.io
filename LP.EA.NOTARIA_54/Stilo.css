@@ -381,28 +381,6 @@ li {
     color: hsl(0, 0%, 0%);
 }
 
-/*Galeria*/
-#galeria .button {
-    display: inline-block;
-    margin-left: auto;
-    padding: 5px 20px;
-    background-color: transparent; /* Fondo transparente */
-    color: #333; /* Color de texto neutro */
-    border: 2px solid #333; /* Borde fino */
-    border-radius: 5px; /* Bordes suaves */
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-}
-
-#galeria .button:hover {
-    background-color: #333; /* Fondo al pasar mouse */
-    color: #fff; /* Texto blanco al hover */
-    transform: translateY(-2px); /* Sutil elevación */
-}
-
 /* ===== Iconos sociables ===== */
 .social-icons {
     gap: 15px;
@@ -419,8 +397,7 @@ li {
 }
 
 .social-icon:hover {
-    box-shadow: 0 8px 20px hsla(0, 0%, 0%, 0.15);
-    background: linear-gradient(45deg, hsl(0, 0%, 0%), hsl(0, 0%, 10%));
+    background: linear-gradient(45deg, hsl(55, 100%, 50%), hsl(55, 100%, 30%));
 }
 
 .social-icon img {
