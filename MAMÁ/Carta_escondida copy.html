@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Invitación Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="carta copy.css">
+</head>
+
+<body>
+
+<div class="intro">Presiona la pantalla para empezar</div>
+<div id="mensajeContinuar" class="mensaje-continuar">
+    PRESIONA LA PANTALLA DE NUEVO
+</div>
+<div id="mensajeScratch" class="mensaje-scratch">
+    ✨ Desliza para revelar la carta
+</div>
+<div id="cursor" class="cursor-luz"></div>
+
+<div id="carta" class="carta">
+    <h1>🎉 Hoy es un dia especial para ti, es tu cumpleaños 🎉</h1>
+
+    <div class="mensaje">
+        <p class="intro-text">
+            Solo recuerda lo bueno, bonito y especial para ti...<br>
+            Solo tu sabes por lo que pasaste, eres fuerte y sabia, eso lo valoro mucho...<br><br>
+            Se que a veces te hago renegar, perdon por esos momentos...<br><br>
+        </p>
+        <div class="acrostico">
+            <div class="linea"><span>J</span><p>unto a ti siento tranquilidad al saber que estas bien</p></div>
+            <div class="linea"><span>E</span><p>stando lejos de ti tu me alientas y me apoyas</p></div>
+            <div class="linea"><span>N</span><p>o olvides lo mucho que te Amo</p></div>
+            <div class="linea"><span>N</span><p>unca, jamas lo hagas, aunque no lo demuestre</p></div>
+            <div class="linea"><span>Y</span><p>o siempre estare ahi para ti como siempre</p></div>
+            <br>
+            <div class="linea"><span>M</span><p>e enseñaste que amar es demostrar en silencio</p></div>
+            <div class="linea"><span>I</span><p>ncluso en mis peores dias, tu eres mi refugio</p></div>
+            <div class="linea"><span>R</span><p>ecuerdo cada consejo tuyo como un mapa</p></div>
+            <div class="linea"><span>T</span><p>u amor es la fuerza que me levanta</p></div>
+            <div class="linea"><span>H</span><p>oy entiendo todo lo que hiciste por mi</p></div>
+            <div class="linea"><span>A</span><p>unque no lo diga, eres lo mejor que tengo</p></div>
+            <br>
+            <div class="linea"><span>J</span><p>amas habra alguien como tu en este mundo</p></div>
+            <div class="linea"><span>A</span><p>prendi de ti a seguir adelante sin rendirme</p></div>
+            <div class="linea"><span>I</span><p>magino mi vida sin ti… y no tiene sentido</p></div>
+            <div class="linea"><span>M</span><p>i mayor orgullo es ser tu hijo</p></div>
+            <div class="linea"><span>E</span><p>res mi ejemplo, mi guia y mi todo</p></div>
+            <div class="linea"><span>S</span><p>iempre voy a agradecer tenerte</p></div>
+            <br>
+            <div class="linea"><span>M</span><p>adre, no hay palabras suficientes para explicarte lo que significas</p></div>
+            <div class="linea"><span>A</span><p>unque el tiempo pase, mi amor por ti solo crece</p></div>
+            <div class="linea"><span>R</span><p>ealmente eres mi hogar, sin importar donde esté</p></div>
+            <div class="linea"><span>T</span><p>odo lo bueno en mi, viene de ti</p></div>
+            <div class="linea"><span>I</span><p>ntento ser fuerte, porque tu me enseñaste a serlo</p></div>
+            <div class="linea"><span>N</span><p>ada en este mundo se compara contigo</p></div>
+            <div class="linea"><span>E</span><p>n cada paso que doy, vas conmigo</p></div>
+            <div class="linea"><span>Z</span><p>onas de mi corazon siempre seran tuyas</p></div>
+        </div>
+        <br>
+        <p class="final-text">
+            Si estás leyendo esto… ya eres parte de la historia.
+        </p>
+
+    </div>
+    <canvas id="scratchCanvas"></canvas>
+</div>
+
+<div id="luz" class="luz"></div>
+
+<div class="panel-controles">
+
+    <button id="toggleLinterna" class="toggle-linterna" aria-label="Activar o desactivar linterna">
+        <span class="switch-dot"></span>
+    </button>
+
+    <div id="scrollHint" class="scroll-hint"></div>
+
+    <button id="toggleCarta" class="toggle-carta" aria-label="Encender o apagar luz de la carta">
+        <span class="switch-dot"></span>
+    </button>
+
+    <div id="scrollHintCarta" class="scroll-hint scroll-hint-carta"></div>
+
+</div>
+
+<script src="carta copy.js"></script>
+</body>
+</html>
