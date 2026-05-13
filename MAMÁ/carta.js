@@ -14,8 +14,9 @@ const toggleLinterna = document.getElementById("toggleLinterna");
 const toggleCarta = document.getElementById("toggleCarta");
 const scrollHint = document.getElementById("scrollHint");
 const scrollHintCarta = document.getElementById("scrollHintCarta");
+const musicaFondo = document.getElementById("musicaFondo");
 
-
+let musicaIniciada = false;
 const scratchCanvas = document.getElementById("scratchCanvas");
 const sctx = scratchCanvas.getContext("2d");
 
@@ -218,6 +219,30 @@ function dividirTexto(txt, maxChars){
 }
 
 function iniciar(){
+
+    if(!musicaIniciada){
+
+        musicaIniciada = true;
+
+        musicaFondo.volume = 0;
+
+musicaFondo.play().catch(()=>{});
+
+let vol = 0;
+
+let fade = setInterval(()=>{
+
+    vol += 0.02;
+
+    if(vol >= 0.7){
+        vol = 0.7;
+        clearInterval(fade);
+    }
+
+    musicaFondo.volume = vol;
+
+}, 150);
+    }
 
         if(animando || particulas.length) return;
 
