@@ -89,13 +89,13 @@ function actualizarEstadoLinterna(){
 
     if(linternaActiva){
         toggleLinterna.classList.remove("off");
-        scrollHint.textContent = "Desliza para ver con la linterna";
+        scrollHint.textContent = "Activa para poder deslizar";
         scrollHint.classList.add("show");
         luz.classList.add("activa");
 
     }else{
         toggleLinterna.classList.add("off");
-        scrollHint.textContent = "Desliza para leer";
+        scrollHint.textContent = "Desactiva para poder revelar la carta";
         scrollHint.classList.add("show");
         luz.classList.remove("activa");
         cursor.style.opacity = "0";
