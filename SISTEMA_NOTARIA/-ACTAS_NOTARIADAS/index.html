@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Acta Notariada</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/documento.css">
+</head>
+<body>    
+    <h1>REGISTRAR <strong>ACTA NOTARIADA</strong></h1>
+    <a href="Lista.php" id="Lista" class="button" onclick="return true;">Lista</a>
+    <form id="Form">
+        <fieldset>
+            <legend>Documento</legend>
+            <div class="numero">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" required placeholder="Ej. 0000/0000" maxlength="9">
+            </div>
+            <div class="fecha">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha_documento" required>
+            </div>
+            <div class="archivo">
+                <label for="archivo">Documento <strong style="opacity: 0.2; font-size: 80%;">(nombre)</strong>:</label>
+                <input type="text" id="archivo" name="documento" required maxlength="100" placeholder="Titulo Documento">
+                <ul class="listaSugerenciasArchivo"></ul>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Participantes</legend>
+            <div id="participantesContainer">
+                <div class="participante">
+                    <div class="nombre">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre" name="nombre[]" required maxlength="150" placeholder="Nombre Completo">
+                        <ul class="listaSugerenciasNombre"></ul>
+                    </div>
+                    <div class="identificacion">
+                        <label>C.I. o Pass.:</label>
+                        <input type="text" id="identificacion" name="identificacion[]" required maxlength="25" placeholder="C.I. o Pasaporte">
+                        <ul class="listaSugerenciasIdentificacion"></ul>
+                    </div>
+                    <div class="tipopersona">
+                        <label>Tipo de Persona:</label>
+                        <select name="tipo_persona[]" required>
+                            <option value="Natural" selected>NATURAL</option>
+                            <option value="Jurídica">JURÍDICA</option>
+                            <option value="ANULADO">ANULADO</option>
+                        </select>
+                    </div>
+                    <div class="pais">
+                        <label>País:</label>
+                        <input type="text" id="pais" name="pais[]" placeholder="Escribe el país..." maxlength="40">
+                        <ul class="listaSugerenciasPais"></ul>                            
+                    </div>
+                    <div class="nacionalidad">
+                        <label for="nacionalidad">Nacionalidad:</label>
+                        <input type="text" id="nacionalidad" name="nacionalidad[]" placeholder="Escribe en País..." required maxlength="30" readonly>
+                    </div>
+                    <br>
+                    <button type="button" class="removeParticipante">Eliminar</button>
+                </div>
+            </div>
+            <button type="button" id="addParticipante">Añadir otro participante</button>
+        </fieldset>
+
+    <!-- Agrega esto justo después del botón Guardar -->
+    <button type="submit">Guardar</button>
+    <div id="mensajeAviso" class="aviso"></div>
+    </form>
+
+<script src="../js/mas_participantes.js"></script>
+<script src="../js/control-inputs.js"></script>
+<script src="../js/control-documento.js"></script>
+<script src="../js/gentilicios.js"></script>
+<script src="js/guardar_tramite.js"></script>
+<script src="../js/sugerencias.js"></script>
+<script src="../js/sugerencias_DOC.js"></script>
+<script src="js/script.js"></script>
+<script src="../js/limite.js"></script>
+</body>
+</html>
