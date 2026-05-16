@@ -1,0 +1,180 @@
+input[name="testigo"] {
+    width: 60px;
+    min-width: 30px;
+    max-width: 80px;
+}
+
+input[name="nombre_beneficiarios\[\]"] {
+    width: 300px;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+#participantes2Container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ===== BOTÓN "AÑADIR PARTICIPANTE" ===== */
+#addParticipante2 {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2f855a 100%);
+    color: var(--white);
+    padding: 12px 24px;
+    margin-top: 15px;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+#addParticipante2::before {
+    content: '+';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#addParticipante2:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, #2f855a 0%, var(--success-color) 100%);
+}
+
+/* ===== BOTÓN "ELIMINAR" PARTICIPANTE ===== */
+.removeParticipante2 {
+    background: linear-gradient(135deg, var(--danger-color) 0%, #c53030 100%);
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 15px;
+    box-shadow: var(--shadow-sm);
+    opacity: 0.9;
+}
+
+.removeParticipante2:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    opacity: 1;
+    background: linear-gradient(135deg, #c53030 0%, var(--danger-color) 100%);
+}
+
+
+/* Cada participante mantiene estructura en bloque */
+.participante2 {
+    overflow: visible !important;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Los divs dentro de participante siguen uno al lado del otro */
+.participante2 > div {
+    display: inline-block;
+    
+}
+
+
+
+
+/* Estilos para las listas de sugerencias */
+.listaSugerenciasNombre_beneficiario {
+    position: relative;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    /*border: 1px solid rgba(201, 169, 110, 0.3);*/
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+    list-style: none;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 110, 0.5) transparent;
+}
+
+/* Personalizar scrollbar para Chrome/Safari */
+.listaSugerenciasNombre_beneficiario::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listaSugerenciasNombre_beneficiario::-webkit-scrollbar-track {
+    background: rgba(201, 169, 110, 0.1);
+    border-radius: 3px;
+}
+
+.listaSugerenciasNombre_beneficiario::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.5);
+    border-radius: 3px;
+}
+
+.listaSugerenciasNombre_beneficiario::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 110, 0.7);
+}
+
+/* Animación de entrada */
+.listaSugerenciasNombre_beneficiario {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Items de la lista */
+.listaSugerenciasNombre_beneficiario li {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Eliminar borde del último elemento */
+.listaSugerenciasNombre_beneficiario li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.listaSugerenciasNombre_beneficiario li:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    color: var(--primary-color);
+}
+
+/* Item seleccionado (para navegación con teclado) */
+.listaSugerenciasNombre_beneficiario li.selected {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Estilo para el mensaje "No se encontraron resultados" */
+.listaSugerenciasNombre_beneficiario li:first-child:only-child {
+    color: #6666;
+    font-style: italic;
+    cursor: default;
+    background-color: #fff !important;
+    font-weight: normal !important;
+}
+
+.listaSugerenciasNombre_beneficiario li:first-child:only-child:hover {
+    background-color: #fff !important;
+    color: #6666 !important;
+}
+

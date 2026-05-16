@@ -1,0 +1,178 @@
+input[name="beneficiarios"] {
+    width: 60px;
+    min-width: 30px;
+    max-width: 70px;
+}
+
+select[name="tipo_pago"] {
+    width: 170px;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+input[name="municipio"] {
+    width: 300px;
+    min-width: 120px;
+    max-width: 400px;
+}
+
+input[name="calidad\[\]"] {
+    width: 170px;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+/* También ajustar los select */
+select[name="tipo_doc"]{
+    width: 100px;
+    min-width: 100px;
+    max-width: 120px;
+}
+
+select[name="tipo_venta"] {
+    width: 150px;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+/* Estilos para las listas de sugerencias */
+.listaSugerenciasmunicipio,
+.listaSugerenciascalidad {
+    position: relative;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    /*border: 1px solid rgba(201, 169, 110, 0.3);*/
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+    list-style: none;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 110, 0.5) transparent;
+}
+
+/* Personalizar scrollbar para Chrome/Safari */
+.listaSugerenciasmunicipio::-webkit-scrollbar,
+.listaSugerenciascalidad::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listaSugerenciasmunicipio::-webkit-scrollbar-track,
+.listaSugerenciascalidad::-webkit-scrollbar-track {
+    background: rgba(201, 169, 110, 0.1);
+    border-radius: 3px;
+}
+
+.listaSugerenciasmunicipio::-webkit-scrollbar-thumb,
+.listaSugerenciascalidad::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.5);
+    border-radius: 3px;
+}
+
+.listaSugerenciasmunicipio::-webkit-scrollbar-thumb:hover,
+.listaSugerenciascalidad::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 110, 0.7);
+}
+
+/* Animación de entrada */
+.listaSugerenciasmunicipio,
+.listaSugerenciascalidad {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Items de la lista */
+.listaSugerenciasmunicipio li,
+.listaSugerenciascalidad li {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Eliminar borde del último elemento */
+.listaSugerenciasmunicipio li:last-child,
+.listaSugerenciascalidad li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.listaSugerenciasmunicipio li:hover,
+.listaSugerenciascalidad li:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    color: var(--primary-color);
+}
+
+/* Item seleccionado (para navegación con teclado) */
+.listaSugerenciasmunicipio li.selected,
+.listaSugerenciascalidad li.selected {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Estilo para el mensaje "No se encontraron resultados" */
+.listaSugerenciasmunicipio li:first-child:only-child,
+.listaSugerenciascalidad li:first-child:only-child {
+    color: #6666;
+    font-style: italic;
+    cursor: default;
+    background-color: #fff !important;
+    font-weight: normal !important;
+}
+
+.listaSugerenciasmunicipio li:first-child:only-child:hover,
+.listaSugerenciascalidad li:first-child:only-child:hover {
+    background-color: #fff !important;
+    color: #6666 !important;
+}
+
+
+
+
+
+#contenedor_tipo_venta,
+#contenedor_tipo_pago,
+#contenedor_beneficiarios{
+    display:none;
+}
+
+
+#Preguntas.alumbrar {
+    animation: alumbrar 0.5s ease-in-out 3;
+    
+}
+
+@keyframes alumbrar {
+    0% {
+        box-shadow: 0 0 2.5px var(--success-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--success-color), 0 0 20px var(--accent-color);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 2.5px var(--success-color);
+    }
+}
+

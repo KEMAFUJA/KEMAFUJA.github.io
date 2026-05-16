@@ -1,0 +1,734 @@
+:root {
+    --primary-color: hsl(215, 60%, 30%); /* Azul oscuro elegante */
+    --secondary-color: #c9a96e; /* Dorado elegante */
+    --accent-color: #2d3748; /* Azul medio */
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --success-color: #38a169;
+    --danger-color: #e53e3e;
+    --warning-color: #dd6b20;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ESTILOS GENERALES DEL BODY ===== */
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2d3748;
+    line-height: 1.7;
+    padding: 40px 20px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+
+/* Overlay para mejorar legibilidad */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(245, 247, 250, 0.85) 0%, 
+        rgba(228, 232, 240, 0.9) 100%
+    );
+    pointer-events: none;
+    z-index: -1; /* Entre la imagen y el contenido */
+}
+
+/* Imagen de fondo con movimiento CORREGIDO */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../LOGO NOT135.png');
+    background-size: 40% auto; /* Cambia este valor: 40% del ancho, altura automática */
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -2;
+    filter: blur(8px) sepia(30%) brightness(0.95);
+    animation: moverFondoLateral 30s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+/* Animación solo de lado a lado (más simple) */
+@keyframes moverFondoLateral {
+    0%, 100% {
+        background-position: 30% center; /* Empieza un poco a la izquierda */
+    }
+    50% {
+        background-position: 70% center; /* Termina un poco a la derecha */
+    }
+}
+
+/* Si quieres que la imagen sea más pequeña */
+body::before {
+    background-size: 100% auto; /* 30% del ancho de la pantalla */
+}
+
+
+/* Asegurar que el contenido principal esté por encima */
+#Form {
+    background: rgba(255, 255, 255, 0.92); /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+    border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+/* Para tablets y móviles, reducir movimiento */
+@media (max-width: 768px) {
+    body::before {
+        animation-duration: 80s; /* Más lento en móviles */
+        filter: blur(4px) sepia(20%) brightness(0.97); /* Menos borroso */
+    }
+    
+    #Form {
+        background: rgba(255, 255, 255, 0.97); /* Más opaco en móviles */
+    }
+}
+
+/* Para evitar motion sickness en usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+        transform: scale(1.1);
+        filter: blur(4px) sepia(20%) brightness(0.97);
+    }
+}
+
+/* ===== ESTILOS DEL TÍTULO ===== */
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    border-radius: 2px;
+}
+
+h1 strong {
+    font-weight: 600;
+    color: var(--secondary-color);
+    position: relative;
+    padding: 0 5px;
+}
+
+h1 strong::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transition: var(--transition-smooth);
+    transform-origin: center;
+}
+
+h1:hover strong::before {
+    transform: scaleX(1);
+}
+
+/* ===== ESTILOS GENERALES PARA BOTONES ===== */
+button {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== BOTÓN "LISTA" ===== */
+#Lista,
+#Preguntas {
+    color: var(--white);
+    padding: 14px 28px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: transform 0.9s ease;
+}
+
+#Lista {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+}
+
+#Preguntas {
+    background: linear-gradient(135deg, var(--success-color) 0%, var(--accent-color) 100%);
+}
+
+#Lista:hover,
+#Preguntas:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+#Lista:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+}
+
+#Preguntas:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--success-color) 100%);
+}
+
+#Lista:active,
+#Preguntas:active {
+    transform: translateY(-1px);
+}
+
+/* ===== BOTÓN "AÑADIR PARTICIPANTE" ===== */
+#addParticipante {
+    background: linear-gradient(135deg, var(--success-color) 0%, #2f855a 100%);
+    color: var(--white);
+    padding: 12px 24px;
+    margin-top: 15px;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+#addParticipante::before {
+    content: '+';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#addParticipante:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, #2f855a 0%, var(--success-color) 100%);
+}
+
+/* ===== BOTÓN "ELIMINAR" PARTICIPANTE ===== */
+.removeParticipante {
+    background: linear-gradient(135deg, var(--danger-color) 0%, #c53030 100%);
+    color: var(--white);
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 15px;
+    box-shadow: var(--shadow-sm);
+    opacity: 0.9;
+}
+
+.removeParticipante:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    opacity: 1;
+    background: linear-gradient(135deg, #c53030 0%, var(--danger-color) 100%);
+}
+
+/* ===== BOTÓN "GUARDAR" PRINCIPAL ===== */
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #b89446 100%);
+    color: var(--primary-color);
+    padding: 16px 40px;
+    font-size: 17px;
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+    box-shadow: var(--shadow-md);
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #b89446 0%, var(--secondary-color) 100%);
+}
+
+button[type="submit"]:hover::after {
+    left: 100%;
+}
+
+/* ===== ESTILOS PARA LOS FIELDSET ===== */
+fieldset {
+    border: 2px solid rgba(201, 169, 110, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    isolation: auto !important;
+    overflow: visible !important;
+}
+
+fieldset > *:not(legend) {
+    align-items: center;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    vertical-align: top;
+}
+
+fieldset::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary-color);
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+    transform-origin: top;
+}
+
+fieldset:hover::before {
+    transform: scaleY(1);
+}
+
+fieldset:hover {
+    border-color: rgba(201, 169, 110, 0.4);
+    box-shadow: var(--shadow-md);
+}
+
+legend {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 20px;
+    font-size: 1.3em;
+    background: var(--white);
+    border-radius: 50px;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    z-index: 1;
+    transition: var(--transition-smooth);
+}
+
+fieldset:hover legend {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ===== EFECTOS DE FOCO PARA BOTONES ===== */
+button:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.3);
+}
+
+/* ===== ANIMACIÓN DE ENTRADA ===== */
+@keyframes fadeInUp {
+  from {
+     opacity: 0;
+     margin-top: 20px;
+  }
+  to {
+     opacity: 1;
+     margin-top: 0;
+  }
+}
+
+h1, #Lista, fieldset, button[type="submit"] {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+
+/* Estilos globales para contenedores div con label dentro */
+div > label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Contenedores uno al lado del otro */
+div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    position: relative !important; 
+}
+
+/* Asegurar que los inputs/selects ocupen todo el ancho disponible */
+/* Tus estilos actuales se mantienen igual */
+div > input,
+div > select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border: 2px solid rgba(201, 169, 110, 0.3);
+    border-radius: var(--border-radius);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 15px;
+    transition: var(--transition-smooth);
+    background: var(--white);
+    height: 44px;
+}
+
+/* Estado en foco - manteniendo border-radius */
+div > input:focus,
+div > select:focus {
+    border-color: #D4B254 !important;
+    box-shadow: 0 0 0 3px rgba(212, 178, 84, 0.15);
+    outline: none;
+    border-radius: var(--border-radius); 
+}
+
+.pais,
+.numero{
+    width: 150px; /* O el ancho que necesites */
+}
+
+.nombre {
+    width: 250px; /* O el ancho que necesites */
+}
+
+.fecha_documento {
+    width: 150px; /* O el ancho que necesites */
+}
+
+/* Contenedor de participantes mantiene estructura en bloque */
+#participantesContainer {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Cada participante mantiene estructura en bloque */
+.participante {
+    overflow: visible !important;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Los divs dentro de participante siguen uno al lado del otro */
+.participante > div {
+    display: inline-block;
+    
+}
+
+
+/* Estilos para las listas de sugerencias */
+.listaSugerenciasNombre,
+.listaSugerenciasIdentificacion,
+.listaSugerenciasPais {
+    position: relative !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    /*border: 1px solid rgba(201, 169, 110, 0.3);*/
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+    list-style: none;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 110, 0.5) transparent;
+}
+
+/* Personalizar scrollbar para Chrome/Safari */
+.listaSugerenciasNombre::-webkit-scrollbar,
+.listaSugerenciasIdentificacion::-webkit-scrollbar,
+.listaSugerenciasPais::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listaSugerenciasNombre::-webkit-scrollbar-track,
+.listaSugerenciasIdentificacion::-webkit-scrollbar-track,
+.listaSugerenciasPais::-webkit-scrollbar-track {
+    background: rgba(201, 169, 110, 0.1);
+    border-radius: 3px;
+}
+
+.listaSugerenciasNombre::-webkit-scrollbar-thumb,
+.listaSugerenciasIdentificacion::-webkit-scrollbar-thumb,
+.listaSugerenciasPais::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.5);
+    border-radius: 3px;
+}
+
+.listaSugerenciasNombre::-webkit-scrollbar-thumb:hover,
+.listaSugerenciasIdentificacion::-webkit-scrollbar-thumb:hover,
+.listaSugerenciasPais::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 110, 0.7);
+}
+
+/* Animación de entrada */
+.listaSugerenciasNombre,
+.listaSugerenciasIdentificacion,
+.listaSugerenciasPais {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Items de la lista */
+.listaSugerenciasNombre li,
+.listaSugerenciasIdentificacion li,
+.listaSugerenciasPais li {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Eliminar borde del último elemento */
+.listaSugerenciasNombre li:last-child,
+.listaSugerenciasIdentificacion li:last-child,
+.listaSugerenciasPais li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.listaSugerenciasNombre li:hover,
+.listaSugerenciasIdentificacion li:hover,
+.listaSugerenciasPais li:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    color: var(--primary-color);
+}
+
+/* Item seleccionado (para navegación con teclado) */
+.listaSugerenciasNombre li.selected,
+.listaSugerenciasIdentificacion li.selected,
+.listaSugerenciasPais li.selected {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Estilo para el mensaje "No se encontraron resultados" */
+.listaSugerenciasNombre li:first-child:only-child,
+.listaSugerenciasIdentificacion li:first-child:only-child,
+.listaSugerenciasPais li:first-child:only-child {
+    color: #6666;
+    font-style: italic;
+    cursor: default;
+    background-color: #fff !important;
+    font-weight: normal !important;
+}
+
+.listaSugerenciasNombre li:first-child:only-child:hover,
+.listaSugerenciasIdentificacion li:first-child:only-child:hover,
+.listaSugerenciasPais li:first-child:only-child:hover {
+    background-color: #fff !important;
+    color: #6666 !important;
+}
+
+/* Estilo para inputs que están cerca del límite */
+input[maxlength]:focus {
+    border-color: #4CAF50;
+    transition: border-color 0.3s;
+}
+
+/* Estilo cuando se alcanza el límite */
+input[maxlength].limit-reached {
+    border-color: #f44336 !important;
+    background-color: #fff8f8;
+    animation: pulse 0.5s;
+}
+
+/* Contador de caracteres */
+.char-counter {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+    display: block;
+    opacity: 0.7;
+}
+
+.char-counter.warning {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.char-counter.limit {
+    color: #f44336;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Estilo para el  emergente */
+.maxlength-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f44336;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    animation: slideIn 0.3s, fadeOut 0.3s 2s forwards;
+    display: none;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; display: none; }
+}
+
+
+
+input.capslock-activo:focus {
+    border-color: rgb(0, 60, 255) !important;
+    box-shadow: 0 0 0 3px rgba(255, 251, 0, 0.25);
+}
+
+.aviso{
+    position: fixed;
+    bottom: -10px;
+    right: 0;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* cuando aparece */
+.aviso.mostrar{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* INFO (azul) */
+.aviso.info{
+    background: #2b7cff;
+    color: white;
+}
+
+/* ÉXITO (verde) */
+.aviso.exito{
+    background: #2ecc71;
+    color: white;
+}
+
+/* ERROR (rojo) */
+.aviso.error{
+    background: #e74c3c;
+    color: white;
+}
+
+
+
+
+#Ultimo, #Cuantas{
+    font-weight: bold;
+    font-size: 12.5px;    
+    color: #444;
+    margin-right: 20px;
+}
+
+.dato{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #003771;
+    text-shadow: 0px 0px 10px hsla(211, 100%, 50%, 0.5);
+}

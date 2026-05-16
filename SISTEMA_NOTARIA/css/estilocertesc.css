@@ -1,0 +1,155 @@
+input[data-filtro="beneficiarios"] {
+    width: 70px;
+    min-width: 70px;
+    max-width: 100px;
+}
+
+input[data-filtro="tipo_pago"] {
+    width: 90px;
+    min-width: 90px;
+    max-width: 120px;
+}
+
+input[data-filtro="municipio"] {
+    width: 150px;
+    min-width: 120px;
+    max-width: 400px;
+}
+
+input[data-filtro="calidad"] {
+    width: 90px;
+    min-width: 90px;
+    max-width: 120px;
+}
+
+/* También ajustar los select */
+select[data-filtro="tipo_doc"] {
+    width: 100px;
+    min-width: 100px;
+    max-width: 120px;
+}
+
+/* Estilos para las listas de sugerencias */
+.listaSugerenciastipo_pago,
+.listaSugerenciasmunicipio,
+.listaSugerenciascalidad {
+    position: relative;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 2px;
+    list-style: none;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 110, 0.5) transparent;
+}
+
+/* Personalizar scrollbar para Chrome/Safari */
+.listaSugerenciastipo_pago::-webkit-scrollbar,
+.listaSugerenciasmunicipio::-webkit-scrollbar,
+.listaSugerenciascalidad::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listaSugerenciastipo_pago::-webkit-scrollbar-track,
+.listaSugerenciasmunicipio::-webkit-scrollbar-track,
+.listaSugerenciascalidad::-webkit-scrollbar-track {
+    background: rgba(201, 169, 110, 0.1);
+    border-radius: 3px;
+}
+
+.listaSugerenciastipo_pago::-webkit-scrollbar-thumb,
+.listaSugerenciasmunicipio::-webkit-scrollbar-thumb,
+.listaSugerenciascalidad::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.5);
+    border-radius: 3px;
+}
+
+.listaSugerenciastipo_pago::-webkit-scrollbar-thumb:hover,
+.listaSugerenciasmunicipio::-webkit-scrollbar-thumb:hover,
+.listaSugerenciascalidad::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 169, 110, 0.7);
+}
+
+/* Animación de entrada */
+.listaSugerenciastipo_pago,
+.listaSugerenciasmunicipio,
+.listaSugerenciascalidad {
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Items de la lista */
+.listaSugerenciastipo_pago li,
+.listaSugerenciasmunicipio li,
+.listaSugerenciascalidad li {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Eliminar borde del último elemento */
+.listaSugerenciastipo_pago li:last-child,
+.listaSugerenciasmunicipio li:last-child,
+.listaSugerenciascalidad li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.listaSugerenciastipo_pago li:hover,
+.listaSugerenciasmunicipio li:hover,
+.listaSugerenciascalidad li:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    color: var(--primary-color);
+}
+
+/* Item seleccionado (para navegación con teclado) */
+.listaSugerenciastipo_pago li.selected,
+.listaSugerenciasmunicipio li.selected,
+.listaSugerenciascalidad li.selected {
+    background-color: rgba(201, 169, 110, 0.2) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+/* Estilo para el mensaje "No se encontraron resultados" */
+.listaSugerenciastipo_pago li:first-child:only-child,
+.listaSugerenciasmunicipio li:first-child:only-child,
+.listaSugerenciascalidad li:first-child:only-child {
+    color: #6666;
+    font-style: italic;
+    cursor: default;
+    background-color: #fff !important;
+    font-weight: normal !important;
+}
+
+.listaSugerenciastipo_pago li:first-child:only-child:hover,
+.listaSugerenciasmunicipio li:first-child:only-child:hover,
+.listaSugerenciascalidad li:first-child:only-child:hover {
+    background-color: #fff !important;
+    color: #6666 !important;
+}
+
