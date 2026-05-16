@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Esc. Publica</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/documento.css">
+    <link rel="stylesheet" href="../css/indexcertesc.css">
+    <link rel="stylesheet" href="../css/escritura.css">
+</head>
+
+<body>    
+    <h1>REGISTRAR <strong>ESCRITURA PÚBLICA</strong></h1>
+    <a href="Lista.php" id="Lista" class="button" onclick="return true;">Lista</a>
+    <a href="../ver_preguntas.php" id="Preguntas" class="button" onclick="return guardarOrigen(this);">UIF</a><br>
+
+<script>
+function guardarOrigen(enlace) {
+    // Guardar en localStorage (COMPARTIDO entre TODAS las pestañas)
+    const origen = window.location.pathname + window.location.search;
+    localStorage.setItem('origen_anterior', origen);
+    
+    // Para click normal, vamos al PHP
+    enlace.href = '../ver_preguntas.php';
+    return true;
+}
+</script>
+
+    <label id="Ultimo"></label>
+    <label id="Cuantas"></label>
+    <div id="mensajeAviso" class="aviso"></div>
+    <form id="Form">
+        <fieldset name="field">
+            <legend>Documento</legend>
+            <div class="numero">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" required placeholder="Ej. 0000/0000" maxlength="9" autocomplete="off" title="Número de documento&#10;Ej. 9999/9999">
+            </div>
+            <div class="fecha">
+                <label for="fecha">Fecha:</label>
+                <input type="text" id="fecha" name="fecha_documento" placeholder="Ej: 5 abril 2025" required title="Fecha de documento&#10;Ej. 5 de abril del 202X,&#10;5 abril 202X,&#10;5 4 202X ">
+            </div>
+            <div class="archivo">
+                <label for="archivo">Documento <strong style="opacity: 0.2; font-size: 80%;">(nombre)</strong>:</label>
+                <input type="text" id="archivo" name="documento" required maxlength="100" placeholder="Titulo Documento" autocomplete="off" title="Titulo del documento&#10;Ej: Tramite notarial">
+                <ul class="listaSugerenciasArchivo"></ul>
+            </div>
+            <div class="tipo_documento">
+                <label>Tipo de Documento:</label>
+                <select name="tipo_documento" id="tipo_documento" title="Tipo de documento">
+                    <option value="Ninguno">NINGUNO</option>
+                    <option value="Compra/Venta">COMPRA/VENTA</option>
+                    <option value="Sociedad">SOCIEDAD</option>
+                    <option value="ANULADO">ANULADO</option>
+                </select>
+            </div>
+            <div class="tipo_venta" id="contenedor_tipo_venta">
+                <label>Tipo de Venta:</label>
+                <select name="tipo_venta" id="tipo_venta" title="Tipo de venta del documento">
+                    <option value="Mueble">MUEBLE</option>
+                    <option value="Inmueble">INMUEBLE</option>
+                </select>
+            </div>            
+            <div class="tipo_trato" id="contenedor_tipo_trato">
+                <label>Tipo de Trato:</label>
+                <select name="tipo_trato" required title="Tipo de trato de la sociedad">
+                    <option value="Ninguno">NINGUNO</option>
+                    <option value="Creacion">Creacion</option>
+                    <option value="Modificacion">Modificacion</option>
+                    <option value="Extincion">Extincion</option>
+                </select>
+            </div>            
+            <div class="tipo_pago" id="contenedor_tipo_pago">
+                <label>Tipo de Pago:</label>
+                <select name="tipo_pago" required title="Tipo de pago de la transferencia">
+                    <option value="Ninguno">NINGUNO</option>
+                    <option value="Efectivo">EFECTIVO</option>
+                </select>
+            </div>            
+            <div class="beneficiarios" id="contenedor_beneficiarios">
+                <label for="beneficiarios">Beneficiarios:</label>
+                <input type="text" id="beneficiarios" name="beneficiarios" maxlength="2" placeholder="Nro" autocomplete="off" title="Beneficiario(s) final(es)&#10;Ej: 2 (puede estar vacio)">
+            </div>
+            <div class="municipio">
+                <label for="municipio">Municipio:</label>
+                <input type="text" id="municipio" name="municipio" maxlength="100" placeholder="Santa Cruz - Santa Cruz de la Sierra" autocomplete="off" title="Municipio&#10;Ej: La guardia&#10;(Si lo deja vacio es automatico&#10;'Santa Cruz - Santa Cruz de la Sierra')">
+                <ul class="listaSugerenciasmunicipio"></ul>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend title="Se puede saltar aca con 'Alt'+'n' y te pone en Nombre">Participantes</legend>
+            <div id="participantesContainer">
+                <div class="participante">
+                    <div class="nombre">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre" name="nombre[]" maxlength="150" placeholder="Nombre Completo" autocomplete="off" required title="Nombre&#10;(Automaticamente cada primer letra se pone en mayuscula)">
+                        <ul class="listaSugerenciasNombre"></ul>
+                    </div>
+                    <div class="identificacion">
+                        <label>C.I. o Pass.:</label>
+                        <input type="text" id="identificacion" name="identificacion[]" maxlength="25" placeholder="C.I. o Pasaporte" autocomplete="off" required title="Carnet/Pasaporte/Identificacion&#10;Ej: 77777-1A&#10;(Automatico se pone mayuscula para las letras)">
+                        <ul class="listaSugerenciasIdentificacion"></ul>
+                    </div>
+                    <div class="tipopersona">
+                        <label>Tipo de Persona:</label>
+                        <select name="tipo_persona[]" title="Tipo de Persona">
+                            <option value="Natural" selected>NATURAL</option>
+                            <option value="Jurídica">JURÍDICA</option>
+                            <option value="ANULADO">ANULADO</option>
+                        </select>
+                    </div>
+                    <div class="calidad">
+                        <label>Calidad:</label>
+                        <input type="text" name="calidad[]" maxlength="25" placeholder="Calidad" autocomplete="off" title="Caldidad&#10;Ej: Vendedor/Comprador&#10;(Si lo deja vacio es automatico 'Parte')&#10;(Automaticamente cada primer letra se pone en mayuscula)">
+                        <ul class="listaSugerenciascalidad"></ul>
+                    </div>
+                    <div class="pais">
+                        <label>País:</label>
+                        <input type="text" id="pais" name="pais[]" placeholder="Bolivia" maxlength="40" autocomplete="off" title="País&#10;Ej: Bolivia&#10;(Si lo deja vacio es automatico 'Bolivia')">
+                        <ul class="listaSugerenciasPais"></ul>                            
+                    </div>
+                    <div class="nacionalidad">
+                        <label for="nacionalidad">Nacionalidad:</label>
+                        <input type="text" id="nacionalidad" name="nacionalidad[]" placeholder="Escribe en País..." maxlength="30" readonly title="Nacionalidad&#10;(Se escribe automaticamente el gentilicio dependiendo al pais)">
+                    </div>
+                    <br>
+                    <button type="button" class="removeParticipante" title="Eliminar participante&#10;(Se puede activar con 'Alt'+'-')">Eliminar</button>
+                </div>
+            </div>
+            <button type="button" id="addParticipante" title="Añadir participante&#10;(Se puede activar con 'Alt'+'+')">Añadir otro participante</button>
+        </fieldset>
+
+        <fieldset id="UIF">
+            <legend >UIF:</legend>
+                <label class="check-item">
+                    <input type="checkbox" id="autoUIF" name="Auto"> 
+                    Automatico
+                </label>
+
+            <div id="CV">
+                <label class="check-item vertical">
+                    Cant. de personas naturales que concretaron la compra/venta de bienes inmuebles o bienes muebles sujetos a registro.
+                    <input type="text" name="uif[cv-1]">
+                </label>
+
+                <label class="check-item vertical"> 
+                    Cant. de personas jurídicas que concretaron la compra/venta de bienes inmuebles o bienes muebles sujetos a registro.
+                    <input type="text" name="uif[cv-4]">
+                </label>
+
+                <label class="check-item">
+                <input type="checkbox" name="uif[cv-5]">  
+                    ¿El trámites notarial de documento compra y/o venta de bienes inmuebles o bienes muebles sujetos a registro es realizado entre personas con nacionalidad Boliviana y extranjera?
+                </label>
+
+                <!--label class="check-item vertical">
+                    Núm. de sujetos identificados como beneficiario final en trámites notariales de compra y/o venta de bienes inmuebles o bienes muebles sujetos a registro.
+                    <input type="text" name="uif[cv-6]">
+                </label-->
+
+                <label class="check-item">
+                <input type="checkbox" name="uif[cv-7]">  
+                    ¿El trámite notarial de documento compra y/o venta de bienes inmuebles o bienes muebles sujetos a registros es realizado entre personas con nacionalidad extranjera?
+                </label>
+
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[cv-11]"> 
+                    ¿El trámite realizado en su oficina notarial de compra/venta de inmuebles y/o muebles sujetos a registros de municipios es distintos a la jurisdicción de su nombramiento?
+                </label-->
+                
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[]" value="cv-13"> 
+                    Cant. de trámites notariales de documentos de compra y/o venta de bienes inmuebles o bienes muebles sujetos a registro realizados.
+                </label-->
+
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[cv-15]"> 
+                    ¿El trámite notarial de compra/venta de inmuebles y/o muebles es identificados con pago en efectivo?
+                </label-->
+            </div>
+
+
+
+            <div id="Soc">
+                <label class="check-item vertical">
+                    Cant. de clientes atendidos que concretaron la constitución, modificación y disolución de sociedades.
+                    <input type="text" name="uif[soc-3]">
+                </label>
+
+                <label class="check-item vertical">
+                    Cant. de personas jurídicas que concretaron la constitución, modificación y disolución de sociedades.
+                    <input type="text" name="uif[soc-2]">
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" name="uif[soc-8]"> 
+                    ¿El trámite notarial de documento constitución, modificación y disolución de sociedades es realizado entre personas con nacionalidad Boliviana y extranjera?
+                </label>
+
+                <!--label class="check-item vertical">
+                    Núm. de sujetos identificados como beneficiario final en trámites notariales de constitución, modificación y disolución de sociedades.
+                    <input type="text" name="uif[soc-9]">
+                </label-->
+
+                <label class="check-item">
+                <input type="checkbox" name="uif[soc-10]"> 
+                    ¿El trámite notarial de documento constitución, modificación y disolución de sociedades es realizado entre personas con nacionalidad extranjeras?
+                </label>
+
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[]" value="soc-12"> 
+                    Cant. de trámites notariales de documentos de constitución, modificación y disolución de sociedades realizados.
+                </label-->
+
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[soc-14]"> 
+                    ¿El trámite realizado en su oficina notarial de constitución, modificación y disolución de sociedades de municipios distintos a la jurisdiccion de su nombramiento.
+                </label-->
+
+                <!--label class="check-item">
+                <input type="checkbox" name="uif[soc-16]"> 
+                    ¿El tramite notarial de constitución, modificación y disolución de sociedades es identificado con pago en efectivo?
+                </label-->
+            </div>
+        </fieldset>
+
+    <button type="submit" title="Gueardad trámite&#10;(Se puede activar con 'Enter')">Guardar</button>
+    
+    </form>
+<script src="../js/contador.js"></script>
+<script src="../js/Brillo_Mayus.js"></script>
+<script src="../js/tipo_venta.js"></script>
+<script src="../js/mas_participantes2.js"></script>
+<script src="../js/control-inputs.js"></script>
+<script src="../js/control-certesc.js"></script>
+<script src="../js/control-documento.js"></script>
+<script src="../js/gentilicios.js"></script>
+<script src="../js/municipios.js"></script>
+<script src="js/guardar_tramite.js"></script>
+<script src="../js/sugerencias2.js"></script>
+<script src="../js/sugerencias_DOC.js"></script>
+<script src="js/sugerencias_CERTESC.js"></script>
+<script src="../js/limite.js"></script>
+<script src="../js/UIF.js"></script>
+
+</body>
+</html>

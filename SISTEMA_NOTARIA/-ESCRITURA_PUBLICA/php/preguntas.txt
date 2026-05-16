@@ -1,0 +1,99 @@
+    $numero = $_POST['numero'] ?? '';
+    $fecha_documento = $_POST['fecha_documento'] ?? '';
+    $documento = $_POST['documento'] ?? '';
+    $beneficiarios = $_POST['beneficiarios'] ?? 'NT';
+    $municipio = $_POST['municipio'] ?? '';
+    $tipo_pago = $_POST['tipo_pago'] ?? '-.-';
+    
+    $tipo_documento = $_POST['tipo_documento'] ?? '';
+
+    $nombres = $_POST['nombre'] ?? [];
+    $cantidad_nombre = count($nombres);
+    $identificaciones = $_POST['identificacion'] ?? [];
+    $tipos_persona = $_POST['tipo_persona'] ?? [];
+    $nacionalidades = $_POST['pais'] ?? [];
+    $calidad = $_POST['calidad'] ?? [];
+
+
+
+if($tipo_documento=="compra/venta"){
+	incrementa en id=13; //+1
+    
+    incrementa en id=6; //+$beneficiarios
+    
+    $n=0;
+    for($n < $cantidad_nombre){
+        if($tipos_persona[$n]=="natural"){
+            incrementa en id=1 //+1;
+        }else if ($tipos_persona[$n]=="juridica"){
+            incrementa en id=4 //+1;
+        }
+    }
+
+    nac=0; ext=0;
+    $n=0;
+    for($n < $cantidad_nombre){
+        if($nacionalidades[$n]=="BOLIVIA"){
+            nac++;
+        }else{
+            ext++;
+        }
+    }
+
+    if(nac>0 & ext>0){
+        incrementa en id=5; //+1;
+    }
+
+    if(nac=0 & ext>0){
+        incrementa en id=7; //+1;
+    }
+
+    if($tipo_pago=="efectivo"){
+        incrementa en id=15; //+1
+    }
+
+    if($municipio=!"santa cruz de la sierra"){
+        incrementa en id=11; //+1
+    }
+	
+}else if($tipo_documento=="sociedad"){
+	incrementa en id=12; //+1
+    
+    incrementa en id=9; //+$beneficiarios
+    
+    incrementa en id=3; //+$cantidad_nombre
+
+    $n=0;
+    for($n < $cantidad_nombre){
+        if($tipos_persona[$n]=="juridica"){
+            incrementa en id=2 //+1;
+        }
+    }
+
+    nac=0; ext=0;
+    $n=0;
+    for($n < $cantidad_nombre){
+        if($nacionalidades[$n]=="BOLIVIA"){
+            nac++;
+        }else{
+            ext++;
+        }
+    }
+
+    if(nac>0 & ext>0){
+        incrementa en id=8; //+1;
+    }
+
+    if(nac=0 & ext>0){
+        incrementa en id=10; //+1;
+    }
+
+    if($tipo_pago=="efectivo"){
+        incrementa en id=16; //+1
+    }
+
+    if($municipio=!"santa cruz de la sierra"){
+        incrementa en id=14; //+1
+    }
+
+}
