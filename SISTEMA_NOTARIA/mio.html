@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti ❤️</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mio.css">
+</head>
+<body>
+
+<div class="container">
+  <!-- Encabezado romántico -->
+  <header class="romantic-header">
+    <h1>Para Ti, Mi Amor</h1>
+    <p>Cada momento a tu lado es un regalo del destino</p>
+  </header>
+
+  <!-- Carrusel de imágenes -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <div class="image-frame">
+          <img src="1 (1).jpg" alt="Amor eterno">
+        </div>
+        <h2 class="slide-title">AMORZOTE</h2>
+        <p class="slide-caption">No sabes lo feliz que me haces cada día</p>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="image-frame">
+          <img src="1 (2).jpg" alt="Pareja feliz">
+        </div>
+        <h2 class="slide-title">NO SABES...</h2>
+        <p class="slide-caption">Desde que llegaste, todo tiene sentido</p>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="image-frame">
+          <img src="1 (3).jpg" alt="Amor profundo">
+        </div>
+        <h2 class="slide-title">LO MUCHO</h2>
+        <p class="slide-caption">Tu sonrisa es mi lugar favorito</p>
+      </div>
+      
+      <!-- Slide 4 -->
+      <div class="slide">
+        <div class="image-frame">
+          <img src="1 (4).jpg" alt="Compromiso">
+        </div>
+        <h2 class="slide-title">QUE TE QUIERO,</h2>
+        <p class="slide-caption">Incluso en silencio, te elijo</p>
+      </div>
+      
+      <!-- Slide 5 -->
+      <div class="slide">
+        <div class="image-frame">
+          <img src="1 (5).jpg" alt="Noches juntos">
+        </div>
+        <h2 class="slide-title">DAR, EN LAS NOCHES... 😋</h2>
+        <p class="slide-caption">Y en todas mis mañanas también</p>
+      </div>
+    </div>
+    
+    <!-- Controles del carrusel -->
+    <div class="carousel-controls">
+      <button class="carousel-btn prev-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <button class="carousel-btn play-pause-btn">
+        <i class="fas fa-pause"></i>
+      </button>
+      
+      <button class="carousel-btn next-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <!-- Indicadores de slide -->
+    <div class="slide-indicators">
+      <div class="indicator active" data-slide="0"></div>
+      <div class="indicator" data-slide="1"></div>
+      <div class="indicator" data-slide="2"></div>
+      <div class="indicator" data-slide="3"></div>
+      <div class="indicator" data-slide="4"></div>
+    </div>
+  </div>
+  
+  <!-- Sección de poesía -->
+  <section class="poetry-section">
+    <h2 class="poetry-title">Para ti ❤️</h2>
+    <div class="poetry-content">
+      <p>
+        No llegaste para quedarte un rato,<br>
+        llegaste para cambiarme los días.
+      </p>
+      <p>
+        Para que las noches tengan sentido,<br>
+        para que el silencio no pese,<br>
+        para que el amor no dé miedo.
+      </p>
+      <p>
+        Si algún día dudas,<br>
+        recuerda esto:<br>
+        aquí hay alguien que te elige,<br>
+        incluso cuando no estás.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Pie de página romántico -->
+  <footer class="romantic-footer">
+    <p>Con todo mi amor, para siempre</p>
+  </footer>
+</div>
+
+<!-- Panel de control de música -->
+<div class="music-controls-container">
+  <div class="music-panel">
+    <button class="music-btn prev-music-btn">
+      <i class="fas fa-step-backward"></i>
+    </button>
+    
+    <button class="music-btn play-music-btn">
+      <i class="fas fa-play"></i>
+    </button>
+    
+    <button class="music-btn next-music-btn">
+      <i class="fas fa-step-forward"></i>
+    </button>
+    
+    <select class="music-select">
+      <option value="0">Canción 1: Música Romántica</option>
+      <option value="1">Canción 2: Amor Eterno</option>
+      <option value="2">Canción 3: Noches de Luna</option>
+      <option value="3">Canción 4: Sueños Contigo</option>
+    </select>
+  </div>
+  <div class="music-info">Reproduciendo: Música Romántica</div>
+</div>
+
+<!-- Elementos de audio -->
+<audio id="music1" src="1.mp3"></audio>
+<audio id="music2" src="1 (1).mp3"></audio>
+<audio id="music3" src="1 (2).mp3"></audio>
+<audio id="music4" src="1 (3).mp3"></audio>
+
+<script>
+// Elementos del DOM
+const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll('.indicator');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const playPauseBtn = document.querySelector('.play-pause-btn');
+const playMusicBtn = document.querySelector('.play-music-btn');
+const prevMusicBtn = document.querySelector('.prev-music-btn');
+const nextMusicBtn = document.querySelector('.next-music-btn');
+const musicSelect = document.querySelector('.music-select');
+const musicInfo = document.querySelector('.music-info');
+const headerTitle = document.querySelector('.romantic-header h1');
+const headerSubtitle = document.querySelector('.romantic-header p');
+const poetrySection = document.querySelector('.poetry-section');
+const romanticFooter = document.querySelector('.romantic-footer');
+
+// Elementos de audio
+const audioElements = [
+  document.getElementById('music1'),
+  document.getElementById('music2'),
+  document.getElementById('music3'),
+  document.getElementById('music4')
+];
+
+// Variables de estado
+let currentSlide = 0;
+let autoSlideInterval;
+let isAutoSlideActive = true;
+let isMusicPlaying = true;
+let currentMusicIndex = 0;
+
+// Inicializar intervalo para cambio automático de slides
+startAutoSlide();
+
+// Función para cambiar de slide
+function changeSlide(slideIndex) {
+  // Remover clase active del slide actual
+  slides[currentSlide].classList.remove('active');
+  indicators[currentSlide].classList.remove('active');
+  
+  // Actualizar índice del slide
+  currentSlide = slideIndex;
+  if (currentSlide < 0) currentSlide = slides.length - 1;
+  if (currentSlide >= slides.length) currentSlide = 0;
+  
+  // Añadir clase active al nuevo slide
+  slides[currentSlide].classList.add('active');
+  indicators[currentSlide].classList.add('active');
+}
+
+// Función para iniciar el cambio automático de slides
+function startAutoSlide() {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+  
+  autoSlideInterval = setInterval(() => {
+    if (isAutoSlideActive) {
+      changeSlide(currentSlide + 1);
+    }
+  }, 5000); // Cambia cada 5 segundos
+}
+
+// Función para alternar reproducción/pausa del carrusel
+function toggleCarouselPlayPause() {
+  isAutoSlideActive = !isAutoSlideActive;
+  const icon = playPauseBtn.querySelector('i');
+  
+  if (isAutoSlideActive) {
+    icon.classList.remove('fa-play');
+    icon.classList.add('fa-pause');
+    startAutoSlide();
+  } else {
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+    clearInterval(autoSlideInterval);
+  }
+}
+
+// Función para cambiar de canción
+function changeMusic(musicIndex) {
+  // Detener la canción actual
+  audioElements.forEach(audio => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+  
+  // Actualizar índice de canción
+  currentMusicIndex = musicIndex;
+  if (currentMusicIndex < 0) currentMusicIndex = audioElements.length - 1;
+  if (currentMusicIndex >= audioElements.length) currentMusicIndex = 0;
+  
+  // Actualizar selector de música
+  musicSelect.selectedIndex = currentMusicIndex;
+  
+  // Reproducir nueva canción si la música está activa
+  if (isMusicPlaying) {
+    audioElements[currentMusicIndex].play();
+  }
+  
+  // Actualizar información de la canción
+  updateMusicInfo();
+}
+
+// Función para actualizar la información de la canción
+function updateMusicInfo() {
+  const songNames = [
+    "Música Romántica",
+    "Amor Eterno",
+    "Noches de Luna",
+    "Sueños Contigo"
+  ];
+  
+  musicInfo.textContent = `Reproduciendo: ${songNames[currentMusicIndex]}`;
+}
+
+// Función para alternar reproducción/pausa de la música
+function toggleMusicPlayPause() {
+  isMusicPlaying = !isMusicPlaying;
+  const icon = playMusicBtn.querySelector('i');
+  
+  if (isMusicPlaying) {
+    icon.classList.remove('fa-play');
+    icon.classList.add('fa-pause');
+    audioElements[currentMusicIndex].play();
+  } else {
+    icon.classList.remove('fa-pause');
+    icon.classList.add('fa-play');
+    audioElements[currentMusicIndex].pause();
+  }
+}
+
+// Función para verificar si los elementos son visibles al hacer scroll
+function checkVisibility() {
+  const elements = [
+    {element: headerTitle, offset: 0},
+    {element: headerSubtitle, offset: 0},
+    {element: poetrySection, offset: 100},
+    {element: romanticFooter, offset: 50}
+  ];
+  
+  elements.forEach(item => {
+    const rect = item.element.getBoundingClientRect();
+    const isVisible = rect.top <= window.innerHeight - item.offset;
+    
+    if (isVisible) {
+      item.element.classList.add('visible');
+    }
+  });
+}
+
+// Event Listeners para controles del carrusel
+prevBtn.addEventListener('click', () => {
+  changeSlide(currentSlide - 1);
+  startAutoSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+  changeSlide(currentSlide + 1);
+  startAutoSlide();
+});
+
+playPauseBtn.addEventListener('click', toggleCarouselPlayPause);
+
+// Event Listeners para indicadores de slide
+indicators.forEach(indicator => {
+  indicator.addEventListener('click', () => {
+    const slideIndex = parseInt(indicator.getAttribute('data-slide'));
+    changeSlide(slideIndex);
+    startAutoSlide();
+  });
+});
+
+// Event Listeners para controles de música
+playMusicBtn.addEventListener('click', toggleMusicPlayPause);
+
+prevMusicBtn.addEventListener('click', () => {
+  changeMusic(currentMusicIndex - 1);
+});
+
+nextMusicBtn.addEventListener('click', () => {
+  changeMusic(currentMusicIndex + 1);
+});
+
+musicSelect.addEventListener('change', () => {
+  changeMusic(parseInt(musicSelect.value));
+});
+
+// Cuando termina una canción, pasar a la siguiente
+audioElements.forEach((audio, index) => {
+  audio.addEventListener('ended', () => {
+    changeMusic(currentMusicIndex + 1);
+  });
+});
+
+// Verificar visibilidad al cargar la página y al hacer scroll
+window.addEventListener('load', checkVisibility);
+window.addEventListener('scroll', checkVisibility);
+
+// Iniciar la verificación de visibilidad
+checkVisibility();
+
+let musicStarted = false;
+
+function startMusicOnce() {
+  if (musicStarted) return;
+
+  const audio = audioElements[currentMusicIndex];
+  audio.volume = 0.7;
+
+  audio.play().then(() => {
+    musicStarted = true;
+    const icon = playMusicBtn.querySelector('i');
+    icon.classList.remove('fa-play');
+    icon.classList.add('fa-pause');
+  }).catch(() => {
+    console.log("Autoplay bloqueado hasta interacción");
+  });
+}
+
+// Cualquier gesto humano sirve
+['click', 'touchstart', 'wheel'].forEach(event => {
+  document.addEventListener(event, startMusicOnce, { once: true });
+});
+
+</script>
+</body>
+</html>
