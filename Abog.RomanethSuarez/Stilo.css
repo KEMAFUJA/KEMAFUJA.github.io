@@ -1,9 +1,9 @@
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(120, 100%, 25%); }
-  20%, 80% { background-color: hsl(120, 100%, 20%); } 
-  40%, 60% { background-color: hsl(120, 100%, 15%); } 
-  50% { background-color: hsl(120, 100%, 10%); } 
+  0%, 100% { background-color: hsl(40, 30%, 80%); }
+  20%, 80% { background-color: hsl(40, 30%, 70%); } 
+  40%, 60% { background-color: hsl(40, 30%, 60%); }
+  50% { background-color: hsl(40, 30%, 50%); }
 }
 
 
@@ -98,7 +98,7 @@
 
 /* ===== Card Informacion ===== */
 .card {
-    background: hsla(0, 0%, 100%, 0.5);
+    background: hsla(0, 0%, 100%, 0.25);
     border-radius: 2.5%;
     backdrop-filter: blur(5px);
     animation: boxShadowCard 10s infinite ease-in-out;
@@ -119,18 +119,6 @@
         0 0 60px hsla(50, 65%, 52%, 0.5) inset; }
 }
 
-/* ----- Luz interna giratoria  ----- */
-.card::before {
-    top: 0%;
-    left: 0%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-        circle,
-        hsl(0, 0%, 50%) -100%,
-        transparent 100%
-    );
-}
 
 /* ===== Sello ===== */
 .sello-contenedor{
@@ -298,23 +286,27 @@
 
 
 /* ===== Nombre ===== */
+@font-face {
+  font-family: 'FUENTE';
+  src: url('/-LETRAS/fonts/Corinthia-Regular.ttf');
+}
+
+/*Nombre */
 .nombre-completo h2 {
-    font-size: 4.75rem;
-    font-weight: 900;
+    font-size: 15.25rem;
+    font-weight: 500;
     letter-spacing: 0.05rem;
     font-family: 'FUENTE';
     margin-top: 0%;
-    margin-bottom: -4.5%;
-    text-transform: uppercase;
+    margin-bottom: -20.5%;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 20%;
     font-weight: 100;
-    font-family: 'FUENTE';
-    margin-top: 2.5%;
-    margin-bottom: 5%;
+    font-family: 'FUENTE1';
+    margin-bottom: -15%;
     text-transform: uppercase;
 }
 
@@ -339,13 +331,13 @@
     animation: animacion-degradado 10s infinite alternate ease-in-out;
 }
 
-
 /* ===== Linea divisoria ===== */
 .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
     margin: 20px auto;
     width: 80%;
+    margin-top: 10%;
 }
 
 /* ===== Texto ===== */
@@ -592,7 +584,7 @@ li {
 }
 @media (max-width: 750px) {
     .nombre-completo h2 {
-        font-size: 3.75rem;
+        font-size: 12.5rem;
     }
 
     .nombre-completo h3 {
@@ -615,8 +607,7 @@ li {
 
 @media (max-width: 435px) {
     .nombre-completo h2 {
-        font-size: 2.25rem;
-        margin-bottom: -2.5%;
+        font-size: 8.25rem;
     }
             
     .nombre-completo h3 {
@@ -682,7 +673,7 @@ li {
 
 @media (max-width: 400px) {
     .nombre-completo h2 {
-        font-size: 2rem;
+        font-size: 7rem;
     }
             
     .nombre-completo h3 {
@@ -731,6 +722,11 @@ li {
         line-height: 0.75rem;
     }
    
+    #galeria .button{
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
     .social-icons{
         gap: 0.5rem;
     }
@@ -743,11 +739,11 @@ li {
 
 @media (max-width: 320px) {
     .nombre-completo h2 {
-        font-size: 1.75rem;
+        font-size: 5.75rem;
     }
             
     .nombre-completo h3 {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 
     .social-icon {
