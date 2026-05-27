@@ -4,9 +4,9 @@
     <meta property="og:description" content="Cel: 76052163">
     <meta property="og:title" content="Ortuño & Asociados">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.Jhersy/logo.png">
-    <meta property="og:image:width" content="50">
-    <meta property="og:image:height" content="50">
-    <meta property="og:url" content="https://kemafuja.github.io/Abog.Jhersy">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Abog.Jhersy/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -16,33 +16,60 @@
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
- 
 <body>
 <div id="sube-contenedor"></div>
-<div id="chocan-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Ortuño <br> & <br> Asociados
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Abog.Jhersy.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Abog.Jhersy.png" download="Abog.Jhersy.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
         </div>
-        
+
         <img src="logo.png" alt="Logo" class="logo">
 
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">JHERSY ALBERTO ORTUÑO GOITIA</h2>
-            <h3 class="inline-text">Abogado</h3>
+            <h2 class="inline-text">Jhersy Alberto</h2>
+            <h2 class="inline-text">Ortuño Goitia</h2>
+            <h3 class="inline-text">ABOGADO</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59176052163">
                         <span class="full">+591 76052163</span>
                         <span class="short">76052163</span>
@@ -52,9 +79,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59176052163&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59176052163&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 76052163</span>
                         <span class="short">76052163</span>
@@ -64,9 +99,17 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="mailto:albert-828@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:albert-828@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         albert-828@hotmail.com
                     </a>
                 </div>
@@ -74,66 +117,86 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/DkK6awAVT4byA2hx9"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.776948277147767, -63.18142710252861"> 
                         Calle Beni casi esquina Rafael Peña
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1504.8759773226288!2d-63.18103546730038!3d-17.77674653217126!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM3LjMiUyA2M8KwMTAnNTMuMCJX!5e0!3m2!1ses-419!2sbo!4v1776174824593!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1504.8759773226288!2d-63.18103546730038!3d-17.77674653217126!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM3LjMiUyA2M8KwMTAnNTMuMCJX!5e0!3m2!1ses-419!2sbo!4v1776174824593!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.776948277147767, -63.18142710252861" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 9:00 - 16:00</li>
-                    <li>Horario Continuo...</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 9:00 - 16:00</li>
+                        <li>Horario Continuo...</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>CIVIL</strong></li>
-                    <li> <strong>LABORAL</strong></li>
-                    <li> <strong>COACTIVOS SOCIALES</strong></li>
-                    <li> <strong>FAMILIARES</strong></li>
-                    <li> <strong>TRAMITES EN GENERAL</strong></li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>CIVIL</strong></li>
+                        <li> <strong>LABORAL</strong></li>
+                        <li> <strong>COACTIVOS SOCIALES</strong></li>
+                        <li> <strong>FAMILIARES</strong></li>
+                        <li> <strong>TRAMITES EN GENERAL</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
             <a href="mailto:albert-828@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
+                target="_blank" class="social-icon Correo">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
             <a href="https://api.whatsapp.com/send?phone=59176052163&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/DkK6awAVT4byA2hx9" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.776948277147767, -63.18142710252861" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Abog.Jhersy/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -149,6 +212,5 @@
         r_opacidad: true
     });
 </script>
-
 </body>
 </html>
