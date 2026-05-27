@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta property="og:title" content="ASALVO - SERVICIOS LEGALES">
+    <meta property="og:title" content="ASALVO - SERVICIOS LEGALES">
     <meta property="og:description" content="MARIA EUGENIA & GUSTAVO">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.MariaGustavo/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/Abog.MariaGustavo">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Abog.MariaGustavo/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -19,29 +19,58 @@
 
 <body>
 <div id="sube-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <img src="logo.png" alt="Logo" class="logo" style="width: 50%; margin-bottom: 1rem;">
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                ASALVO <br> SERVICIOS LEGALES
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Abog.MariaGustavo.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Abog.MariaGustavo.png" download="Abog.MariaGustavo.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
+        
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">MARIA EUGENIA RIOS CABALLERO</h2>
+            <h2 class="inline-text">MARIA EUGENIA</h2>
+            <h2 class="inline-text">RIOS CABALLERO</h2>
             <h3 class="inline-text">Abogada</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59168758411">
                         <span class="full">+591 68758411</span>
                         <span class="short">68758411</span>
@@ -51,9 +80,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59168758411&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59168758411&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 68758411</span>
                         <span class="short">68758411</span>
@@ -62,6 +99,7 @@
             </div>
         </div>
 
+        <div class="despegables-wrapper">
         <!-- SERVICIOS -->
         <div class="despegable">
             <div class="despegable-toggle">Se atiende:</div>
@@ -73,20 +111,33 @@
                 </ul>
             </div>
         </div>
-
-        <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">GUSTAVO NAVARRO CASTEL</h2>
-            <h3 class="inline-text">Abog. Especialista en materia Agroambiental</h3>
         </div>
 
+
+
+        <div class="nombre-completo degradado-animado3" style="margin-top: 5%;">
+            <h2 class="inline-text">GUSTAVO</h2>
+            <h2 class="inline-text">NAVARRO CASTEL</h2>
+            <h3 class="inline-text">Abog. Especialista en materia Agroambiental</h3>
+        </div>
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" href="tel:+59175527576">
                         <span class="full">+591 75527576</span>
                         <span class="short">75527576</span>
@@ -96,9 +147,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59175527576&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59175527576&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 75527576</span>
                         <span class="short">75527576</span>
@@ -108,59 +167,76 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/Q8U88iqSuUFCEhMRA"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.776388593703818, -63.18113255767281"> 
                         Calle Beni entre calle Celso Castedo y Vaca Diez, Edif. Mary Luz, planta baja, oficina N°6
                     </a>
                 </div>
             </div>
         </div>
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.3250784628112!2d-63.18124175020452!3d-17.776412818351044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM1LjkiUyA2M8KwMTAnNTIuMCJX!5e0!3m2!1ses-419!2sbo!4v1760579474500!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="social-icons">
-            <a href="mailto:kemafuja.enterprise@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
-                <img src="../-LOGOS/Correo.png" alt="Correo">            
-            </a>
-            <div class="whatsapp-despegable">
-                <button class="social-icon" style="border: none;">
-                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
-                </button>
-                <div class="despegable-content">
-                    <a href="https://api.whatsapp.com/send?phone=59168758411&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
-                        +591 68758411
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=59175527576&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
-                        +591 75527576
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.3250784628112!2d-63.18124175020452!3d-17.776412818351044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM1LjkiUyA2M8KwMTAnNTIuMCJX!5e0!3m2!1ses-419!2sbo!4v1760579474500!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.776388593703818, -63.18113255767281" target="_blank">
+                    Abrir en Google Maps
                     </a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/Q8U88iqSuUFCEhMRA" 
-                target="_blank" class="social-icon">
+
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        <div class="social-icons">
+            <div class="whatsapp-despegable" style="right: -7.5%;">
+                <button class="social-icon Whatsapp" style="border: none;">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 70%;">
+                </button>
+                <div class="despegable-content">
+                    <a href="https://api.whatsapp.com/send?phone=59168758411&text=Buenas%20quisiera%20consultar%20sobre..." target="_blank">
+                        +591 68758411
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=59175527576&text=Buenas%20quisiera%20consultar%20sobre..." target="_blank">
+                        +591 75527576
+                </div>
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.776388593703818, -63.18113255767281" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Abog.MariaGustavo/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
