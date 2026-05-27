@@ -4,9 +4,9 @@
     <meta property="og:title" content="OFICIAL DE REGISTRO CIVIL N°70101091">
     <meta property="og:description" content="Lourdes Canaviri Juaniquina">
     <meta property="og:image" content="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -15,32 +15,64 @@
     <title>Oficial de Registro civil - Abog. Lourdes Canaviri Juaniquina</title>
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
-</head>
+</head> 
 
-<body> 
+<body>
 <div id="sube-contenedor"></div>
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <h1 class="letra">OFICIALIA DE REGISTRO CIVIL</h1>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Registro <br> Civil
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Ofic.LourdesCanaviriJuaniquina.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Ofic.LourdesCanaviriJuaniquina.png" download="Ofic.LourdesCanaviriJuaniquina.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter">
+            <h1 class="letra">OFICIALIA DE</h1>
+            <h1 class="letra"><strong>REGISTRO CIVIL</strong></h1>
+        </div>
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">LOURDES CANAVIRI JUANIQUINA</h2>
+            <h2 class="inline-text">LOURDES</h2>
+            <h2 class="inline-text">CANAVIRI JUANIQUINA</h2>
             <h3 class="inline-text">OFICIAL DE REGISTRO CIVIL</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59172628254">
                         <span class="full">+591 72628254</span>
                         <span class="short">72628254</span>
@@ -50,84 +82,108 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59172628254&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59172628254&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 72628254</span>
                         <span class="short">72628254</span>
                     </a>
                 </div>
             </div>
-          
+
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/RLoCNK3qm3g1yj2P7"> 
-                         Calle Tao entre calle Velasco y calle C. Chiquitos
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.77545421288103, -63.17333089578322"> 
+                        Calle Tao entre calle Velasco y calle C. Chiquitos
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.342616140024!2d-63.17590092482604!3d-17.775587883179313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMyLjEiUyA2M8KwMTAnMjQuMCJX!5e0!3m2!1ses-419!2sbo!4v1759156550943!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.342616140024!2d-63.17590092482604!3d-17.775587883179313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzMyLjEiUyA2M8KwMTAnMjQuMCJX!5e0!3m2!1ses-419!2sbo!4v1759156550943!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.77545421288103, -63.17333089578322" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES-JUEVES-VIERNES:</strong> 8:00 - 18:00</li>
-                    <li><strong>MARTES-MIERCOLES:</strong> 7:00 - 18:00</li>
-                    <li><strong>SÁBADO:</strong> 8:00 - 12:00</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES-JUEVES-VIERNES:</strong> 8:00 - 18:00</li>
+                        <li><strong>MARTES-MIERCOLES:</strong> 7:00 - 18:00</li>
+                        <li><strong>SÁBADO:</strong> 8:00 - 12:00</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>                    
-                    <li><strong>RECONOCIMIENTO DE HIJO(S)</strong></li>
-                    <li><strong>CELEBRACION DE MATRIMONIO</strong></li>
-                    <li class="submenu">
-                        <strong>CERTIFICADOS:</strong>
-                        <ul>
-                            <li>NACIMIENTO</li>
-                            <li>MATRIMONIO</li>
-                            <li>DEFUNCION</li>
-                        </ul>
-                    </li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>                    
+                        <li><strong>RECONOCIMIENTO DE HIJO(S)</strong></li>
+                        <li><strong>CELEBRACION DE MATRIMONIO</strong></li>
+                        <li class="submenu">
+                            <strong>CERTIFICADOS:</strong>
+                            <ul>
+                                <li>NACIMIENTO</li>
+                                <li>MATRIMONIO</li>
+                                <li>DEFUNCION</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="mailto:kemafuja.enterprise@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
-                <img src="../-LOGOS/Correo.png" alt="Correo">            
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=59172628254&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+            <a href="https://api.whatsapp.com/send?phone=59172628254&text=Buenas%20quisiera%20consultar%20sobre..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/RLoCNK3qm3g1yj2P7" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.77545421288103, -63.17333089578322" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Ofic.LourdesCanaviriJuaniquina/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -136,9 +192,9 @@
         tamMax: 10,
         durMax: 20,
         durMin: 1,
-        aparMax: 20,
+        aparMax: 10,
         tamIgual: true,
-        forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
         color: 'gold',
         r_opacidad: true
     });
