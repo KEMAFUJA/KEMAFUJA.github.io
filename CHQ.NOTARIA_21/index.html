@@ -1,12 +1,12 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta property="og:title" content="NOTARÍA DE FÉ PÚBLICA NRO.21">
     <meta property="og:description" content="Viviana Miriam Balcazar Rojas">
     <meta property="og:image" content="https://kemafuja.github.io/CHQ.NOTARIA_21/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/CHQ.NOTARIA_21">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/CHQ.NOTARIA_21/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -17,36 +17,67 @@
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
-<body> 
+<body>
 <div id="sube-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Notaría <br> N°21
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/CHQ.NOTARIA_21.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/CHQ.NOTARIA_21.png" download="CHQ.NOTARIA_21.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
         </div>
-        
-        <h1 class="letra">NOTARÍA N°21</h1>
+
+        <div class="letter">
+            <h1 class="letra">NOTARÍA</h1>
+            <h1 class="letra">N°<strong>21</strong></h1>
+        </div>
 
         <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
-            <h2 class="inline-text">VIVIANA MIRIAM BALCAZAR ROJAS</h2>
-            
+            <h2 class="inline-text">VIVIANA MIRIAM</h2>
+            <h2 class="inline-text">BALCAZAR ROJAS</h2>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59176118581">
                         <span class="full">+591 76118581</span>
                         <span class="short">76118581</span>
-                    </a> <br>
+                    </a><br>
                     <a class="contact-link numwa" href="tel:+59146423327 ">
                         <span class="full">+591 46423327 </span>
                         <span class="short">46423327 </span>
@@ -56,7 +87,15 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
                         href="https://api.whatsapp.com/send?phone=59176118581&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2021,%20en%20que%20podemos%20ayudarle?..." 
                         target="_blank">
@@ -68,8 +107,16 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
                         href="mailto:notariadefepublica21@outlook.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         notariadefepublica21@outlook.com
                     </a>
@@ -78,9 +125,17 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/UsxLqdrjTtmY3vPf6"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-19.046145590816156, -65.2459676037096"> 
                         Calle Colombia N°156, esq. Av. de las Americas - Barrio Petrolero - Sucre
                     </a>
                 </div>
@@ -88,65 +143,44 @@
         </div>
 
         <div class="despegables-wrapper">
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-  <div class="despegable-toggle">Ubicación</div>
-
-  <div class="content2 map-wrapper">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d942.8499204087465!2d-65.2458174!3d-19.046157!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDAyJzQ2LjMiUyA2NcKwMTQnNDUuNSJX!5e0!3m2!1ses-419!2sbo!4v1779206562303!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <!-- capa clickeable -->
-    <a 
-      class="map-overlay"
-      href="https://maps.app.goo.gl/UsxLqdrjTtmY3vPf6"
-      target="_blank">
-    </a>
-  </div>
-</div>
-
-<style>
-    .content2 {
-  position: relative;
-}
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 450px;
-}
-
-.map-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-</style>
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 17:30</li>
-                    <li><strong>SÁBADO:</strong> 9:00 - 13:00</li>
-                </ul>
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d942.8499204087465!2d-65.2458174!3d-19.046157!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDAyJzQ2LjMiUyA2NcKwMTQnNDUuNSJX!5e0!3m2!1ses-419!2sbo!4v1779207156435!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-19.046145590816156, -65.2459676037096" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>ACTAS NOTARIADAS</strong></li>
-                    <li> <strong>CERTIFICACIONES DE FIRMA</strong></li>
-                    <li> <strong>CERTIFICACIONES Y OTROS</strong></li>
-                    <li> <strong>DECLARACIONES VOLUNTÁRIAS</strong></li>
-                    <li> <strong>ESCRITURAS PÚBLICAS</strong></li>
-                    <li> <strong>PROCESOS VOLUNTARIOS</strong></li>
-                    <li> <strong>PERMISOS DE VIAJE PARA MENORES DE EDAD</strong></li>
-                    <li> <strong>PODERES</strong></li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:30 - 17:30</li>
+                        <li><strong>SÁBADO:</strong> 9:00 - 13:00</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>ACTAS NOTARIADAS</strong></li>
+                        <li> <strong>CERTIFICACIONES DE FIRMA</strong></li>
+                        <li> <strong>CERTIFICACIONES Y OTROS</strong></li>
+                        <li> <strong>DECLARACIONES VOLUNTÁRIAS</strong></li>
+                        <li> <strong>ESCRITURAS PÚBLICAS</strong></li>
+                        <li> <strong>PERMISOS DE VIAJE PARA MENORES DE EDAD</strong></li>
+                        <li> <strong>PODERES</strong></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="social-icons">
@@ -154,21 +188,25 @@
                 target="_blank" class="social-icon Correo">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-
-            <a href="https://api.whatsapp.com/send?phone=59146423327 &text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2021,%20en%20que%20podemos%20ayudarle?..." 
-                target="_blank" class="social-icon Whatsapp">                
-                <img src="../-LOGOS/WA.png" alt="Whatsapp">            
+            <a href="https://api.whatsapp.com/send?phone=59176118581&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2021,%20en%20que%20podemos%20ayudarle?..." 
+                target="_blank" class="social-icon Whatsapp"> 
+                <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-
-            <a href="https://maps.app.goo.gl/UsxLqdrjTtmY3vPf6" 
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-19.046145590816156, -65.2459676037096" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/CHQ.NOTARIA_21/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
