@@ -4,8 +4,8 @@
     <meta property="og:description" content="Cel: 74605876">
     <meta property="og:title" content="Abog. I. Paola Salvatierra Menacho">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.IPaolaSalvatierra/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
     <meta property="og:url" content="https://kemafuja.github.io/Abog.IPaolaSalvatierra/">
     <meta name="twitter:card" content="summary_large_image">    
 
@@ -18,34 +18,65 @@
 </head>
 
 <body>
-
 <div id="sube-contenedor"></div>
 <img src="logo.png" alt="Logo" class="logo">
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Abog. 
+                <br> 
+                I. Paola Salvatierra Menacho
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Abog.IPaolaSalvatierra.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Abog.IPaolaSalvatierra.png" download="Abog.IPaolaSalvatierra.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="Est">Estudio Juridico</h3>
+        <div class="letter">
+            <h1 class="letra">P S</h1>
+            <h1 class="letra">ASOCIADOS</h1>
         </div>
         
-        
-        <h3 class="Est">Estudio Juridico</h3>
-        <h1 class="letra">P S ASOCIADOS</h1>
-        
-
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">I. Paola Salvatierra Menacho </h2>
+            <h2 class="inline-text">I. Paola Salvatierra Menacho</h2>
             <h3 class="inline-text">Abogada</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59174605876">
                         <span class="full">+591 74605876</span>
                         <span class="short">74605876</span>
@@ -55,9 +86,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59174605876&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59174605876&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 74605876</span>
                         <span class="short">74605876</span>
@@ -67,89 +106,113 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="mailto:psm.estudiojuridico88@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:psm.estudiojuridico88@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         psm.estudiojuridico88@gmail.com
                     </a>
                 </div>
             </div>
+            
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/VmzAdaYGVcvdLXPk7"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.773709385465008, -63.1802041134908"> 
                         C/ Prolongacion Beni N° 20 Edificio Casanovas Piso 1 Of. 7
                     </a>
                 </div>
             </div>
-
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d690.6395710214911!2d-63.18023626975194!3d-17.773702958353653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7e00e248a7b%3A0xd5ca514cfba37b56!2sEdificio%20Casanovas%20Oficina%20F.P.S%20P8!5e0!3m2!1ses!2sbo!4v1777917414018!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d690.6395710214911!2d-63.18023626975194!3d-17.773702958353653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e7e00e248a7b%3A0xd5ca514cfba37b56!2sEdificio%20Casanovas%20Oficina%20F.P.S%20P8!5e0!3m2!1ses!2sbo!4v1777917414018!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.773709385465008, -63.1802041134908" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
-        
-        <div class="despegable">
-            <div class="despegable-toggle">Fotos:</div>
-            <div class="content-img">
-                <img src="imagen.jpg" alt="Imagen">
-                <img src="imagen (1).jpg" alt="Imagen">
-                <img src="imagen (2).jpeg" alt="Imagen">
-            </div>
-        </div>
-        
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li class="submenu"> <strong>FAMILIAR</strong>
-                        <ul>
-                            <li>Divorcios</li>
-                            <li>Custodia</li>
-                            <li>Asistencia Familiar</li>
-                        </ul>
-                    </li>  
-                    <li class="submenu"> <strong>CIVIL</strong>
-                        <ul>
-                            <li>Contratos</li>
-                            <li>Daños y perjuicios</li>
-                            <li>Propiedad y bienes</li>
-                        </ul>
-                    </li>
-                    <li class="submenu"> <strong>PENAL</strong>
-                        <ul>
-                            <li>Denuncias</li>
-                            <li>Delitos</li>
-                            <li>Medidas Cautelares</li>
-                        </ul>
-                    </li>
-                    <li class="submenu"> <strong>LABORAL</strong>
-                        <ul>
-                            <li>Despidos injustificados</li>
-                            <li>Indemnizacion</li>
-                            <li>Contrato de trabajo</li>
-                            <li>Beneficios sociales</li>
-                            <li>Acoso Laboral</li>
-                            <li>Conflictos empleador-empleado</li>
-                        </ul>
-                    </li>
+            <!-- IMAGENES -->
+            <div class="despegable">
+                <div class="despegable-toggle">Fotos:</div>
+                <div class="content-img">
+                    <img src="imagen.jpg" alt="Imagen">
+                    <img src="imagen (1).jpg" alt="Imagen">
+                    <img src="imagen (2).jpeg" alt="Imagen">
+                </div>
+            </div>
 
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li class="submenu"> <strong>FAMILIAR</strong>
+                            <ul>
+                                <li>Divorcios</li>
+                                <li>Custodia</li>
+                                <li>Asistencia Familiar</li>
+                            </ul>
+                        </li>  
+                        <li class="submenu"> <strong>CIVIL</strong>
+                            <ul>
+                                <li>Contratos</li>
+                                <li>Daños y perjuicios</li>
+                                <li>Propiedad y bienes</li>
+                            </ul>
+                        </li>
+                        <li class="submenu"> <strong>PENAL</strong>
+                            <ul>
+                                <li>Denuncias</li>
+                                <li>Delitos</li>
+                                <li>Medidas Cautelares</li>
+                            </ul>
+                        </li>
+                        <li class="submenu"> <strong>LABORAL</strong>
+                            <ul>
+                                <li>Despidos injustificados</li>
+                                <li>Indemnizacion</li>
+                                <li>Contrato de trabajo</li>
+                                <li>Beneficios sociales</li>
+                                <li>Acoso Laboral</li>
+                                <li>Conflictos empleador-empleado</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -166,15 +229,21 @@
                 target="_blank" class="social-icon Tiktok">
                 <img src="../-LOGOS/TT.png" alt="TikTok">
             </a>
-            <a href="https://maps.app.goo.gl/VmzAdaYGVcvdLXPk7" 
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.773709385465008, -63.1802041134908" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Abog.IPaolaSalvatierra/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
