@@ -6,44 +6,77 @@
     <meta property="og:image" content="https://kemafuja.github.io/NOTARIA_135/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/NOTARIA_135">
+    <meta property="og:url" content="https://kemafuja.github.io/NOTARIA_135/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Notaría N°135 - Abog. Pablo Gerar Fuentes Mendoza</title>
+
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
-<body> 
+<body>
 <div id="sube-contenedor"></div>
 <div id="chocan-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Notaría <br> N°135
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/NOTARIA_135.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/NOTARIA_135.png" download="NOTARIA_135.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter letra">
+            <h1>NOTARÍA</h1>
+            <h1>N°<strong>135</strong></h1>
         </div>
         
-        <h1 class="letra">NOTARÍA N°135</h1>
 
         <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
             <h2 class="inline-text">PABLO GERAR</h2>
             <h2 class="inline-text">FUENTES MENDOZA</h2>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59167784775">
                         <span class="full">+591 67784775</span>
                         <span class="short">67784775</span>
@@ -53,7 +86,15 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
                         href="https://api.whatsapp.com/send?phone=59167784775&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%20135,%20en%20que%20podemos%20ayudarle?..." 
                         target="_blank">
@@ -65,8 +106,16 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
                         href="mailto:pablofuentes.notaria135@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         pablofuentes.notaria135@gmail.com
                     </a>
@@ -75,47 +124,61 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.7764482595461, -63.181288055817994"> 
                         Calle Beni, entre calle Celso Castedo y calle Rafael Peña planta baja
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.321175508744!2d-63.1813417!3d-17.7765964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e9d22dd4ba81%3A0x5db1c0a1ffbec291!2zTm90YXLDrWEgZGUgZmUgUMO6YmxpY2EgTsKwIDEzNQ!5e0!3m2!1ses-419!2sbo!4v1738777931195!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.321175508744!2d-63.1813417!3d-17.7765964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e9d22dd4ba81%3A0x5db1c0a1ffbec291!2zTm90YXLDrWEgZGUgZmUgUMO6YmxpY2EgTsKwIDEzNQ!5e0!3m2!1ses-419!2sbo!4v1738777931195!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.7764482595461, -63.181288055817994" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
-                    <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
+                        <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>ACTAS NOTARIADAS</strong></li>
-                    <li> <strong>CERTIFICACIONES DE FIRMA</strong></li>
-                    <li> <strong>CERTIFICACIONES Y OTROS</strong></li>
-                    <li> <strong>DECLARACIONES VOLUNTÁRIAS</strong></li>
-                    <li> <strong>ESCRITURAS PÚBLICAS</strong></li>
-                    <li> <strong>PERMISOS DE VIAJE PARA MENORES DE EDAD</strong></li>
-                    <li> <strong>PODERES</strong></li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>ACTAS NOTARIADAS</strong></li>
+                        <li> <strong>CERTIFICACIONES DE FIRMA</strong></li>
+                        <li> <strong>CERTIFICACIONES Y OTROS</strong></li>
+                        <li> <strong>DECLARACIONES VOLUNTÁRIAS</strong></li>
+                        <li> <strong>ESCRITURAS PÚBLICAS</strong></li>
+                        <li> <strong>PERMISOS DE VIAJE PARA MENORES DE EDAD</strong></li>
+                        <li> <strong>PODERES</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -132,15 +195,21 @@
                 target="_blank" class="social-icon Facebook">
                 <img src="../-LOGOS/FB.png" alt="Facebook">
             </a>
-            <a href="https://maps.app.goo.gl/XuhDTEvhvqvWrjaH6" 
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.7764482595461, -63.181288055817994" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/NOTARIA_135/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
