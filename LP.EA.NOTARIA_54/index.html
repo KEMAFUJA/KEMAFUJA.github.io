@@ -1,12 +1,12 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta property="og:title" content="NOTARÍA DE FÉ PÚBLICA NRO.54">
     <meta property="og:description" content="Silvia Riveros Quenta">
     <meta property="og:image" content="https://kemafuja.github.io/LP.EA.NOTARIA_54/logo.png">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="600">
-    <meta property="og:url" content="https://kemafuja.github.io/LP.EA.NOTARIA_54">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/LP.EA.NOTARIA_54/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -16,32 +16,63 @@
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
-
-<body> 
+<body>
 <div id="sube-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <h1 class="letra">NOTARÍA N°54</h1>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Notaría <br> N°54
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/LP.EA.NOTARIA_54.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/LP.EA.NOTARIA_54.png" download="LP.EA.NOTARIA_54.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter">
+            <h1 class="letra">NOTARIA</h1>
+            <h1 class="letra">N°<strong>54</strong></h1>
+        </div>
+    
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">SILVIA RIVEROS QUENTA</h2>
+            <h2 class="inline-text">SILVIA</h2>
+            <h2 class="inline-text">RIVEROS QUENTA</h2>
             <h3 class="inline-text">Notaria</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59176588085">
                         <span class="full">+591 76588085</span>
                         <span class="short">76588085</span>
@@ -55,7 +86,15 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
                         href="https://api.whatsapp.com/send?phone=59176588085&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2054,%20en%20que%20podemos%20ayudarle?..." 
                         target="_blank">
@@ -73,7 +112,15 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link fbcorr correo" 
                         href="mailto:notaria54elalto@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         notaria54elalto@gmail.com
@@ -87,55 +134,68 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicación:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/CaLDLJmCBgJwFw917"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-16.49972191974364, -68.1746302362556"> 
                         Av. Juan Pablo II, esq. Chacaltaya N°999, 1er piso, Edif. Valencia lado Banco PRODEM
                     </a>
                 </div>
             </div>
         </div>
 
-<div class="despegables-wrapper">
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3825.5162454665506!2d-68.174319054463!3d-16.500015098792865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDI5JzU5LjIiUyA2OMKwMTAnMjguNiJX!5e0!3m2!1ses!2sbo!4v1778197160543!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3825.5162454665506!2d-68.174319054463!3d-16.500015098792865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDI5JzU5LjIiUyA2OMKwMTAnMjguNiJX!5e0!3m2!1ses!2sbo!4v1778197160543!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-16.49972191974364, -68.1746302362556" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:30 - 18:00</li>
+                        <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li>Aceptación de herencia en forma pura y simple para mayores de edad</li>
+                        <li>Aceptación de herencia con beneficio de inventario para menores de edad</li>
+                        <li>Renuncia a la herencia</li>
+                        <li>Divorcio notarial de mutuo acuerdo</li>
+                        <li>Escrituras públicas</li>
+                        <li>Poderes</li>
+                        <li>Certificación de firmas y rúbricas</li>
+                        <li>Declaración voluntaria</li>
+                        <li>Cartas notariadas</li>
+                        <li>Actas</li>
+                        <li>Otros...</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 18:00</li>
-                    <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li>Aceptación de herencia en forma pura y simple para mayores de edad</li>
-                    <li>Aceptación de herencia con beneficio de inventario para menores de edad</li>
-                    <li>Renuncia a la herencia</li>
-                    <li>Divorcio notarial de mutuo acuerdo</li>
-                    <li>Escrituras públicas</li>
-                    <li>Poderes</li>
-                    <li>Certificación de firmas y rúbricas</li>
-                    <li>Declaración voluntaria</li>
-                    <li>Cartas notariadas</li>
-                    <li>Actas</li>
-                    <li>Otros...</li>
-                </ul>
-            </div>
-        </div>
-</div>
         <div class="social-icons">
             <div class="whatsapp-despegable">
                 <button class="social-icon Correo" style="border: none;">
@@ -143,13 +203,13 @@
                 </button>
                 <div class="despegable-content">
                     <a href="mailto:notaria54elalto@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..."  
-            target="_blank">
-                notaria54elalto@gmail.com
-            </a>
-            <a href="mailto:silviariveros054@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..."  
-            target="_blank">
-                silviariveros054@gmail.com
-            </a>
+                    target="_blank">
+                        notaria54elalto@gmail.com
+                    </a>
+                    <a href="mailto:silviariveros054@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..."  
+                    target="_blank">
+                        silviariveros054@gmail.com
+                    </a>
                 </div>
             </div>
 
@@ -166,16 +226,22 @@
                     </a>
                 </div>
             </div>
-
-            <a href="https://maps.app.goo.gl/CaLDLJmCBgJwFw917" 
+            
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-16.49972191974364, -68.1746302362556" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
             </a>
+            <a href="https://kemafuja.github.io/LP.EA.NOTARIA_54/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
+            </a>
         </div>
-    
+    </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -186,7 +252,7 @@
         durMin: 10,
         aparMax: 60,
         tamIgual: true,
-        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
         color: 'white',
         r_opacidad: true
     });
