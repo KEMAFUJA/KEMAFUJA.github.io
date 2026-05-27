@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
+<head>
     <meta property="og:title" content="Abog. Cloris Cochamanidis De Groot">
     <meta property="og:description" content="WA: 76377778">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.ClorisCochamanidisDeGroot/logo.png">
-    <meta property="og:image:width" content="1200">
+    <meta property="og:image:width" content="1300">
     <meta property="og:image:height" content="650">
-    <meta property="og:url" content="https://kemafuja.github.io/Abog.ClorisCochamanidisDeGroot">
+    <meta property="og:url" content="https://kemafuja.github.io/Abog.ClorisCochamanidisDeGroot/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -19,28 +19,57 @@
 
 <body>
 <div id="sube-contenedor"></div>
+    
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <img src="logo.png" alt="Logo" class="logo">
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Abog. <br> Cloris Cochamanidis De Groot
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Abog.ClorisCochamanidisDeGroot.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Abog.ClorisCochamanidisDeGroot.png" download="Abog.ClorisCochamanidisDeGroot.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
+        
         <div class="nombre-completo degradado-animado3">
             <h2 class="inline-text">Cloris Cochamanidis De Groot</h2>
             <h3 class="inline-text">ABOGADA</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59176377778">
                         <span class="full">+591 76377778</span>
                         <span class="short">76377778</span>
@@ -50,9 +79,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59176377778&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59176377778&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 76377778</span>
                         <span class="short">76377778</span>
@@ -62,9 +99,17 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="mailto:grecia_abog@hotmail.es?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:grecia_abog@hotmail.es?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         grecia_abog@hotmail.es
                     </a>
                 </div>
@@ -72,9 +117,17 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/7hBpemogEPJpP4HX6"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t"
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.77346010682307, -63.181525844182"> 
                         Edif. Razuk, planta baja, C/ D'Orbigny # 63, Of. 02
                     </a>
                 </div>
@@ -82,38 +135,41 @@
         </div>
 
         <div class="despegables-wrapper">
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.3888297682183!2d-63.18215614967959!3d-17.773413914582132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzI1LjEiUyA2M8KwMTAnNTMuMyJX!5e0!3m2!1ses-419!2sbo!4v1761073682331!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3799.3888297682183!2d-63.18215614967959!3d-17.773413914582132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzI1LjEiUyA2M8KwMTAnNTMuMyJX!5e0!3m2!1ses-419!2sbo!4v1761073682331!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.77346010682307, -63.181525844182" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <!-- IMAGENES -->
-         <div class="despegable">
-            <div class="despegable-toggle">Fotos:</div>
-            <div class="content-img">
+    
+            <!-- IMAGENES -->
+            <div class="despegable">
+                <div class="despegable-toggle">Fotos:</div>
+                <div class="content-img">
                 <img src="imagen1.jpg" alt="Imagen 1">
                 <img src="imagen2.jpg" alt="Imagen 2">
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A SABADO:</strong> 8:00 - 16:00</li>
-                    <li>Horario continuo...</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A SABADO:</strong> 8:00 - 16:00</li>
+                        <li>Horario continuo...</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
                 <ul>
                     <li class="submenu">
                         <strong>CIVILES</strong>
@@ -155,7 +211,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+            </div>
         </div>
 
         <div class="social-icons">
@@ -163,19 +219,25 @@
                 target="_blank" class="social-icon Correo">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59176377778&text=Buenas%20quisiera%20saber%20sobre..." 
+            <a href="https://api.whatsapp.com/send?phone=59176377778&text=Buenas%20quisiera%20consultar%20sobre..." 
                 target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/7hBpemogEPJpP4HX6" 
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.77346010682307, -63.181525844182" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Abog.ClorisCochamanidisDeGroot/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
