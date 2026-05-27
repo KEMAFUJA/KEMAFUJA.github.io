@@ -4,9 +4,9 @@
     <meta property="og:description" content="Cel: 68922215">
     <meta property="og:title" content="Abog. Romaneth Suarez">
     <meta property="og:image" content="https://kemafuja.github.io/Abog.RomanethSuarez/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/Abog.RomanethSuarez">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Abog.RomanethSuarez/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -19,29 +19,58 @@
 
 <body>
 <div id="sube-contenedor"></div>
- 
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <img src="logo.png" alt="Logo" class="logo">
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Abog. <br> Romaneth Suarez
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Abog.RomanethSuarez.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Abog.RomanethSuarez.png" download="Abog.RomanethSuarez.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
+        
         <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abogada</h3>
-            <h2 class="inline-text">Romaneth Suarez</h2>
+            <h2 class="inline-text">Romaneth</h2>
+            <h2 class="inline-text">Suarez</h2>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59168922215">
                         <span class="full">+591 68922215</span>
                         <span class="short">68922215</span>
@@ -51,9 +80,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 68922215</span>
                         <span class="short">68922215</span>
@@ -63,9 +100,17 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         romitadccc@gmail.com
                     </a>
                 </div>
@@ -73,140 +118,160 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.776201215028642, -63.181210217790905"> 
                         Calle Beni 682 esq. Celso Castedo
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d754.1501186562288!2d-63.18121291242176!3d-17.776268919417586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM0LjUiUyA2M8KwMTAnNTIuNCJX!5e0!3m2!1ses!2sbo!4v1774488164032!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d754.1501186562288!2d-63.18121291242176!3d-17.776268919417586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzM0LjUiUyA2M8KwMTAnNTIuNCJX!5e0!3m2!1ses!2sbo!4v1774488164032!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.776201215028642, -63.181210217790905" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
-                    <li>Horario Continuo...</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
+                        <li>Horario Continuo...</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-
-                <li class="submenu">
-                    <strong>PROCESOS:</strong>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
                     <ul>
-                        <li class="submenu">
-                            <strong>Penales:</strong>
-                            <ul>
-                                <li>Violación</li>
-                                <li>Abuso</li>
-                                <li>Ley 348</li>
-                                <li>Violencia</li>
-                                <li>Fisica</li>
-                                <li>Psicologica</li>
-                                <li>Economica</li>
-                                <li>Estafa</li>
-                                <li>Hurto</li>
-                                <li>Ley 1008</li>
-                                <li>Estupro</li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <strong>Civil:</strong>
-                            <ul>
-                                <li>Cobro de deuda</li>
-                                <li>Coactiva y ejecutiva</li>
-                                <li>Derecho propietario</li>
-                                <li>Ley 247</li>
-                                <li>Usucapion</li>
-                                <li>Ordinarios</li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <strong>Familiar:</strong>
-                            <ul>
-                                <li>Asistencia Familiar</li>
-                                <li>Divorcio</li>
-                                <li>Reconocimiento de union libre</li>
-                                <li>Division y particion de bienes</li>
-                                <li>Homologaciones de acuerdo</li>                    
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <strong>Laboral:</strong>
-                            <ul>
-                                <li>Cobro de beneficios sociales y otros</li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <strong>Elaboracion de contrato:</strong>
-                            <ul>
-                                <li>Conpra venta</li>
-                                <li>Anticresis</li>
-                                <li>Alquileres</li>
-                                <li>Acuerdo</li>
-                                <li>Instructivas</li>
-                                <li>Tramites en gral.</li>
-                                <li>otros</li>
-                            </ul>
-                        </li>
-                        <li></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <strong>TRÁMITES:</strong>
-                    <ul>
-                        <li>Divorcio juducial y notarial</li>
-                        <li>Declaratoria de herederos</li>
-                        <li>Judicial y notarial</li>
-                        <li>Derecho propietario</li>
-                        <li>Ley 247</li>
-                        <li>Segip Seresi</li>
-                        <li>Alcaldia</li>
-                        <li>Plan regulador</li>
-                        <li>Derechos Reales</li>
-                        <li>Alodiales DDRR</li>
-                        <li>Vista rapida DDRR</li>
-                    </ul>
-                </li>
 
-                </ul>
+                    <li class="submenu">
+                        <strong>PROCESOS:</strong>
+                        <ul>
+                            <li class="submenu">
+                                <strong>Penales:</strong>
+                                <ul>
+                                    <li>Violación</li>
+                                    <li>Abuso</li>
+                                    <li>Ley 348</li>
+                                    <li>Violencia</li>
+                                    <li>Fisica</li>
+                                    <li>Psicologica</li>
+                                    <li>Economica</li>
+                                    <li>Estafa</li>
+                                    <li>Hurto</li>
+                                    <li>Ley 1008</li>
+                                    <li>Estupro</li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <strong>Civil:</strong>
+                                <ul>
+                                    <li>Cobro de deuda</li>
+                                    <li>Coactiva y ejecutiva</li>
+                                    <li>Derecho propietario</li>
+                                    <li>Ley 247</li>
+                                    <li>Usucapion</li>
+                                    <li>Ordinarios</li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <strong>Familiar:</strong>
+                                <ul>
+                                    <li>Asistencia Familiar</li>
+                                    <li>Divorcio</li>
+                                    <li>Reconocimiento de union libre</li>
+                                    <li>Division y particion de bienes</li>
+                                    <li>Homologaciones de acuerdo</li>                    
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <strong>Laboral:</strong>
+                                <ul>
+                                    <li>Cobro de beneficios sociales y otros</li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <strong>Elaboracion de contrato:</strong>
+                                <ul>
+                                    <li>Conpra venta</li>
+                                    <li>Anticresis</li>
+                                    <li>Alquileres</li>
+                                    <li>Acuerdo</li>
+                                    <li>Instructivas</li>
+                                    <li>Tramites en gral.</li>
+                                    <li>otros</li>
+                                </ul>
+                            </li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <strong>TRÁMITES:</strong>
+                        <ul>
+                            <li>Divorcio juducial y notarial</li>
+                            <li>Declaratoria de herederos</li>
+                            <li>Judicial y notarial</li>
+                            <li>Derecho propietario</li>
+                            <li>Ley 247</li>
+                            <li>Segip Seresi</li>
+                            <li>Alcaldia</li>
+                            <li>Plan regulador</li>
+                            <li>Derechos Reales</li>
+                            <li>Alodiales DDRR</li>
+                            <li>Vista rapida DDRR</li>
+                        </ul>
+                    </li>
+
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
+            <a href="mailto:romitadccc@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." 
+                target="_blank" class="social-icon Correo">                
                 <img src="../-LOGOS/Correo.png" alt="Correo">            
             </a>
-            <a href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+            <a href="https://api.whatsapp.com/send?phone=59168922215&text=Buenas%20quisiera%20consultar%20sobre..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/PGdLZTvp7Cn3FUBP7" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.776201215028642, -63.181210217790905" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Abog.RomanethSuarez/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
