@@ -4,45 +4,76 @@
     <meta property="og:title" content="OPTICA - RAFITA">
     <meta property="og:description" content="Neysa Siancas Mamani - Optica Oftálmica">
     <meta property="og:image" content="https://kemafuja.github.io/CBB.Optica.Rafita/logo.png">
-    <meta property="og:image:width" content="800">
-    <meta property="og:image:height" content="800">
-    <meta property="og:url" content="https://kemafuja.github.io/CBB.Optica.Rafita">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/CBB.Optica.Rafita/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Optica - Rafita</title>
-
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
 <div id="sube-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Optica <br> Rafita
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/CBB.Optica.Rafita.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/CBB.Optica.Rafita.png" download="CBB.Optica.Rafita.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="letter">
+            <h1 class="letra">OPTICA</h1>
+            <h1 class="letra">RAFITA</h1>
         </div>
 
-        <h1 class="letra">OPTICA RAFITA</h1>
-        
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">Neysa Siancas Mamani</h2>
+            <h2 class="inline-text">Neysa</h2>
+            <h2 class="inline-text">Siancas Mamani</h2>
             <h3 class="inline-text">Optica Oftálmica</h3>
-        </div>        
+        </div>
         
         <div class="divider"></div>
-
+        
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59174803195">
                         <span class="full">+591 74803195</span>
                         <span class="short">74803195</span>
@@ -52,75 +83,102 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 74803195</span>
                         <span class="short">74803195</span>
                     </a>
                 </div>
             </div>
-
+            
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/tzR7SbHJ8VXPt9TY8"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.39557339960684, -66.15367041483843"> 
                         Av. San Martin N°472 entre Calama y Jordan
                     </a>
                 </div>
             </div>
-            
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.3354739811407!2d-66.15306958703307!3d-17.395680909357825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373392313cbbb%3A0x6a2e7d1118c267ed!2sOptica%20Rafita!5e0!3m2!1ses-419!2sbo!4v1777416905930!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.3354739811407!2d-66.15306958703307!3d-17.395680909357825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373392313cbbb%3A0x6a2e7d1118c267ed!2sOptica%20Rafita!5e0!3m2!1ses-419!2sbo!4v1777416905930!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.39557339960684, -66.15367041483843" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 9:00 - 19:00</li>
-                    <li><strong>SABADO:</strong> 9:00 - 14:00</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 9:00 - 19:00</li>
+                        <li><strong>SABADO:</strong> 9:00 - 14:00</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>FOTOCROMATICO</strong></li>
-                    <li> <strong>POLICARBONATO</strong></li>
-                    <li> <strong>ORGANICO</strong></li>
-                    <li> <strong>ANTIREFLEX</strong></li>
-                    <li> <strong>BIFOCALES Y MULTIFOCALES</strong></li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>FOTOCROMATICO</strong></li>
+                        <li> <strong>POLICARBONATO</strong></li>
+                        <li> <strong>ORGANICO</strong></li>
+                        <li> <strong>ANTIREFLEX</strong></li>
+                        <li> <strong>BIFOCALES Y MULTIFOCALES</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+            <a href="https://api.whatsapp.com/send?phone=59174803195&text=Buenas%20quisiera%20consultar%20sobre..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://maps.app.goo.gl/tzR7SbHJ8VXPt9TY8" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.39557339960684, -66.15367041483843" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/CBB.Optica.Rafita/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -132,7 +190,7 @@
         aparMax: 20,
         tamIgual: true,
         forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
-        color: 'gold',
+        color: 'white',
         r_opacidad: true
     });
 </script>
