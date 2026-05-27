@@ -1,52 +1,83 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta property="og:title" content="NOTARÍA DE FÉ PÚBLICA NRO.48">
+        <meta property="og:title" content="NOTARÍA DE FÉ PÚBLICA NRO.48">
     <meta property="og:description" content="Mónica A. Pérez Orruel">
     <meta property="og:image" content="https://kemafuja.github.io/CBB.NOTARIA_48/logo.png">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="600">
-    <meta property="og:url" content="https://kemafuja.github.io/CBB.NOTARIA_48">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/CBB.NOTARIA_48/">
     <meta name="twitter:card" content="summary_large_image">    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Notaría N°48 - Abog. Mónica A. Pérez Orruel</title>
+
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
-<body> 
+<body>
 <div id="sube-contenedor"></div>
 
-    
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <h1 class="letra">NOTARÍA N°48</h1>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                Notaría <br> N°48
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/CBB.NOTARIA_48.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/CBB.NOTARIA_48.png" download="CBB.NOTARIA_48.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter">
+            <h1 class="letra">NOTARÍA</h1>
+            <h1 class="letra">N°<strong>48</strong></h1>
+        </div>
+    
         <div class="nombre-completo degradado-animado3">
             <h3 class="inline-text">Abog.</h3>
-            <h2 class="inline-text">MÓNICA A. PÉREZ ORRUEL</h2>
+            <h2 class="inline-text">MÓNICA A.</h2>
+            <h2 class="inline-text">PÉREZ ORRUEL</h2>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59144527814">
                         <span class="full">Telf: +591 44527814</span>
                         <span class="short">Tf: 44527814</span>
-                    </a>
+                    </a><br>
                     <a class="contact-link numwa" href="tel:+5914564090">
                         <span class="full">Telf: +591 4564090</span>
                         <span class="short">Tf: 44564090</span>
@@ -54,7 +85,7 @@
                     <a class="contact-link numwa" href="tel:+59172222446">
                         <span class="full">Of.: +591 72222446</span>
                         <span class="short">Of: 72222446</span>
-                    </a>
+                    </a><br>
                     <a class="contact-link numwa" href="tel:+59172204899">
                         <span class="full">Cel: +591 72204899</span>
                         <span class="short">Ce: 72204899</span>
@@ -64,7 +95,15 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
                         href="https://api.whatsapp.com/send?phone=59172222446&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2048,%20en%20que%20podemos%20ayudarle?..." 
                         target="_blank">
@@ -82,8 +121,16 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
                         href="mailto:notaria48cbb@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
                         notaria48cbb@hotmail.com
                     </a>
@@ -92,9 +139,17 @@
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/qzFXeGSoDYtP2BWV9"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.385815665442422, -66.154338610455"> 
                         Av. Salamanca N°0675 entre Antezana y Lanza, Edif. Sisteco, piso #3 of. N°1
                     </a>
                 </div>
@@ -102,48 +157,52 @@
         </div>
 
         <div class="despegables-wrapper">
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d951.8849803964919!2d-66.15420446919319!3d-17.385857902840918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIzJzA5LjEiUyA2NsKwMDknMTUuNiJX!5e0!3m2!1ses!2sbo!4v1778536213340!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d951.8849803964919!2d-66.15420446919319!3d-17.385857902840918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIzJzA5LjEiUyA2NsKwMDknMTUuNiJX!5e0!3m2!1ses!2sbo!4v1778536213340!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.385815665442422, -66.154338610455" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 16:30</li>
-                    <li><strong>SÁBADO:</strong>  8:30 - 12:30</li>
-                    <li>Sabados, atencion previa coordinación</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:30 - 16:30</li>
+                        <li><strong>SÁBADO:</strong>  8:30 - 12:30</li>
+                        <li>Sabados, atencion previa coordinación</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li>Escrituras</li>
-                    <li>Poderes</li>
-                    <li>Certificación de firma y rubricas</li>
-                    <li>Actas de verificación, sorteos e inventarios</li>
-                    <li>Cartas notariadas</li>
-                    <li>Declaraciones voluntarias</li>
-                    <li>Apertura, cierre y legalizaciones de libros contables de actas y otros</li>
-                    <li>Legalizacion de actas de empresas</li>
-                    <li>Aceptacion de herencia</li>
-                    <li>Renuncia a herencia</li>
-                    <li>Divorcio notarial</li>
-                    <li>Autorizacion de viaje de menor al exterior</li>
-                    <li>Protestas de letras de cambio y pagares</li>
-                    <li>Otros establecidos por ley</li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li>Escrituras</li>
+                        <li>Poderes</li>
+                        <li>Certificación de firma y rubricas</li>
+                        <li>Actas de verificación, sorteos e inventarios</li>
+                        <li>Cartas notariadas</li>
+                        <li>Declaraciones voluntarias</li>
+                        <li>Apertura, cierre y legalizaciones de libros contables de actas y otros</li>
+                        <li>Legalizacion de actas de empresas</li>
+                        <li>Aceptacion de herencia</li>
+                        <li>Renuncia a herencia</li>
+                        <li>Divorcio notarial</li>
+                        <li>Autorizacion de viaje de menor al exterior</li>
+                        <li>Protestas de letras de cambio y pagares</li>
+                        <li>Otros establecidos por ley</li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </div>
 
         <div class="social-icons">
@@ -153,26 +212,32 @@
             </a>
             <div class="whatsapp-despegable">
                 <button class="social-icon Whatsapp" style="border: none;">
-                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 70%;">
                 </button>
                 <div class="despegable-content">
-                    <a href="https://api.whatsapp.com/send?phone=59172222446&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=59172222446&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2048,%20en%20que%20podemos%20ayudarle?..." target="_blank">
                         +591 72222446
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=59172204899&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=59172204899&text=Ud.%20se%20ha%20comunicado%20a%20la%20Notaría%2048,%20en%20que%20podemos%20ayudarle?..." target="_blank">
                         +591 72204899
                     </a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/qzFXeGSoDYtP2BWV9" 
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.385815665442422, -66.154338610455" 
                 target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/CBB.NOTARIA_48/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
