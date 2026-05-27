@@ -497,7 +497,7 @@
 /* ===== Texto ===== */
 .intro-text {
     font-size: 1.1rem;
-    color: var(--text-dark);
+    color: white;
     margin-top: 0%;
     margin-bottom: 2.5%;
     font-weight: 300;
