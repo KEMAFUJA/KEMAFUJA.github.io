@@ -4,47 +4,78 @@
     <meta property="og:title" content="Abgds. SUSANA LIN & JOSE LUIS ">
     <meta property="og:description" content="Cel: ">
     <meta property="og:image" content="https://kemafuja.github.io/CBB.VINTO.Abogs.FyS/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/CBB.VINTO.Abogs.FyS">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/CBB.VINTO.Abogs.FyS/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
-    <title>ABOGADOS - VINTO/CBB</title>
+    <title>F & S - Abogados</title>
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
 <div id="sube-contenedor"></div>
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <img src="logo.png" alt="Logo" class="logo" style="width: 50%; margin-bottom: 1rem; opacity: 1 !important;">
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                F & S <br> Abogados
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/CBB.VINTO.Abogs.FyS.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/CBB.VINTO.Abogs.FyS.png" download="CBB.VINTO.Abogs.FyS.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
+
+        
         <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">SUSANA LINN SIMIZU DOMINGUEZ</h2>
+            <h2 class="inline-text">SUSANA LINN</h2>
+            <h2 class="inline-text">SIMIZU DOMINGUEZ</h2>
             <h3 class="inline-text">Abogada</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59170374590">
                         <span class="full">+591 70374590</span>
                         <span class="short">70374590</span>
-                    </a>
+                    </a><br>
                     <a class="contact-link numwa" href="tel:+59178401284">
                         <span class="full">+591 78401284</span>
                         <span class="short">78401284</span>
@@ -54,56 +85,91 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59170374590&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59170374590&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 70374590</span>
                         <span class="short">70374590</span>
-                    </a>
+                    </a> <br>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59178401284&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59178401284&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 78401284</span>
                         <span class="short">78401284</span>
                     </a>
                 </div>
             </div>
-            
+
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:linnsimizu92@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">linnsimizu92@gmail.com</a>
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:linnsimizu92@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
+                        linnsimizu92@gmail.com
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>TRAMITES FAMILIARES</strong></li>
-                    <li> <strong>CIVILES</strong></li>
-                    <li> <strong>ALCALDIA</strong></li>
-                    <li> <strong>REGULARIZACION DE TERRENOS</strong></li>
-                </ul>
+        <div class="despegables-wrapper">
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>TRAMITES FAMILIARES</strong></li>
+                        <li> <strong>CIVILES</strong></li>
+                        <li> <strong>ALCALDIA</strong></li>
+                        <li> <strong>REGULARIZACION DE TERRENOS</strong></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </div>  
 
-        <div class="nombre-completo degradado-animado3">
-            <h2 class="inline-text">JOSE LUIS FUENTES ZENTENO</h2>
+
+
+
+        <div class="nombre-completo degradado-animado3" style="margin-top: 10%;">
+            <h2 class="inline-text">JOSE LUIS</h2>
+            <h2 class="inline-text">FUENTES ZENTENO</h2>
             <h3 class="inline-text">Abogado</h3>
         </div>
-
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona un numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59172204110">
                         <span class="full">+591 72204110</span>
                         <span class="short">72204110</span>
@@ -113,9 +179,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona un numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59172204110&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59172204110&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 72204110</span>
                         <span class="short">72204110</span>
@@ -125,81 +199,116 @@
 
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr" href="mailto:alainalfredo.jyl@gmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre...">alainalfredo.jyl@gmail.com</a>
+                    <div class="sugerencia">
+                        <p class="contact-label">Correo:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona el mail para enviar un correo.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr corr-t" 
+                        href="mailto:alainalfredo.jyl@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
+                        alainalfredo.jyl@gmail.com
+                    </a>
                 </div>
             </div>
             
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/jecGr7QiqhNYwcCeA"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.39645822981598, -66.31414259688088"> 
                         Calle Beni entre calle Celso Castedo y Vaca Diez, Edif. Mary Luz, planta baja, oficina N°6
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li class="submenu"> 
-                        <strong>ESPECIALIDAD EN TRAMITE DE VEHICULOS</strong>
-                        <ul>
-                            <li> DIPROVE</li>
-                            <li> ADUANA</li>
-                            <li> ALCALDIAS</li>
-                            <li> NIVEL NACIONAL</li>
-                        </ul>
-                    </li>
-                    <li class="submenu">
-                         <strong>TRAMITES</strong>
-                         <ul>
-                            <li> CAMBIO DE RADICATORIA</li>
-                            <li> TRANSFERENCIAS</li>
-                            <li> EXTRAVIOS</li>
-                            <li> DUPLICADOS DE RUAT</li>
-                            <li> DUPLICADOS DE PLACA</li>
-                            <li> CAMBIO DE ESTRUCTURA</li>
-                            <li> REEMPLAQUE</li>
-                            <li> REPORTE DE ROBO</li>
-                            <li> DUPLICADOS DE POLIZA</li>
-                        </ul>
-                    </li>
-                </ul>
+
+        <div class="despegables-wrapper">
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li class="submenu"> 
+                            <strong>ESPECIALIDAD EN TRAMITE DE VEHICULOS</strong>
+                            <ul>
+                                <li> DIPROVE</li>
+                                <li> ADUANA</li>
+                                <li> ALCALDIAS</li>
+                                <li> NIVEL NACIONAL</li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <strong>TRAMITES</strong>
+                            <ul>
+                                <li> CAMBIO DE RADICATORIA</li>
+                                <li> TRANSFERENCIAS</li>
+                                <li> EXTRAVIOS</li>
+                                <li> DUPLICADOS DE RUAT</li>
+                                <li> DUPLICADOS DE PLACA</li>
+                                <li> CAMBIO DE ESTRUCTURA</li>
+                                <li> REEMPLAQUE</li>
+                                <li> REPORTE DE ROBO</li>
+                                <li> DUPLICADOS DE POLIZA</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d634.4022338580006!2d-66.31441346871478!3d-17.39651068623181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIzJzQ3LjUiUyA2NsKwMTgnNTAuOSJX!5e0!3m2!1ses!2sbo!4v1768402988802!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d634.4022338580006!2d-66.31441346871478!3d-17.39651068623181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDIzJzQ3LjUiUyA2NsKwMTgnNTAuOSJX!5e0!3m2!1ses!2sbo!4v1768402988802!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.39645822981598, -66.31414259688088" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:00 - 17:00</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="mailto:kemafuja.enterprise@hotmail.com?subject=Consulta&body=Buenas Abg., quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
-                <img src="../-LOGOS/Correo.png" alt="Correo">            
-            </a>
             <div class="whatsapp-despegable">
-                <button class="social-icon" style="border: none;">
-                    <img src="../-LOGOS/WA.png" alt="WhatsApp">
+                <button class="social-icon Correo" style="border: none;">
+                    <img src="../-LOGOS/Correo.png" alt="Correo" style="width: 70%;">
+                </button>
+                <div class="despegable-content">
+                    <a href="mailto:linnsimizu92@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." >                
+                        linnsimizu92@gmail.com            
+                    </a>
+                    <a href="mailto:alainalfredo.jyl@gmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." >                
+                        alainalfredo.jyl@gmail.com           
+                    </a>
+                </div>
+            </div>
+
+            <div class="whatsapp-despegable">
+                <button class="social-icon Whatsapp" style="border: none;">
+                    <img src="../-LOGOS/WA.png" alt="WhatsApp" style="width: 70%;">
                 </button>
                 <div class="despegable-content">
                     <a href="https://api.whatsapp.com/send?phone=59170374590&text=Buenas%20quisiera%20saber%20sobre..." target="_blank">
@@ -213,15 +322,21 @@
                     </a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/jecGr7QiqhNYwcCeA" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.39645822981598, -66.31414259688088" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/CBB.VINTO.Abogs.FyS/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -232,7 +347,7 @@
         durMin: 1,
         aparMax: 20,
         tamIgual: true,
-        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
         color: 'gold',
         r_opacidad: true
     });
