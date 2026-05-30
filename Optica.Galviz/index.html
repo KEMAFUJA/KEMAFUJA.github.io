@@ -4,9 +4,9 @@
     <meta property="og:description" content="Cel: 63422151">
     <meta property="og:title" content="ÓPTICA - GALVIZ">
     <meta property="og:image" content="https://kemafuja.github.io/Optica.Galviz/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://kemafuja.github.io/Optica.GalvIz">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Optica.Galviz/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
@@ -19,23 +19,52 @@
 
 <body>
 <div id="sube-contenedor"></div>
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
-        </div>
-        
-        <img src="TARJETAS OPTICA GALVIZ PNG.png" alt="Logo" class="logo" style="width: 50%; opacity: 1 !important;">
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                OPTICA <br> Galviz
+            </div>
+        </div>    
 
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Optica.Galviz.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Optica.Galviz.png" download="Optica.Galviz.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
+        
         <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59163422151">
                         <span class="full">+591 63422151</span>
                         <span class="short">63422151</span>
@@ -45,9 +74,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 63422151</span>
                         <span class="short">63422151</span>
@@ -55,84 +92,128 @@
                 </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Facebook:</p>
-                    <a class="contact-link fbcorr" href="https://www.facebook.com/share/17GhgJQpn9/" target="_blank">Óptica "Galviz" </a>
+                    <div class="sugerencia">
+                        <p class="contact-label">Facebook:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona para ir a la pagina de Facebook.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr" 
+                        href="https://www.facebook.com/share/17GhgJQpn9/" 
+                        target="_blank">
+                        Óptica "Galviz" 
+                    </a>
                 </div>
             </div>
 
-            <div class="contact-item">
-                <div>
-                    <p class="contact-label">TIK TOK:</p>
-                    <a class="contact-link fbcorr" href="https://www.tiktok.com/@ptica.galviz.vision" target="_blank">optica.galviz</a>
-                </div>
-            </div>
-           
             <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/Xyc4wTVcDpRkM2jYA"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">TIK TOK:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona para ir a la pagina de TikTok.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr" 
+                        href="https://www.tiktok.com/@ptica.galviz.vision" 
+                        target="_blank">
+                        optica.galviz.vision
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-item full-width">
+                <div>
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.77474676462741, -63.1728054969642"> 
                         Calle Bernabe Sosa entre calle Pedro Antelo y calle S. Ortiz
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d578.3392170839771!2d-63.1726392261172!3d-17.7747224911877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ2JzI5LjMiUyA2M8KwMTAnMjIuMSJX!5e0!3m2!1ses-419!2sbo!4v1759196631432!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6556351.127481865!2d-64.19038543407629!3d-16.304252216327665!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sbo!4v1775696972045!5m2!1ses-419!2sbo" allowfullscreen="" loading="lazy"> </iframe>
+                    
+                    <a class="btn-maps" href="https://www.google.com/maps/dir/?api=1&destination=-17.77474676462741, -63.1728054969642" target="_blank">
+                    Abrir en Google Maps
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
-                    <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
-                </ul>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A VIERNES:</strong> 8:30 - 12:30 y 14:30 - 18:30</li>
+                        <li><strong>SÁBADO:</strong> 9:00 - 12:30</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>GAFAS</strong></li>
-                    <li> <strong>LENTES</strong></li>
-                    <li> <strong>LENTES DE CONTACTO CON MEDIDAS A PEDIDO</strong></li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>GAFAS</strong></li>
+                        <li> <strong>LENTES</strong></li>
+                        <li> <strong>LENTES DE CONTACTO CON MEDIDAS A PEDIDO</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+            <a href="https://api.whatsapp.com/send?phone=59163422151&text=Buenas%20quisiera%20consultar%20sobre..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
             <a href="https://www.facebook.com/share/17GhgJQpn9/" 
-                target="_blank" class="social-icon">
+                target="_blank" class="social-icon Facebook">
                 <img src="../-LOGOS/FB.png" alt="Facebook">
             </a>
             <a href="https://www.tiktok.com/@ptica.galviz.vision" 
-                target="_blank" class="social-icon">
+                target="_blank" class="social-icon Tiktok">
                 <img src="../-LOGOS/TT.png" alt="TikTok">
             </a>
-            <a href="https://maps.app.goo.gl/Xyc4wTVcDpRkM2jYA" 
-                target="_blank" class="social-icon">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=-17.77474676462741, -63.1728054969642" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Optica.Galviz/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
@@ -143,10 +224,10 @@
         durMin: 1,
         aparMax: 20,
         tamIgual: true,
-        forma: 'estrella', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
         color: 'gold',
         r_opacidad: true
     });
-</script>   
+</script>
 </body>
 </html>
