@@ -293,27 +293,26 @@
 /* ===== Nombre ===== */
 @font-face {
   font-family: 'FUENTE';
-  src: url('../../-LETRAS/fonts/Coprgtl.ttf');
+    src: url('/-LETRAS/fonts/KUNSTLER.TTF');
 }
 
 /*Nombre */
 .nombre-completo h2 {
-    font-size: 3rem;
+    font-size: 7rem;
     font-weight: 700;
     letter-spacing: 0.05rem;
     font-family: 'FUENTE';
     margin-top: 0%;
     margin-bottom: -7.5%;
-    text-transform: uppercase;
 }
 /* ---- Ocupacion ---- */
 .nombre-completo h3 {
     font-size: 1.5rem;
     letter-spacing: 20%;
     font-weight: 100;
-    font-family: 'FUENTE';
+    font-family: 'FUENTE2';
     margin-bottom: 0%;
-    margin-top: 7.5%;
+    margin-top: 5%;
     text-transform: uppercase;
 }
 
@@ -324,7 +323,6 @@
                                 hsl(60, 0%, 100%),
                                 hsl(60, 0%, 97.5%),
                                 hsl(60, 0%, 95%, 0.75));
-    filter: drop-shadow(0 0 2.5px hsl(60, 0%, 100%));
     animation: animacion-degradado 10s infinite alternate ease-in-out, 
                 animacion-aparicion 1.5s ease-in;
 }
@@ -601,7 +599,7 @@ li {
 }
 @media (max-width: 750px) {
     .nombre-completo h2 {
-        font-size: 3rem;
+        font-size: 5rem;
     }
 
     .nombre-completo h3 {
@@ -624,7 +622,7 @@ li {
 
 @media (max-width: 435px) {
     .nombre-completo h2 {
-        font-size: 1.75rem;
+        font-size: 3.75rem;
     }
             
     .nombre-completo h3 {
@@ -690,7 +688,7 @@ li {
 
 @media (max-width: 400px) {
     .nombre-completo h2 {
-        font-size: 1.5rem;
+        font-size: 2.75rem;
     }
             
     .nombre-completo h3 {
@@ -751,7 +749,7 @@ li {
 
 @media (max-width: 320px) {
     .nombre-completo h2 {
-        font-size: 1.25rem;
+        font-size: 2.25rem;
     }
             
     .nombre-completo h3 {
