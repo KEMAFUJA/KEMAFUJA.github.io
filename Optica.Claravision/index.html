@@ -6,43 +6,70 @@
     <meta property="og:image" content="https://kemafuja.github.io/Optica.Claravision/logo.png">
     <meta property="og:image:width" content="50">
     <meta property="og:image:height" content="50">
-    <meta property="og:url" content="https://kemafuja.github.io/Optica.Claravision">
+    <meta property="og:url" content="https://kemafuja.github.io/Optica.Claravision/">
     <meta name="twitter:card" content="summary_large_image">    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
     <title>Optica - Claravision</title>
-
     <link rel="stylesheet" href="Stilo.css">
     <link rel="stylesheet" href="../-OTROS/General.css">
 </head>
 
 <body>
 <div id="sube-contenedor"></div>
-    
+
 <div class="card-wrapper">
     <div class="card">
 
         <div class="sello-contenedor">
-            <div class="official-sello"></div>
+            <div class="sello-rotador"></div>
+            <div class="sello-texto">
+                OPTICA <br> CLARAVISION
+            </div>
+        </div>    
+
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-overlay"></div>
+            <div class="qr-ventana">
+                <button class="qr-cerrar" id="cerrarQr" aria-label="Cerrar">✕</button>
+                <div class="qr-panel">
+                    <img src="../Presentacion/QR's/Optica.Claravision.png" alt="QR" class="qr-real">
+                </div>
+                <div class="qr-acciones">
+                    <a href="../Presentacion/QR's/Optica.Claravision.png" download="Optica.Claravision.png" class="qr-descargar">
+                        Descargar QR
+                    </a>
+                </div>
+            </div>
         </div>
+
+        <img src="logo.png" alt="Logo" class="logo">
         
-        <img src="logo.png" alt="Logo" class="logo" style="width: 80%; opacity: 1 !important;">
-
-        <div class="divider"></div>
-
         <div class="nombre-completo degradado-animado3">
             <h2 class="inline-text">SONIA ZURITA ALEJO</h2>
             <h3 class="inline-text">Optica Oftálmica</h3>
-        </div>        
+        </div>
+        
+        <div class="divider"></div>
         
         <p class="intro-text">Para más información, contáctenos a través de:</p>
         
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">Teléfono:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Teléfono:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para llamar.
+                            </span>
+                        </button>
+                    </div>
+
                     <a class="contact-link numwa" href="tel:+59171076849">
                         <span class="full">+591 71076849</span>
                         <span class="short">71076849</span>
@@ -52,9 +79,17 @@
             
             <div class="contact-item">
                 <div>
-                    <p class="contact-label">WhatsApp:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Whatsapp:</p>
+                        <button class="info-btn">
+                            !
+                            <span class="tooltip">
+                                Presiona el numero para contactar por Whatsapp.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link numwa" 
-                        href="https://api.whatsapp.com/send?phone=59171076849&text=Buenas%20quisiera%20saber%20sobre..." 
+                        href="https://api.whatsapp.com/send?phone=59171076849&text=Buenas%20quisiera%20consultar%20sobre..." 
                         target="_blank">
                         <span class="full">Msj: 71076849</span>
                         <span class="short">71076849</span>
@@ -62,100 +97,114 @@
                 </div>
             </div>
 
-            <div class="contact-item">
+            <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Facebook:</p>
+                    <div class="sugerencia">
+                        <p class="contact-label">Facebook:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona para enviar ir a la pagina de facebook.
+                            </span>
+                        </button>
+                    </div>
                     <a class="contact-link fbcorr" href="https://www.facebook.com/profile.php?id=100079392616644" target="_blank">
                         Visitar página
                     </a>
                 </div>
             </div>
-
-            <div class="contact-item">
+            
+            <div class="contact-item full-width">
                 <div>
-                    <p class="contact-label">Ubicacion:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="https://maps.app.goo.gl/rsGreUA2FrESJjo27"> 
+                    <div class="sugerencia">
+                        <p class="contact-label">Ubicacion:</p>
+                        <button class="info-btn" style="margin-bottom: -2.5%; margin-left: 5%;">
+                            !
+                            <span class="tooltip">
+                                Presiona la ubicacion para ir a Maps.
+                            </span>
+                        </button>
+                    </div>
+                    <a class="contact-link fbcorr map-t" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=-17.772966712667063, -63.170550869278735"> 
                         C. Bernabe Sosa casi esq. J. Cronembold
                     </a>
                 </div>
             </div>
+        </div>
 
-            <div class="contact-item full-width">
-                <div>
-                    <p class="contact-label">Correo:</p>
-                    <a class="contact-link fbcorr correo" 
-                        href="mailto:claravisionopticas@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre...">
-                        claravisionopticas@hotmail.com
+        <div class="despegables-wrapper">
+            <!-- UBICACIÓN -->
+            <div class="despegable">
+                <div class="despegable-toggle">Ubicación</div>
+                <div class="content2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d474.9247359596695!2d-63.17049051957398!3d-17.772987784787535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e819d62a1381%3A0xae02ffc1ef0f175f!2sOPTICA%20CLARAVISION!5e0!3m2!1ses-419!2sbo!4v1780168848350!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <a class="btn-maps" href="https://maps.app.goo.gl/Q7Bq5p6Y5342SuPX8" target="_blank">
+                    Abrir en Google Maps
                     </a>
                 </div>
             </div>
-            
-        </div>
 
-        <!-- UBICACIÓN -->
-        <div class="despegable">
-            <div class="despegable-toggle">Ubicación</div>
-            <div class="content2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d340.00080368103573!2d-63.17085529648623!3d-17.773042652122683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1e819d62a1381%3A0xae02ffc1ef0f175f!2sOPTICA%20CLARAVISION!5e0!3m2!1ses-419!2sbo!4v1759192883611!5m2!1ses-419!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- HORARIO -->
+            <div class="despegable">
+                <div class="despegable-toggle">Horario de atención</div>
+                <div class="content">
+                    <ul>
+                        <li><strong>LUNES A SABADO:</strong> 8:00 - 18:00</li>                    
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- HORARIO -->
-        <div class="despegable">
-            <div class="despegable-toggle">Horario de atención</div>
-            <div class="content">
-                <ul>
-                    <li><strong>LUNES A SABADO:</strong> 8:00 - 18:00</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SERVICIOS -->
-        <div class="despegable">
-            <div class="despegable-toggle">Se atiende:</div>
-            <div class="content">
-                <ul>
-                    <li> <strong>GAFAS</strong></li>
-                    <li> <strong>LENTES</strong></li>
-                    <li> <strong>LENTES DE CONTACTO</strong></li>
-                </ul>
+            <!-- SERVICIOS -->
+            <div class="despegable">
+                <div class="despegable-toggle">Se atiende:</div>
+                <div class="content">
+                    <ul>
+                        <li> <strong>GAFAS</strong></li>
+                        <li> <strong>LENTES</strong></li>
+                        <li> <strong>LENTES DE CONTACTO</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="social-icons">
-            <a href="mailto:claravisionopticas@hotmail.com?subject=Consulta&body=Buenas, quisiera consultar sobre..." 
-                target="_blank" class="social-icon">                
-                <img src="../-LOGOS/Correo.png" alt="Correo">            
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=59171076849&text=Buenas%20quisiera%20saber%20sobre..." 
-                target="_blank" class="social-icon"> 
+            <a href="https://api.whatsapp.com/send?phone=59171076849&text=Buenas%20quisiera%20consultar%20sobre..." 
+                target="_blank" class="social-icon Whatsapp"> 
                 <img src="../-LOGOS/WA.png" alt="WhatsApp">
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61567842524001&mibextid=ZbWKwL" target="_blank" class="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=100079392616644" 
+                target="_blank" class="social-icon Facebook">
                 <img src="../-LOGOS/FB.png" alt="Facebook">
             </a>
-            <a href="https://maps.app.goo.gl/rsGreUA2FrESJjo27" 
-                target="_blank" class="social-icon">
+            <a href="https://maps.app.goo.gl/Q7Bq5p6Y5342SuPX8" 
+                target="_blank" class="social-icon Mapa">
                 <img src="../-LOGOS/Maps.png" alt="Ubicación">            
+            </a>
+            <a href="https://kemafuja.github.io/Optica.Claravision/" 
+                onclick="navigator.share?.({url:location.href}); return false;" 
+                class="social-icon Compartir">
+                <img src="../-LOGOS/Compartir.png" alt="Compartir">
             </a>
         </div>
     </div>
 </div>
 
 <script src="../-OTROS/despegable.js"></script>
+<script src="../-OTROS/verQR.js"></script>
 <script type="module">
     import { createGoldParticles } from '../-OTROS/particulas_suben.js';
 
     createGoldParticles('#sube-contenedor', {
         cuantas: 50,
-        tamMax: 10,
-        durMax: 20,
-        durMin: 1,
+        tamMax: 50,
+        durMax: 60,
+        durMin: 10,
         aparMax: 20,
         tamIgual: true,
-        forma: 'circulo', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
-        color: 'gold',
+        forma: 'cuadrado', //cirqlo, triangul, cuadrdo, estrlla, s0l, krta
+        color: 'white',
         r_opacidad: true
     });
 </script>
