@@ -11,10 +11,10 @@
 
 /* ===== Fondo Body ===== */
 @keyframes backgroundBody {
-  0%, 100% { background-color: hsl(0, 100%, 50%); }
-  20%, 80% { background-color: hsl(0, 100%, 40%); } 
-  40%, 60% { background-color: hsl(0, 100%, 30%); }
-  50% { background-color: hsl(0, 100%, 20%); }
+  0%, 100% { background-color: hsl(0, 100%, 60%); }
+  20%, 80% { background-color: hsl(0, 100%, 55%); } 
+  40%, 60% { background-color: hsl(0, 100%, 50%); }
+  50% { background-color: hsl(0, 100%, 45%); }
 }
 
 /* ===== Sube ===== */
@@ -278,7 +278,7 @@
 .logo{
     width: 95% !important;
     opacity: 1 !important;
-    filter: drop-shadow(0 0 5px hsl(30, 0%, 50%, 0)) !important;
+    filter: drop-shadow(0 0 2.5px hsl(0, 0%, 100%, 0.5)) !important;
     margin-top: 5% !important;
 }
 
