@@ -271,48 +271,29 @@
     color: #222;
 }
 
-/* ===== Letra ===== */
-.letra {
-    font-size: 7.5rem;
-    margin-bottom: -17.5%;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    text-shadow: 0px 5px 5px hsla(0, 0%, 0%, 0.1);
-    animation: ColorTitulo 50s ease-in-out infinite;
+@font-face {
+  font-family: 'FUENTE';
+  src: url('../-LETRAS/fonts/CormorantGaramond-VariableFont_wght.ttf');
 }
 
-.letra >strong{
-    font-size: 10%;
+.logo{
+    width: 90% !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 5px hsl(30, 0%, 100%, 0.25)) !important;
+    margin-top: 5% !important;
 }
 
-.letter::after {
-    content: "";
-    display: block;
-    width: 20%;
-    height: 0.75px;
-    background: linear-gradient(to right, transparent, var(--gold-tertiary), var(--gold-primary), var(--gold-tertiary), transparent);
-    margin: 18.5% auto;
-    border-radius: 3px;
+.mun{
+    position: absolute;
+    font-weight: 100;
+    color: white;
+    left: 42.5%;
+    margin-top: -11%;
+    font-family: 'FUENTE';
+    font-size: 1rem;
+    letter-spacing: 25%;
+    opacity: 0.75;
 }
-
-@keyframes ColorTitulo {
-    0% {filter: drop-shadow(0 0 5px hsl(60, 100%, 45%)) ; 
-        color: hsl(60, 96%, 50%);
-        }
-    30% {filter: drop-shadow(0 0 5px hsl(60, 50%, 65%)); 
-        color: hsl(60, 100%, 70%);
-        } 
-    60% {filter: drop-shadow(0 0 5px hsl(60, 49%, 55%)); 
-        color: hsl(60, 100%, 60%);
-        }
-    90% {filter: drop-shadow(0 0 5px hsl(60, 100%, 50%)); 
-        color: hsl(60, 100%, 75%);
-        }
-    100% {filter: drop-shadow(0 0 5px hsl(60, 100%, 45%)) ; 
-        color: hsl(60, 96%, 40%);
-        }
-}
-
 @font-face {
   font-family: 'FUENTE';
   src: url('../-LETRAS/fonts/CormorantGaramond-VariableFont_wght.ttf');
@@ -328,7 +309,7 @@
     font-weight: 500;
     letter-spacing: -5%;
     font-family: 'FUENTE';
-    margin-top: -15%;
+    margin-top: -5%;
     margin-bottom: 0%;
     text-transform: uppercase;
 }
@@ -377,7 +358,7 @@
 /* ===== Texto ===== */
 .intro-text {
     font-size: 1.1rem;
-    color: var(--text-dark);
+    color: whitesmoke;
     margin-top: 0%;
     margin-bottom: 2.5%;
     font-weight: 300;
@@ -465,10 +446,10 @@
 }
 
 @keyframes backgroundFBCORR {
-    0% {color: #1100ff; }
-    33% {color: #06005a; } 
-    66% {color: #090084; }
-    100% {color: #1100ff; }
+    0% {color: hsl(244, 100%, 100%); }
+    33% {color: hsl(244, 100%, 98%); } 
+    66% {color: hsl(244, 100%, 96%); }
+    100% {color: hsl(244, 100%, 100%); }
 }
 
 /* ===== Palpito ===== */
@@ -478,7 +459,7 @@
 }
 /* ----- Efectos de enlace ----- */
 .numwa {
-    animation: backgroundnumwa 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
+    animation: backgroundFBCORR 60s ease-in-out infinite, palpito 3s ease-in-out infinite;
 }
 
 .numwa::after {
@@ -605,7 +586,10 @@ li {
     height: 50%;
 }
          
-
+.Facebook { 
+    background-color: #3B5998; 
+    filter: drop-shadow(0 10px 5px #3B5998);
+}
 .Whatsapp { 
     background-color: #25D366;
     filter: drop-shadow(0 10px 5px #008000); 
@@ -633,10 +617,11 @@ li {
     }
 }
 @media (max-width: 750px) {
-    .letra{
-        font-size: 6.5rem;
-    }
-
+.mun{
+    left: 39.5%;
+    margin-top: -12%;
+    font-size: 1rem;
+}
     .letra >strong{
         font-size: 10rem;
     }
@@ -663,10 +648,12 @@ li {
 }
 
 @media (max-width: 435px) {
-    .letra{
-        font-size: 4rem;
-    }
-
+.mun{
+    letter-spacing: 10%;
+    left: 40.5%;
+    margin-top: -12%;
+    font-size: .75rem;
+}
     .letra >strong{
         font-size: 6.5rem;
     }
@@ -676,6 +663,7 @@ li {
 
     .nombre-completo h2 {
         font-size: 1.75rem;
+        line-height: 1.5rem;
     }
             
     .nombre-completo h3 {
@@ -740,13 +728,11 @@ li {
 
 
 @media (max-width: 400px) {
-    .letra{
-        font-size: 3.5rem;
-    }
-    .letra >strong{
-        font-size: 5.5rem;
-    }
-
+.mun{
+    left: 38.5%;
+    margin-top: -12%;
+    font-size: 0.75rem;
+}
     .logo_sello{
         width: 40%;
     }
@@ -812,19 +798,19 @@ li {
 }
 
 @media (max-width: 320px) {
-    .letra{
-        font-size: 3rem;
-    }
-    .letra >strong{
-        font-size: 4.5rem;
-    }
-
+.mun{
+    left: 37.5%;
+    letter-spacing: 5%;
+    margin-top: -12%;
+    font-size: 0.75rem;
+}
     .logo_sello{
         width: 40%;
     }
 
     .nombre-completo h2 {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
+        line-height: 1rem;
     }
             
     .nombre-completo h3 {
