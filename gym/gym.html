@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>GYM·FUEL | Catálogo de Bebidas</title>
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts (elegancia deportiva) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <style>
+    /* ========== RESET Y BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0d0f;
+      color: #f0f2f5;
+      scroll-behavior: smooth;
+    }
+
+    /* ========== CAPA 1 (LOGO / HERO) ========== */
+    .capa1 {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at 20% 30%, #1e2a2f, #0a0c0e);
+      padding: 2rem 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .logo-icon {
+      font-size: 5.5rem;
+      background: linear-gradient(135deg, #f0b73e, #f7d875);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 8px 20px rgba(240, 183, 62, 0.3));
+      transition: all 0.3s;
+    }
+
+    .logo-text {
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #f5e6c8, #f7d875);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s;
+    }
+
+    .logo-sub {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #b3b9c0;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: -0.2rem;
+    }
+
+    /* ========== CAPA 2 (CONTENIDO: CATÁLOGO) ========== */
+    .capa2 {
+      position: relative;
+      z-index: 20;
+      min-height: 100vh;
+      background: #12171b;
+      padding: 2rem 1.5rem 3rem;
+      margin-top: -2px;
+      box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(2px);
+      transition: all 0.2s;
+    }
+
+    /* Sticky logo que aparece al hacer scroll */
+    .sticky-logo {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(18, 23, 27, 0.92);
+      backdrop-filter: blur(8px);
+      padding: 0.8rem 0.5rem 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid rgba(255, 215, 100, 0.15);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
+
+    .sticky-logo.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .sticky-logo i {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #f0b73e, #f7d875);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sticky-logo span {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #f5e6c8, #f7d875);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ========== FILTROS ========== */
+    .filtros-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 0.8rem;
+      margin-bottom: 2rem;
+      background: #1b2329;
+      padding: 1rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid #2e3b44;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .grupo-botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .btn-filtro {
+      background: transparent;
+      border: 1px solid #3d4b56;
+      color: #c8d0d8;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(2px);
+    }
+
+    .btn-filtro:hover,
+    .btn-filtro.active {
+      background: #f7d875;
+      border-color: #f7d875;
+      color: #0b0d0f;
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(247, 216, 117, 0.3);
+    }
+
+    .btn-filtro i {
+      margin-right: 6px;
+    }
+
+    .grupo-orden {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .select-orden {
+      background: #1f2930;
+      border: 1px solid #3a4853;
+      color: #e8edf2;
+      padding: 0.4rem 1.2rem 0.4rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      cursor: pointer;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .select-orden:hover {
+      border-color: #f7d875;
+    }
+
+    .buscador {
+      display: flex;
+      align-items: center;
+      background: #1f2930;
+      border-radius: 50px;
+      padding: 0.1rem 0.1rem 0.1rem 1rem;
+      border: 1px solid #3a4853;
+      transition: 0.2s;
+      min-width: 160px;
+    }
+
+    .buscador:focus-within {
+      border-color: #f7d875;
+      box-shadow: 0 0 0 3px rgba(247, 216, 117, 0.2);
+    }
+
+    .buscador i {
+      color: #8f9ba8;
+      font-size: 0.9rem;
+    }
+
+    .buscador input {
+      background: transparent;
+      border: none;
+      padding: 0.6rem 0.6rem 0.6rem 0.4rem;
+      color: #f0f2f5;
+      font-weight: 400;
+      font-size: 0.9rem;
+      width: 100%;
+      outline: none;
+    }
+
+    .buscador input::placeholder {
+      color: #7d8b99;
+      font-weight: 300;
+    }
+
+    /* ========== CATÁLOGO (grid) ========== */
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .producto-card {
+      background: #1b2329;
+      border-radius: 28px;
+      padding: 1.2rem 1rem 1.2rem;
+      border: 1px solid #2c3842;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      position: relative;
+    }
+
+    .producto-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: #f7d875;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(247, 216, 117, 0.2);
+    }
+
+    /* Imagen del producto */
+    .producto-imagen {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 18px;
+      background: #252f37;
+      margin-bottom: 0.3rem;
+      border: 1px solid #33434e;
+      transition: 0.2s;
+    }
+
+    .producto-card:hover .producto-imagen {
+      border-color: #f7d875;
+    }
+
+    .producto-card .nombre {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: -0.3px;
+      color: #f5e9d8;
+      margin-top: 0.2rem;
+    }
+
+    .producto-card .desc {
+      font-size: 0.8rem;
+      color: #b0bac4;
+      line-height: 1.4;
+      margin: 0.2rem 0 0.4rem;
+      flex: 1;
+    }
+
+    .precios {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 0.2rem;
+      border-top: 1px dashed #2f3e4a;
+      padding-top: 0.6rem;
+    }
+
+    .precio-unidad {
+      font-weight: 700;
+      color: #f7d875;
+      font-size: 1.2rem;
+    }
+
+    .precio-mayor {
+      font-weight: 500;
+      color: #b8cfd6;
+      font-size: 0.9rem;
+    }
+
+    .precio-mayor span {
+      color: #a5d8b0;
+      font-weight: 600;
+    }
+
+    .categoria-badge {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: #2d3e4b;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #bccbd6;
+      border: 1px solid #3d5363;
+      z-index: 2;
+    }
+
+    /* ========== CAPA 3 (PIE) ========== */
+    .capa3 {
+      position: relative;
+      z-index: 30;
+      background: #0b0f12;
+      padding: 2.5rem 1.5rem 2rem;
+      border-top: 1px solid #263138;
+      box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(2px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .info-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .info-contacto .item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: #ccd7e0;
+    }
+
+    .info-contacto i {
+      color: #f7d875;
+      width: 1.4rem;
+      font-size: 1.1rem;
+    }
+
+    .mapa-container {
+      width: 100%;
+      max-width: 260px;
+      height: 120px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #2f3f4b;
+      background: #1d282f;
+    }
+
+    .mapa-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: invert(90%) hue-rotate(180deg) saturate(0.8);
+    }
+
+    .redes-sociales {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 1.8rem;
+    }
+
+    .redes-sociales a {
+      color: #bccbd6;
+      transition: 0.2s;
+    }
+
+    .redes-sociales a:hover {
+      color: #f7d875;
+      transform: scale(1.1);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 700px) {
+      .logo-text {
+        font-size: 2.6rem;
+      }
+      .logo-icon {
+        font-size: 4rem;
+      }
+      .filtros-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .grupo-botones {
+        justify-content: center;
+      }
+      .grupo-orden {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .buscador {
+        width: 100%;
+      }
+      .catalogo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      .capa3 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .mapa-container {
+        max-width: 100%;
+      }
+      .sticky-logo span {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .logo-text {
+        font-size: 2rem;
+      }
+      .catalogo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .producto-card {
+        padding: 0.8rem;
+      }
+      .btn-filtro {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.8rem;
+      }
+      .producto-imagen {
+        border-radius: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== CAPA 1 (LOGO) ========== -->
+  <section class="capa1" id="capa1">
+    <div class="logo-container">
+      <i class="fas fa-dumbbell logo-icon"></i>
+      <div class="logo-text">GYM·FUEL</div>
+      <div class="logo-sub">Performance Drinks</div>
+      <div style="margin-top: 1.5rem; font-size: 0.9rem; color: #8f9daa; letter-spacing: 2px;">
+        <i class="fas fa-bolt" style="color: #f7d875;"></i> hidratación · energía · sabor
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAPA 2 (CATÁLOGO) ========== -->
+  <section class="capa2" id="capa2">
+    <!-- Sticky logo (se muestra al hacer scroll) -->
+    <div class="sticky-logo" id="stickyLogo">
+      <i class="fas fa-dumbbell"></i>
+      <span>GYM·FUEL</span>
+      <span style="font-size: 0.8rem; font-weight: 300; color: #b0bac4; margin-left: auto; letter-spacing: 1px;">catálogo</span>
+    </div>
+
+    <!-- FILTROS + BUSCADOR + ORDEN -->
+    <div class="filtros-wrapper">
+      <div class="grupo-botones" id="filtroBotones">
+        <button class="btn-filtro active" data-filter="all"><i class="fas fa-th"></i> Todo</button>
+        <button class="btn-filtro" data-filter="soda"><i class="fas fa-glass-whiskey"></i> Soda</button>
+        <button class="btn-filtro" data-filter="jugo"><i class="fas fa-apple-alt"></i> Jugo</button>
+        <button class="btn-filtro" data-filter="agua"><i class="fas fa-tint"></i> Agua</button>
+        <button class="btn-filtro" data-filter="energizante"><i class="fas fa-bolt"></i> Energía</button>
+        <button class="btn-filtro" data-filter="hidratante"><i class="fas fa-water"></i> Hidratante</button>
+        <button class="btn-filtro" data-filter="promo"><i class="fas fa-tags"></i> Promo</button>
+      </div>
+
+      <div class="grupo-orden">
+        <select class="select-orden" id="ordenSelect">
+          <option value="nombre-asc">Nombre A-Z</option>
+          <option value="nombre-desc">Nombre Z-A</option>
+          <option value="precio-asc">Precio ↑</option>
+          <option value="precio-desc">Precio ↓</option>
+        </select>
+
+        <div class="buscador">
+          <i class="fas fa-search"></i>
+          <input type="text" id="buscadorInput" placeholder="Buscar bebida..." />
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS (se renderiza con JS) -->
+    <div class="catalogo-grid" id="catalogoGrid"></div>
+  </section>
+
+  <!-- ========== CAPA 3 (PIE: REDES, TEL, MAPA) ========== -->
+  <section class="capa3" id="capa3">
+    <div class="info-contacto">
+      <div class="item"><i class="fas fa-phone-alt"></i> +591 700 0000</div>
+      <div class="item"><i class="fas fa-map-pin"></i> Av. Los Olivos 123, Gym Zone</div>
+      <div class="item" style="font-size:0.85rem; color:#8f9daa;"><i class="far fa-clock"></i> Lun-Sáb 6:00 – 22:00</div>
+    </div>
+
+    <div class="redes-sociales">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="mapa-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.893393995932!2d-68.1437026!3d-16.5000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f20f5f8f5f5f5%3A0x5f5f5f5f5f5f5f5f!2sAv.%20Los%20Olivos!5e0!3m2!1ses!2sbo!4v1712345678901" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // --------------------------------------------------------------
+      // 1. BASE DE DATOS DE BEBIDAS (con imágenes URL)
+      //    Usamos imágenes de placeholder generadas con UI Avatars
+      //    para simular bebidas. En un caso real serían URLs propias.
+      // --------------------------------------------------------------
+      let productos = [];
+
+      // --------------------------------------------------------------
+      // 2. REFERENCIAS DOM
+      // --------------------------------------------------------------
+      const grid = document.getElementById('catalogoGrid');
+      const filtroBtns = document.querySelectorAll('.btn-filtro');
+      const ordenSelect = document.getElementById('ordenSelect');
+      const buscadorInput = document.getElementById('buscadorInput');
+      const stickyLogo = document.getElementById('stickyLogo');
+
+      // Estado actual
+      let filtroActual = 'all';
+      let ordenActual = 'nombre-asc';
+      let busquedaActual = '';
+
+
+      async function cargarProductos() {
+  try {
+    const respuesta = await fetch('./productos.json');
+
+    if (!respuesta.ok) {
+      throw new Error('No se pudo cargar el archivo productos.json');
+    }
+
+    productos = await respuesta.json();
+
+    // Una vez cargados los datos se renderiza el catálogo
+    renderizarCatalogo();
+  }
+  catch (error) {
+    console.error(error);
+
+    grid.innerHTML = `
+      <div style="grid-column:1/-1; text-align:center; padding:3rem 0; color:#8f9daa;">
+        Error al cargar el catálogo.
+      </div>
+    `;
+  }
+}
+
+      // --------------------------------------------------------------
+      // 3. FUNCIÓN PRINCIPAL: RENDERIZAR
+      // --------------------------------------------------------------
+      function renderizarCatalogo() {
+        // 3a. filtrar
+        let productosFiltrados = productos.filter(p => {
+          if (filtroActual !== 'all' && p.categoria !== filtroActual) return false;
+          if (busquedaActual.trim() !== '') {
+            const term = busquedaActual.toLowerCase().trim();
+            const nombreMatch = p.nombre.toLowerCase().includes(term);
+            const descMatch = p.desc.toLowerCase().includes(term);
+            if (!nombreMatch && !descMatch) return false;
+          }
+          return true;
+        });
+
+        // 3b. ordenar
+        productosFiltrados = ordenarProductos(productosFiltrados, ordenActual);
+
+        // 3c. generar HTML con imagen
+        if (productosFiltrados.length === 0) {
+          grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem 0; color:#8f9daa;">
+            <i class="fas fa-search" style="font-size:2rem; display:block; margin-bottom:0.5rem;"></i>
+            No hay bebidas que coincidan con tu búsqueda.
+          </div>`;
+          return;
+        }
+
+        let html = '';
+        productosFiltrados.forEach(p => {
+          const badgeCategoria = p.categoria.charAt(0).toUpperCase() + p.categoria.slice(1);
+          html += `
+            <div class="producto-card" data-id="${p.id}">
+              <span class="categoria-badge">${badgeCategoria}</span>
+              <img class="producto-imagen" src="${p.imagen}" alt="${p.nombre}" loading="lazy" />
+              <div class="nombre">${p.nombre}</div>
+              <div class="desc">${p.desc}</div>
+              <div class="precios">
+                <span class="precio-unidad">$${p.precioUnidad.toFixed(2)}</span>
+                <span class="precio-mayor">Mayor: <span>$${p.precioMayor.toFixed(2)}</span></span>
+              </div>
+            </div>
+          `;
+        });
+        grid.innerHTML = html;
+      }
+
+      // --------------------------------------------------------------
+      // 4. ORDENAR
+      // --------------------------------------------------------------
+      function ordenarProductos(lista, criterio) {
+        const copia = [...lista];
+        switch (criterio) {
+          case 'nombre-asc':
+            copia.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            break;
+          case 'nombre-desc':
+            copia.sort((a, b) => b.nombre.localeCompare(a.nombre));
+            break;
+          case 'precio-asc':
+            copia.sort((a, b) => a.precioUnidad - b.precioUnidad);
+            break;
+          case 'precio-desc':
+            copia.sort((a, b) => b.precioUnidad - a.precioUnidad);
+            break;
+          default:
+            break;
+        }
+        return copia;
+      }
+
+      // --------------------------------------------------------------
+      // 5. EVENTOS: FILTROS (botones)
+      // --------------------------------------------------------------
+      filtroBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filtroBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          filtroActual = this.dataset.filter;
+          cargarProductos();
+        });
+      });
+
+      // --------------------------------------------------------------
+      // 6. EVENTO: ORDEN
+      // --------------------------------------------------------------
+      ordenSelect.addEventListener('change', function() {
+        ordenActual = this.value;
+        cargarProductos();
+      });
+
+      // --------------------------------------------------------------
+      // 7. EVENTO: BUSCADOR (debounce)
+      // --------------------------------------------------------------
+      let timeoutBuscador = null;
+      buscadorInput.addEventListener('input', function() {
+        clearTimeout(timeoutBuscador);
+        timeoutBuscador = setTimeout(() => {
+          busquedaActual = this.value;
+          cargarProductos();
+        }, 250);
+      });
+
+      // --------------------------------------------------------------
+      // 8. STICKY LOGO (scroll)
+      // --------------------------------------------------------------
+      function handleScroll() {
+        const capa1 = document.getElementById('capa1');
+        const capa1Rect = capa1.getBoundingClientRect();
+        if (capa1Rect.bottom <= 0) {
+          stickyLogo.classList.add('visible');
+        } else {
+          stickyLogo.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+      setTimeout(handleScroll, 100);
+
+      // --------------------------------------------------------------
+      // 9. RENDER INICIAL
+      // --------------------------------------------------------------
+      cargarProductos();
+
+      console.log('GYM·FUEL con imágenes — diseño sorprendente y responsivo.');
+    })();
+  </script>
+
+</body>
+</html>

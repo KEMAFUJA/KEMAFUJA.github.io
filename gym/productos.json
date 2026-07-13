@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "nombre": "Agua Mineral",
+    "categoria": "agua",
+    "precioUnidad": 1.8,
+    "precioMayor": 1.4,
+    "desc": "Agua pura con electrolitos naturales.",
+    "imagen": "https://ui-avatars.com/api/?name=Agua+Mineral&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 2,
+    "nombre": "Soda Limón",
+    "categoria": "soda",
+    "precioUnidad": 2.2,
+    "precioMayor": 1.8,
+    "desc": "Refrescante soda con toque cítrico.",
+    "imagen": "https://ui-avatars.com/api/?name=Soda+Limon&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 3,
+    "nombre": "Jugo Multifruta",
+    "categoria": "jugo",
+    "precioUnidad": 3.5,
+    "precioMayor": 2.9,
+    "desc": "Mezcla de frutas tropicales.",
+    "imagen": "https://ui-avatars.com/api/?name=Jugo+Multifruta&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 4,
+    "nombre": "Energy Rush",
+    "categoria": "energizante",
+    "precioUnidad": 4.2,
+    "precioMayor": 3.6,
+    "desc": "Alta cafeína y taurina para rendir.",
+    "imagen": "https://ui-avatars.com/api/?name=Energy+Rush&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 5,
+    "nombre": "Hidra Sport",
+    "categoria": "hidratante",
+    "precioUnidad": 3,
+    "precioMayor": 2.4,
+    "desc": "Isotónico con sales y vitaminas.",
+    "imagen": "https://ui-avatars.com/api/?name=Hidra+Sport&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 6,
+    "nombre": "Agua de Coco",
+    "categoria": "agua",
+    "precioUnidad": 2.9,
+    "precioMayor": 2.3,
+    "desc": "Hidratación natural con potasio.",
+    "imagen": "https://ui-avatars.com/api/?name=Agua+Coco&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 7,
+    "nombre": "Soda Cola",
+    "categoria": "soda",
+    "precioUnidad": 2.5,
+    "precioMayor": 2,
+    "desc": "Clásica soda de cola sin azúcar.",
+    "imagen": "https://ui-avatars.com/api/?name=Soda+Cola&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 8,
+    "nombre": "Jugo Naranja",
+    "categoria": "jugo",
+    "precioUnidad": 3.2,
+    "precioMayor": 2.7,
+    "desc": "100% jugo exprimido, sin conservantes.",
+    "imagen": "https://ui-avatars.com/api/?name=Jugo+Naranja&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 9,
+    "nombre": "Energizante Zero",
+    "categoria": "energizante",
+    "precioUnidad": 4.5,
+    "precioMayor": 3.8,
+    "desc": "Sin azúcar, con vitaminas B.",
+    "imagen": "https://ui-avatars.com/api/?name=Energizante+Zero&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 10,
+    "nombre": "Hidratante Frutos Rojos",
+    "categoria": "hidratante",
+    "precioUnidad": 3.3,
+    "precioMayor": 2.8,
+    "desc": "Antioxidantes y electrolitos.",
+    "imagen": "https://ui-avatars.com/api/?name=Hidratante+Frutos&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 11,
+    "nombre": "Agua Tónica",
+    "categoria": "agua",
+    "precioUnidad": 2,
+    "precioMayor": 1.6,
+    "desc": "Agua con gas y quinina.",
+    "imagen": "https://ui-avatars.com/api/?name=Agua+Tonica&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 12,
+    "nombre": "Soda Pomelo",
+    "categoria": "soda",
+    "precioUnidad": 2.4,
+    "precioMayor": 1.9,
+    "desc": "Soda con jugo de pomelo natural.",
+    "imagen": "https://ui-avatars.com/api/?name=Soda+Pomelo&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 13,
+    "nombre": "Jugo Verde Detox",
+    "categoria": "jugo",
+    "precioUnidad": 3.8,
+    "precioMayor": 3.2,
+    "desc": "Espinaca, pepino, manzana y jengibre.",
+    "imagen": "https://ui-avatars.com/api/?name=Jugo+Verde&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 14,
+    "nombre": "Energy Shot",
+    "categoria": "energizante",
+    "precioUnidad": 5,
+    "precioMayor": 4.2,
+    "desc": "Shot concentrado de energía.",
+    "imagen": "https://ui-avatars.com/api/?name=Energy+Shot&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 15,
+    "nombre": "Hidratante Naranja",
+    "categoria": "hidratante",
+    "precioUnidad": 3.1,
+    "precioMayor": 2.6,
+    "desc": "Bebida deportiva sabor naranja.",
+    "imagen": "https://ui-avatars.com/api/?name=Hidratante+Naranja&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 16,
+    "nombre": "Pack Agua + Soda",
+    "categoria": "promo",
+    "precioUnidad": 4.5,
+    "precioMayor": 3.5,
+    "desc": "Pack especial 2 botellas (agua + soda).",
+    "imagen": "https://ui-avatars.com/api/?name=Pack+Agua+Soda&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  },
+  {
+    "id": 17,
+    "nombre": "Pack Energía",
+    "categoria": "promo",
+    "precioUnidad": 8,
+    "precioMayor": 6.5,
+    "desc": "2 energizantes + 1 hidratante.",
+    "imagen": "https://ui-avatars.com/api/?name=Pack+Energia&background=F7D875&color=0b0d0f&size=128&font-size=0.4&bold=true"
+  }
+]
