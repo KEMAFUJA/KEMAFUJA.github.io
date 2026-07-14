@@ -1,0 +1,328 @@
+/* =====================================================================
+   1. TOKENS DE DISEÑO — cambia aquí colores y tipografías globales
+   ===================================================================== */
+:root{    
+  --bg-deep:      hsl(195, 71%, 73%);   /* fondo más profundo (esquinas / vignette) */
+  --bg-navy:      hsl(54, 100%, 100%);   /* azul noche principal */
+  --bg-navy-2:    hsl(195, 71%, 70%);   /* azul noche claro, para degradados */
+  --gold:         hsl(195, 56%, 66%);   /* dorado principal (bordes, íconos, cifras) */
+  --gold-light:   hsl(195, 69%, 50%);   /* dorado claro (títulos, hover) */
+  --cream:        hsl(39, 52%, 25%);   /* texto principal sobre fondo oscuro */
+  --powder:       hsl(206, 42%, 76%);   /* texto secundario, azul empolvado */
+  --line:         hsla(40, 56%, 66%, 0.35); /* líneas divisoras doradas */
+  --shadow-gold:  hsla(40, 56%, 66%, 0.35);
+
+  --font-display: 'Cormorant Garamond', serif;   /* títulos elegantes */
+  --font-script:  'Parisienne', cursive;         /* acento caligráfico, USAR POCO */
+  --font-body:    'Jost', sans-serif;            /* texto y etiquetas */
+}
+
+*{ box-sizing:border-box; }
+html,body{
+  margin:0; padding:0;
+  width:100%; height:100vh; height:100dvh;
+  overflow:hidden; /* la navegación es por "páginas", no por scroll */
+  background:var(--bg-navy);
+  font-family:var(--font-body);
+  color:var(--cream);
+  -webkit-tap-highlight-color:transparent;
+}
+h1,h2,h3,p{ margin:0; }
+a{ color:inherit; }
+button{ font-family:inherit; }
+
+/* Respeta a quienes prefieren menos animación */
+@media (prefers-reduced-motion: reduce){
+  .card,
+  .hero,
+  .button{
+      animation:none !important;
+      transition:none !important;
+  }
+
+}
+
+/* =====================================================================
+   2. CIELO DECORATIVO — capa fija detrás de todo (estrellas + luna + corona)
+   No contiene información, es puramente atmosférico (aria-hidden).
+   ===================================================================== */
+.sky{
+  position:fixed; inset:0; z-index:0; overflow:hidden;
+  background:
+    radial-gradient(ellipse 200% 100% at 50% -10%, var(--bg-navy-2) 0%, transparent 60%),
+    radial-gradient(ellipse 200% 80% at 50% 100%, var(--bg-deep) 0%, transparent 55%),
+    var(--bg-navy);
+}
+
+.stars-layer{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.star{
+  position:absolute;
+  opacity:0;
+  will-change:transform, opacity;
+
+  animation:
+    beeFloat var(--duration,15s)
+    infinite ease-in-out;
+}
+
+@keyframes beeFloat{
+
+  0%{
+    opacity:0;
+    transform:
+      translate(0px,0px)
+      rotate(-2deg)
+      scale(0.15);
+  }
+
+  20%{
+    opacity:0.15;
+  }
+
+  50%{
+    opacity:0.45;
+    transform:
+      translate(
+        calc(var(--move-x) * 0.5 + 4px),
+        calc(var(--move-y) * 0.5 - 3px)
+      )
+      rotate(2deg)
+      scale(0.35);
+  }
+
+  80%{
+    opacity:0.25;
+  }
+
+  100%{
+    opacity:0;
+    transform:
+      translate(
+        var(--move-x),
+        var(--move-y)
+      )
+      rotate(-2deg)
+      scale(0.15);
+  }
+}
+
+.moon{
+  position:absolute; top:6%; right:8%; width:min(70px,14vw); opacity:.8;
+  filter:drop-shadow(0 0 18px var(--shadow-gold));
+}
+
+/* =====================================================================
+   3. ESTRUCTURA DE PÁGINAS (las "diapositivas" de la invitación)
+   Cada .page ocupa toda la pantalla y se muestra/oculta con la clase .active
+   ===================================================================== */
+#app{ position:relative; width:100%; height:100%; z-index:1; }
+
+.page{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  padding: clamp(1.2rem,5vw,2.5rem) 1.3rem;
+  opacity:0; transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s ease;
+  pointer-events:none;
+  z-index:1;
+}
+.page.active{ opacity:1; transform:translateY(0); pointer-events:auto; z-index:2; }
+
+.page-inner{
+  width:100%; max-width:460px;
+  max-height:100%;
+  overflow-y:auto;                 /* red de seguridad en pantallas muy bajas */
+  scrollbar-width:none;
+  text-align:center;
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  padding:.5rem .25rem 1rem;
+}
+.page-inner::-webkit-scrollbar{ display:none; }
+
+/* Emblema (corona + estrellas) que se repite arriba de cada página: el
+   "hilo" visual que conecta todas las secciones de la invitación */
+.emblem{ width:10%; margin-bottom:.2rem; opacity:.5; }
+.emblem path,.emblem circle{ stroke:var(--gold); fill:none; stroke-width:1.4; }
+.emblem circle{ fill:var(--gold); stroke:none; }
+
+.eyebrow{
+  font-family:var(--font-body); font-weight:500;
+  font-size:.72rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--gold);
+}
+.divider{
+  width:38px; height:1px; background:var(--line); margin:.55rem 0 .3rem;
+}
+.title{
+  font-family:var(--font-display); font-style:italic; font-weight:500;
+  color:var(--gold-light);
+  font-size:clamp(2.1rem,8vw,3.1rem);
+  letter-spacing:.01em;
+  line-height:1.05;
+}
+.script-line{
+  font-family:var(--font-script);
+  font-size:clamp(1.2rem,4.5vw,1.6rem);
+  color:var(--cream);
+  margin-top:.15rem;
+  line-height:clamp(1.5rem,5vw,2rem);
+}
+
+.script-line span{
+  font-size:2rem;
+}
+.body-text{
+  font-family:var(--font-body); font-weight:300;
+  color:var(--powder);
+  font-size:.98rem; line-height:1.7;
+  max-width:32ch;
+  margin-top:.4rem;
+}
+
+/* Botones tipo "pastilla", contorno dorado -> se rellenan al pasar el cursor */
+.btn{
+  display:inline-flex; align-items:center; gap:.55rem;
+  margin-top:1.1rem;
+  padding:.85rem 1.9rem;
+  border:1px solid var(--gold);
+  border-radius:999px;
+  background:transparent;
+  color:var(--gold-light);
+  font-size:.78rem; letter-spacing:.16em; text-transform:uppercase;
+  text-decoration:none; cursor:pointer;
+  transition:background .35s ease,color .35s ease,box-shadow .35s ease,transform .15s ease;
+}
+.btn:hover{ background:var(--gold); color:var(--bg-deep); box-shadow:0 0 26px var(--shadow-gold); }
+.btn:active{ transform:scale(.96); }
+.btn:focus-visible{ outline:2px solid var(--gold-light); outline-offset:3px; }
+.btn svg{ width:15px; height:15px; }
+
+.map-container{
+    width:100%;
+    margin-top:10px;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.map-container iframe{
+    width:100%;
+    border:none;
+}
+
+.link-quiet{
+  margin-top:.9rem; font-size:.78rem; letter-spacing:.05em;
+  color:var(--powder); text-decoration:underline; text-decoration-color:var(--line);
+  background:none; border:none; cursor:pointer; opacity:.85;
+}
+.link-quiet:hover{ opacity:1; color:var(--cream); }
+
+/* ---------- Página 2: calendario + cuenta regresiva ---------- */
+.cal-card{
+  width:100%; margin-top:.5rem;
+  border:1px solid var(--line); border-radius:18px;
+  padding:.9rem .8rem 1rem;
+  background:linear-gradient(180deg,rgba(217,185,120,.05),transparent);
+}
+.cal-mes{
+  font-family:var(--font-display); font-style:italic; font-size:1.35rem;
+  color:var(--gold-light); text-transform:capitalize; margin-bottom:.5rem;
+}
+.cal-grid{
+  display:grid; grid-template-columns:repeat(7,1fr);
+  gap:4px;
+}
+.cal-weekday{
+  font-size:.62rem; letter-spacing:.08em; color:var(--powder); opacity:.7;
+  padding:.2rem 0;
+}
+.cal-day{
+  position:relative;
+  aspect-ratio:1/1;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.78rem; color:var(--cream); opacity:.55;
+  border-radius:50%;
+}
+.cal-day--empty{ visibility:hidden; }
+.cal-day--target{
+  opacity:1; color:var(--bg-deep); font-weight:600;
+  background:var(--gold-light);
+  box-shadow:0 0 16px var(--shadow-gold);
+  animation:pulseDay 2.4s ease-in-out infinite;
+}
+@keyframes pulseDay{ 0%,100%{ box-shadow:0 0 10px var(--shadow-gold);} 50%{ box-shadow:0 0 22px var(--shadow-gold);} }
+.cal-star{ position:absolute; top:-7px; font-size:.55rem; color:var(--gold); font-style:normal; }
+
+.evento-info{ margin-top:.85rem; font-size:.85rem; color:var(--powder); line-height:1.6; }
+.evento-info strong{ color:var(--cream); font-weight:500; }
+
+.countdown{
+  display:flex; gap:.5rem; justify-content:center; margin-top:1.1rem;
+}
+.cd-box{ display:flex; flex-direction:column; align-items:center; min-width:52px; }
+.cd-num{
+  font-family:var(--font-display); font-size:clamp(1.6rem,6vw,2.1rem);
+  color:var(--gold-light); font-weight:600; line-height:1;
+}
+.cd-label{ font-size:.6rem; letter-spacing:.14em; color:var(--powder); margin-top:.25rem; }
+.cd-sep{ font-family:var(--font-display); font-size:1.6rem; color:var(--line); align-self:center; }
+.countdown-today{ font-family:var(--font-display); font-style:italic; font-size:1.4rem; color:var(--gold-light); margin-top:1rem; }
+
+/* ---------- Página 3: anfitriones ---------- */
+.host-row{ display:flex; gap:.4rem; justify-content:center; margin-top:.4rem; flex-wrap:wrap; }
+.host-block{ min-width:120px; }
+.host-label{ font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.35rem; }
+.host-names{ font-family:var(--font-display); font-style:italic; font-size:2.5rem; color:var(--cream); }
+.quote{
+  margin-top:1.1rem; font-family:var(--font-display); font-style:italic;
+  font-size:1.05rem; line-height:1.7; color:var(--powder); max-width:30ch;
+}
+.quote::before{ content:"“"; color:var(--gold); }
+.quote::after{ content:"”"; color:var(--gold); }
+
+/* ---------- Página 4: ubicación ---------- */
+.lugar-nombre{ font-family:var(--font-display); font-style:italic; font-size:1.6rem; color:var(--gold-light); margin-top:.3rem; }
+.lugar-direccion{ font-size:.9rem; color:var(--powder); margin-top:.3rem; max-width:28ch; }
+
+/* =====================================================================
+   4. NAVEGACIÓN (flechas, puntos, control de música)
+   ===================================================================== */
+.nav-arrow{
+  position:fixed; top:50%; transform:translateY(-50%);
+  background:transparent; border:none; color:var(--gold);
+  font-family:var(--font-display); font-size:5rem; line-height:1;
+  cursor:pointer; z-index:50; padding:.6rem 1rem;
+  transition:opacity .3s,transform .2s;
+}
+.nav-arrow:hover{ transform:translateY(-50%) scale(1.18); }
+.nav-arrow:focus-visible{ outline:2px solid var(--gold-light); }
+#arrow-prev{ left:0; } #arrow-next{ right:0; }
+
+@media (max-width:480px){ .nav-arrow{ font-size:3rem; padding:.5rem .6rem; } }
+
+.dots{ position:fixed; bottom:1.3rem; left:50%; transform:translateX(-50%); display:flex; gap:.6rem; z-index:50; }
+.dot{
+  width:7px; height:7px; border-radius:50%; padding:0; border:none; cursor:pointer;
+  background:rgba(217,185,120,.3); transition:background .3s,transform .3s;
+}
+.dot.active{ background:var(--gold-light); transform:scale(1.5); }
+.dot:focus-visible{ outline:2px solid var(--gold-light); outline-offset:3px; }
+
+#btn-music-toggle{
+  position:fixed; top:1.1rem; right:1.1rem; z-index:60;
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--gold); background:rgba(6,15,26,.45);
+  backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; color:var(--gold-light);
+}
+#btn-music-toggle svg{ width:16px; height:16px; }
+#btn-music-toggle .icon-off{ display:none; }
+#btn-music-toggle.muted .icon-on{ display:none; }
+#btn-music-toggle.muted .icon-off{ display:block; }
+#btn-music-toggle:focus-visible{ outline:2px solid var(--gold-light); outline-offset:3px; }
