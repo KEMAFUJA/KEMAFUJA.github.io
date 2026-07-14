@@ -25,7 +25,7 @@ const CONFIG = {
   formUrl: "https://forms.gle/PON-AQUI-TU-FORMULARIO",
   // musicaUrl: déjalo vacío para usar la melodía integrada (no requiere archivos).
   // Si prefieres tu propia canción, pon aquí la ruta o URL de un .mp3
-  musicaUrl: ""
+  musicaUrl: "Pooh.mp3"
 };
 
 /* =====================================================================
@@ -132,9 +132,46 @@ let audioCtx = null, masterGain = null, musicStarted = false, musicPlaying = fal
 const musicBtn = document.getElementById('btn-music-toggle');
 
 // Escala pentatónica suave + patrón repetitivo = sonido de caja de música
-const SCALE   = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50]; // C5 D5 E5 G5 A5 C6
-const PATTERN = [0,2,4,5,4,2,1,0,3,4,2,0];
+const SCALE = [
+    523.25, // C5
+    587.33, // D5
+    659.25, // E5
+    698.46, // F5
+    783.99, // G5
+    880.00, // A5
+    1046.50 // C6
+];
+
+const PATTERN = [
+    0,2,4,5,4,2,1,0,
+    2,3,4,5,4,3,2,1,
+    0,2,5,6,5,4,2,0,
+    1,3,4,5,3,2,1,0,
+
+    0,2,4,5,4,2,1,0,
+    2,3,4,5,4,3,2,1,
+    0,2,5,6,5,4,2,0,
+    1,3,4,5,3,2,1,0
+];
 let noteIndex = 0, loopTimer = null;
+
+// Variable para almacenar la URL de la música externa
+let musicaExternaUrl = '';
+
+/**
+ * Función para establecer una música externa
+ * @param {string} url - Ruta o URL del archivo de música (.mp3, .wav, etc.)
+ */
+function setMusicaExterna(url) {
+    if (url && url.trim() !== '') {
+        musicaExternaUrl = url.trim();
+        // Si ya hay un audio creado, lo actualizamos
+        if (window.audioExterno) {
+            window.audioExterno.src = musicaExternaUrl;
+            window.audioExterno.load();
+        }
+    }
+}
 
 function ensureAudioContext(){
   if(!audioCtx){
@@ -147,7 +184,7 @@ function ensureAudioContext(){
 function playNote(freq, time){
   const osc  = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
-  osc.type = 'triangle'; // tono suave, tipo caja de música
+  osc.type = 'square'; // tono suave, tipo caja de música
   osc.frequency.value = freq;
   gain.gain.setValueAtTime(0.0001, time);
   gain.gain.exponentialRampToValueAtTime(0.35, time + 0.02);  // ataque
@@ -181,12 +218,66 @@ let stopMusic = function(){
 // Si el usuario definió su propia canción, se reemplazan las funciones
 // anteriores por controles de un <audio> normal.
 if(CONFIG.musicaUrl && CONFIG.musicaUrl.trim() !== ''){
-  const audioEl = document.createElement('audio');
-  audioEl.src = CONFIG.musicaUrl;
-  audioEl.loop = true;
-  document.body.appendChild(audioEl);
-  startMusic = function(){ audioEl.play(); musicPlaying = true; updateMusicIcon(); };
-  stopMusic  = function(){ audioEl.pause(); musicPlaying = false; updateMusicIcon(); };
+    musicaExternaUrl = CONFIG.musicaUrl.trim();
+}
+
+// Función para crear o actualizar el audio externo
+function crearAudioExterno() {
+    if (window.audioExterno) {
+        // Si ya existe, solo actualizamos la fuente
+        if (musicaExternaUrl) {
+            window.audioExterno.src = musicaExternaUrl;
+            window.audioExterno.load();
+        }
+        return window.audioExterno;
+    }
+    
+    const audioEl = document.createElement('audio');
+    if (musicaExternaUrl) {
+        audioEl.src = musicaExternaUrl;
+    }
+    audioEl.loop = true;
+    document.body.appendChild(audioEl);
+    window.audioExterno = audioEl;
+    return audioEl;
+}
+
+// Inicializamos el audio si hay URL configurada
+if (musicaExternaUrl) {
+    const audioExterno = crearAudioExterno();
+    
+    // Sobrescribimos las funciones start/stop para usar el audio externo
+    startMusic = function(){
+        const audio = window.audioExterno;
+        if (audio && audio.src) {
+            audio.play().catch(e => console.log('Error al reproducir audio:', e));
+            musicPlaying = true;
+            updateMusicIcon();
+        } else {
+            console.log('No hay música externa configurada, usando sintetizador');
+            // Fallback al sintetizador
+            ensureAudioContext();
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            if(!musicStarted){ scheduleLoop(); musicStarted = true; }
+            masterGain.gain.linearRampToValueAtTime(0.16, audioCtx.currentTime + 1.2);
+            musicPlaying = true;
+            updateMusicIcon();
+        }
+    };
+    
+    stopMusic = function(){
+        const audio = window.audioExterno;
+        if (audio) {
+            audio.pause();
+            musicPlaying = false;
+            updateMusicIcon();
+        } else {
+            if(!audioCtx) return;
+            masterGain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.6);
+            musicPlaying = false;
+            updateMusicIcon();
+        }
+    };
 }
 
 function toggleMusic(){ musicPlaying ? stopMusic() : startMusic(); }
@@ -195,6 +286,26 @@ musicBtn.addEventListener('click', toggleMusic);
 
 document.getElementById('btn-start').addEventListener('click', () => { startMusic(); goTo(1); });
 document.getElementById('btn-skip-sound').addEventListener('click', () => goTo(1));
+
+// Función global para cambiar la música fácilmente desde cualquier parte
+window.cambiarMusica = function(nombreArchivo) {
+    // Aquí puedes poner la ruta completa o solo el nombre
+    const urlMusica = `./musica/${nombreArchivo}`; // Ejemplo de ruta
+    setMusicaExterna(urlMusica);
+    crearAudioExterno();
+    
+    // Si la música está sonando, la reiniciamos con el nuevo archivo
+    if (musicPlaying) {
+        stopMusic();
+        setTimeout(() => startMusic(), 100);
+    }
+    console.log(`Música cambiada a: ${nombreArchivo}`);
+};
+
+// Ejemplo de uso desde la consola o desde otro script:
+// cambiarMusica('mi-cancion.mp3');
+// cambiarMusica('mi-cancion.wav');
+// cambiarMusica('https://ejemplo.com/musica.mp3');
 
 /* =====================================================================
    8. TEXTOS DINÁMICOS (rellenan la página con los datos de CONFIG)
