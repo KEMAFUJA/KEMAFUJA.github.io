@@ -314,7 +314,7 @@ document.getElementById('intro-texto').textContent      = CONFIG.introTexto;
 document.getElementById('papas-nombres').textContent    = CONFIG.papas;
 //document.getElementById('padrinos-nombres').textContent = CONFIG.padrinos;
 document.getElementById('mensaje-texto').textContent    = CONFIG.mensaje;
-document.getElementById('nota-asistencia').textContent  = CONFIG.notaAsistencia;
+//document.getElementById('nota-asistencia').textContent  = CONFIG.notaAsistencia;
 document.getElementById('lugar-nombre-4').textContent   = CONFIG.lugarNombre;
 document.getElementById('lugar-direccion-4').textContent= CONFIG.lugarDireccion;
 document.getElementById('lugar-texto-corto').textContent= CONFIG.lugarNombre;
@@ -454,6 +454,10 @@ document.getElementById('btn-rsvp').href = CONFIG.formUrl;
 // CARRUSEL AUTOMÁTICO CON BARRA DE PROGRESO
 // =========================================================
 
+// =========================================================
+// CARRUSEL AUTOMÁTICO CON BARRA DE PROGRESO
+// =========================================================
+
 class Carousel {
   constructor(options = {}) {
     // Configuración
@@ -467,48 +471,64 @@ class Carousel {
     this.startTime = 0;
     this.remainingTime = this.duration;
     
-    // Elementos
+    // Elementos existentes
     this.progressBar = document.getElementById('progressBar');
-    this.indicators = document.createElement('div');
+    this.arrowPrev = document.getElementById('arrow-prev');
+    this.arrowNext = document.getElementById('arrow-next');
+    this.dotsContainer = document.getElementById('dots');
     
     // Inicializar
-    this.initIndicators();
+    this.initDots();
+    this.updateNavigation();
     this.start();
     this.setupControls();
   }
   
-  initIndicators() {
-    // Crear indicadores de página (puntos)
-    this.indicators.className = 'page-indicators';
-    
-    for (let i = 0; i < this.totalPages; i++) {
-      const dot = document.createElement('button');
-      dot.className = 'page-dot' + (i === 0 ? ' active' : '');
-      dot.dataset.index = i;
-      dot.addEventListener('click', () => this.goTo(i));
-      this.indicators.appendChild(dot);
+  initDots() {
+    // Usar los dots existentes del HTML
+    if (this.dotsContainer) {
+      // Si ya hay dots, limpiarlos y recrearlos con eventos
+      this.dotsContainer.innerHTML = '';
+      
+      for (let i = 0; i < this.totalPages; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => this.goTo(i));
+        this.dotsContainer.appendChild(dot);
+      }
     }
-    
-    document.body.appendChild(this.indicators);
   }
   
-  updateIndicators() {
-    const dots = this.indicators.querySelectorAll('.page-dot');
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === this.currentPage);
+  updateNavigation() {
+    // Actualizar flechas
+    if (this.arrowPrev) {
+      this.arrowPrev.style.visibility = this.currentPage === 0 ? 'hidden' : 'visible';
+      this.arrowPrev.style.opacity = this.currentPage === 0 ? '0' : '1';
+    }
+    
+    if (this.arrowNext) {
+      this.arrowNext.style.visibility = this.currentPage === this.totalPages - 1 ? 'hidden' : 'visible';
+      this.arrowNext.style.opacity = this.currentPage === this.totalPages - 1 ? '0' : '1';
+    }
+    
+    // Actualizar dots
+    if (this.dotsContainer) {
+      const dots = this.dotsContainer.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === this.currentPage);
+      });
+    }
+    
+    // Actualizar páginas
+    this.pages.forEach((page, index) => {
+      page.classList.toggle('active', index === this.currentPage);
     });
   }
   
   showPage(index) {
-    // Ocultar todas las páginas
-    this.pages.forEach(page => page.classList.remove('active'));
-    
-    // Mostrar la página actual
-    this.pages[index].classList.add('active');
     this.currentPage = index;
-    
-    // Actualizar indicadores
-    this.updateIndicators();
+    this.updateNavigation();
     
     // Scroll al inicio de la página
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -516,6 +536,7 @@ class Carousel {
   
   goTo(index) {
     if (index === this.currentPage) return;
+    if (index < 0 || index >= this.totalPages) return;
     
     // Reiniciar el temporizador
     this.stop();
@@ -566,12 +587,16 @@ class Carousel {
   pause() {
     this.isPaused = true;
     this.stop();
-    this.progressBar.classList.add('paused');
+    if (this.progressBar) {
+      this.progressBar.classList.add('paused');
+    }
   }
   
   resume() {
     this.isPaused = false;
-    this.progressBar.classList.remove('paused');
+    if (this.progressBar) {
+      this.progressBar.classList.remove('paused');
+    }
     this.start();
   }
   
@@ -584,17 +609,22 @@ class Carousel {
   }
   
   next() {
-    this.stop();
-    const nextIndex = (this.currentPage + 1) % this.totalPages;
-    this.showPage(nextIndex);
-    this.start();
+    if (this.currentPage < this.totalPages - 1) {
+      this.stop();
+      this.showPage(this.currentPage + 1);
+      this.start();
+    } else {
+      // Opcional: si estás en la última página, puedes reiniciar desde el principio
+      // this.goTo(0);
+    }
   }
   
   prev() {
-    this.stop();
-    const prevIndex = (this.currentPage - 1 + this.totalPages) % this.totalPages;
-    this.showPage(prevIndex);
-    this.start();
+    if (this.currentPage > 0) {
+      this.stop();
+      this.showPage(this.currentPage - 1);
+      this.start();
+    }
   }
   
   updateProgress(value) {
@@ -606,7 +636,16 @@ class Carousel {
   }
   
   setupControls() {
-    // Controles de teclado (opcional)
+    // Flechas existentes
+    if (this.arrowPrev) {
+      this.arrowPrev.addEventListener('click', () => this.prev());
+    }
+    
+    if (this.arrowNext) {
+      this.arrowNext.addEventListener('click', () => this.next());
+    }
+    
+    // Controles de teclado
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
@@ -622,52 +661,52 @@ class Carousel {
     
     // Pausar al pasar el mouse sobre la página
     const main = document.getElementById('app');
-    main.addEventListener('mouseenter', () => this.pause());
-    main.addEventListener('mouseleave', () => this.resume());
+    if (main) {
+      main.addEventListener('mouseenter', () => this.pause());
+      main.addEventListener('mouseleave', () => this.resume());
+    }
     
-    // Pausar en dispositivos táctiles
+    // Swipe táctil
     let touchStartX = 0;
     let touchStartY = 0;
     
-    main.addEventListener('touchstart', (e) => {
-      const touch = e.touches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-    });
-    
-    main.addEventListener('touchmove', (e) => {
-      if (!touchStartX || !touchStartY) return;
+    if (main) {
+      main.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+      }, { passive: true });
       
-      const touch = e.touches[0];
-      const deltaX = touch.clientX - touchStartX;
-      const deltaY = touch.clientY - touchStartY;
-      
-      // Detectar swipe horizontal (más que vertical)
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-        e.preventDefault();
+      main.addEventListener('touchmove', (e) => {
+        if (!touchStartX || !touchStartY) return;
         
-        if (deltaX < 0) {
-          this.next();
-        } else {
-          this.prev();
+        const touch = e.touches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+          e.preventDefault();
+          
+          if (deltaX < 0) {
+            this.next();
+          } else {
+            this.prev();
+          }
+          
+          touchStartX = 0;
+          touchStartY = 0;
         }
-        
-        touchStartX = 0;
-        touchStartY = 0;
-      }
-    });
+      }, { passive: false });
+    }
   }
 }
 
 // =========================================================
-// INICIALIZAR EL CARRUSEL (después de cargar los datos)
+// INICIALIZAR EL CARRUSEL
 // =========================================================
 
-// Inicializar cuando todos los datos estén cargados
 document.addEventListener('DOMContentLoaded', function() {
-  // Esperar a que los datos estén listos (si usas fetch)
   const checkData = setInterval(() => {
-    // Verificar que los datos estén cargados
     const introText = document.getElementById('intro-texto');
     if (introText && introText.textContent !== '') {
       clearInterval(checkData);
@@ -675,7 +714,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 100);
   
-  // Timeout por si algo falla
   setTimeout(() => {
     const introText = document.getElementById('intro-texto');
     if (introText && introText.textContent === '') {
@@ -684,17 +722,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 5000);
   
   function initCarousel() {
-    // Crear instancia del carrusel
     window.carousel = new Carousel({
-      duration: 5000 // 8 segundos por página (ajusta según necesites)
+      duration: 8000 // 8 segundos por página
     });
     
-    // Si quieres detener el autoplay en la primera página
-    // puedes agregar un botón para iniciar después de la intro
     const startBtn = document.getElementById('btn-start');
     if (startBtn) {
       startBtn.addEventListener('click', function() {
-        // Si el carrusel está pausado, reanudar
         if (window.carousel && window.carousel.isPaused) {
           window.carousel.resume();
         }
@@ -702,6 +736,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
 
 // =========================================================
 // FUNCIONES DE UTILIDAD PARA EL CARRUSEL
