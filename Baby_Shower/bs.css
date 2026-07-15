@@ -8,7 +8,7 @@
   --gold:         hsl(195, 56%, 66%);   /* dorado principal (bordes, íconos, cifras) */
   --gold-light:   hsl(195, 69%, 50%);   /* dorado claro (títulos, hover) */
   --cream:        hsl(39, 52%, 25%);   /* texto principal sobre fondo oscuro */
-  --powder:       hsl(206, 42%, 76%);   /* texto secundario, azul empolvado */
+  --powder:       hsl(0, 0%, 50%);   /* texto secundario, azul empolvado */
   --line:         hsla(40, 56%, 66%, 0.35); /* líneas divisoras doradas */
   --shadow-gold:  hsla(40, 56%, 66%, 0.35);
 
@@ -145,6 +145,80 @@ button{ font-family:inherit; }
 }
 .page-inner::-webkit-scrollbar{ display:none; }
 
+
+
+/* =========================================================
+   BARRA DE PROGRESO
+   ========================================================= */
+.progress-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  border-radius: 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f9d976, #f39c12);
+  border-radius: 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+}
+
+/* Animación de pulso para la barra */
+.progress-bar.active {
+  animation: pulseProgress 2s ease-in-out infinite;
+}
+
+@keyframes pulseProgress {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Opcional: puntos/paginación encima de la barra */
+.page-indicators {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 9998;
+}
+
+.page-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.page-dot.active {
+  background: #f9d976;
+  transform: scale(1.3);
+  box-shadow: 0 0 15px rgba(249, 217, 118, 0.6);
+}
+
+.page-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+
+
+
+
+
 /* Emblema (corona + estrellas) que se repite arriba de cada página: el
    "hilo" visual que conecta todas las secciones de la invitación */
 .emblem{ width:10%; margin-bottom:.2rem; opacity:.5; }
@@ -153,7 +227,7 @@ button{ font-family:inherit; }
 
 .eyebrow{
   font-family:var(--font-body); font-weight:500;
-  font-size:.72rem; letter-spacing:.28em; text-transform:uppercase;
+  font-size:1rem; letter-spacing:.28em; text-transform:uppercase;
   color:var(--gold);
 }
 .divider{
@@ -162,13 +236,13 @@ button{ font-family:inherit; }
 .title{
   font-family:var(--font-display); font-style:italic; font-weight:500;
   color:var(--gold-light);
-  font-size:clamp(2.1rem,8vw,3.1rem);
+  font-size:clamp(2.5rem,10vw,4rem);
   letter-spacing:.01em;
   line-height:1.05;
 }
 .script-line{
-  font-family:var(--font-script);
-  font-size:clamp(1.2rem,4.5vw,1.6rem);
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,4.75vw,1.15rem);
   color:var(--cream);
   margin-top:.15rem;
   line-height:clamp(1.5rem,5vw,2rem);
@@ -211,7 +285,7 @@ button{ font-family:inherit; }
 }
 
 .map-container iframe{
-    width:100%;
+    width:80%;
     border:none;
 }
 
@@ -280,7 +354,7 @@ button{ font-family:inherit; }
 .host-names{ font-family:var(--font-display); font-style:italic; font-size:2.5rem; color:var(--cream); }
 .quote{
   margin-top:1.1rem; font-family:var(--font-display); font-style:italic;
-  font-size:1.05rem; line-height:1.7; color:var(--powder); max-width:30ch;
+  font-size:1.25rem; line-height:1.7; color:var(--powder); max-width:30ch;
 }
 .quote::before{ content:"“"; color:var(--gold); }
 .quote::after{ content:"”"; color:var(--gold); }
@@ -303,8 +377,8 @@ button{ font-family:inherit; }
 .nav-arrow:focus-visible{ outline:2px solid var(--gold-light); }
 #arrow-prev{ left:0; } #arrow-next{ right:0; }
 
-@media (max-width:480px){ .nav-arrow{ font-size:3rem; padding:.5rem .6rem; } }
-
+@media (max-width:480px){ 
+.nav-arrow{ font-size:3rem; padding:.5rem .6rem; } }
 .dots{ position:fixed; bottom:1.3rem; left:50%; transform:translateX(-50%); display:flex; gap:.6rem; z-index:50; }
 .dot{
   width:7px; height:7px; border-radius:50%; padding:0; border:none; cursor:pointer;
