@@ -444,3 +444,275 @@ document.getElementById('map-frame').src = mapUrl;
    13. BOTÓN DE CONFIRMACIÓN DE ASISTENCIA (Google Forms)
    ===================================================================== */
 document.getElementById('btn-rsvp').href = CONFIG.formUrl;
+
+
+
+
+
+
+// =========================================================
+// CARRUSEL AUTOMÁTICO CON BARRA DE PROGRESO
+// =========================================================
+
+class Carousel {
+  constructor(options = {}) {
+    // Configuración
+    this.duration = options.duration || 8000; // 8 segundos por página
+    this.pages = document.querySelectorAll('.page');
+    this.totalPages = this.pages.length;
+    this.currentPage = 0;
+    this.isPaused = false;
+    this.timer = null;
+    this.progressTimer = null;
+    this.startTime = 0;
+    this.remainingTime = this.duration;
+    
+    // Elementos
+    this.progressBar = document.getElementById('progressBar');
+    this.indicators = document.createElement('div');
+    
+    // Inicializar
+    this.initIndicators();
+    this.start();
+    this.setupControls();
+  }
+  
+  initIndicators() {
+    // Crear indicadores de página (puntos)
+    this.indicators.className = 'page-indicators';
+    
+    for (let i = 0; i < this.totalPages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'page-dot' + (i === 0 ? ' active' : '');
+      dot.dataset.index = i;
+      dot.addEventListener('click', () => this.goTo(i));
+      this.indicators.appendChild(dot);
+    }
+    
+    document.body.appendChild(this.indicators);
+  }
+  
+  updateIndicators() {
+    const dots = this.indicators.querySelectorAll('.page-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.currentPage);
+    });
+  }
+  
+  showPage(index) {
+    // Ocultar todas las páginas
+    this.pages.forEach(page => page.classList.remove('active'));
+    
+    // Mostrar la página actual
+    this.pages[index].classList.add('active');
+    this.currentPage = index;
+    
+    // Actualizar indicadores
+    this.updateIndicators();
+    
+    // Scroll al inicio de la página
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  goTo(index) {
+    if (index === this.currentPage) return;
+    
+    // Reiniciar el temporizador
+    this.stop();
+    this.showPage(index);
+    this.start();
+  }
+  
+  start() {
+    if (this.timer) return;
+    
+    this.startTime = Date.now();
+    this.remainingTime = this.duration;
+    
+    // Iniciar barra de progreso
+    this.updateProgress(1);
+    
+    // Temporizador principal para cambio de página
+    this.timer = setTimeout(() => {
+      this.next();
+    }, this.duration);
+    
+    // Temporizador para actualizar la barra de progreso
+    this.progressTimer = setInterval(() => {
+      const elapsed = Date.now() - this.startTime;
+      const progress = Math.min(1 - (elapsed / this.duration), 1);
+      this.updateProgress(progress);
+    }, 50);
+  }
+  
+  stop() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
+    
+    if (this.progressTimer) {
+      clearInterval(this.progressTimer);
+      this.progressTimer = null;
+    }
+    
+    // Guardar el tiempo restante
+    if (this.startTime > 0) {
+      const elapsed = Date.now() - this.startTime;
+      this.remainingTime = Math.max(0, this.duration - elapsed);
+    }
+  }
+  
+  pause() {
+    this.isPaused = true;
+    this.stop();
+    this.progressBar.classList.add('paused');
+  }
+  
+  resume() {
+    this.isPaused = false;
+    this.progressBar.classList.remove('paused');
+    this.start();
+  }
+  
+  togglePause() {
+    if (this.isPaused) {
+      this.resume();
+    } else {
+      this.pause();
+    }
+  }
+  
+  next() {
+    this.stop();
+    const nextIndex = (this.currentPage + 1) % this.totalPages;
+    this.showPage(nextIndex);
+    this.start();
+  }
+  
+  prev() {
+    this.stop();
+    const prevIndex = (this.currentPage - 1 + this.totalPages) % this.totalPages;
+    this.showPage(prevIndex);
+    this.start();
+  }
+  
+  updateProgress(value) {
+    if (this.progressBar) {
+      const percentage = Math.max(0, Math.min(value * 100, 100));
+      this.progressBar.style.width = percentage + '%';
+      this.progressBar.classList.toggle('active', value > 0 && value < 1);
+    }
+  }
+  
+  setupControls() {
+    // Controles de teclado (opcional)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        this.prev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        this.next();
+      } else if (e.key === ' ') {
+        e.preventDefault();
+        this.togglePause();
+      }
+    });
+    
+    // Pausar al pasar el mouse sobre la página
+    const main = document.getElementById('app');
+    main.addEventListener('mouseenter', () => this.pause());
+    main.addEventListener('mouseleave', () => this.resume());
+    
+    // Pausar en dispositivos táctiles
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    main.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    });
+    
+    main.addEventListener('touchmove', (e) => {
+      if (!touchStartX || !touchStartY) return;
+      
+      const touch = e.touches[0];
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      
+      // Detectar swipe horizontal (más que vertical)
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        e.preventDefault();
+        
+        if (deltaX < 0) {
+          this.next();
+        } else {
+          this.prev();
+        }
+        
+        touchStartX = 0;
+        touchStartY = 0;
+      }
+    });
+  }
+}
+
+// =========================================================
+// INICIALIZAR EL CARRUSEL (después de cargar los datos)
+// =========================================================
+
+// Inicializar cuando todos los datos estén cargados
+document.addEventListener('DOMContentLoaded', function() {
+  // Esperar a que los datos estén listos (si usas fetch)
+  const checkData = setInterval(() => {
+    // Verificar que los datos estén cargados
+    const introText = document.getElementById('intro-texto');
+    if (introText && introText.textContent !== '') {
+      clearInterval(checkData);
+      initCarousel();
+    }
+  }, 100);
+  
+  // Timeout por si algo falla
+  setTimeout(() => {
+    const introText = document.getElementById('intro-texto');
+    if (introText && introText.textContent === '') {
+      initCarousel();
+    }
+  }, 5000);
+  
+  function initCarousel() {
+    // Crear instancia del carrusel
+    window.carousel = new Carousel({
+      duration: 5000 // 8 segundos por página (ajusta según necesites)
+    });
+    
+    // Si quieres detener el autoplay en la primera página
+    // puedes agregar un botón para iniciar después de la intro
+    const startBtn = document.getElementById('btn-start');
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        // Si el carrusel está pausado, reanudar
+        if (window.carousel && window.carousel.isPaused) {
+          window.carousel.resume();
+        }
+      });
+    }
+  }
+});
+
+// =========================================================
+// FUNCIONES DE UTILIDAD PARA EL CARRUSEL
+// =========================================================
+
+// Si necesitas pausar/reanudar manualmente desde la consola:
+// window.carousel.pause()
+// window.carousel.resume()
+// window.carousel.goTo(2) // ir a la página 2
+// window.carousel.next()
+// window.carousel.prev()
+
+// Cambiar la duración dinámicamente:
+// window.carousel.duration = 10000 // 10 segundos
