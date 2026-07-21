@@ -413,7 +413,7 @@
     width: 20%;
     height: 0.85px;
     background: linear-gradient(to right, transparent, var(--gold-tertiary), var(--gold-primary), var(--gold-tertiary), transparent);
-    margin: 17.5% auto;
+    margin: 25% auto 20% auto;
     border-radius: 3px;
 }
 
@@ -742,22 +742,6 @@ li {
     filter: drop-shadow(0 10px 5px #3B5998);
 }
 
-.Instagram { 
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    filter: drop-shadow(0 5px 2.5px #405DE6)
-            drop-shadow(0 5px 5px #5851DB); 
-}
-
-.Youtube { 
-    background-color: #FF0000; 
-    filter: drop-shadow(0 10px 5px #c10000);
-}
-
-.Tiktok { 
-    background-color: #ffffff; 
-    filter: drop-shadow(0 5px 2.5px #40e6e6)
-            drop-shadow(0 5px 5px #db5151); 
-}
 
 .Correo { 
     background-color: #ffffff; 
@@ -769,10 +753,6 @@ li {
     filter: drop-shadow(0 10px 5px #960000); 
 }
 
-.Telefono { 
-    background-color: #ffffff;
-    filter: drop-shadow(0 10px 5px #006699); 
-}
 
 .Compartir { 
     background-color: hsla(55, 100%, 100%); 
@@ -892,8 +872,9 @@ li {
 
 
 @media (max-width: 400px) {
-    .letra{
-        font-size: 4.5rem;
+    .letra h1{
+        font-size: 4rem;
+        line-height: 5rem;
     }
 
     .letra h1 strong {
