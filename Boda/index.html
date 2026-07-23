@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <meta property="og:title" content="Baby Shower">
+    <meta property="og:description" content="Bastian Nicola Fuentes Bejarano">
+    <meta property="og:image" content="https://kemafuja.github.io/Baby_Shower/Pooh.png">
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="650">
+    <meta property="og:url" content="https://kemafuja.github.io/Baby_Shower/">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1c2e">
+<meta name="color-scheme" content="dark">
+<title>Baby Shower</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="bs.css">
+</head>
+<body>
+<!-- ===================== CIELO DECORATIVO (fijo, no interactivo) ===================== -->
+<div class="sky" aria-hidden="true">
+  <div class="stars-layer" id="stars-layer"></div>
+  <svg class="moon" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M65,8 A42,42 0 1 0 65,92 A34,34 0 1 1 65,8 Z" fill="#f0dcae" opacity="0.9"/>
+  </svg>
+</div>
+
+<!-- ===================== CONTROL DE MÚSICA (visible en todas las páginas) ===================== -->
+<button id="btn-music-toggle" aria-label="Silenciar o activar música">
+  <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9v6h4l6 5V4L8 9H4Z"/><path d="M17 8a5 5 0 0 1 0 8"/></svg>
+  <svg class="icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9v6h4l6 5V4L8 9H4Z"/><path d="M17.5 8.5l4 4m0-4l-4 4"/></svg>
+</button>
+
+<main id="app">
+  <!-- =========================================================
+       PÁGINA 0 — INTRO + INICIO DE MÚSICA
+       ========================================================= -->
+  <section class="page active" data-page="0">
+    <div class="page-inner">
+      <img class="emblem" src="pooh.png" alt="Logo" style="width: 30% !important; opacity: 0.9 !important;">
+      <p class="eyebrow">Bienvenidos</p>
+      <h1 class="title">Nuestra Boda</h1>
+      <p class="script-line"> <span>B</span>astian <span>N</span>icola<span> & F</span>abiola <span>B</span>ejarano</p>
+      <!-- EDITA este párrafo con tu propio mensaje de bienvenida -->
+      <p class="body-text" id="intro-texto"></p>
+
+      <button class="btn" id="btn-start">✦ Comenzar la invitación ✦</button>
+      <button class="link-quiet" id="btn-skip-sound">Continuar sin música</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PÁGINA 1 — CALENDARIO + CUENTA REGRESIVA
+       ========================================================= -->
+  <section class="page" data-page="1">
+    <div class="page-inner">
+      <img class="emblem" src="pooh.png" alt="Logo">
+      <p class="eyebrow">I · Fecha</p>
+
+      <div class="cal-card">
+        <p class="cal-mes" id="cal-mes-anio">—</p>
+        <div class="cal-grid" id="cal-grid"><!-- generado por JS: buildCalendar() --></div>
+        <p class="evento-info">
+          <strong id="fecha-larga">—</strong><br>
+          <span id="hora-texto">—</span> · <span id="lugar-texto-corto">—</span>
+        </p>
+      </div>
+
+      <div class="countdown" id="countdown-wrap">
+        <div class="cd-box"><span class="cd-num" id="cd-dias">00</span><span class="cd-label">DÍAS</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box"><span class="cd-num" id="cd-horas">00</span><span class="cd-label">HORAS</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box"><span class="cd-num" id="cd-min">00</span><span class="cd-label">MIN</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-box"><span class="cd-num" id="cd-seg">00</span><span class="cd-label">SEG</span></div>
+      </div>
+
+      <a class="link-quiet" id="btn-add-calendar" target="_blank" rel="noopener">+ Añadir a mi calendario</a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PÁGINA 2 — ANFITRIONES (PAPÁS / PADRINOS) + MENSAJE
+       ========================================================= -->
+  <section class="page" data-page="2">
+    <div class="page-inner">
+      <img class="emblem" src="pooh.png" alt="Logo">
+      <p class="eyebrow">II · Anfitriones</p>
+      <h2 class="title" style="font-size:clamp(1.6rem,6vw,2.2rem)">Con mucho amor</h2>
+
+      <div class="host-row">
+        <div class="host-block">
+          <p class="host-label">Papás</p>
+          <p class="host-names" id="papas-nombres">—</p>
+        </div>
+        <div class="host-block">
+          <p class="host-label">Padrinos</p>
+          <p class="host-names" id="padrinos-nombres">—</p>
+        </div>
+      </div>
+
+      <p class="quote" id="mensaje-texto"></p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PÁGINA 3 — UBICACIÓN + BOTÓN A GOOGLE MAPS
+       ========================================================= -->
+  <section class="page" data-page="3">
+    <div class="page-inner">
+      <img class="emblem" src="pooh.png" alt="Logo">
+      <p class="eyebrow">III · Cómo llegar</p>
+      <p class="body-text">Te esperamos en:</p>
+      <p class="lugar-nombre" id="lugar-nombre-4">—</p>
+      <p class="lugar-direccion" id="lugar-direccion-4">—</p>
+
+      <div class="map-container">
+    <iframe
+        id="map-frame"
+        src=""
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+</div>
+
+      <a class="btn" id="btn-maps" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        Ver ubicación en el mapa
+      </a>
+
+      <p class="script-line" style="margin-top:1.4rem; font-size: 1.5rem;">De favor, sin niños.</p>
+    </div>
+  </section> 
+
+  <!-- =========================================================
+       PÁGINA 4 — CONFIRMACIÓN DE ASISTENCIA (GOOGLE FORMS)
+       ========================================================= -->
+  <section class="page" data-page="4">
+  <div class="page-inner">
+    <img class="emblem" src="pooh.png" alt="Logo">
+    <p class="eyebrow">IV · Recuerdo de nosotros</p>
+
+    <!-- CARRUSEL (SCROLL SNAP) -->
+    <div class="carousel-snap">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="imagen (1).jpg" alt="Foto 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="imagen (2).jpg" alt="Foto 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="imagen (3).jpg" alt="Foto 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="imagen (4).jpg" alt="Foto 4">
+        </div>
+        <div class="carousel-slide">
+          <img src="imagen (5).jpg" alt="Foto 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="imagen (6).jpg" alt="Foto 4">
+        </div>
+      </div>
+    </div>
+    <!-- FIN CARRUSEL -->
+
+  </div>
+</section>
+
+</main>
+
+<!-- Flechas y puntos de navegación -->
+<button class="nav-arrow" id="arrow-prev" aria-label="Página anterior">‹</button>
+<button class="nav-arrow" id="arrow-next" aria-label="Página siguiente">›</button>
+<div class="dots" id="dots"></div>
+
+<script src="bs.js"></script>
+</body>
+</html>
