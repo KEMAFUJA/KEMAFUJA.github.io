@@ -576,6 +576,20 @@ li {
     filter: drop-shadow(0 10px 5px hsla(0, 0%, 0%)); 
 }
 
+@media (max-width: 1440px) {
+    .card-wrapper::after {
+        height: 102%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card-wrapper::after {
+        height: 102%;
+        width: 80%;
+    }
+}
+
 @media (max-width: 800px) {
     .card-wrapper::after {
         height: 102%;
